@@ -13,7 +13,7 @@ const HeaderOne = ({ style }: any) => {
 
    return (
       <>
-         <header className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`} style={{ background: 'rgb(19, 29, 32)' }}>
+         <header className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`} style={{ background: '#1a1a1a' }}>
             <div className="inner-content gap-one">
                <div className="top-header position-relative">
                   <div className="d-flex align-items-center justify-content-between">
@@ -116,7 +116,7 @@ const HeaderOne = ({ style }: any) => {
                   color: rgb(48, 92, 115) !important;
                }
                .theme-main-menu.fixed {
-                  background: rgb(19, 29, 32) !important;
+                  background: #1a1a1a !important;
                }
             `}</style>
          </header>

@@ -16,7 +16,7 @@ const FooterOne = ({ style }: any) => {
    const { t } = useTranslation();
    
    return (
-      <div className={`footer-one ${style ? "dark-bg" : ""}`}>
+      <div className={`footer-one ${style ? "dark-bg" : ""}`} style={{ background: '#1a1a1a' }}>
          <div className="position-relative z-1">
             <div className="container">
                <div className="row justify-content-between">
@@ -26,12 +26,12 @@ const FooterOne = ({ style }: any) => {
                            <div className="logo mb-20">
                               <Link href="/" className="d-flex align-items-center gap-3 text-decoration-none">
                                  <Image src="/logo/logo o7.jpg" alt="O7 REALESTATES logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
-                                 <span className="fw-semibold text-uppercase fs-5">O7 REALESTATES</span>
+                                 <span className="fw-semibold text-uppercase fs-5" style={{ color: '#ffffff' }}>O7 REALESTATES</span>
                               </Link>
                            </div>
-                           <p className="mb-60 lg-mb-40 md-mb-20">{t('footer.address')}</p>
-                           <h6>{t('footer.contact')}</h6>
-                           <Link href="mailto:info@o7realestates.com" className={`email tran3s mb-70 lg-mb-50 ${style ? "font-garamond" : "fs-24 text-decoration-underline"}`}>info@o7realestates.com</Link>
+                           <p className="mb-60 lg-mb-40 md-mb-20" style={{ color: '#ffffff' }}>{t('footer.address')}</p>
+                           <h6 style={{ color: '#ffffff' }}>{t('footer.contact')}</h6>
+                           <Link href="mailto:info@o7realestates.com" className={`email tran3s mb-70 lg-mb-50 ${style ? "font-garamond" : "fs-24 text-decoration-underline"}`} style={{ color: '#ffffff' }}>info@o7realestates.com</Link>
                            <ul className="style-none d-flex align-items-center social-icon">
                               {icon_1.map((icon, i) => (
                                  <li key={i}><Link href="#"><i className={`fa-brands fa${style ? "" : "-square"}-${icon}`}></i></Link></li>
@@ -46,7 +46,7 @@ const FooterOne = ({ style }: any) => {
                      <div className={`d-flex flex-wrap ${style ? "h-100" : ""}`}>
                         {footer_data.filter((items) => items.page === "home_1").map((item) => (
                            <div key={item.id} className={`footer-nav mt-100 lg-mt-80 ${item.widget_class}`}>
-                              <h5 className={`footer-title ${style ? "text-white" : ''}`}>{item.widget_title_key ? t(item.widget_title_key) : item.widget_title}</h5>
+                              <h5 className="footer-title" style={{ color: '#ffffff' }}>{item.widget_title_key ? t(item.widget_title_key) : item.widget_title}</h5>
                               <ul className="footer-nav-link style-none">
                                  {item.footer_link.map((li, i) => (
                                     <li key={i}><Link href={li.link}>{li.link_title_key ? t(li.link_title_key) : li.link_title}</Link></li>
@@ -61,6 +61,17 @@ const FooterOne = ({ style }: any) => {
             </div>
             {style && <Image src={footerShape_2} alt="" className="lazy-img shapes shape_02" />}
          </div>
+         <style jsx>{`
+            .footer-one .footer-nav-link a {
+               color: #ffffff !important;
+            }
+            .footer-one .footer-nav-link a:hover {
+               color: rgb(48, 92, 115) !important;
+            }
+            .footer-one .social-icon a {
+               color: #ffffff !important;
+            }
+         `}</style>
       </div>
    )
 }
