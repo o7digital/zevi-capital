@@ -37,7 +37,7 @@ const HeaderOne = ({ style }: any) => {
                               className="d-none d-lg-block"
                               priority
                            />
-                           <div className="d-flex flex-column" style={{ lineHeight: "1.1" }}>
+                           <div className="d-flex flex-column" style={{ lineHeight: "1.1", marginLeft: "20px" }}>
                               <span 
                                  className="text-uppercase" 
                                  style={{ 

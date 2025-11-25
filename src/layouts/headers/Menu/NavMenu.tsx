@@ -20,19 +20,10 @@ const NavMenu = () => {
                 <Link className="nav-link" href="/">{t('nav.home')}</Link>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" href="/purchase">{t('nav.purchase')}</Link>
-            </li>
-            <li className="nav-item">
                 <Link className="nav-link" href="/about_us_01">{t('nav.aboutUs')}</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" href="/sales">{t('nav.sales')}</Link>
-            </li>
-            <li className="nav-item">
-                <Link className="nav-link" href="/insurance">{t('nav.insurance')}</Link>
-            </li>
-            <li className="nav-item">
-                <Link className="nav-link" href="/blog_01">{t('nav.blog')}</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" href="/contact">{t('nav.contactUs')}</Link>
