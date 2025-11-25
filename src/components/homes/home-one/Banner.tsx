@@ -165,28 +165,30 @@ const Banner = () => {
                }
             }
 
-            /* Technique d'affichage au survol/touch */
+            /* Technique d'affichage au survol/touch - Complètement caché */
             .booking-hover-zone {
                cursor: pointer;
             }
 
             .booking-bar-inner {
-               opacity: 0.15;
+               opacity: 0;
+               visibility: hidden;
                pointer-events: none;
-               transform: scale(0.98);
-               transition: opacity 0.4s ease, transform 0.4s ease, backdrop-filter 0.4s ease;
-               backdrop-filter: blur(2px);
+               transform: scale(0.95);
+               transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease, backdrop-filter 0.5s ease;
+               backdrop-filter: blur(0px);
             }
 
             .booking-bar-inner :global(.bg-wrapper) {
-               background: rgba(255, 255, 255, 0.7) !important;
-               transition: background 0.4s ease;
+               background: rgba(255, 255, 255, 0) !important;
+               transition: background 0.5s ease;
             }
 
             /* États hover et focus pour desktop */
             .booking-hover-zone:hover .booking-bar-inner,
             .booking-hover-zone:focus-within .booking-bar-inner {
                opacity: 1;
+               visibility: visible;
                pointer-events: auto;
                transform: scale(1);
                backdrop-filter: blur(8px);
@@ -200,13 +202,15 @@ const Banner = () => {
             /* Support mobile/tablette */
             @media (max-width: 991px) {
                .booking-bar-inner {
-                  opacity: 0.2;
-                  transform: scale(0.97);
+                  opacity: 0;
+                  visibility: hidden;
+                  transform: scale(0.95);
                }
 
                .booking-hover-zone:active .booking-bar-inner,
                .booking-hover-zone:focus-within .booking-bar-inner {
                   opacity: 1;
+                  visibility: visible;
                   pointer-events: auto;
                   transform: scale(1);
                }
@@ -215,7 +219,7 @@ const Banner = () => {
 
          <script dangerouslySetInnerHTML={{
             __html: `
-               // Support tactile/mobile
+               // Support tactile/mobile - Complètement caché
                if (typeof window !== 'undefined') {
                   setTimeout(() => {
                      const box = document.getElementById('booking-hover-container');
@@ -226,6 +230,7 @@ const Banner = () => {
                         
                         box.addEventListener('touchstart', () => {
                            barContainer.style.opacity = '1';
+                           barContainer.style.visibility = 'visible';
                            barContainer.style.pointerEvents = 'auto';
                            barContainer.style.transform = 'scale(1)';
                            barContainer.style.backdropFilter = 'blur(8px)';
@@ -233,11 +238,12 @@ const Banner = () => {
                            clearTimeout(hideTimeout);
                            
                            hideTimeout = setTimeout(() => {
-                              barContainer.style.opacity = '0.2';
+                              barContainer.style.opacity = '0';
+                              barContainer.style.visibility = 'hidden';
                               barContainer.style.pointerEvents = 'none';
-                              barContainer.style.transform = 'scale(0.97)';
-                              barContainer.style.backdropFilter = 'blur(2px)';
-                           }, 3000);
+                              barContainer.style.transform = 'scale(0.95)';
+                              barContainer.style.backdropFilter = 'blur(0px)';
+                           }, 5000);
                         });
                      }
                   }, 100);
