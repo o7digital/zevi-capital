@@ -64,8 +64,8 @@ const Banner = () => {
             <Slider ref={sliderRef} {...settings}>
                <div style={{ height: '100%', width: '100%' }}>
                   <img 
-                     src="/slider/dubai1.jpg"
-                     alt="villa de luxe Dubai immobilier premium exclusif"
+                     src="/slider/montreal1.jpg"
+                     alt="villa de luxe Canada immobilier premium exclusif"
                      style={{
                         width: '100%',
                         height: '800px',
@@ -76,8 +76,8 @@ const Banner = () => {
                </div>
                <div style={{ height: '100%', width: '100%' }}>
                   <img 
-                     src="/slider/dubai2.jpg"
-                     alt="Dubai penthouse luxury real estate"
+                     src="/slider/montreal2.jpg"
+                     alt="Canada penthouse luxury real estate"
                      style={{
                         width: '100%',
                         height: '800px',
