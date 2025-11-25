@@ -25,7 +25,7 @@ const FooterOne = ({ style }: any) => {
                         <div className="bg-wrapper">
                            <div className="logo mb-20">
                               <Link href="/" className="d-flex align-items-center gap-3 text-decoration-none">
-                                 <Image src="/images/logo.svg" alt="O7 REALESTATES logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
+                                 <Image src="/logo/logo o7.jpg" alt="O7 REALESTATES logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
                                  <span className="fw-semibold text-uppercase fs-5">O7 REALESTATES</span>
                               </Link>
                            </div>
