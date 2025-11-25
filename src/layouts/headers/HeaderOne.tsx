@@ -13,7 +13,7 @@ const HeaderOne = ({ style }: any) => {
 
    return (
       <>
-         <header className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`}>
+         <header className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`} style={{ background: 'rgb(19, 29, 32)' }}>
             <div className="inner-content gap-one">
                <div className="top-header position-relative">
                   <div className="d-flex align-items-center justify-content-between">
@@ -44,7 +44,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontSize: "clamp(16px, 2.5vw, 24px)",
                                     fontWeight: "700",
                                     letterSpacing: "2px",
-                                    color: "#1a1a1a",
+                                    color: "#ffffff",
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
@@ -56,7 +56,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontSize: "clamp(14px, 2vw, 20px)",
                                     fontWeight: "300",
                                     letterSpacing: "3px",
-                                    color: "#1a1a1a",
+                                    color: "#ffffff",
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
@@ -76,10 +76,11 @@ const HeaderOne = ({ style }: any) => {
                                  }}
                                  className="btn btn-sm d-flex align-items-center gap-1"
                                  style={{ 
-                                    border: '1px solid #000',
+                                    border: '1px solid #ffffff',
                                     padding: '6px 15px',
                                     borderRadius: '5px',
                                     background: 'transparent',
+                                    color: '#ffffff',
                                     fontWeight: '500',
                                     fontSize: '14px',
                                     cursor: 'pointer'
@@ -90,7 +91,7 @@ const HeaderOne = ({ style }: any) => {
                               </button>
                            </li>
                            <li className="d-none d-lg-block">
-                              <Link href="#" data-bs-toggle="modal" data-bs-target="#loginModal" className="btn-one"><i className="fa-regular fa-lock"></i> <span>{t('nav.login')}</span></Link>
+                              <Link href="#" data-bs-toggle="modal" data-bs-target="#loginModal" className="btn-one" style={{ background: 'rgb(48, 92, 115)', borderColor: 'rgb(48, 92, 115)', color: '#ffffff' }}><i className="fa-regular fa-lock"></i> <span>{t('nav.login')}</span></Link>
                            </li>
                         </ul>
                      </div>
@@ -107,6 +108,17 @@ const HeaderOne = ({ style }: any) => {
                   </div>
                </div>
             </div>
+            <style jsx global>{`
+               .theme-main-menu .nav-item .nav-link {
+                  color: #ffffff !important;
+               }
+               .theme-main-menu .nav-item .nav-link:hover {
+                  color: rgb(48, 92, 115) !important;
+               }
+               .theme-main-menu.fixed {
+                  background: rgb(19, 29, 32) !important;
+               }
+            `}</style>
          </header>
          <LoginModal />
       </>
