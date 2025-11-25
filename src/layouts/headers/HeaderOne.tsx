@@ -20,8 +20,8 @@ const HeaderOne = ({ style }: any) => {
                      <div className="logo order-lg-0" style={{ position: "relative", zIndex: 1000 }}>
                         <Link href="/" className="d-flex align-items-center gap-2 gap-lg-3 text-decoration-none">
                            <Image
-                              src="/logo/logo.png"
-                              alt="ALJABER DUBAI logo"
+                              src="/images/logo.svg"
+                              alt="O7 REALESTATES logo"
                               width={400}
                               height={100}
                               style={{ width: "auto", height: "60px" }}
@@ -29,8 +29,8 @@ const HeaderOne = ({ style }: any) => {
                               priority
                            />
                            <Image
-                              src="/logo/logo.png"
-                              alt="ALJABER DUBAI logo"
+                              src="/images/logo.svg"
+                              alt="O7 REALESTATES logo"
                               width={400}
                               height={100}
                               style={{ width: "auto", height: "100px" }}
@@ -48,7 +48,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
-                                 ALJABER
+                                 O7
                               </span>
                               <span 
                                  className="text-capitalize" 
@@ -60,7 +60,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
-                                 Dubai
+                                 Realestates
                               </span>
                            </div>
                         </Link>

@@ -22,8 +22,8 @@ interface ContentType {
 const footer_content: ContentType = {
    title: "Our Newsletter",
    desc_1: "Get instant news by subscribe to our newsletter",
-   desc_2: "Mars Residence, Dubai United Arab Emirates 337-1500",
-   email: "info@aljaberdubai.ae",
+   desc_2: "1030, Avenue Muguette, Saint-Élie-de-Caxton QC G0X 2N0, Canada",
+   email: "info@o7realestates.com",
    number: "+757 699-4478",
    icon: ["facebook-f", "twitter", "instagram"],
 }

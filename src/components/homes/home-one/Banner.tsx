@@ -12,15 +12,15 @@ const Banner = () => {
    const rotatingTexts = {
       en: [
          "We've more than 745,000 apartments, place & plot.",
-         "Discover your dream home in Dubai's finest locations.",
+         "Discover your dream home in Canada's finest locations.",
          "Luxury properties with breathtaking views of the city.",
-         "Your perfect investment starts here with Aljaber Dubai."
+         "Your perfect investment starts here with O7 Realestates."
       ],
       fr: [
          "Nous avons plus de 745 000 appartements, places et terrains.",
-         "Découvrez la maison de vos rêves dans les meilleurs quartiers de Dubaï.",
+         "Découvrez la maison de vos rêves dans les meilleurs quartiers du Canada.",
          "Propriétés de luxe avec des vues imprenables sur la ville.",
-         "Votre investissement parfait commence ici avec Aljaber Dubaï."
+         "Votre investissement parfait commence ici avec O7 Realestates."
       ]
    };
 

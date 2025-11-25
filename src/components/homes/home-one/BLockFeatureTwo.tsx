@@ -20,7 +20,7 @@ const BLockFeatureTwo = () => {
                   <div className="col-xxl-7 col-md-6 d-flex wow fadeInLeft">
                      <div className="block-one w-100 h-100">
                         <div className="position-relative z-1 h-100">
-                           <h3 className="mb-55">Aljaber Dubai</h3>
+                           <h3 className="mb-55">O7 Realestates</h3>
                            <a onClick={() => setIsVideoOpen(true)} style={{ cursor: "pointer" }} className="fancybox video-icon d-flex align-items-center justify-content-center rounded-circle ms-3" data-fancybox="">
                               <i className="fa-solid fa-play"></i>
                            </a>

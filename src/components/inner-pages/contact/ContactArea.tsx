@@ -21,19 +21,19 @@ const ContactArea = () => {
       {
          id: 1,
          title: t('contact.helpTitle'),
-         address_1: "info@aljaberdubai.ae"
+         address_1: "info@o7realestates.com"
       },
       {
          id: 2,
          class_name: "skew-line",
          title: t('contact.hotlineTitle'),
-         address_1: "+971 4 123 4567",
-         address_2: "+971 50 123 4567",
+         address_1: "+1 819 123 4567",
+         address_2: "+1 819 987 6543",
       },
       {
          id: 3,
          title: t('contact.liveChatTitle'),
-         address_1: "www.aljaberdubai.ae"
+         address_1: "www.o7realestates.com"
       },
    ];
    
@@ -79,7 +79,7 @@ const ContactArea = () => {
                <div className="col-xl-5 col-lg-6 d-flex order-lg-first">
                   <div className="contact-map-banner w-100">
                      <div className="gmap_canvas h-100 w-100">
-                        <iframe className="gmap_iframe h-100 w-100" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Mars+Residence,+Dubai+United+Arab+Emirates&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                        <iframe className="gmap_iframe h-100 w-100" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=1030+Avenue+Muguette,+Saint-Élie-de-Caxton+QC+G0X+2N0,+Canada&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                      </div>
                   </div>
                </div>

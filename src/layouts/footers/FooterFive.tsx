@@ -43,7 +43,7 @@ const FooterFive = () => {
                               <Image src={footerLogo} alt="" />
                            </Link>
                         </div>
-                        <p className="mb-45 md-mb-20">Mars Residence, Dubai United Arab Emirates 337-1500</p>
+                        <p className="mb-45 md-mb-20">1030, Avenue Muguette, Saint-Élie-de-Caxton QC G0X 2N0, Canada</p>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>
                            <li><Link href="#"><i className="fa-brands fa-twitter"></i></Link></li>

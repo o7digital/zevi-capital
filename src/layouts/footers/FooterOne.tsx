@@ -25,13 +25,13 @@ const FooterOne = ({ style }: any) => {
                         <div className="bg-wrapper">
                            <div className="logo mb-20">
                               <Link href="/" className="d-flex align-items-center gap-3 text-decoration-none">
-                                 <Image src="/logo/logo.png" alt="ALJABER DUBAI logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
-                                 <span className="fw-semibold text-uppercase fs-5">ALJABER DUBAI</span>
+                                 <Image src="/images/logo.svg" alt="O7 REALESTATES logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
+                                 <span className="fw-semibold text-uppercase fs-5">O7 REALESTATES</span>
                               </Link>
                            </div>
                            <p className="mb-60 lg-mb-40 md-mb-20">{t('footer.address')}</p>
                            <h6>{t('footer.contact')}</h6>
-                           <Link href="mailto:info@aljaberdubai.ae" className={`email tran3s mb-70 lg-mb-50 ${style ? "font-garamond" : "fs-24 text-decoration-underline"}`}>info@aljaberdubai.ae</Link>
+                           <Link href="mailto:info@o7realestates.com" className={`email tran3s mb-70 lg-mb-50 ${style ? "font-garamond" : "fs-24 text-decoration-underline"}`}>info@o7realestates.com</Link>
                            <ul className="style-none d-flex align-items-center social-icon">
                               {icon_1.map((icon, i) => (
                                  <li key={i}><Link href="#"><i className={`fa-brands fa${style ? "" : "-square"}-${icon}`}></i></Link></li>
