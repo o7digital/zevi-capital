@@ -64,22 +64,22 @@ interface CountryDataType {
 
 const country_data: CountryDataType[] = [
    {
-      title: "Asia Pacific",
+      title: "Amérique du Nord",
       class_name: "d-flex flex-wrap",
-      country: ["Australia", "Dubai", "India", "Singapore", "Hong Kong"],
+      country: ["Montreal", "Los Angeles"],
    },
    {
-      title: "South America",
-      country: ["United States", "Canada", "Argentina",],
+      title: "Amérique Latine",
+      country: ["Mexico"],
    },
    {
-      title: "European",
+      title: "Europe",
       class_name: "d-flex flex-wrap",
-      country: ["Germany", "France", "Italy", "Netherlands", "Switzerland", "Spain"],
+      country: ["Paris", "Londres"],
    },
    {
-      title: "South America",
-      country: ["Morocco", "South Africa"],
+      title: "International",
+      country: ["Accompagnement sur-mesure"],
    },
 ]
 
@@ -125,10 +125,10 @@ const FancyBannerOne = () => {
                <div className="text-slide-wrapper">
 						<div className="marquee">
 						  <p>
-							Dubai . America . Canada .
+							Montreal . Paris . Los Angeles . Mexico . Londres .
 						  </p>
 						  <p>
-							Dubai . America . Canada .
+							Montreal . Paris . Los Angeles . Mexico . Londres .
 						  </p>
 						</div>
 					</div>

@@ -16,7 +16,7 @@ const feature_data: DataType[] = [
       id: 1,
       icon: icon_1,
       title: "2M+ Properties",
-      desc: (<>Legal expertise for Dubai property concerns.</>),
+      desc: (<>Legal expertise for Montreal, Paris, Los Angeles, Mexico & Londres property concerns.</>),
    },
    {
       id: 2,

@@ -18,13 +18,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={isDev}>
       <head>
         <meta name="keywords" content={combinedKeywords.join(", ")} />
-        <meta name="description" content="O7 REALESTATES | Site officiel de l'agence immobilière de luxe à Dubai pour villas, penthouses et investissements premium." />
+        <meta name="description" content="O7 REALESTATES | Site officiel de l'agence immobilière internationale à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium." />
         <meta property="og:site_name" content="O7 REALESTATES - Site officiel" />
         <meta property="og:url" content="https://o7realestates.vercel.app/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="O7 REALESTATES | Site officiel - Luxury Real Estate Agency" />
-        <meta property="og:description" content="O7 REALESTATES | Site officiel de l'agence immobilière de luxe à Dubai pour villas, penthouses et investissements premium." />
-        <title>O7 REALESTATES | Site officiel</title>
+        <meta property="og:title" content="O7 REALESTATES | Site officiel - Agence immobilière Montreal - Paris - Los Angeles - Mexico - Londres" />
+        <meta property="og:description" content="O7 REALESTATES | Site officiel de l'agence immobilière internationale à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium." />
+        <title>O7 REALESTATES | Site officiel - Agence immobilière Montreal - Paris - Los Angeles - Mexico - Londres</title>
         <meta name='og:image' content='images/assets/ogg.png' />
         <StructuredData />
         {/* For IE  */}

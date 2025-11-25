@@ -5,8 +5,8 @@ const structuredData = {
   "@type": "RealEstateAgent",
   "name": "O7 REALESTATES",
   "url": "https://o7realestates.vercel.app/",
-  "description": "O7 REALESTATES, site officiel de l'agence immobilière de luxe à Dubai pour villas, penthouses et investissements premium.",
-  "areaServed": ["Dubai", "UAE", "International"],
+  "description": "O7 REALESTATES, site officiel de l'agence immobilière présente à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium.",
+  "areaServed": ["Montreal", "Paris", "Los Angeles", "Mexico", "Londres", "International"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "1030, Avenue Muguette",
