@@ -2,20 +2,20 @@ import HomeOne from "@/components/homes/home-one";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "O7 REALESTATES | Site officiel - Agence immobilière Montreal - Paris - Los Angeles - Mexico - Londres",
-  description: "O7 REALESTATES, site officiel de l'agence immobilière internationale présente à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium.",
+  title: "O7 REALESTATES | Luxury Real Estate – Los Angeles • Montreal • Paris • Mexico",
+  description: "O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals.",
   openGraph: {
-    title: "O7 REALESTATES | Site officiel - Agence immobilière Montreal - Paris - Los Angeles - Mexico - Londres",
-    description: "O7 REALESTATES, site officiel de l'agence immobilière internationale présente à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium.",
+    title: "O7 Realestates | International Luxury Real Estate",
+    description: "Premium real estate agency with global presence: Los Angeles, Montreal, Paris, Mexico. Exclusive luxury properties, investment portfolios and private deals.",
     url: "https://o7realestates.vercel.app/",
-    siteName: "O7 REALESTATES - Site officiel",
+    siteName: "O7 Realestates",
     type: "website",
     images: [
       {
         url: "/images/assets/ogg.png",
         width: 1200,
         height: 630,
-        alt: "O7 REALESTATES | Site officiel",
+        alt: "O7 Realestates | International Luxury Real Estate",
       },
     ],
   },

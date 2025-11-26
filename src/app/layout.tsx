@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "@/redux/store";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import StructuredData from "@/components/seo/StructuredData";
-import HiddenSeoKeywords, { combinedKeywords } from "@/components/seo/HiddenSeoKeywords";
+import HiddenSeoKeywords from "@/components/seo/HiddenSeoKeywords";
 
 export default function RootLayout({
   children,
@@ -17,14 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={isDev}>
       <head>
-        <meta name="keywords" content={combinedKeywords.join(", ")} />
-        <meta name="description" content="O7 REALESTATES | Site officiel de l'agence immobilière internationale à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium." />
-        <meta property="og:site_name" content="O7 REALESTATES - Site officiel" />
+        <meta name="keywords" content="Luxury Real Estate, Real Estate Investment, Los Angeles Properties, Montreal Real Estate, Paris Luxury Homes, Mexico Real Estate, O7 Realestates, Exclusive Listings, Off-Market Deals, Private Buyers, Luxury Broker International, Premium Properties, Waterfront Estates" />
+        <meta name="description" content="O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals." />
+        <meta property="og:site_name" content="O7 Realestates" />
         <meta property="og:url" content="https://o7realestates.vercel.app/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="O7 REALESTATES | Site officiel - Agence immobilière Montreal - Paris - Los Angeles - Mexico - Londres" />
-        <meta property="og:description" content="O7 REALESTATES | Site officiel de l'agence immobilière internationale à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium." />
-        <title>O7 REALESTATES | Site officiel - Agence immobilière Montreal - Paris - Los Angeles - Mexico - Londres</title>
+        <meta property="og:title" content="O7 Realestates | International Luxury Real Estate" />
+        <meta property="og:description" content="Premium real estate agency with global presence: Los Angeles, Montreal, Paris, Mexico. Exclusive luxury properties, investment portfolios and private deals." />
+        <title>O7 REALESTATES | Luxury Real Estate – Los Angeles • Montreal • Paris • Mexico</title>
         <meta name='og:image' content='images/assets/ogg.png' />
         <StructuredData />
         {/* For IE  */}

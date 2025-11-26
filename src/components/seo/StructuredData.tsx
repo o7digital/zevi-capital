@@ -3,10 +3,10 @@
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "O7 REALESTATES",
+  "name": "O7 Realestates",
   "url": "https://o7realestates.vercel.app/",
-  "description": "O7 REALESTATES, site officiel de l'agence immobilière présente à Montreal, Paris, Los Angeles, Mexico et Londres pour villas, penthouses et investissements premium.",
-  "areaServed": ["Montreal", "Paris", "Los Angeles", "Mexico", "Londres", "International"],
+  "description": "O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals.",
+  "areaServed": ["Los Angeles", "Montreal", "Paris", "Mexico", "International"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "1030, Avenue Muguette",
