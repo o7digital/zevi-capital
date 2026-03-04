@@ -28,9 +28,14 @@ const FooterOne = ({ style }: any) => {
                      <div className={`footer-intro ${isDark ? "position-relative z-1" : ""}`}>
                         <div className="bg-wrapper" style={!isDark ? { background: introBackground } : undefined}>
                            <div className="logo mb-20">
-                              <Link href="/" className="d-flex align-items-center gap-3 text-decoration-none">
-                                 <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
-                                 <span className="fw-semibold text-uppercase fs-5" style={{ color: '#ffffff' }}>ZEVI CAPITAL</span>
+                              <Link href="/" className="d-inline-block text-decoration-none">
+                                 <Image
+                                    src="/logo.png"
+                                    alt="ZEVI CAPITAL logo"
+                                    width={220}
+                                    height={120}
+                                    style={{ width: "auto", height: "110px" }}
+                                 />
                               </Link>
                            </div>
                            <p className="mb-60 lg-mb-40 md-mb-20" style={{ color: '#ffffff' }}>{t('footer.address')}</p>
