@@ -29,7 +29,7 @@ const FooterOne = ({ style }: any) => {
                         <div className="bg-wrapper" style={!isDark ? { background: introBackground } : undefined}>
                            <div className="logo mb-20">
                               <Link href="/" className="d-flex align-items-center gap-3 text-decoration-none">
-                                 <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
+                                 <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
                                  <span className="fw-semibold text-uppercase fs-5" style={{ color: '#ffffff' }}>ZEVI CAPITAL</span>
                               </Link>
                            </div>

@@ -58,7 +58,7 @@ const FooterTwo = () => {
                      <div className="footer-intro position-relative z-1 pt-70 pb-150 lg-pb-20">
                         <div className="logo mb-15">
                            <Link href="/">
-                              <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
+                              <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
                         <p className="mb-45 lg-mb-30 pe-2 pe-lg-5">{desc_2}</p>

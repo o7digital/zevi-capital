@@ -16,7 +16,7 @@ const FooterThree = () => {
                      <div className="footer-intro pe-xxl-5 pe-xl-3">
                         <div className="logo mb-15">
                            <Link href="/">
-                              <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
+                              <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
                         <p className="mb-45 lg-mb-30">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>

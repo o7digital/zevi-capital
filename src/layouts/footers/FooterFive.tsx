@@ -39,7 +39,7 @@ const FooterFive = () => {
                      <div className="footer-intro">
                         <div className="logo mb-20">
                            <Link href="/">
-                              <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
+                              <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
                         <p className="mb-45 md-mb-20">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>

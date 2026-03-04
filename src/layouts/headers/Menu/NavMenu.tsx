@@ -11,7 +11,7 @@ const NavMenu = () => {
             <li className="d-block d-lg-none">
                 <div className="logo">
                     <Link href="/" className="d-inline-flex align-items-center gap-3 text-decoration-none">
-                        <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={420} height={108} priority style={{ maxHeight: "108px", height: "auto", width: "auto" }} />
+                        <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={420} height={108} priority style={{ maxHeight: "108px", height: "auto", width: "auto" }} />
                         <span className="fw-semibold text-uppercase text-dark">ZEVI CAPITAL</span>
                     </Link>
                 </div>
