@@ -1,6 +1,5 @@
 import Image from "next/image"
 
-import footerLogo from "@/assets/images/logo/logo_06.svg"
 import footerShape from "@/assets/images/assets/ils_06.svg"
 import Link from "next/link"
 import footer_data from "@/data/home-data/FooterData"
@@ -16,10 +15,10 @@ const FooterFour = () => {
                      <div className="footer-intro">
                         <div className="logo mb-20">
                            <Link href="/">
-                              <Image src={footerLogo} alt="" />
+                              <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
-                        <p className="mb-30 xs-mb-20">1030, Avenue Muguette, Saint-Élie-de-Caxton QC G0X 2N0, Canada</p>
+                        <p className="mb-30 xs-mb-20">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>
                         <Link href="mailto:info@zevicapital.com" className="email tran3s mb-60 md-mb-30">info@zevicapital.com</Link>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>

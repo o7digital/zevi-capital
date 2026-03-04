@@ -2,7 +2,6 @@
 import Image from "next/image"
 import Link from "next/link";
 
-import footerLogo_1 from "@/assets/images/logo/logo_05.svg"
 import footerShape_1 from "@/assets/images/shape/shape_46.svg"
 import footerShape_2 from "@/assets/images/shape/shape_47.svg"
 import footerIcon_1 from "@/assets/images/icon/icon_30.svg"
@@ -22,7 +21,7 @@ interface ContentType {
 const footer_content: ContentType = {
    title: "Our Newsletter",
    desc_1: "Get instant news by subscribe to our newsletter",
-   desc_2: "1030, Avenue Muguette, Saint-Élie-de-Caxton QC G0X 2N0, Canada",
+   desc_2: "Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.",
    email: "info@zevicapital.com",
    number: "+757 699-4478",
    icon: ["facebook-f", "twitter", "instagram"],
@@ -59,7 +58,7 @@ const FooterTwo = () => {
                      <div className="footer-intro position-relative z-1 pt-70 pb-150 lg-pb-20">
                         <div className="logo mb-15">
                            <Link href="/">
-                              <Image src={footerLogo_1} alt="" />
+                              <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
                         <p className="mb-45 lg-mb-30 pe-2 pe-lg-5">{desc_2}</p>

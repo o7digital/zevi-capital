@@ -2,7 +2,6 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import footerLogo from "@/assets/images/logo/logo_07.svg"
 import footer_data from "@/data/home-data/FooterData"
 import FooterKeywords from "./FooterKeywords"
 
@@ -40,10 +39,10 @@ const FooterFive = () => {
                      <div className="footer-intro">
                         <div className="logo mb-20">
                            <Link href="/">
-                              <Image src={footerLogo} alt="" />
+                              <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
-                        <p className="mb-45 md-mb-20">1030, Avenue Muguette, Saint-Élie-de-Caxton QC G0X 2N0, Canada</p>
+                        <p className="mb-45 md-mb-20">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>
                            <li><Link href="#"><i className="fa-brands fa-twitter"></i></Link></li>

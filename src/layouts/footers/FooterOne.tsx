@@ -5,8 +5,6 @@ import footer_data from "@/data/home-data/FooterData"
 import { useTranslation } from "@/contexts/TranslationContext"
 import FooterKeywords from "./FooterKeywords"
 
-import footerLogo_1 from "@/assets/images/logo/logo_01.svg"
-import footerLogo_2 from "@/assets/images/logo/logo_03.svg"
 import footerShape_1 from "@/assets/images/shape/shape_32.svg"
 import footerShape_2 from "@/assets/images/shape/shape_33.svg"
 
@@ -32,7 +30,7 @@ const FooterOne = ({ style }: any) => {
                            <div className="logo mb-20">
                               <Link href="/" className="d-flex align-items-center gap-3 text-decoration-none">
                                  <Image src="/logo.jpeg" alt="ZEVI CAPITAL logo" width={80} height={80} style={{ width: "auto", height: "80px" }} />
-                                 <span className="fw-semibold text-uppercase fs-5" style={{ color: '#ffffff' }}>O7 REALESTATES</span>
+                                 <span className="fw-semibold text-uppercase fs-5" style={{ color: '#ffffff' }}>ZEVI CAPITAL</span>
                               </Link>
                            </div>
                            <p className="mb-60 lg-mb-40 md-mb-20" style={{ color: '#ffffff' }}>{t('footer.address')}</p>
