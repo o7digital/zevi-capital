@@ -20,7 +20,7 @@ const HeaderOne = ({ style }: any) => {
                      <div className="logo order-lg-0" style={{ position: "relative", zIndex: 1000 }}>
                         <Link href="/" className="d-flex align-items-center gap-2 gap-lg-3 text-decoration-none">
                            <Image
-                              src="/logo/logo-zevi-capital.svg"
+                              src="/logo.jpeg"
                               alt="ZEVI CAPITAL logo"
                               width={400}
                               height={100}
@@ -29,7 +29,7 @@ const HeaderOne = ({ style }: any) => {
                               priority
                            />
                            <Image
-                              src="/logo/logo-zevi-capital.svg"
+                              src="/logo.jpeg"
                               alt="ZEVI CAPITAL logo"
                               width={400}
                               height={100}
