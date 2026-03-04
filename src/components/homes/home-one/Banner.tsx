@@ -12,15 +12,15 @@ const Banner = () => {
    const rotatingTexts = {
       en: [
          "We've more than 745,000 apartments, place & plot.",
-         "Discover your dream home in Canada's finest locations.",
+         "Discover your dream home in Mexico's finest locations.",
          "Luxury properties with breathtaking views of the city.",
-         "Your perfect investment starts here with O7 Realestates."
+         "Your perfect investment starts here with ZEVI CAPITAL."
       ],
       fr: [
          "Nous avons plus de 745 000 appartements, places et terrains.",
-         "Découvrez la maison de vos rêves dans les meilleurs quartiers du Canada.",
+         "Découvrez la maison de vos rêves dans les meilleurs quartiers du Mexico.",
          "Propriétés de luxe avec des vues imprenables sur la ville.",
-         "Votre investissement parfait commence ici avec O7 Realestates."
+         "Votre investissement parfait commence ici avec ZEVI CAPITAL."
       ]
    };
 
@@ -65,7 +65,7 @@ const Banner = () => {
                <div style={{ height: '100%', width: '100%' }}>
                   <img 
                      src="/slider/montreal1.jpg"
-                     alt="villa de luxe Canada immobilier premium exclusif"
+                     alt="villa de luxe Mexico immobilier premium exclusif"
                      style={{
                         width: '100%',
                         height: '800px',
@@ -77,7 +77,7 @@ const Banner = () => {
                <div style={{ height: '100%', width: '100%' }}>
                   <img 
                      src="/slider/montreal2.jpg"
-                     alt="Canada penthouse luxury real estate"
+                     alt="Mexico penthouse luxury real estate"
                      style={{
                         width: '100%',
                         height: '800px',
