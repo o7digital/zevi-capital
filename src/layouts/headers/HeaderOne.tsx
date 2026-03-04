@@ -5,11 +5,35 @@ import Image from "next/image"
 import UseSticky from "@/hooks/UseSticky"
 import LoginModal from "@/modals/LoginModal"
 import { useTranslation } from "@/contexts/TranslationContext"
+import { useEffect, useRef, useState } from "react"
 
 const HeaderOne = ({ style }: any) => {
    
    const { sticky } = UseSticky();
    const { t, locale, setLocale } = useTranslation();
+   const [langOpen, setLangOpen] = useState(false);
+   const langRef = useRef<HTMLDivElement>(null);
+
+   const languages = [
+      { code: 'fr' as const, label: 'FR', title: 'Français' },
+      { code: 'en' as const, label: 'EN', title: 'English' },
+      { code: 'es' as const, label: 'ES', title: 'Español' },
+   ];
+
+   const activeLanguage = languages.find((lang) => lang.code === locale) ?? languages[2];
+
+   useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+         if (langRef.current && !langRef.current.contains(event.target as Node)) {
+            setLangOpen(false);
+         }
+      };
+
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+         document.removeEventListener("mousedown", handleClickOutside);
+      };
+   }, []);
 
    return (
       <>
@@ -71,31 +95,35 @@ const HeaderOne = ({ style }: any) => {
                      <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                         <ul className="d-flex align-items-center style-none">
                            <li className="me-3">
-                              <div className="d-flex align-items-center gap-2">
-                                 {[
-                                    { code: 'fr' as const, label: 'FR', flag: '🇫🇷', title: 'Français' },
-                                    { code: 'en' as const, label: 'EN', flag: '🇬🇧', title: 'English' },
-                                    { code: 'es' as const, label: 'ES', flag: '🇪🇸', title: 'Español' },
-                                 ].map((lang) => (
-                                    <button
-                                       key={lang.code}
-                                       onClick={() => setLocale(lang.code)}
-                                       className="btn btn-sm d-flex align-items-center gap-1"
-                                       style={{
-                                          border: "1px solid #1f2937",
-                                          padding: '6px 10px',
-                                          borderRadius: '5px',
-                                          background: locale === lang.code ? "#1f2937" : "#ffffff",
-                                          color: locale === lang.code ? "#ffffff" : "#1f2937",
-                                          fontWeight: '500',
-                                          fontSize: '13px',
-                                          cursor: 'pointer'
-                                       }}
-                                       title={lang.title}
-                                    >
-                                       {lang.flag} {lang.label}
-                                    </button>
-                                 ))}
+                              <div className="language-switch" ref={langRef}>
+                                 <button
+                                    type="button"
+                                    className="language-switch-btn"
+                                    onClick={() => setLangOpen((prev) => !prev)}
+                                    aria-label="Select language"
+                                    aria-expanded={langOpen}
+                                 >
+                                    <span>{activeLanguage.label}</span>
+                                    <span className={`language-switch-chevron ${langOpen ? "open" : ""}`}>▾</span>
+                                 </button>
+                                 <div className={`language-switch-dropdown ${langOpen ? "open" : ""}`}>
+                                    {languages
+                                       .filter((lang) => lang.code !== locale)
+                                       .map((lang) => (
+                                          <button
+                                             type="button"
+                                             key={lang.code}
+                                             className="language-switch-item"
+                                             onClick={() => {
+                                                setLocale(lang.code);
+                                                setLangOpen(false);
+                                             }}
+                                             title={lang.title}
+                                          >
+                                             {lang.label}
+                                          </button>
+                                       ))}
+                                 </div>
                               </div>
                            </li>
                            <li className="d-none d-lg-block">
@@ -131,6 +159,72 @@ const HeaderOne = ({ style }: any) => {
                .theme-main-menu .navbar-toggler::before,
                .theme-main-menu .navbar-toggler::after {
                   background: #111111 !important;
+               }
+               .language-switch {
+                  position: relative;
+                  min-width: 62px;
+               }
+               .language-switch-btn {
+                  border: none;
+                  background: transparent;
+                  color: #111111;
+                  font-size: 18px;
+                  font-weight: 500;
+                  letter-spacing: 0.02em;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  line-height: 1;
+                  padding: 4px 0;
+               }
+               .language-switch-chevron {
+                  font-size: 13px;
+                  transition: transform 0.2s ease;
+                  transform-origin: center;
+               }
+               .language-switch-chevron.open {
+                  transform: rotate(180deg);
+               }
+               .language-switch-dropdown {
+                  position: absolute;
+                  top: calc(100% + 6px);
+                  left: 0;
+                  z-index: 1200;
+                  min-width: 62px;
+                  border: 1px solid #e3e3e3;
+                  border-radius: 8px;
+                  background: #ffffff;
+                  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                  padding: 4px 0;
+                  opacity: 0;
+                  visibility: hidden;
+                  transform: translateY(-6px);
+                  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+               }
+               .language-switch-dropdown.open {
+                  opacity: 1;
+                  visibility: visible;
+                  transform: translateY(0);
+               }
+               .language-switch-item {
+                  width: 100%;
+                  border: none;
+                  background: transparent;
+                  color: #111111;
+                  font-size: 16px;
+                  font-weight: 500;
+                  text-align: left;
+                  padding: 8px 12px;
+                  line-height: 1;
+               }
+               .language-switch-item:hover {
+                  background: #f5f7fa;
+               }
+               @media (max-width: 991px) {
+                  .language-switch-btn,
+                  .language-switch-item {
+                     font-size: 15px;
+                  }
                }
             `}</style>
          </header>
