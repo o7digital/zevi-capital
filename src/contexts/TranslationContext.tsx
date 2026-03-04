@@ -10,9 +10,11 @@ interface TranslationContextType {
 }
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined)
+const DEFAULT_LOCALE: Locale = 'es'
+const LOCALE_STORAGE_KEY = 'preferred_locale'
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>('fr')
+  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE)
   const [messages, setMessages] = useState<any>({})
 
   const isValidLocale = (value: string): value is Locale => {
@@ -21,13 +23,13 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Load saved locale from localStorage
-    const savedLocale = localStorage.getItem('locale')
+    const savedLocale = localStorage.getItem(LOCALE_STORAGE_KEY)
     if (savedLocale && isValidLocale(savedLocale)) {
       setLocaleState(savedLocale)
     } else {
-      // Par défaut en français si aucune langue sauvegardée
-      setLocaleState('fr')
-      localStorage.setItem('locale', 'fr')
+      // Default website language: Spanish
+      setLocaleState(DEFAULT_LOCALE)
+      localStorage.setItem(LOCALE_STORAGE_KEY, DEFAULT_LOCALE)
     }
   }, [])
 
@@ -40,7 +42,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale)
-    localStorage.setItem('locale', newLocale)
+    localStorage.setItem(LOCALE_STORAGE_KEY, newLocale)
   }
 
   const t = (key: string): string => {
