@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "purchase": "Compra",
+    "aboutUs": "Nosotros",
+    "sales": "Ventas",
+    "insurance": "Seguros",
+    "blog": "Blog",
+    "contactUs": "Contáctanos",
+    "login": "Ingresar"
+  },
+  "banner": {
+    "title": "Tenemos más de 745,000 apartamentos, espacios y terrenos.",
+    "searchLabel": "Estoy buscando...",
+    "location": "Ubicación",
+    "priceRange": "Rango de precio",
+    "search": "BUSCAR"
+  },
+  "searchDropdown": {
+    "buyApartments": "Comprar apartamentos",
+    "rentCondos": "Rentar condominios",
+    "sellHouses": "Vender casas",
+    "rentIndustrial": "Rentar industrial",
+    "sellVillas": "Vender villas",
+    "searchNow": "Buscar ahora"
+  },
+  "features": {
+    "title": "Descubre las ventajas de ZEVI CAPITAL",
+    "titleHighlight": "ventajas",
+    "subtitle": "Tu socio inmobiliario de confianza en cada transacción.",
+    "buyHome": "Comprar una casa",
+    "buyHomeDesc": "Explora más de 2 millones de propiedades y descubre tu espacio ideal.",
+    "findHome": "Encontrar casa",
+    "rentHome": "Rentar una casa",
+    "rentHomeDesc": "Encuentra una renta que te encantará con más de 35 filtros y palabras clave personalizadas.",
+    "rentHomeBtn": "Rentar casa",
+    "sellProperty": "Vender propiedad",
+    "sellPropertyDesc": "Publica, vende y crece con nuestra agencia inmobiliaria premium. Es fácil y rápido.",
+    "sellPropertyBtn": "Vender propiedad"
+  },
+  "property": {
+    "featured": "Destacadas",
+    "properties": "Propiedades",
+    "subtitle": "Explora las propiedades más recientes y destacadas en venta.",
+    "forSale": "EN VENTA",
+    "forRent": "EN RENTA",
+    "sqft": "m²",
+    "bed": "rec",
+    "bath": "baño"
+  },
+  "fancyBanner": {
+    "exclusive": "Oferta",
+    "monthly": "Mensual",
+    "deal": "Exclusiva para ti.",
+    "subtitle": "No te pierdas esta oferta mensual exclusiva hecha para ti.",
+    "moreDetails": "Más detalles",
+    "checkFullDetails": "Ver detalles completos",
+    "forSell": "EN VENTA"
+  },
+  "agents": {
+    "our": "Nuestro",
+    "agents": "Equipo",
+    "subtitle": "Texto de ejemplo para describir el equipo de asesores.",
+    "meetTeam": "Conocer al equipo completo"
+  },
+  "contact": {
+    "inquiry": "¿Tienes alguna pregunta?",
+    "feelFree": "No dudes",
+    "toContact": "en contactarnos.",
+    "sendMessage": "ENVIAR MENSAJE",
+    "mainTitle": "¿Preguntas? Escríbenos por mensaje.",
+    "helpTitle": "Siempre estamos felices de ayudarte.",
+    "hotlineTitle": "Nuestro número directo",
+    "liveChatTitle": "Chat en vivo"
+  },
+  "aboutSection": {
+    "whoWeAre": "¿Quiénes somos?",
+    "yearsExperience": "Años de experiencia\ncon orgullo.",
+    "completedProject": "Proyectos completados",
+    "happyCustomers": "Clientes satisfechos",
+    "loanFacility": "Financiamiento y tasas preferenciales",
+    "propertyUpdate": "Más de 100k+ propiedades y actualización constante",
+    "expertAgent": "Asesoría con expertos",
+    "moreDetails": "Más detalles",
+    "requestCallback": "Solicitar llamada",
+    "subtitle": "Tu aliado principal en bienes raíces.",
+    "description": "Convertimos propiedades en sueños. Te guiamos con experiencia hasta tu próximo hogar."
+  },
+  "exploreSection": {
+    "title": "Explora nuestras últimas",
+    "properties": "Propiedades",
+    "subtitle": "Conoce los listados y proyectos más recientes en distintas zonas"
+  },
+  "estimateSection": {
+    "label": "ESTIMACIÓN",
+    "title": "Obtén una",
+    "titleHighlight": "estimación rápida",
+    "titleEnd": "de tu propiedad.",
+    "subtitle": "Domina la valuación de tu propiedad para entrar al mercado con confianza y claridad.",
+    "placeholder": "Tu correo electrónico...",
+    "button": "Descubrir",
+    "accurateInfo": "*Para información precisa, por favor",
+    "contactUs": "contáctanos.",
+    "yourEstimate": "¡Tu estimación está lista!",
+    "findOut": "Descubrir"
+  },
+  "stepsSection": {
+    "title": "Estamos aquí para ayudarte",
+    "subtitle": "a conseguir la casa de tus sueños",
+    "easyStart": "Es muy fácil empezar con nosotros en simples pasos",
+    "createAccount": "Crear cuenta",
+    "createAccountDesc": "Abre tu cuenta en minutos y comienza tu proceso.",
+    "findHome": "Encontrar casa",
+    "findHomeDesc": "Completa tu perfil con toda la información para atraer mejores oportunidades.",
+    "quickProcess": "Proceso rápido",
+    "quickProcessDesc": "Postula y obtén las mejores opciones con todos los requisitos claros."
+  },
+  "journeySection": {
+    "title": "Comienza tu camino",
+    "asRetailer": "como cliente.",
+    "emailPlaceholder": "Correo electrónico",
+    "getStarted": "Comenzar",
+    "alreadyAgent": "¿Ya eres agente?",
+    "signIn": "Inicia sesión."
+  },
+  "testimonials": {
+    "testimonial1": {
+      "name": "Jonathan Harry",
+      "location": "Milán, Italia",
+      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
+      "rating": "13k valoraciones",
+      "ratingScore": "(4.7 calificación)"
+    },
+    "testimonial2": {
+      "name": "Sofia Rena",
+      "location": "Nueva York, EE.UU.",
+      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
+      "rating": "10k valoraciones",
+      "ratingScore": "(4.5 calificación)"
+    },
+    "testimonial3": {
+      "name": "Rashed Kabir",
+      "location": "Dhaka, BD",
+      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
+      "rating": "11k valoraciones",
+      "ratingScore": "(4.8 calificación)"
+    }
+  },
+  "footer": {
+    "address": "Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.",
+    "contact": "CONTACTO",
+    "links": "Enlaces",
+    "legal": "Legal",
+    "termsConditions": "Términos y condiciones",
+    "cookie": "Cookie",
+    "privacyPolicy": "Política de privacidad",
+    "faqs": "Preguntas frecuentes"
+  },
+  "aboutUs": {
+    "breadcrumbTitle": "Sobre nosotros",
+    "subtitle": "Sobre nosotros",
+    "mainTitle": "Asegura",
+    "familyWord": "el hogar soñado",
+    "dreamHome": "de tu familia.",
+    "intro": "ZEVI CAPITAL es tu aliado de confianza en bienes raíces de lujo. Con más de 15 años de experiencia en mercados inmobiliarios de alto nivel.",
+    "contactButton": "Contáctanos",
+    "yearsExperience": "Años de experiencia",
+    "propertiesSold": "Propiedades vendidas",
+    "whoWeAre": "¿Quiénes somos?",
+    "whoWeAreText": "ZEVI CAPITAL es una agencia inmobiliaria líder especializada en propiedades de lujo. Combinamos conocimiento de mercado y servicio personalizado para ayudarte a encontrar tu hogar o inversión ideal.",
+    "ourMission": "Nuestra misión",
+    "ourMissionText": "Nuestra misión es ofrecer servicios inmobiliarios excepcionales, con transparencia e integridad, generando valor duradero para nuestros clientes en mercados internacionales premium."
+  },
+  "insurance": {
+    "mainTitle": "Protege tu",
+    "titleHighlight": "inversión",
+    "subtitle": "Soluciones de seguro integrales para tus inversiones inmobiliarias internacionales. Protege tus activos con nuestro equipo experto.",
+    "propertyInsurance": "Seguro de propiedad",
+    "propertyInsuranceDesc": "Cobertura completa contra daños, desastres naturales y eventos imprevistos. Protege tu inversión con un seguro integral.",
+    "homeInsurance": "Seguro de hogar",
+    "homeInsuranceDesc": "Protege tu casa y pertenencias con planes personalizados. Cobertura para contenido, estructura y responsabilidad civil.",
+    "investmentProtection": "Protección de inversión",
+    "investmentProtectionDesc": "Seguro especializado para propiedades de inversión. Protege ingresos por renta y valor patrimonial.",
+    "liabilityInsurance": "Cobertura de responsabilidad",
+    "liabilityInsuranceDesc": "Protégete frente a reclamaciones de terceros y responsabilidad legal. Cobertura integral para propietarios y arrendadores.",
+    "whyChooseUs": "¿Por qué elegir los servicios de seguro de ZEVI CAPITAL?",
+    "benefit1Title": "Asesoría experta",
+    "benefit1Desc": "Nuestros especialistas ofrecen asesoría personalizada según tus necesidades y objetivos de inversión.",
+    "benefit2Title": "Tarifas competitivas",
+    "benefit2Desc": "Accede a tarifas preferenciales mediante alianzas con aseguradoras líderes.",
+    "benefit3Title": "Siniestros ágiles",
+    "benefit3Desc": "Gestión eficiente de reclamaciones para una resolución rápida y mínima interrupción.",
+    "benefit4Title": "Soporte 24/7",
+    "benefit4Desc": "Atención permanente para resolver dudas y brindarte asistencia en emergencias.",
+    "ctaTitle": "¿Listo para proteger tu propiedad?",
+    "ctaSubtitle": "Solicita una cotización gratuita hoy y asegura tu inversión inmobiliaria.",
+    "ctaButton": "Obtener cotización"
+  }
+}

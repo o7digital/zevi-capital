@@ -68,27 +68,32 @@ const HeaderOne = ({ style }: any) => {
                      <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                         <ul className="d-flex align-items-center style-none">
                            <li className="me-3">
-                              <button 
-                                 onClick={() => {
-                                    const newLocale = locale === 'en' ? 'fr' : 'en';
-                                    console.log('Changing locale from', locale, 'to', newLocale);
-                                    setLocale(newLocale);
-                                 }}
-                                 className="btn btn-sm d-flex align-items-center gap-1"
-                                 style={{ 
-                                    border: '1px solid #ffffff',
-                                    padding: '6px 15px',
-                                    borderRadius: '5px',
-                                    background: 'transparent',
-                                    color: '#ffffff',
-                                    fontWeight: '500',
-                                    fontSize: '14px',
-                                    cursor: 'pointer'
-                                 }}
-                                 title={locale === 'en' ? 'Passer en français' : 'Switch to English'}
-                              >
-                                 {locale === 'en' ? '🇫🇷 FR' : '🇬🇧 EN'}
-                              </button>
+                              <div className="d-flex align-items-center gap-2">
+                                 {[
+                                    { code: 'fr' as const, label: 'FR', flag: '🇫🇷', title: 'Français' },
+                                    { code: 'en' as const, label: 'EN', flag: '🇬🇧', title: 'English' },
+                                    { code: 'es' as const, label: 'ES', flag: '🇪🇸', title: 'Español' },
+                                 ].map((lang) => (
+                                    <button
+                                       key={lang.code}
+                                       onClick={() => setLocale(lang.code)}
+                                       className="btn btn-sm d-flex align-items-center gap-1"
+                                       style={{
+                                          border: '1px solid #ffffff',
+                                          padding: '6px 10px',
+                                          borderRadius: '5px',
+                                          background: locale === lang.code ? 'rgba(255,255,255,0.18)' : 'transparent',
+                                          color: '#ffffff',
+                                          fontWeight: '500',
+                                          fontSize: '13px',
+                                          cursor: 'pointer'
+                                       }}
+                                       title={lang.title}
+                                    >
+                                       {lang.flag} {lang.label}
+                                    </button>
+                                 ))}
+                              </div>
                            </li>
                            <li className="d-none d-lg-block">
                               <Link href="#" data-bs-toggle="modal" data-bs-target="#loginModal" className="btn-one" style={{ background: 'rgb(48, 92, 115)', borderColor: 'rgb(48, 92, 115)', color: '#ffffff' }}><i className="fa-regular fa-lock"></i> <span>{t('nav.login')}</span></Link>

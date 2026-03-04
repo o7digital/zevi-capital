@@ -1,7 +1,7 @@
 "use client"
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 
-type Locale = 'en' | 'fr'
+type Locale = 'en' | 'fr' | 'es'
 
 interface TranslationContextType {
   locale: Locale
@@ -15,10 +15,14 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('fr')
   const [messages, setMessages] = useState<any>({})
 
+  const isValidLocale = (value: string): value is Locale => {
+    return value === 'en' || value === 'fr' || value === 'es'
+  }
+
   useEffect(() => {
     // Load saved locale from localStorage
-    const savedLocale = localStorage.getItem('locale') as Locale
-    if (savedLocale) {
+    const savedLocale = localStorage.getItem('locale')
+    if (savedLocale && isValidLocale(savedLocale)) {
       setLocaleState(savedLocale)
     } else {
       // Par défaut en français si aucune langue sauvegardée

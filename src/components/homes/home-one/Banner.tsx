@@ -21,7 +21,13 @@ const Banner = () => {
          "Découvrez la maison de vos rêves dans les meilleurs quartiers du Mexico.",
          "Propriétés de luxe avec des vues imprenables sur la ville.",
          "Votre investissement parfait commence ici avec ZEVI CAPITAL."
-      ]
+      ],
+      es: [
+         "Tenemos más de 745,000 apartamentos, espacios y terrenos.",
+         "Descubre la casa de tus sueños en las mejores zonas de Mexico.",
+         "Propiedades de lujo con vistas impresionantes de la ciudad.",
+         "Tu inversión perfecta empieza aquí con ZEVI CAPITAL."
+      ],
    };
 
    const settings = {
@@ -44,12 +50,13 @@ const Banner = () => {
    }, [])
 
    useEffect(() => {
+      const localeTexts = rotatingTexts[locale as keyof typeof rotatingTexts] || rotatingTexts.en;
       const interval = setInterval(() => {
-         setCurrentTextIndex((prevIndex) => (prevIndex + 1) % 4);
+         setCurrentTextIndex((prevIndex) => (prevIndex + 1) % localeTexts.length);
       }, 5000);
 
       return () => clearInterval(interval);
-   }, []);
+   }, [locale]);
 
    return (
       <div className="hero-banner-one z-1 pt-225 xl-pt-200 pb-250 xl-pb-150 lg-pb-100 position-relative" style={{ overflow: 'hidden', minHeight: '800px' }}>
@@ -108,7 +115,7 @@ const Banner = () => {
                      }}
                      key={currentTextIndex}
                   >
-                     {rotatingTexts[locale as keyof typeof rotatingTexts][currentTextIndex]}
+                     {(rotatingTexts[locale as keyof typeof rotatingTexts] || rotatingTexts.en)[currentTextIndex]}
                   </p>
                </div>
             </div>

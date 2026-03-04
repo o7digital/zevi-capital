@@ -49,10 +49,38 @@ const englishVisibleKeywords = [
   "Saint-Élie-de-Caxton real estate",
 ];
 
+const spanishVisibleKeywords = [
+  "Agencia inmobiliaria en Mexico",
+  "Inmobiliaria de lujo Mexico",
+  "Villas de lujo Mexico",
+  "Penthouses Mexico",
+  "Invertir en Mexico",
+  "Propiedades de alta gama",
+  "Residencias premium Mexico",
+  "Propiedades exclusivas",
+  "Inmobiliaria CDMX",
+  "Propiedades en Montreal",
+  "Departamentos de lujo Mexico",
+  "Inversión inmobiliaria",
+  "Inmobiliaria para expatriados Mexico",
+  "Casas modernas Mexico",
+  "Propiedades frente al mar",
+  "Inmobiliaria internacional",
+  "Gestión inmobiliaria Mexico",
+  "Residencias seguras Mexico",
+  "Comprar propiedad en Mexico",
+  "Inmobiliaria Saint-Élie-de-Caxton",
+];
+
 const FooterKeywords = () => {
   const { locale } = useTranslation();
   const isFrench = locale === "fr";
-  const visibleKeywords = isFrench ? frenchVisibleKeywords : englishVisibleKeywords;
+  const isSpanish = locale === "es";
+  const visibleKeywords = isFrench
+    ? frenchVisibleKeywords
+    : isSpanish
+      ? spanishVisibleKeywords
+      : englishVisibleKeywords;
 
   const wrapperStyle: CSSProperties = {
     marginTop: "14px",
@@ -70,7 +98,11 @@ const FooterKeywords = () => {
   };
 
   return (
-    <div className="footer-keywords" style={wrapperStyle} aria-label={isFrench ? "Mots-clés immobiliers" : "Real estate keywords"}>
+    <div
+      className="footer-keywords"
+      style={wrapperStyle}
+      aria-label={isFrench ? "Mots-clés immobiliers" : isSpanish ? "Palabras clave inmobiliarias" : "Real estate keywords"}
+    >
       <span style={textStyle}>{visibleKeywords.join(" • ")}</span>
     </div>
   );
