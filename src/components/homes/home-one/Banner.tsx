@@ -71,7 +71,7 @@ const Banner = () => {
             <Slider ref={sliderRef} {...settings}>
                <div style={{ height: '100%', width: '100%' }}>
                   <img 
-                     src="/slider/montreal1.jpg"
+                     src="/slider/cdmx.png"
                      alt="villa de luxe Mexico immobilier premium exclusif"
                      style={{
                         width: '100%',
