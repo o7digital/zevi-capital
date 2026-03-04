@@ -13,7 +13,10 @@ const HeaderOne = ({ style }: any) => {
 
    return (
       <>
-         <header className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`} style={{ background: '#1a1a1a' }}>
+         <header
+            className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`}
+            style={{ background: "#ffffff", borderBottom: "1px solid #e9ecef" }}
+         >
             <div className="inner-content gap-one">
                <div className="top-header position-relative">
                   <div className="d-flex align-items-center justify-content-between">
@@ -44,7 +47,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontSize: "clamp(16px, 2.5vw, 24px)",
                                     fontWeight: "700",
                                     letterSpacing: "2px",
-                                    color: "#ffffff",
+                                    color: "#111111",
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
@@ -56,7 +59,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontSize: "clamp(14px, 2vw, 20px)",
                                     fontWeight: "300",
                                     letterSpacing: "3px",
-                                    color: "#ffffff",
+                                    color: "#111111",
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
@@ -79,11 +82,11 @@ const HeaderOne = ({ style }: any) => {
                                        onClick={() => setLocale(lang.code)}
                                        className="btn btn-sm d-flex align-items-center gap-1"
                                        style={{
-                                          border: '1px solid #ffffff',
+                                          border: "1px solid #1f2937",
                                           padding: '6px 10px',
                                           borderRadius: '5px',
-                                          background: locale === lang.code ? 'rgba(255,255,255,0.18)' : 'transparent',
-                                          color: '#ffffff',
+                                          background: locale === lang.code ? "#1f2937" : "#ffffff",
+                                          color: locale === lang.code ? "#ffffff" : "#1f2937",
                                           fontWeight: '500',
                                           fontSize: '13px',
                                           cursor: 'pointer'
@@ -115,13 +118,19 @@ const HeaderOne = ({ style }: any) => {
             </div>
             <style jsx global>{`
                .theme-main-menu .nav-item .nav-link {
-                  color: #ffffff !important;
+                  color: #111111 !important;
                }
                .theme-main-menu .nav-item .nav-link:hover {
                   color: rgb(48, 92, 115) !important;
                }
                .theme-main-menu.fixed {
-                  background: #1a1a1a !important;
+                  background: #ffffff !important;
+                  border-bottom: 1px solid #e9ecef !important;
+               }
+               .theme-main-menu .navbar-toggler span,
+               .theme-main-menu .navbar-toggler::before,
+               .theme-main-menu .navbar-toggler::after {
+                  background: #111111 !important;
                }
             `}</style>
          </header>
