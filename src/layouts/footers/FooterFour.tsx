@@ -20,7 +20,7 @@ const FooterFour = () => {
                            </Link>
                         </div>
                         <p className="mb-30 xs-mb-20">1030, Avenue Muguette, Saint-Élie-de-Caxton QC G0X 2N0, Canada</p>
-                        <Link href="mailto:info@o7realestates.com" className="email tran3s mb-60 md-mb-30">info@o7realestates.com</Link>
+                        <Link href="mailto:info@zevicapital.com" className="email tran3s mb-60 md-mb-30">info@zevicapital.com</Link>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>
                            <li><Link href="#"><i className="fa-brands fa-twitter"></i></Link></li>

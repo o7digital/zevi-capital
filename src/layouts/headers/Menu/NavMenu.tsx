@@ -11,8 +11,8 @@ const NavMenu = () => {
             <li className="d-block d-lg-none">
                 <div className="logo">
                     <Link href="/" className="d-inline-flex align-items-center gap-3 text-decoration-none">
-                        <Image src="/logo/logo o7.jpg" alt="O7 REALESTATES logo" width={420} height={108} priority style={{ maxHeight: "108px", height: "auto", width: "auto" }} />
-                        <span className="fw-semibold text-uppercase text-dark">O7 REALESTATES</span>
+                        <Image src="/logo/logo-zevi-capital.svg" alt="ZEVI CAPITAL logo" width={420} height={108} priority style={{ maxHeight: "108px", height: "auto", width: "auto" }} />
+                        <span className="fw-semibold text-uppercase text-dark">ZEVI CAPITAL</span>
                     </Link>
                 </div>
             </li>
@@ -33,4 +33,3 @@ const NavMenu = () => {
 };
 
 export default NavMenu;
-

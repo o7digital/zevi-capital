@@ -37,7 +37,7 @@ const FooterOne = ({ style }: any) => {
                            </div>
                            <p className="mb-60 lg-mb-40 md-mb-20" style={{ color: '#ffffff' }}>{t('footer.address')}</p>
                            <h6 style={{ color: '#ffffff' }}>{t('footer.contact')}</h6>
-                           <Link href="mailto:info@o7realestates.com" className={`email tran3s mb-70 lg-mb-50 ${isDark ? "font-garamond" : "fs-24 text-decoration-underline"}`} style={{ color: '#ffffff' }}>info@o7realestates.com</Link>
+                           <Link href="mailto:info@zevicapital.com" className={`email tran3s mb-70 lg-mb-50 ${isDark ? "font-garamond" : "fs-24 text-decoration-underline"}`} style={{ color: '#ffffff' }}>info@zevicapital.com</Link>
                            <ul className="style-none d-flex align-items-center social-icon">
                               {icon_1.map((icon, i) => (
                                  <li key={i}><Link href="#"><i className={`fa-brands fa${isDark ? "" : "-square"}-${icon}`}></i></Link></li>

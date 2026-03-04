@@ -21,7 +21,7 @@ const ContactArea = () => {
       {
          id: 1,
          title: t('contact.helpTitle'),
-         address_1: "info@o7realestates.com"
+         address_1: "info@zevicapital.com"
       },
       {
          id: 2,

@@ -20,8 +20,8 @@ const HeaderOne = ({ style }: any) => {
                      <div className="logo order-lg-0" style={{ position: "relative", zIndex: 1000 }}>
                         <Link href="/" className="d-flex align-items-center gap-2 gap-lg-3 text-decoration-none">
                            <Image
-                              src="/logo/logo o7.jpg"
-                              alt="O7 REALESTATES logo"
+                              src="/logo/logo-zevi-capital.svg"
+                              alt="ZEVI CAPITAL logo"
                               width={400}
                               height={100}
                               style={{ width: "auto", height: "60px" }}
@@ -29,8 +29,8 @@ const HeaderOne = ({ style }: any) => {
                               priority
                            />
                            <Image
-                              src="/logo/logo o7.jpg"
-                              alt="O7 REALESTATES logo"
+                              src="/logo/logo-zevi-capital.svg"
+                              alt="ZEVI CAPITAL logo"
                               width={400}
                               height={100}
                               style={{ width: "auto", height: "100px" }}
@@ -48,10 +48,10 @@ const HeaderOne = ({ style }: any) => {
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
-                                 O7
+                                 ZEVI
                               </span>
                               <span 
-                                 className="text-capitalize" 
+                                 className="text-uppercase" 
                                  style={{ 
                                     fontSize: "clamp(14px, 2vw, 20px)",
                                     fontWeight: "300",
@@ -60,7 +60,7 @@ const HeaderOne = ({ style }: any) => {
                                     fontFamily: "'Montserrat', 'Arial', sans-serif"
                                  }}
                               >
-                                 Realestates
+                                 CAPITAL
                               </span>
                            </div>
                         </Link>
