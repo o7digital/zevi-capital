@@ -8,6 +8,10 @@ import Count from "@/components/common/Count";
 
 const BLockFeatureOne = () => {
    const { t } = useTranslation();
+   const metrics = [
+      { id: 1, value: 3, labelKey: "aboutUs.servicePillars" },
+      { id: 2, value: 6, labelKey: "aboutUs.structuredSteps" },
+   ];
 
    return (
       <div className="block-feature-two mt-150 xl-mt-100">
@@ -23,18 +27,14 @@ const BLockFeatureOne = () => {
                      <Link href="/contact" className="btn-two">{t('aboutUs.contactButton')}</Link>
                      <div className="counter-wrapper border-top pt-40 md-pt-10 mt-65 md-mt-40">
                         <div className="row">
-                           <div className="col-xxl-6 col-sm-5">
-                              <div className="counter-block-one mt-20">
-                                 <div className="main-count fw-500 color-dark"><span className="counter"><Count number={15} /></span>+</div>
-                                 <span>{t('aboutUs.yearsExperience')}</span>
+                           {metrics.map((metric) => (
+                              <div key={metric.id} className="col-sm-6">
+                                 <div className="counter-block-one mt-20">
+                                    <div className="main-count fw-500 color-dark"><span className="counter"><Count number={metric.value} /></span></div>
+                                    <span>{t(metric.labelKey)}</span>
+                                 </div>
                               </div>
-                           </div>
-                           <div className="col-xxl-6 col-sm-7">
-                              <div className="counter-block-one mt-20">
-                                 <div className="main-count fw-500 color-dark"><span className="counter"><Count number={500} /></span>+</div>
-                                 <span>{t('aboutUs.propertiesSold')}</span>
-                              </div>
-                           </div>
+                           ))}
                         </div>
                      </div>
                   </div>
