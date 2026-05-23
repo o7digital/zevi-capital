@@ -2,7 +2,7 @@ import Agent from "@/components/inner-pages/agent/agent";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "Agent Homy - Real Estate React Next js Template",
+   title: "Agent",
 };
 const index = () => {
    return (

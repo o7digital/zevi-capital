@@ -2,22 +2,29 @@ import HomeOne from "@/components/homes/home-one";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "O7 REALESTATES | Luxury Real Estate – Los Angeles • Montreal • Paris • Mexico",
-  description: "O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals.",
+  title: "Bienes raices e inversion inmobiliaria en Mexico",
+  description: "ZeVi Capital asesora compra, venta, renta e inversion inmobiliaria en Ciudad de Mexico y las principales ciudades del pais.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "O7 Realestates | International Luxury Real Estate",
-    description: "Premium real estate agency with global presence: Los Angeles, Montreal, Paris, Mexico. Exclusive luxury properties, investment portfolios and private deals.",
-    url: "https://o7realestates.vercel.app/",
-    siteName: "O7 Realestates",
+    title: "ZeVi Capital | Bienes raices en Mexico",
+    description: "Asesoria inmobiliaria estrategica para compra, venta, renta e inversion en Mexico.",
+    url: "/",
+    siteName: "ZeVi Capital",
     type: "website",
     images: [
       {
-        url: "/images/assets/ogg.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "O7 Realestates | International Luxury Real Estate",
+        alt: "ZeVi Capital",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ZeVi Capital | Bienes raices en Mexico",
+    description: "Compra, venta, renta e inversion inmobiliaria en Mexico.",
+    images: ["/logo.png"],
   },
 };
 const index = () => {

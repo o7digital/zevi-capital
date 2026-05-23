@@ -1,20 +1,31 @@
-"use client"
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "O7 Realestates",
-  "url": "https://o7realestates.vercel.app/",
-  "description": "O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals.",
-  "areaServed": ["Los Angeles", "Montreal", "Paris", "Mexico", "International"],
-  "address": {
+  name: "ZeVi Capital",
+  url: "https://zevi-capital-git-main-olivier-steineur.vercel.app",
+  logo: "https://zevi-capital-git-main-olivier-steineur.vercel.app/logo.png",
+  description:
+    "ZeVi Capital asesora operaciones inmobiliarias de compra, venta, renta e inversion en Mexico.",
+  areaServed: [
+    "Ciudad de Mexico",
+    "Monterrey",
+    "Guadalajara",
+    "Queretaro",
+    "Puebla",
+    "Merida",
+    "Cancun",
+    "Playa del Carmen",
+    "Tulum",
+    "Los Cabos",
+  ],
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "1030, Avenue Muguette",
-    "addressLocality": "Saint-Élie-de-Caxton",
-    "addressRegion": "QC",
-    "postalCode": "G0X 2N0",
-    "addressCountry": "CA"
-  }
+    streetAddress: "Montes Urales 755 piso 18",
+    addressLocality: "Ciudad de Mexico",
+    addressRegion: "CDMX",
+    postalCode: "11500",
+    addressCountry: "MX",
+  },
 };
 
 const StructuredData = () => {
