@@ -8,7 +8,13 @@ const Insurance = () => {
    return (
       <>
          <HeaderOne style={true} />
-         <BreadcrumbOne title="Insurance Services" sub_title="Insurance" style={false} />
+         <BreadcrumbOne
+            title="Certeza y Due Diligence"
+            sub_title="Manejo de riesgo y certeza"
+            style={false}
+            image="/images/tierra-mallorca-rgJ1J8SDEAY-unsplash.jpg"
+            imagePosition="center 58%"
+         />
          <InsuranceArea />
          <FancyBanner style={false} />
          <FooterOne style={false} />

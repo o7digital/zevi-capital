@@ -47,7 +47,13 @@ const Feedback = () => {
    }
 
    return (
-      <div className="feedback-section-one position-relative z-1 pt-70 md-pt-50 pb-80 md-pb-60">
+      <div className="feedback-section-one position-relative z-1 pt-100 md-pt-70 pb-80 md-pb-60">
+         <div className="container text-center mb-55 md-mb-35">
+            <div className="title-one">
+               <h2>{t('testimonials.title')}</h2>
+               <p className="fs-20 mt-20 m-auto" style={{ maxWidth: "900px" }}>{t('testimonials.intro')}</p>
+            </div>
+         </div>
          <div className="main-content m-auto">
             <Slider {...settings} className="feedback-slider-one position-static">
                {feedback_data.map((item) => (

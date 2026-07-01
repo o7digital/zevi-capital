@@ -32,8 +32,8 @@ const ContactArea = () => {
       },
       {
          id: 3,
-         title: t('contact.liveChatTitle'),
-         address_1: "www.o7realestates.com"
+         title: t('contact.addressTitle'),
+         address_1: "Montes Urales 755, piso 18, Lomas de Chapultepec, 11500 CDMX, México"
       },
    ];
    
@@ -79,7 +79,7 @@ const ContactArea = () => {
                <div className="col-xl-5 col-lg-6 d-flex order-lg-first">
                   <div className="contact-map-banner w-100">
                      <div className="gmap_canvas h-100 w-100">
-                        <iframe className="gmap_iframe h-100 w-100" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=1030+Avenue+Muguette,+Saint-Élie-de-Caxton+QC+G0X+2N0,+Canada&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                        <iframe title="ZeVi Capital - Montes Urales 755" className="gmap_iframe h-100 w-100" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=es&amp;q=Montes+Urales+755,+Lomas+de+Chapultepec,+11500+Ciudad+de+Mexico,+Mexico&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                      </div>
                   </div>
                </div>

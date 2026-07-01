@@ -2,9 +2,9 @@ import AboutUsOne from "@/components/inner-pages/about-us/about-us-one";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "Nosotros",
-   description: "Conoce a ZeVi Capital, firma de asesoria inmobiliaria enfocada en expansion, comercializacion y valor patrimonial en Mexico.",
-   alternates: { canonical: "/about_us_01" },
+   title: "ZeVi Capital | Consultoría Inmobiliaria Estratégica en México",
+   description: "Conoce ZeVi Capital, firma especializada en expansión empresarial, inversión inmobiliaria, manejo de activos y comercialización estratégica de propiedades en México.",
+   keywords: ["ZeVi Capital", "consultoría inmobiliaria México", "expansión empresarial México", "manejo de activos inmobiliarios", "inversión inmobiliaria estratégica"],
 };
 const index = () => {
    return (
