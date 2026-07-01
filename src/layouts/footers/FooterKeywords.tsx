@@ -32,7 +32,7 @@ export default function FooterKeywords() {
     <div className="footer-keywords" aria-label="SEO keywords">
       {keywords[locale].join(" • ")}
       <style jsx>{`
-        .footer-keywords{margin-top:14px;padding:10px 0;border-top:1px solid rgba(0,0,0,.08);color:#666;font-size:11px;font-weight:500;line-height:1.65}
+        .footer-keywords{margin-top:14px;padding:14px 0;border-top:1px solid rgba(0,0,0,.08);color:#555;font-size:14px;font-weight:500;line-height:1.7}
       `}</style>
     </div>
   )
