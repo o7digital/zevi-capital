@@ -3,7 +3,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import { useTranslation } from "@/contexts/TranslationContext";
 
-const API = "https://olivia-ai.o7digital.com/api";
+const API = "https://suitesmine-bot.vercel.app/api";
 
 const copy = {
   es: {
