@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import footer_data from "@/data/home-data/FooterData"
 import { useTranslation } from "@/contexts/TranslationContext"
-import FooterKeywords from "./FooterKeywords"
 
 import footerShape_1 from "@/assets/images/shape/shape_32.svg"
 import footerShape_2 from "@/assets/images/shape/shape_33.svg"
@@ -66,7 +65,6 @@ const FooterOne = ({ style }: any) => {
                      </div>
                   </div>
                </div>
-               <FooterKeywords />
             </div>
             {isDark && <Image src={footerShape_2} alt="" className="lazy-img shapes shape_02" />}
          </div>

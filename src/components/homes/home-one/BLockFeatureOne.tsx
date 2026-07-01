@@ -3,7 +3,7 @@
 import Link from "next/link"
 
 const operations = ["Comprar propiedad", "Rentar propiedad", "Vender propiedad", "Rentar espacio industrial", "Invertir en inmueble", "Buscar terreno estratégico"]
-const locations = ["Ciudad de México", "Monterrey", "Guadalajara", "Querétaro", "Puebla", "Mérida", "Cancún", "Playa del Carmen", "Tulum", "Los Cabos", "Estado de México", "Bajío", "Riviera Maya"]
+const locations = ["Zona Esmeralda", "Atizapán de Zaragoza", "Naucalpan", "Huixquilucan", "Tlalnepantla", "Estado de México", "Ciudad de México", "Querétaro", "Bajío"]
 const ranges = ["Desde $2,000,000 hasta $30,000,000 MXN", "$2,000,000 - $5,000,000 MXN", "$5,000,000 - $10,000,000 MXN", "$10,000,000 - $30,000,000 MXN", "Más de $30,000,000 MXN", "Precio a consultar"]
 
 const BLockFeatureOne = () => (
@@ -11,12 +11,12 @@ const BLockFeatureOne = () => (
     <div className="container">
       <div className="strategy-home__intro">
         <div>
-          <span className="strategy-home__eyebrow">ZeVi Capital · México</span>
-          <h1 id="strategy-title">Expansión empresarial e inversión inmobiliaria estratégica en México</h1>
+          <span className="strategy-home__eyebrow">ZeVi Capital · Estado de México</span>
+          <h1 id="strategy-title">Inversión inmobiliaria estratégica en Zona Esmeralda y Estado de México</h1>
         </div>
         <div className="strategy-home__copy">
           <p className="lead">En ZeVi Capital conectamos visión, capital, territorio y estrategia para transformar oportunidades inmobiliarias en operaciones reales, rentables y seguras.</p>
-          <p>Acompañamos a empresas que buscan expandirse, propietarios que desean maximizar el valor de sus activos e inversionistas que buscan oportunidades inmobiliarias con potencial en México.</p>
+          <p>Acompañamos a empresas, propietarios e inversionistas en Zona Esmeralda, Atizapán, Naucalpan, Huixquilucan y otras zonas estratégicas del Estado de México.</p>
           <p>No somos una inmobiliaria tradicional. Somos una firma estratégica que integra análisis de mercado, visión comercial, evaluación técnica, respaldo jurídico y ejecución operativa para que cada decisión inmobiliaria tenga fundamento, dirección y valor.</p>
           <strong>Where vision meets strategy.</strong>
         </div>
@@ -31,7 +31,7 @@ const BLockFeatureOne = () => (
 
       <div className="strategy-home__search">
         <div className="strategy-home__search-head">
-          <h2>Encuentra oportunidades inmobiliarias estratégicas en México</h2>
+          <h2>Encuentra oportunidades inmobiliarias en Zona Esmeralda</h2>
           <p>Explora propiedades comerciales, industriales, corporativas, hoteleras, residenciales premium, terrenos y activos con potencial de inversión.</p>
         </div>
         <div className="strategy-home__columns">

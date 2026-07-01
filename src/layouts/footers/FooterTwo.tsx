@@ -7,7 +7,6 @@ import footerShape_2 from "@/assets/images/shape/shape_47.svg"
 import footerIcon_1 from "@/assets/images/icon/icon_30.svg"
 import footerIcon_2 from "@/assets/images/icon/icon_31.svg"
 import footer_data from "@/data/home-data/FooterData";
-import FooterKeywords from "./FooterKeywords";
 
 interface ContentType {
    title: string;
@@ -105,7 +104,6 @@ const FooterTwo = () => {
                   </div>
                </div>
             </div>
-            <FooterKeywords />
             <div className="bottom-footer">
                <div className="d-md-flex justify-content-center justify-content-md-between align-items-center">
                   <ul className="style-none bottom-nav d-flex flex-wrap justify-content-center">
