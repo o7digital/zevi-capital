@@ -5,6 +5,7 @@ import store from "@/redux/store";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import StructuredData from "@/components/seo/StructuredData";
 import HiddenSeoKeywords from "@/components/seo/HiddenSeoKeywords";
+import OliviaAI from "@/components/common/OliviaAI";
 
 export default function RootLayout({
   children,
@@ -46,6 +47,7 @@ export default function RootLayout({
           <Provider store={store}>
             <TranslationProvider>
               {children}
+              <OliviaAI />
               <HiddenSeoKeywords />
             </TranslationProvider>
           </Provider>
