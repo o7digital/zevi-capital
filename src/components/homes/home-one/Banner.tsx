@@ -3,6 +3,18 @@ import { useEffect, useRef } from "react"
 import Slider from "react-slick"
 import DropdownOne from "@/components/search-dropdown/home-dropdown/DropdownOne"
 
+const slides = [
+   { src: "/slider/cdmx.webp", alt: "Panorama nocturno de Ciudad de México", position: "center" },
+   { src: "/slider/alexander-schimmeck-O8JJ72b4a1Y-unsplash.webp", alt: "Ciudad mexicana con vista al volcán", position: "center" },
+   { src: "/slider/arturo-ochoa-wB84N1jrfiM-unsplash.webp", alt: "Centro histórico y arquitectura mexicana", position: "center" },
+   { src: "/slider/gerson-repreza-PW3tJkRkSy8-unsplash.webp", alt: "Oportunidades inmobiliarias frente al mar en Cancún", position: "center" },
+   { src: "/slider/jorge-gardner-6YkqE50Gin0-unsplash.webp", alt: "Paisaje urbano mexicano al atardecer", position: "center" },
+   { src: "/slider/loris-boulinguez-9AFMVXjp5ik-unsplash.webp", alt: "Calle histórica y propiedades comerciales en México", position: "center" },
+   { src: "/slider/sergio-rodriguez-2EOHVbvum9w-unsplash.webp", alt: "Desarrollo urbano y espacios corporativos en México", position: "center" },
+   { src: "/slider/spencer-watson-ioy3bN5Irew-unsplash.webp", alt: "Activo hotelero y playa premium en México", position: "center" },
+   { src: "/slider/vania-medina-N6MQuEBohZA-unsplash.webp", alt: "Inversión inmobiliaria en Los Cabos", position: "center" },
+]
+
 const Banner = () => {
    const sliderRef = useRef<Slider | null>(null)
 
@@ -36,31 +48,21 @@ const Banner = () => {
             zIndex: 0
          }}>
             <Slider ref={sliderRef} {...settings}>
-               <div style={{ height: '100%', width: '100%' }}>
-                  <img 
-                     src="/slider/cdmx.png"
-                     alt="villa de luxe Mexico immobilier premium exclusif"
+               {slides.map((slide, index) => (
+                  <div key={slide.src} style={{ height: '100%', width: '100%' }}>
+                     <img
+                        src={slide.src}
+                        alt={slide.alt}
+                        loading={index === 0 ? "eager" : "lazy"}
                      style={{
                         width: '100%',
                         height: '800px',
                         objectFit: 'cover',
-                        objectPosition: 'center'
+                           objectPosition: slide.position
                      }}
                   />
                </div>
-               <div style={{ height: '100%', width: '100%' }}>
-                  <img 
-                     src="/slider/montreal2.jpg"
-                     alt="Mexico penthouse luxury real estate"
-                     style={{
-                        width: '100%',
-                        height: '800px',
-                        objectFit: 'cover',
-                        objectPosition: 'center top',
-                        transform: 'translateY(-60px)'
-                     }}
-                  />
-               </div>
+               ))}
             </Slider>
          </div>
 
