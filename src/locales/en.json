@@ -3,8 +3,9 @@
     "home": "Home",
     "purchase": "Purchase",
     "aboutUs": "About Us",
-    "sales": "Sales",
+    "sales": "Services",
     "insurance": "Insurance",
+    "insights": "Insights",
     "blog": "Blog",
     "contactUs": "Contact Us",
     "login": "Login"
@@ -126,26 +127,28 @@
     "signIn": "Sign in."
   },
   "testimonials": {
+    "title": "Trust built through strategy and results",
+    "intro": "Every real estate transaction requires trust, clear information, and professional guidance. At ZeVi Capital, we work so that owners, companies, and investors feel supported at every stage of the process.",
     "testimonial1": {
-      "name": "Jonathan Harry",
-      "location": "Milan, Italy",
-      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
-      "rating": "13k rating",
-      "ratingScore": "(4.7 Rating)"
+      "name": "Property owner",
+      "location": "Mexico City",
+      "text": "ZeVi Capital helped us understand the real value of our asset, structure a commercial strategy, and reach qualified prospects. The process was organized, clear, and professional.",
+      "rating": "Commercial strategy",
+      "ratingScore": "and guidance"
     },
     "testimonial2": {
-      "name": "Sofia Rena",
-      "location": "New York, USA",
-      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
-      "rating": "10k rating",
-      "ratingScore": "(4.5 Rating)"
+      "name": "Expanding company",
+      "location": "Mexico",
+      "text": "We needed to find strategic locations to grow. ZeVi Capital organized the search, compared alternatives, and supported us through the negotiation with a clear business perspective.",
+      "rating": "Site selection",
+      "ratingScore": "and negotiation"
     },
     "testimonial3": {
-      "name": "Rashed Kabir",
-      "location": "Dhaka, BD",
-      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
-      "rating": "11k rating",
-      "ratingScore": "(4.8 Rating)"
+      "name": "Investor",
+      "location": "Mexico",
+      "text": "We received concrete information to assess the opportunity, identify risks, and define an investment strategy. The guidance allowed us to decide with greater confidence.",
+      "rating": "Investment analysis",
+      "ratingScore": "and certainty"
     }
   },
   "footer": {
@@ -163,6 +166,7 @@
     "helpTitle": "We're always happy to help.",
     "hotlineTitle": "Our hotline number",
     "liveChatTitle": "Live chat"
+    ,"addressTitle": "Address"
   },
   "aboutUs": {
     "breadcrumbTitle": "About Us",

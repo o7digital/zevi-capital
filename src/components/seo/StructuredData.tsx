@@ -1,31 +1,28 @@
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  name: "ZeVi Capital",
-  url: "https://zevi-capital-git-main-olivier-steineur.vercel.app",
-  logo: "https://zevi-capital-git-main-olivier-steineur.vercel.app/logo.png",
-  description:
-    "ZeVi Capital asesora operaciones inmobiliarias de compra, venta, renta e inversion en Mexico.",
-  areaServed: [
-    "Ciudad de Mexico",
-    "Monterrey",
-    "Guadalajara",
-    "Queretaro",
-    "Puebla",
-    "Merida",
-    "Cancun",
-    "Playa del Carmen",
-    "Tulum",
-    "Los Cabos",
-  ],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Montes Urales 755 piso 18",
-    addressLocality: "Ciudad de Mexico",
-    addressRegion: "CDMX",
-    postalCode: "11500",
-    addressCountry: "MX",
+  "@type": ["Organization", "RealEstateAgent"],
+  "@id": "https://www.zevicapital.com/#organization",
+  "name": "ZeVi Capital",
+  "url": "https://www.zevicapital.com/",
+  "logo": "https://www.zevicapital.com/favicon.png",
+  "description": "Firma de consultoría inmobiliaria estratégica especializada en expansión empresarial, manejo de activos, comercialización e inversión inmobiliaria en México.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "México"
   },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Montes Urales 755, piso 18, Lomas de Chapultepec",
+    "addressLocality": "Ciudad de México",
+    "postalCode": "11500",
+    "addressCountry": "MX"
+  },
+  "knowsAbout": [
+    "Expansión empresarial",
+    "Inversión inmobiliaria",
+    "Manejo de activos inmobiliarios",
+    "Due diligence inmobiliario"
+  ]
 };
 
 const StructuredData = () => {

@@ -1,13 +1,16 @@
 "use client"
 import BreadcrumbOne from "@/components/common/breadcrumb/BreadcrumbOne"
 import HeaderOne from "@/layouts/headers/HeaderOne"
-import StrategicContentSection from "./StrategicContentSection"
+import BLockFeatureOne from "./BLockFeatureOne"
+import VideoBanner from "@/components/homes/home-seven/VideoBanner"
 import BLockFeatureFive from "@/components/homes/home-one/BLockFeatureFive"
 import Feedback from "@/components/homes/home-five/Feedback"
 import AgentArea from "@/components/homes/home-one/AgentArea"
+import Brand from "./Brand"
 import FooterOne from "@/layouts/footers/FooterOne"
 import FancyBanner from "@/components/common/FancyBanner"
 import { useTranslation } from "@/contexts/TranslationContext"
+import StrategicContent from "./StrategicContent"
 
 const AboutUsOne = () => {
    const { t } = useTranslation();
@@ -16,10 +19,13 @@ const AboutUsOne = () => {
       <>
          <HeaderOne style={true} />
          <BreadcrumbOne title={t('aboutUs.breadcrumbTitle')} sub_title={t('aboutUs.subtitle')} style={false} />
-         <StrategicContentSection />
+         <StrategicContent />
+         <BLockFeatureOne />
+         <VideoBanner />
          <BLockFeatureFive style={true} />
          <Feedback style={true} />
          <AgentArea style={false} />
+         <Brand />
          <FancyBanner style={false} />
          <FooterOne style={false} />
       </>

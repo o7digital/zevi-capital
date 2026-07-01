@@ -1,21 +1,22 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://zevi-capital-git-main-olivier-steineur.vercel.app";
-
 const routes = [
   "",
   "/about_us_01",
-  "/listing_01",
-  "/contact",
+  "/services",
   "/insurance",
+  "/insights",
+  "/contact",
   "/faq",
+  "/privacy-policy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
+  const now = new Date();
+  return routes.map((route, index) => ({
+    url: `https://www.zevicapital.com${route}`,
+    lastModified: now,
+    changeFrequency: index === 0 ? "weekly" : "monthly",
+    priority: index === 0 ? 1 : 0.8,
   }));
 }
