@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import StructuredData from "@/components/seo/StructuredData";
 import Script from "next/script";
 import AppProviders from "./providers";
+import OliviaAI from "@/components/common/OliviaAI";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zevicapital.com"),
@@ -54,7 +55,10 @@ export default function RootLayout({
           `}
         </Script>
         <div className="main-page-wrapper">
-          <AppProviders>{children}</AppProviders>
+          <AppProviders>
+              {children}
+              <OliviaAI />
+          </AppProviders>
         </div>
       </body>
     </html>
