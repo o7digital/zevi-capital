@@ -2,6 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import footer_data from "@/data/home-data/FooterData"
+import FooterKeywords from "./FooterKeywords"
 
 import footerShape_1 from "@/assets/images/shape/shape_52.svg"
 
@@ -53,6 +54,7 @@ const FooterThree = () => {
                </div>
             </div>
 
+            <FooterKeywords />
             <div className="bottom-footer">
                <div className="d-md-flex justify-content-center justify-content-md-between align-items-center">
                   <ul className="style-none bottom-nav d-flex justify-content-center">

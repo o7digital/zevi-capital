@@ -3,6 +3,7 @@ import Image from "next/image"
 import footerShape from "@/assets/images/assets/ils_06.svg"
 import Link from "next/link"
 import footer_data from "@/data/home-data/FooterData"
+import FooterKeywords from "./FooterKeywords"
 
 const FooterFour = () => {
    return (
@@ -40,6 +41,7 @@ const FooterFour = () => {
                   ))}
                </div>
             </div>
+            <FooterKeywords />
             <div className="bottom-footer">
                <p className="m0 text-center fs-16">Copyright @2024 Homy inc.</p>
             </div>
