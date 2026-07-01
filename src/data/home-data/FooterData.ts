@@ -20,7 +20,7 @@ const footer_data: DataType[] = [
       widget_class: "xs-mt-50",
       widget_title: "Links",
       widget_title_key: "footer.links",
-      footer_link: [{ link: "/", link_title: "Home", link_title_key: "nav.home" }, { link: "/purchase", link_title: "Purchase", link_title_key: "nav.purchase" }, { link: "/about_us_01", link_title: "About Us", link_title_key: "nav.aboutUs" }, { link: "/sales", link_title: "Sales", link_title_key: "nav.sales" }, { link: "/insurance", link_title: "Insurance", link_title_key: "nav.insurance" }, { link: "/blog_01", link_title: "Blog", link_title_key: "nav.blog" }, { link: "/contact", link_title: "Contact Us", link_title_key: "nav.contactUs" },]
+      footer_link: [{ link: "/", link_title: "Home", link_title_key: "nav.home" }, { link: "/about_us_01", link_title: "About Us", link_title_key: "nav.aboutUs" }, { link: "/services", link_title: "Services", link_title_key: "nav.sales" }, { link: "/insurance", link_title: "Insurance", link_title_key: "nav.insurance" }, { link: "/insights", link_title: "Insights", link_title_key: "nav.insights" }, { link: "/contact", link_title: "Contact Us", link_title_key: "nav.contactUs" },]
    },
    {
       id: 2,
@@ -28,7 +28,7 @@ const footer_data: DataType[] = [
       page: "home_1",
       widget_title: "Legal",
       widget_title_key: "footer.legal",
-      footer_link: [{ link: "/faq", link_title: "Terms & conditions", link_title_key: "footer.termsConditions" }, { link: "/faq", link_title: "Cookie", link_title_key: "footer.cookie" }, { link: "/faq", link_title: "Privacy policy", link_title_key: "footer.privacyPolicy" }, { link: "/faq", link_title: "Faq's", link_title_key: "footer.faqs" },]
+      footer_link: [{ link: "/privacy-policy", link_title: "Privacy policy", link_title_key: "footer.privacyPolicy" }]
    },
    {
       id: 3,
