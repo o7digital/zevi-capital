@@ -29,6 +29,9 @@ const NavMenu = () => {
                 <Link className="nav-link" href="/insurance">{t('nav.insurance')}</Link>
             </li>
             <li className="nav-item">
+                <Link className="nav-link" href="/insights">{t('nav.insights')}</Link>
+            </li>
+            <li className="nav-item">
                 <Link className="nav-link" href="/contact">{t('nav.contactUs')}</Link>
             </li>
         </ul>
