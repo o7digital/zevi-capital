@@ -21,6 +21,12 @@ export const metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Expansión Empresarial e Inversión Inmobiliaria en México | ZeVi Capital",
+    description: "Expansión empresarial, manejo de activos, venta, renta e inversión inmobiliaria en México.",
+    images: ["/images/assets/ogg.png"],
+  },
 };
 const index = () => {
   return (
