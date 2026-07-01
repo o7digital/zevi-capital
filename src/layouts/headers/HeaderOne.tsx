@@ -10,6 +10,28 @@ const HeaderOne = ({ style }: any) => {
    
    const { sticky } = UseSticky();
    const { t, locale, setLocale } = useTranslation();
+   const languages = [
+      { code: 'es' as const, label: 'ES', flag: '🇪🇸', title: 'Español' },
+      { code: 'en' as const, label: 'EN', flag: '🇬🇧', title: 'English' },
+      { code: 'fr' as const, label: 'FR', flag: '🇫🇷', title: 'Français' },
+   ];
+
+   const languageSelector = (mobile = false) => (
+      <div className={`d-flex align-items-center gap-2 ${mobile ? "flex-wrap" : ""}`}>
+         {languages.map((lang) => (
+            <button key={lang.code} onClick={() => setLocale(lang.code)}
+               className="btn btn-sm d-flex align-items-center gap-1"
+               style={{
+                  border: "1px solid #1f2937", padding: mobile ? "8px 12px" : "6px 10px",
+                  borderRadius: "5px", background: locale === lang.code ? "#1f2937" : "#ffffff",
+                  color: locale === lang.code ? "#ffffff" : "#1f2937", fontWeight: "500", fontSize: "13px",
+               }}
+               title={lang.title} aria-pressed={locale === lang.code}>
+               {lang.flag} {lang.label}
+            </button>
+         ))}
+      </div>
+   );
 
    return (
       <>
@@ -68,7 +90,7 @@ const HeaderOne = ({ style }: any) => {
                            </div>
                         </Link>
                      </div>
-                     <div className="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
+                     <div className="desktop-language-selector right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                         <ul className="d-flex align-items-center style-none">
                            <li className="me-3">
                               <div className="d-flex align-items-center gap-2">
@@ -111,6 +133,9 @@ const HeaderOne = ({ style }: any) => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                            <NavMenu />
+                           <div className="d-block d-lg-none px-3 pt-4 mt-3 border-top">
+                              {languageSelector(true)}
+                           </div>
                         </div>
                      </nav>
                   </div>
@@ -131,6 +156,16 @@ const HeaderOne = ({ style }: any) => {
                .theme-main-menu .navbar-toggler::before,
                .theme-main-menu .navbar-toggler::after {
                   background: #111111 !important;
+               }
+               @media (max-width: 991.98px) {
+                  .theme-main-menu .desktop-language-selector {
+                     display: none !important;
+                  }
+               }
+               @media (min-width: 992px) {
+                  .theme-main-menu .desktop-language-selector {
+                     display: block !important;
+                  }
                }
             `}</style>
          </header>

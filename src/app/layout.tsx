@@ -15,7 +15,7 @@ export default function RootLayout({
   const isDev = process.env.NODE_ENV === 'development'
 
   return (
-    <html lang="en" suppressHydrationWarning={isDev}>
+    <html lang="es" suppressHydrationWarning={isDev}>
       <head>
         <meta name="keywords" content="Luxury Real Estate, Real Estate Investment, Los Angeles Properties, Montreal Real Estate, Paris Luxury Homes, Mexico Real Estate, O7 Realestates, Exclusive Listings, Off-Market Deals, Private Buyers, Luxury Broker International, Premium Properties, Waterfront Estates" />
         <meta name="description" content="O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals." />
