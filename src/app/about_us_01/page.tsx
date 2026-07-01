@@ -2,7 +2,9 @@ import AboutUsOne from "@/components/inner-pages/about-us/about-us-one";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "About Us One Homy - Real Estate React Next js Template",
+   title: "ZeVi Capital | Consultoría Inmobiliaria Estratégica en México",
+   description: "Conoce ZeVi Capital, firma especializada en expansión empresarial, inversión inmobiliaria, manejo de activos y comercialización estratégica de propiedades en México.",
+   keywords: ["ZeVi Capital", "consultoría inmobiliaria México", "expansión empresarial México", "manejo de activos inmobiliarios", "inversión inmobiliaria estratégica"],
 };
 const index = () => {
    return (

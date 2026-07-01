@@ -10,6 +10,7 @@ import Brand from "./Brand"
 import FooterOne from "@/layouts/footers/FooterOne"
 import FancyBanner from "@/components/common/FancyBanner"
 import { useTranslation } from "@/contexts/TranslationContext"
+import StrategicContent from "./StrategicContent"
 
 const AboutUsOne = () => {
    const { t } = useTranslation();
@@ -18,6 +19,7 @@ const AboutUsOne = () => {
       <>
          <HeaderOne style={true} />
          <BreadcrumbOne title={t('aboutUs.breadcrumbTitle')} sub_title={t('aboutUs.subtitle')} style={false} />
+         <StrategicContent />
          <BLockFeatureOne />
          <VideoBanner />
          <BLockFeatureFive style={true} />
