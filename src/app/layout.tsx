@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import store from "@/redux/store";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import StructuredData from "@/components/seo/StructuredData";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -32,6 +33,18 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" />
       </head>
       <body suppressHydrationWarning={true}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0177X6KQPN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0177X6KQPN');
+          `}
+        </Script>
         <div className="main-page-wrapper">
           <Provider store={store}>
             <TranslationProvider>
