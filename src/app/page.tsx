@@ -14,9 +14,9 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/assets/ogg.png",
-        width: 1200,
-        height: 630,
+        url: "/slider/cdmx.webp",
+        width: 2400,
+        height: 1611,
         alt: "ZeVi Capital",
       },
     ],
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Expansión Empresarial e Inversión Inmobiliaria en México | ZeVi Capital",
     description: "Expansión empresarial, manejo de activos, venta, renta e inversión inmobiliaria en México.",
-    images: ["/images/assets/ogg.png"],
+    images: ["/slider/cdmx.webp"],
   },
 };
 const index = () => {

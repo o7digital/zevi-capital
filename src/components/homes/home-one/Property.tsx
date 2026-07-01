@@ -32,9 +32,9 @@ const Property = () => {
                                        <button type="button" data-bs-target={`#carousel${item.carousel}`} data-bs-slide-to="2" aria-label="Slide 3"></button>
                                     </div>
                                     <div className="carousel-inner">
-                                       {item.carousel_thumb.map((item, i) => (
-                                          <div key={i} className={`carousel-item ${item.active}`} data-bs-interval="1000000">
-                                             <Link href="/listing_details_01" className="d-block"><Image src={item.img} className="w-100" alt="..." /></Link>
+                                       {item.carousel_thumb.map((image, i) => (
+                                          <div key={i} className={`carousel-item ${image.active}`} data-bs-interval="1000000">
+                                             <Link href="/listing_details_01" className="d-block"><Image src={image.img} className="w-100" alt={`${item.title} — ${item.address}`} /></Link>
                                           </div>
                                        ))}
                                     </div>
