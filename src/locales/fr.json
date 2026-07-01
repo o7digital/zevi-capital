@@ -121,26 +121,28 @@
     "signIn": "Se connecter."
   },
   "testimonials": {
+    "title": "Une confiance fondée sur la stratégie et les résultats",
+    "intro": "Chaque opération immobilière exige de la confiance, une information claire et un accompagnement professionnel. Chez ZeVi Capital, nous veillons à ce que propriétaires, entreprises et investisseurs soient accompagnés à chaque étape.",
     "testimonial1": {
-      "name": "Jonathan Harry",
-      "location": "Milan, Italie",
-      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
-      "rating": "13k évaluations",
-      "ratingScore": "(4.7 Note)"
+      "name": "Propriétaire",
+      "location": "Mexico",
+      "text": "ZeVi Capital nous a aidés à comprendre la valeur réelle de notre actif, à structurer une stratégie commerciale et à atteindre des prospects qualifiés. Le processus a été ordonné, clair et professionnel.",
+      "rating": "Stratégie commerciale",
+      "ratingScore": "et accompagnement"
     },
     "testimonial2": {
-      "name": "Sofia Rena",
-      "location": "New York, USA",
-      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
-      "rating": "10k évaluations",
-      "ratingScore": "(4.5 Note)"
+      "name": "Entreprise en expansion",
+      "location": "Mexique",
+      "text": "Nous devions trouver des emplacements stratégiques pour nous développer. ZeVi Capital a organisé la recherche, comparé les options et nous a accompagnés dans la négociation avec une vision claire du projet.",
+      "rating": "Sélection de site",
+      "ratingScore": "et négociation"
     },
     "testimonial3": {
-      "name": "Rashed Kabir",
-      "location": "Dhaka, BD",
-      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
-      "rating": "11k évaluations",
-      "ratingScore": "(4.8 Note)"
+      "name": "Investisseur",
+      "location": "Mexique",
+      "text": "Nous avons reçu des informations concrètes pour évaluer l’opportunité, identifier les risques et définir une stratégie d’investissement. Cet accompagnement nous a permis de décider avec davantage de certitude.",
+      "rating": "Analyse d’investissement",
+      "ratingScore": "et certitude"
     }
   },
   "footer": {

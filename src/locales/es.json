@@ -125,26 +125,28 @@
     "signIn": "Inicia sesión."
   },
   "testimonials": {
+    "title": "Confianza construida con estrategia y resultados",
+    "intro": "Cada operación inmobiliaria requiere confianza, información clara y acompañamiento profesional. En ZeVi Capital trabajamos para que propietarios, empresas e inversionistas se sientan acompañados en cada etapa del proceso.",
     "testimonial1": {
-      "name": "Jonathan Harry",
-      "location": "Milán, Italia",
-      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
-      "rating": "13k valoraciones",
-      "ratingScore": "(4.7 calificación)"
+      "name": "Propietario",
+      "location": "Ciudad de México",
+      "text": "ZeVi Capital nos ayudó a entender el valor real de nuestro activo, estructurar una estrategia comercial y llegar a prospectos calificados. El proceso fue ordenado, claro y profesional.",
+      "rating": "Estrategia comercial",
+      "ratingScore": "y acompañamiento"
     },
     "testimonial2": {
-      "name": "Sofia Rena",
-      "location": "Nueva York, EE.UU.",
-      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
-      "rating": "10k valoraciones",
-      "ratingScore": "(4.5 calificación)"
+      "name": "Empresa en expansión",
+      "location": "México",
+      "text": "Necesitábamos encontrar ubicaciones estratégicas para crecer. ZeVi Capital organizó la búsqueda, comparó alternativas y nos acompañó en la negociación con una visión clara del negocio.",
+      "rating": "Selección de ubicación",
+      "ratingScore": "y negociación"
     },
     "testimonial3": {
-      "name": "Rashed Kabir",
-      "location": "Dhaka, BD",
-      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
-      "rating": "11k valoraciones",
-      "ratingScore": "(4.8 calificación)"
+      "name": "Inversionista",
+      "location": "México",
+      "text": "Recibimos información concreta para evaluar la oportunidad, identificar riesgos y definir una estrategia de inversión. El acompañamiento nos permitió decidir con mayor certeza.",
+      "rating": "Análisis de inversión",
+      "ratingScore": "y certeza"
     }
   },
   "footer": {
