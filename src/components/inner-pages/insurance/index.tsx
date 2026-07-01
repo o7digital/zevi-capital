@@ -12,7 +12,7 @@ const Insurance = () => {
             title="Certeza y Due Diligence"
             sub_title="Manejo de riesgo y certeza"
             style={false}
-            image="/images/tierra-mallorca-rgJ1J8SDEAY-unsplash.jpg"
+            image="/images/tierra-mallorca-rgJ1J8SDEAY-unsplash.webp"
             imagePosition="center 58%"
          />
          <InsuranceArea />

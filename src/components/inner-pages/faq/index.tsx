@@ -17,7 +17,7 @@ const Faq = () => {
    return (
       <>
          <HeaderOne style={true} />
-         <BreadcrumbOne title={copy.title} link="/" link_title="ZeVi Capital" sub_title={copy.subtitle} style={true} image="/images/buddha-elemental-3d-b8Bi0p_o5Lk-unsplash.jpg" imagePosition="center 45%" />
+         <BreadcrumbOne title={copy.title} link="/" link_title="ZeVi Capital" sub_title={copy.subtitle} style={true} image="/images/buddha-elemental-3d-b8Bi0p_o5Lk-unsplash.webp" imagePosition="center 45%" />
          <FaqArea/>
          <FancyBanner style={false} />
          <FooterFour />
