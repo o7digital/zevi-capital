@@ -4,6 +4,7 @@ import Wrapper from "@/layouts/Wrapper";
 export const metadata = {
    title: "Preguntas Frecuentes | ZeVi Capital",
    description: "Respuestas sobre expansión empresarial, comercialización de activos, inversión y due diligence inmobiliario con ZeVi Capital.",
+   alternates: { canonical: "https://www.zevicapital.com/faq" },
 };
 const index = () => {
    return (

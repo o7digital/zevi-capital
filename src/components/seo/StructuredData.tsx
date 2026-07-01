@@ -1,20 +1,28 @@
-"use client"
-
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "O7 Realestates",
-  "url": "https://o7realestates.vercel.app/",
-  "description": "O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals.",
-  "areaServed": ["Los Angeles", "Montreal", "Paris", "Mexico", "International"],
+  "@type": ["Organization", "RealEstateAgent"],
+  "@id": "https://www.zevicapital.com/#organization",
+  "name": "ZeVi Capital",
+  "url": "https://www.zevicapital.com/",
+  "logo": "https://www.zevicapital.com/favicon.png",
+  "description": "Firma de consultoría inmobiliaria estratégica especializada en expansión empresarial, manejo de activos, comercialización e inversión inmobiliaria en México.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "México"
+  },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1030, Avenue Muguette",
-    "addressLocality": "Saint-Élie-de-Caxton",
-    "addressRegion": "QC",
-    "postalCode": "G0X 2N0",
-    "addressCountry": "CA"
-  }
+    "streetAddress": "Montes Urales 755, piso 18, Lomas de Chapultepec",
+    "addressLocality": "Ciudad de México",
+    "postalCode": "11500",
+    "addressCountry": "MX"
+  },
+  "knowsAbout": [
+    "Expansión empresarial",
+    "Inversión inmobiliaria",
+    "Manejo de activos inmobiliarios",
+    "Due diligence inmobiliario"
+  ]
 };
 
 const StructuredData = () => {
