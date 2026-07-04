@@ -61,7 +61,7 @@ export default function OliviaAI() {
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState(
     OFFLINE
-      ? [{ role: "ai", content: "Offline" }, { role: "ai", content: "Add more credit" }]
+      ? [{ role: "ai", content: "Offline" }]
       : [{ role: "ai", content: text.welcome }]
   );
   const visitorId = useMemo(() => {
@@ -122,20 +122,20 @@ export default function OliviaAI() {
 
   return <div className="zevi-olivia">
     {open && <section className="zevi-olivia__panel">
-      <header><div><strong>Olivia AI</strong><small>{OFFLINE ? "Offline · Add more credit" : `${text.subtitle} · ${text.online}`}</small></div><button onClick={() => setOpen(false)} aria-label="Close">×</button></header>
+      <header><div><strong>Olivia AI</strong><small>{OFFLINE ? "Offline" : `${text.subtitle} · ${text.online}`}</small></div><button onClick={() => setOpen(false)} aria-label="Close">×</button></header>
       <div className="zevi-olivia__messages">
         {messages.map((message, index) => <p key={index} className={message.role}>{message.content}</p>)}
         {loading && <p className="ai">…</p>}
       </div>
       <form onSubmit={send}>
         {!OFFLINE && <label><input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} /> <span>{text.consent} <button type="button" className="privacy-link" onClick={() => setPrivacyOpen(true)}>{text.privacy}</button></span></label>}
-        <div><input value={input} onChange={(e) => setInput(e.target.value)} placeholder={OFFLINE ? "Offline — Add more credit" : text.placeholder} disabled={OFFLINE || !consent || loading} /><button disabled={OFFLINE || !consent || loading}>{text.send}</button></div>
+        <div><input value={input} onChange={(e) => setInput(e.target.value)} placeholder={OFFLINE ? "Offline" : text.placeholder} disabled={OFFLINE || !consent || loading} /><button disabled={OFFLINE || !consent || loading}>{text.send}</button></div>
       </form>
     </section>}
     {!OFFLINE && privacyOpen && <div className="zevi-olivia__privacy" role="dialog" aria-modal="true" aria-label={text.privacyTitle}>
       <div><button type="button" onClick={() => setPrivacyOpen(false)} aria-label="Close">×</button><h3>{text.privacyTitle}</h3><p>{text.privacyBody}</p><button type="button" onClick={() => { setConsent(true); setPrivacyOpen(false); }}>{text.privacyAccept}</button></div>
     </div>}
-    {!open && <button className="zevi-olivia__teaser" onClick={() => setOpen(true)}><b>O</b>{OFFLINE ? "Offline — Add more credit" : text.teaser}</button>}
+    {!open && <button className="zevi-olivia__teaser" onClick={() => setOpen(true)}><b>O</b>{OFFLINE ? "Offline" : text.teaser}</button>}
     <style jsx>{`
       .zevi-olivia{position:fixed;right:24px;bottom:24px;z-index:99999;font:14px/1.4 Arial,sans-serif}
       .zevi-olivia__teaser{display:flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid #c8a96b;border-radius:999px;background:#0d1a1c;color:#fff;box-shadow:0 16px 42px #0007}
