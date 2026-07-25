@@ -23,7 +23,13 @@ const NavMenu = () => {
                 <Link className="nav-link" href="/about_us_01">{t('nav.aboutUs')}</Link>
             </li>
             <li className="nav-item">
-                <Link className="nav-link" href="/sales">{t('nav.sales')}</Link>
+                <Link className="nav-link" href="/services">{t('nav.sales')}</Link>
+            </li>
+            <li className="nav-item">
+                <Link className="nav-link" href="/insurance">{t('nav.insurance')}</Link>
+            </li>
+            <li className="nav-item">
+                <Link className="nav-link" href="/insights">{t('nav.insights')}</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" href="/contact">{t('nav.contactUs')}</Link>

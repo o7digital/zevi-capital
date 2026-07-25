@@ -2,9 +2,10 @@ import Insurance from "@/components/inner-pages/insurance";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "Seguros inmobiliarios",
-   description: "Soluciones de seguro para proteger propiedades e inversiones inmobiliarias en Mexico con asesoria especializada.",
-   alternates: { canonical: "/insurance" },
+   title: "Due Diligence Inmobiliario y Certeza Patrimonial | ZeVi Capital",
+   description: "ZeVi Capital acompaña operaciones inmobiliarias con análisis documental, evaluación de riesgos, asesoría estratégica y coordinación legal para mayor certeza.",
+   keywords: ["due diligence inmobiliario", "revisión documental inmobiliaria", "certeza patrimonial", "análisis de riesgo inmobiliario"],
+   alternates: { canonical: "https://www.zevicapital.com/insurance" },
 };
 const index = () => {
    return (

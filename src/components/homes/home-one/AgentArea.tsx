@@ -55,7 +55,7 @@ const AgentArea = ({ style }: any) => {
                         <div key={item.id} className="item">
                            <div className="agent-card-one position-relative">
                               <div className="img border-20">
-                                 <Image src={item.thumb} alt="" className="w-100 tran5s" />
+                                 <Image src={item.thumb} alt={`${item.title}, ${item.desc}`} className="w-100 tran5s" />
                               </div>
                               <div className="text-center">
                                  <h6>{item.title}</h6>

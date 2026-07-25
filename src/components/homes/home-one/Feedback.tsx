@@ -47,7 +47,13 @@ const Feedback = () => {
    }
 
    return (
-      <div className="feedback-section-one position-relative z-1 pt-70 md-pt-50 pb-80 md-pb-60">
+      <div className="feedback-section-one position-relative z-1 pt-100 md-pt-70 pb-80 md-pb-60">
+         <div className="container text-center mb-55 md-mb-35">
+            <div className="title-one">
+               <h2>{t('testimonials.title')}</h2>
+               <p className="fs-20 mt-20 m-auto" style={{ maxWidth: "900px" }}>{t('testimonials.intro')}</p>
+            </div>
+         </div>
          <div className="main-content m-auto">
             <Slider {...settings} className="feedback-slider-one position-static">
                {feedback_data.map((item) => (
@@ -55,7 +61,7 @@ const Feedback = () => {
                      <div className="feedback-block-one text-center">
                         <div className="row align-items-center">
                            <div className="col-md-3">
-                              <Image src={item.img} alt="" className="rounded-circle m-auto avatar" />
+                              <Image src={item.img} alt={t(`${item.testimonialKey}.name`)} className="rounded-circle m-auto avatar" />
                               <h6 className="fs-20 m0 pt-10">{t(`${item.testimonialKey}.name`)}</h6>
                               <span className="fs-16">{t(`${item.testimonialKey}.location`)}</span>
                            </div>
@@ -63,7 +69,7 @@ const Feedback = () => {
                               <blockquote>{t(`${item.testimonialKey}.text`)}</blockquote>
                            </div>
                            <div className="col-md-3">
-                              <Image src={rating} alt="" className="lazy-img m-auto" />
+                              <Image src={rating} alt={t(`${item.testimonialKey}.ratingScore`)} className="lazy-img m-auto" />
                               <p className="text-center m0 pt-10"><span className="fw-500 color-dark">{t(`${item.testimonialKey}.rating`)}</span> {t(`${item.testimonialKey}.ratingScore`)}</p>
                            </div>
                         </div>
