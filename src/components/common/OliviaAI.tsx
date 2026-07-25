@@ -3,8 +3,8 @@
 import { FormEvent, useMemo, useState } from "react";
 import { useTranslation } from "@/contexts/TranslationContext";
 
-const API = "https://suitesmine-bot.vercel.app/api";
-const OFFLINE = true;
+const API = "https://olivia-ai.o7digital.com/api";
+const OFFLINE = false;
 
 const copy = {
   es: {
