@@ -1,13 +1,31 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import property_data from "@/data/home-data/PropertyData";
 import { useTranslation } from "@/contexts/TranslationContext";
+import { DirectusPropertyCard, fetchDirectusProperties } from "@/lib/directusProperties";
 
 import titleShape from "@/assets/images/shape/title_shape_03.svg";
 
 const Property = () => {
    const { t } = useTranslation();
+   const fallbackProperties = property_data.filter((items) => items.page === "home_1");
+   const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(fallbackProperties);
+
+   useEffect(() => {
+      let isMounted = true;
+
+      fetchDirectusProperties().then((directusProperties) => {
+         if (isMounted && directusProperties.length > 0) {
+            setProperties(directusProperties);
+         }
+      });
+
+      return () => {
+         isMounted = false;
+      };
+   }, []);
    
    return (
       <div className="property-listing-one bg-pink-two mt-150 xl-mt-120 pt-140 xl-pt-120 lg-pt-80 pb-180 xl-pb-120 lg-pb-100">
@@ -19,7 +37,7 @@ const Property = () => {
                </div>
 
                <div className="row gx-xxl-5">
-                  {property_data.filter((items) => items.page === "home_1").map((item) => (
+                  {properties.map((item) => (
                      <div key={item.id} className="col-lg-4 col-md-6 d-flex mt-40 wow fadeInUp" data-wow-delay={item.data_delay_time}>
                         <div className="listing-card-one border-25 h-100 w-100">
                            <div className="img-gallery p-15">
@@ -34,7 +52,7 @@ const Property = () => {
                                     <div className="carousel-inner">
                                        {item.carousel_thumb.map((image, i) => (
                                           <div key={i} className={`carousel-item ${image.active}`} data-bs-interval="1000000">
-                                             <Link href="/listing_details_01" className="d-block"><Image src={image.img} className="w-100" alt={`${item.title} — ${item.address}`} /></Link>
+                                             <Link href="/listing_details_01" className="d-block"><Image src={image.img} className="w-100" alt={`${item.title} - ${item.address}`} width={410} height={280} /></Link>
                                           </div>
                                        ))}
                                     </div>
