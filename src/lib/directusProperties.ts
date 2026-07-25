@@ -78,7 +78,7 @@ function assetUrl(value: DirectusFileValue | string | { id?: string } | undefine
 }
 
 function propertyImages(property: DirectusProperty) {
-   const relatedImages = property.images || property.property_images || [];
+   const relatedImages = [...(property.images || []), ...(property.property_images || [])];
    const urls = [
       assetUrl(property.cover_image),
       assetUrl(property.image),
@@ -97,7 +97,7 @@ export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]>
 
    try {
       const params = new URLSearchParams({
-         fields: "*,images.*,property_images.*",
+         fields: "*,images.*,property_images.*,property_images.image.*",
          limit: "6",
          sort: "-date_created",
       });

@@ -109,18 +109,22 @@ await ensureField("properties", "location", "string");
 await ensureField("properties", "address", "string");
 await ensureField("properties", "status", "string", { default_value: "draft" }, {
   interface: "select-dropdown",
-  options: { choices: [{ text: "Published", value: "published" }, { text: "Draft", value: "draft" }] },
+  options: { choices: [{ text: "Published", value: "published" }, { text: "Draft", value: "draft" }, { text: "Archived", value: "archived" }] },
 });
 await ensureField("properties", "listing_status", "string", { default_value: "FOR SALE" });
+await ensureField("properties", "tag", "string");
+await ensureField("properties", "tag_bg", "string");
 await ensureField("properties", "sqft", "integer");
 await ensureField("properties", "bedrooms", "integer");
 await ensureField("properties", "bathrooms", "integer");
+await ensureField("properties", "price_text", "string");
 await ensureField("properties", "cover_image", "uuid", { foreign_key_table: "directus_files", foreign_key_column: "id" }, { interface: "file-image" });
+await ensureField("properties", "image", "uuid", { foreign_key_table: "directus_files", foreign_key_column: "id" }, { interface: "file-image" });
 
 await ensureCollection("property_images", { icon: "image", note: "Images attached to public real estate listings" });
-await ensureField("property_images", "property_id", "integer", { foreign_key_table: "properties", foreign_key_column: "id" }, { interface: "select-dropdown-m2o", special: ["m2o"] });
+await ensureField("property_images", "property_id", "uuid", { foreign_key_table: "properties", foreign_key_column: "id" }, { interface: "select-dropdown-m2o", special: ["m2o"] });
 await ensureField("property_images", "image", "uuid", { foreign_key_table: "directus_files", foreign_key_column: "id" }, { interface: "file-image" });
-await ensureField("property_images", "sort", "integer");
+await ensureField("property_images", "sort_order", "integer");
 
 await ensureCollection("leads", { icon: "contact_mail", note: "Website contact and property inquiries" });
 await ensureField("leads", "name", "string");

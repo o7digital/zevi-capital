@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cervantes-directus-backend-lc-inmobiliaria.up.railway.app',
+        hostname: 'zevicapital-directus-backend-lc-inmobiliaria.up.railway.app',
         pathname: '/assets/**',
       },
     ],
