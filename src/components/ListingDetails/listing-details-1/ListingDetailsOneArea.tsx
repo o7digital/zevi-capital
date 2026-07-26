@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
+import Link from "next/link"
 import MediaGallery from "./MediaGallery"
 import Sidebar from "./Sidebar"
 import CommonBanner from "../listing-details-common/CommonBanner"
@@ -50,6 +51,10 @@ const ListingDetailsOneArea = () => {
    return (
       <div className="listing-details-one theme-details-one bg-pink pt-180 lg-pt-150 pb-150 xl-pb-120">
          <div className="container">
+            <Link href="/#properties" className="d-inline-flex align-items-center mb-35 fw-500 color-dark">
+               <i className="bi bi-arrow-left me-2"></i>
+               {t("listingDetails.backToList")}
+            </Link>
             <CommonBanner property={property} />
             <MediaGallery images={galleryImages} />
             <div className="property-feature-list bg-white shadow4 border-20 p-40 mt-50 mb-60">
@@ -75,6 +80,12 @@ const ListingDetailsOneArea = () => {
                         </ul>
                      </div>
                   </div>
+                  <Link href="/#properties" className="btn-four d-inline-flex align-items-center justify-content-center rounded-circle">
+                     <i className="bi bi-arrow-left"></i>
+                  </Link>
+                  <Link href="/#properties" className="fw-500 color-dark ms-3">
+                     {t("listingDetails.backToList")}
+                  </Link>
                </div>
                <Sidebar property={property} />
             </div>

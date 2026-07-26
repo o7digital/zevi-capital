@@ -178,6 +178,7 @@
     "propertyFallback": "Property",
     "price": "Price",
     "share": "Share",
+    "backToList": "Back to listings",
     "sale": "Sale",
     "rent": "Rent",
     "description": "Description",
