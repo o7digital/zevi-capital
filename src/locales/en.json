@@ -48,8 +48,9 @@
     "forRent": "FOR RENT",
     "sqft": "sqft",
     "bed": "bed",
-    "bath": "bath"
-    ,"empty": "Properties will be available soon."
+    "bath": "bath",
+    "empty": "Properties will be available soon.",
+    "priceOnRequest": "Price on request"
   },
   "fancyBanner": {
     "exclusive": "Exclusive",
@@ -180,6 +181,7 @@
     "titleFallback": "ZeVi Capital property",
     "propertyFallback": "Property",
     "price": "Price",
+    "priceOnRequest": "Price on request",
     "share": "Share",
     "backToList": "Back to listings",
     "sale": "Sale",

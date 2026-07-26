@@ -1,11 +1,12 @@
 "use client"
 import Link from "next/link"
-import { DirectusProperty } from "@/lib/directusProperties"
+import { DirectusProperty, shouldDisplayPropertyPrice } from "@/lib/directusProperties"
 import { useTranslation } from "@/contexts/TranslationContext"
 
-const formatPrice = (property?: DirectusProperty | null) => {
+const formatPrice = (property: DirectusProperty, fallback: string) => {
    const price = Number(property?.price);
-   if (!Number.isFinite(price)) return "Precio a consultar";
+   if (!shouldDisplayPropertyPrice(property)) return fallback;
+
    return new Intl.NumberFormat("es-MX", {
       style: "currency",
       currency: property?.currency || "MXN",
@@ -33,7 +34,11 @@ const CommonBanner = ({ style_3, property }: { style_3?: boolean; property?: Dir
          </div>
          <div className="col-lg-6 text-lg-end">
             <div className="d-inline-block md-mt-40">
-               <div className="price color-dark fw-500">{t("listingDetails.price")}: {formatPrice(property)}</div>
+               <div className="price color-dark fw-500">
+                  {property && shouldDisplayPropertyPrice(property)
+                     ? `${t("listingDetails.price")}: ${formatPrice(property, t("listingDetails.priceOnRequest"))}`
+                     : t("listingDetails.priceOnRequest")}
+               </div>
                <div className="est-price fs-20 mt-25 mb-35 md-mb-30">{property?.property_type || t("listingDetails.propertyFallback")}</div>
                <ul className="style-none d-flex align-items-center action-btns">
                   <li className="me-auto fw-500 color-dark"><i className="fa-sharp fa-regular fa-share-nodes me-2"></i>

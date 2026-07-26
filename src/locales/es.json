@@ -48,8 +48,9 @@
     "forRent": "EN RENTA",
     "sqft": "m²",
     "bed": "rec",
-    "bath": "baño"
-    ,"empty": "Las propiedades estarán disponibles pronto."
+    "bath": "baño",
+    "empty": "Las propiedades estarán disponibles pronto.",
+    "priceOnRequest": "Precio a consultar"
   },
   "fancyBanner": {
     "exclusive": "Oferta",
@@ -178,6 +179,7 @@
     "titleFallback": "Propiedad ZeVi Capital",
     "propertyFallback": "Inmueble",
     "price": "Precio",
+    "priceOnRequest": "Precio a consultar",
     "share": "Compartir",
     "backToList": "Regresar a la lista",
     "sale": "Venta",

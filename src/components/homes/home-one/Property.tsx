@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTranslation } from "@/contexts/TranslationContext";
-import { DirectusPropertyCard, fetchDirectusProperties } from "@/lib/directusProperties";
+import { DirectusPropertyCard, fetchDirectusProperties, shouldDisplayPropertyPrice } from "@/lib/directusProperties";
 
 import titleShape from "@/assets/images/shape/title_shape_03.svg";
 
@@ -86,7 +86,11 @@ const Property = ({ initialProperties = [] }: { initialProperties?: DirectusProp
                               </ul>
                               <div className="pl-footer top-border d-flex align-items-center justify-content-between">
                                  <strong className="price fw-500 color-dark">
-                                    {formatCardPrice(item)}{item.price_text &&<>/<sub>m</sub></>}
+                                    {shouldDisplayPropertyPrice(item) ? (
+                                       <>{formatCardPrice(item)}{item.price_text && <>/<sub>m</sub></>}</>
+                                    ) : (
+                                       t("property.priceOnRequest")
+                                    )}
                                  </strong>
                                  <Link href={propertyHref(item)} className="btn-four rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                               </div>

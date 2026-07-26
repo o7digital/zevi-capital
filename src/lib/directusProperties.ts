@@ -75,6 +75,14 @@ export function propertySlug(property: Pick<DirectusProperty, "id" | "title"> | 
    return `${slug || "propiedad"}-${property.id}`;
 }
 
+export function shouldDisplayPropertyPrice(property?: Pick<DirectusProperty, "price" | "currency"> | Pick<DirectusPropertyCard, "price" | "currency"> | null) {
+   const price = Number(property?.price);
+   if (!Number.isFinite(price) || price <= 0) return false;
+
+   const currency = String(property?.currency || "MXN").toUpperCase();
+   return !(currency === "USD" && price < 100);
+}
+
 function toNumber(value: number | string | undefined, fallback = 0) {
    const numberValue = Number(value);
    return Number.isFinite(numberValue) ? numberValue : fallback;

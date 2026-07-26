@@ -48,8 +48,9 @@
     "forRent": "À LOUER",
     "sqft": "m²",
     "bed": "ch",
-    "bath": "sdb"
-    ,"empty": "Les propriétés seront bientôt disponibles."
+    "bath": "sdb",
+    "empty": "Les propriétés seront bientôt disponibles.",
+    "priceOnRequest": "Prix sur demande"
   },
   "fancyBanner": {
     "exclusive": "Offre",
@@ -180,6 +181,7 @@
     "titleFallback": "Bien ZeVi Capital",
     "propertyFallback": "Bien immobilier",
     "price": "Prix",
+    "priceOnRequest": "Prix sur demande",
     "share": "Partager",
     "backToList": "Retour à la liste",
     "sale": "Vente",
