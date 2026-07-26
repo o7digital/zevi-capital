@@ -70,7 +70,6 @@ function toNumber(value: number | string | undefined, fallback = 0) {
 function fileId(value: DirectusFileValue | string | { id?: string } | undefined) {
    if (!value) return undefined;
    if (typeof value === "string") return value;
-   if ("id" in value && value.id) return value.id;
    if ("directus_files_id" in value) {
       const file = value.directus_files_id;
       return typeof file === "string" ? file : file?.id;
@@ -79,6 +78,7 @@ function fileId(value: DirectusFileValue | string | { id?: string } | undefined)
       const image = value.image;
       return typeof image === "string" ? image : image?.id;
    }
+   if ("id" in value && value.id) return value.id;
 }
 
 function assetUrl(value: DirectusFileValue | string | { id?: string } | undefined) {
