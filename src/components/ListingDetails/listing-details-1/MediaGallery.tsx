@@ -1,5 +1,7 @@
+"use client"
 import Image, { StaticImageData } from "next/image";
 import Fancybox from "@/components/common/Fancybox";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 import bigCarousel_1 from "@/assets/images/listing/img_43.jpg"
 import bigCarousel_2 from "@/assets/images/listing/img_44.jpg"
@@ -31,6 +33,7 @@ interface GalleryImage {
 }
 
 const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: GalleryImage[] }) => {
+  const { t } = useTranslation();
   const hasDirectusImages = images.length > 0;
   const largeImages = hasDirectusImages ? images : big_carousel.map((image, index) => ({ url: image, alt: `Property image ${index + 1}` }));
   const thumbImages = hasDirectusImages ? images : small_carousel.map((image, index) => ({ url: image, alt: `Property thumbnail ${index + 1}` }));
@@ -42,7 +45,7 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
           <div className={` bg-white border-20 md-mb-20 ${style ? "" : "shadow4 p-30"}`}>
             <div className="position-relative z-1 overflow-hidden border-20">
               <div className="img-fancy-btn border-10 fw-500 fs-16 color-dark">
-                Ver {largeImages.length} fotos
+                {t("listingDetails.gallery.view")} {largeImages.length} {t("listingDetails.gallery.photos")}
                 <Fancybox
                   options={{
                     Carousel: {

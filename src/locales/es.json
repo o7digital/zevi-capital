@@ -3,9 +3,8 @@
     "home": "Inicio",
     "purchase": "Compra",
     "aboutUs": "Nosotros",
-    "sales": "Servicios",
+    "sales": "Ventas",
     "insurance": "Seguros",
-    "insights": "Insights",
     "blog": "Blog",
     "contactUs": "Contáctanos",
     "login": "Ingresar"
@@ -73,7 +72,6 @@
     "helpTitle": "Siempre estamos felices de ayudarte.",
     "hotlineTitle": "Nuestro número directo",
     "liveChatTitle": "Chat en vivo"
-    ,"addressTitle": "Dirección"
   },
   "aboutSection": {
     "whoWeAre": "¿Quiénes somos?",
@@ -126,32 +124,30 @@
     "signIn": "Inicia sesión."
   },
   "testimonials": {
-    "title": "Confianza construida con estrategia y resultados",
-    "intro": "Cada operación inmobiliaria requiere confianza, información clara y acompañamiento profesional. En ZeVi Capital trabajamos para que propietarios, empresas e inversionistas se sientan acompañados en cada etapa del proceso.",
     "testimonial1": {
-      "name": "Propietario",
-      "location": "Ciudad de México",
-      "text": "ZeVi Capital nos ayudó a entender el valor real de nuestro activo, estructurar una estrategia comercial y llegar a prospectos calificados. El proceso fue ordenado, claro y profesional.",
-      "rating": "Estrategia comercial",
-      "ratingScore": "y acompañamiento"
+      "name": "Jonathan Harry",
+      "location": "Milán, Italia",
+      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
+      "rating": "13k valoraciones",
+      "ratingScore": "(4.7 calificación)"
     },
     "testimonial2": {
-      "name": "Empresa en expansión",
-      "location": "México",
-      "text": "Necesitábamos encontrar ubicaciones estratégicas para crecer. ZeVi Capital organizó la búsqueda, comparó alternativas y nos acompañó en la negociación con una visión clara del negocio.",
-      "rating": "Selección de ubicación",
-      "ratingScore": "y negociación"
+      "name": "Sofia Rena",
+      "location": "Nueva York, EE.UU.",
+      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
+      "rating": "10k valoraciones",
+      "ratingScore": "(4.5 calificación)"
     },
     "testimonial3": {
-      "name": "Inversionista",
-      "location": "México",
-      "text": "Recibimos información concreta para evaluar la oportunidad, identificar riesgos y definir una estrategia de inversión. El acompañamiento nos permitió decidir con mayor certeza.",
-      "rating": "Análisis de inversión",
-      "ratingScore": "y certeza"
+      "name": "Rashed Kabir",
+      "location": "Dhaka, BD",
+      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
+      "rating": "11k valoraciones",
+      "ratingScore": "(4.8 calificación)"
     }
   },
   "footer": {
-    "address": "Montes Urales 755, piso 18, Lomas de Chapultepec, 11500 CDMX, México.",
+    "address": "Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.",
     "contact": "CONTACTO",
     "links": "Enlaces",
     "legal": "Legal",
@@ -166,14 +162,68 @@
     "mainTitle": "Asegura",
     "familyWord": "el hogar soñado",
     "dreamHome": "de tu familia.",
-    "intro": "ZeVi Capital acompaña a empresas, propietarios e inversionistas en Zona Esmeralda y el Estado de México con un enfoque inmobiliario estratégico.",
+    "intro": "ZEVI CAPITAL es tu aliado de confianza en bienes raíces de lujo. Con más de 15 años de experiencia en mercados inmobiliarios de alto nivel.",
     "contactButton": "Contáctanos",
     "yearsExperience": "Años de experiencia",
     "propertiesSold": "Propiedades vendidas",
     "whoWeAre": "¿Quiénes somos?",
-    "whoWeAreText": "ZeVi Capital es una firma de consultoría inmobiliaria estratégica especializada en inversión, comercialización y manejo de activos en Zona Esmeralda, Atizapán, Naucalpan y Huixquilucan.",
+    "whoWeAreText": "ZEVI CAPITAL es una agencia inmobiliaria líder especializada en propiedades de lujo. Combinamos conocimiento de mercado y servicio personalizado para ayudarte a encontrar tu hogar o inversión ideal.",
     "ourMission": "Nuestra misión",
-    "ourMissionText": "Nuestra misión es aportar análisis, transparencia y ejecución a cada decisión inmobiliaria para crear valor duradero en el Estado de México."
+    "ourMissionText": "Nuestra misión es ofrecer servicios inmobiliarios excepcionales, con transparencia e integridad, generando valor duradero para nuestros clientes en mercados internacionales premium."
+  },
+  "listingDetails": {
+    "titleFallback": "Propiedad ZeVi Capital",
+    "propertyFallback": "Inmueble",
+    "price": "Precio",
+    "share": "Compartir",
+    "sale": "Venta",
+    "rent": "Renta",
+    "description": "Descripción",
+    "descriptionFallback": "Información de la propiedad próximamente.",
+    "overview": {
+      "title": "Resumen de la propiedad",
+      "area": "Superficie",
+      "bedrooms": "Recámaras",
+      "bathrooms": "Baños",
+      "operation": "Operación",
+      "type": "Tipo"
+    },
+    "details": {
+      "title": "Detalles de la propiedad",
+      "bedrooms": "Recámaras",
+      "bathrooms": "Baños",
+      "area": "Superficie",
+      "type": "Tipo de inmueble",
+      "operation": "Operación",
+      "status": "Estatus",
+      "location": "Zona",
+      "easybroker": "ID EasyBroker"
+    },
+    "gallery": {
+      "view": "Ver",
+      "photos": "fotos"
+    },
+    "agent": {
+      "role": "Consultoría inmobiliaria estratégica",
+      "location": "Zona",
+      "phone": "Teléfono",
+      "cta": "Contactar asesor"
+    },
+    "form": {
+      "title": "Solicitar información",
+      "name": "Nombre*",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo electrónico*",
+      "emailPlaceholder": "Tu correo electrónico",
+      "phone": "Teléfono",
+      "phonePlaceholder": "Tu número de teléfono",
+      "message": "Mensaje",
+      "messagePlaceholder": "Hola, me interesa esta propiedad:",
+      "submit": "Enviar solicitud",
+      "sending": "Enviando...",
+      "success": "Gracias. Recibimos tu solicitud.",
+      "error": "No se pudo enviar. Intenta de nuevo."
+    }
   },
   "insurance": {
     "mainTitle": "Protege tu",

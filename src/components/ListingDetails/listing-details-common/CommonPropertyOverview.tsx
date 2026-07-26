@@ -1,3 +1,4 @@
+"use client"
 import Image, { StaticImageData } from "next/image"
 
 import icon_1 from "@/assets/images/icon/icon_47.svg"
@@ -6,6 +7,7 @@ import icon_3 from "@/assets/images/icon/icon_49.svg"
 import icon_4 from "@/assets/images/icon/icon_50.svg"
 import icon_5 from "@/assets/images/icon/icon_51.svg"
 import { DirectusProperty } from "@/lib/directusProperties";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 interface DataType {
    id: number;
@@ -42,31 +44,32 @@ const property_overview_data: DataType[] = [
 ]
 
 const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | null }) => {
+   const { t } = useTranslation();
    const property_overview_data: DataType[] = [
       {
          id: 1,
          icon: icon_1,
-         title: `Sqft . ${property?.sqft || 0}`,
+         title: `${t("listingDetails.overview.area")} . ${property?.sqft || 0}`,
       },
       {
          id: 2,
          icon: icon_2,
-         title: `Bed . ${property?.bedrooms || 0}`,
+         title: `${t("listingDetails.overview.bedrooms")} . ${property?.bedrooms || 0}`,
       },
       {
          id: 3,
          icon: icon_3,
-         title: `Bath . ${property?.bathrooms || 0}`,
+         title: `${t("listingDetails.overview.bathrooms")} . ${property?.bathrooms || 0}`,
       },
       {
          id: 4,
          icon: icon_4,
-         title: property?.operation_type === "rental" ? "Operación . Renta" : "Operación . Venta",
+         title: `${t("listingDetails.overview.operation")} . ${property?.operation_type === "rental" ? t("listingDetails.rent") : t("listingDetails.sale")}`,
       },
       {
          id: 5,
          icon: icon_5,
-         title: `Type . ${property?.property_type || "Inmueble"}`,
+         title: `${t("listingDetails.overview.type")} . ${property?.property_type || t("listingDetails.propertyFallback")}`,
       },
    ];
 
