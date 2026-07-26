@@ -3,7 +3,6 @@ import HeaderOne from "@/layouts/headers/HeaderOne"
 import Banner from "./Banner"
 import Feedback from "./Feedback"
 import BLockFeatureOne from "./BLockFeatureOne"
-import BLockFeatureThree from "./BLockFeatureThree"
 import Property from "./Property"
 import FancyBannerOne from "./FancyBannerOne"
 import AgentArea from "./AgentArea"
@@ -18,7 +17,6 @@ const HomeOne = () => {
       <HeaderOne style={false} />
       <Banner />
       <BLockFeatureOne />
-      <BLockFeatureThree />
       <Property />
       <FancyBannerOne style={false} />
       {/* <AgentArea style={false} /> */}
