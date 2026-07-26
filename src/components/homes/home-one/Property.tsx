@@ -12,6 +12,15 @@ const Property = () => {
    const { t } = useTranslation();
    const fallbackProperties = property_data.filter((items) => items.page === "home_1");
    const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(fallbackProperties);
+   const formatCardPrice = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
+      const currency = "currency" in item && item.currency ? item.currency : "MXN";
+      const amount = item.price.toLocaleString("es-MX", {
+         minimumFractionDigits: item.price_text ? 0 : 2,
+         maximumFractionDigits: 2,
+      });
+
+      return `$${amount} ${currency}`;
+   };
    const propertyHref = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
       return "href" in item && item.href ? item.href : "/listing_details_01";
    };
@@ -76,10 +85,7 @@ const Property = () => {
                               </ul>
                               <div className="pl-footer top-border d-flex align-items-center justify-content-between">
                                  <strong className="price fw-500 color-dark">
-                                    ${item.price.toLocaleString(undefined, {
-                                       minimumFractionDigits: item.price_text ? 0 : 2,
-                                       maximumFractionDigits: 2
-                                    })}{item.price_text &&<>/<sub>m</sub></>}
+                                    {formatCardPrice(item)}{item.price_text &&<>/<sub>m</sub></>}
                                  </strong>
                                  <Link href={propertyHref(item)} className="btn-four rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                               </div>
