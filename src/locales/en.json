@@ -72,7 +72,8 @@
     "inquiry": "Any Inquiry?",
     "feelFree": "Feel free",
     "toContact": "To contact Us.",
-    "sendMessage": "SEND MESSAGE"
+    "sendMessage": "SEND MESSAGE",
+    "addressTitle": "Our address"
   },
   "aboutSection": {
     "whoWeAre": "Who we are?",
@@ -161,6 +162,7 @@
     "mainTitle": "Questions? Feel Free to Reach Out Via Message.",
     "helpTitle": "We're always happy to help.",
     "hotlineTitle": "Our hotline number",
+    "addressTitle": "Our address",
     "liveChatTitle": "Live chat"
   },
   "aboutUs": {

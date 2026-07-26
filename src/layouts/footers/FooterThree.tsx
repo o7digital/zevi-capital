@@ -6,6 +6,8 @@ import FooterKeywords from "./FooterKeywords"
 
 import footerShape_1 from "@/assets/images/shape/shape_52.svg"
 
+const officeAddress = "Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cdad. López Mateos, Méx."
+
 const FooterThree = () => {
    return (
       <div className="footer-three">
@@ -19,7 +21,7 @@ const FooterThree = () => {
                               <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
-                        <p className="mb-45 lg-mb-30">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>
+                        <p className="mb-45 lg-mb-30">{officeAddress}</p>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>
                            <li><Link href="#"><i className="fa-brands fa-twitter"></i></Link></li>
@@ -61,7 +63,7 @@ const FooterThree = () => {
                      <li><Link href="/faq">Privacy &amp; Terms</Link></li>
                      <li><Link href="/contact">Contact Us</Link></li>
                   </ul>
-                  <p className="mb-15 text-center text-lg-start fs-16 order-md-first">Copyright @2024 Homy inc.</p>
+                  <p className="mb-15 text-center text-lg-start fs-16 order-md-first">ZeVi Capital</p>
                </div>
             </div>
          </div>

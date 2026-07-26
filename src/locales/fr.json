@@ -72,7 +72,8 @@
     "inquiry": "Une Question ?",
     "feelFree": "N'hésitez pas",
     "toContact": "à nous contacter.",
-    "sendMessage": "ENVOYER UN MESSAGE"
+    "sendMessage": "ENVOYER UN MESSAGE",
+    "addressTitle": "Notre adresse"
   },
   "aboutSection": {
     "whoWeAre": "Qui sommes-nous ?",
@@ -161,6 +162,7 @@
     "mainTitle": "Des questions ? N'hésitez pas à nous contacter par message.",
     "helpTitle": "Nous sommes toujours heureux de vous aider.",
     "hotlineTitle": "Notre numéro direct",
+    "addressTitle": "Notre adresse",
     "liveChatTitle": "Chat en direct"
   },
   "aboutUs": {

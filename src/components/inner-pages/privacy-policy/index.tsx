@@ -10,7 +10,7 @@ const content = {
     updated: "Última actualización: 1 de julio de 2026",
     intro: "ZeVi Capital respeta su privacidad y trata los datos personales de forma responsable, transparente y segura. Esta política explica qué información recopilamos, para qué la usamos y qué derechos puede ejercer.",
     sections: [
-      ["Responsable y contacto", "ZeVi Capital, con domicilio en Montes Urales 755, piso 18, Lomas de Chapultepec, 11500 Ciudad de México, México, es responsable del tratamiento de los datos recabados a través de este sitio. Para asuntos de privacidad: info@zevicapital.com."],
+      ["Responsable y contacto", "ZeVi Capital, con domicilio en Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cdad. López Mateos, Méx., es responsable del tratamiento de los datos recabados a través de este sitio. Para asuntos de privacidad: info@zevicapital.com."],
       ["Datos que podemos recopilar", "Podemos recopilar nombre, correo electrónico, teléfono, empresa, interés inmobiliario, información proporcionada en formularios, comunicaciones, datos técnicos de navegación, dirección IP, dispositivo y cookies necesarias o analíticas."],
       ["Finalidades", "Usamos la información para responder consultas, prestar servicios inmobiliarios, evaluar oportunidades, coordinar operaciones, dar seguimiento comercial, mejorar el sitio, proteger nuestros sistemas, cumplir obligaciones legales y, con autorización cuando corresponda, enviar comunicaciones relevantes."],
       ["Base legal y consentimiento", "Tratamos datos con base en el consentimiento, la ejecución de medidas precontractuales o contractuales, obligaciones legales e intereses legítimos, según la jurisdicción aplicable. Puede retirar su consentimiento cuando el tratamiento dependa de él."],
@@ -28,7 +28,7 @@ const content = {
     title: "Privacy Policy", updated: "Last updated: July 1, 2026",
     intro: "ZeVi Capital respects your privacy and handles personal data responsibly, transparently, and securely. This policy explains what we collect, why we use it, and the rights available to you.",
     sections: [
-      ["Controller and contact", "ZeVi Capital, located at Montes Urales 755, 18th floor, Lomas de Chapultepec, 11500 Mexico City, Mexico, controls data collected through this website. Privacy contact: info@zevicapital.com."],
+      ["Controller and contact", "ZeVi Capital, located at Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cdad. López Mateos, Méx., controls data collected through this website. Privacy contact: info@zevicapital.com."],
       ["Information we collect", "We may collect your name, email, telephone, company, real estate interests, form submissions, communications, IP address, device and browsing data, and necessary or analytics cookies."],
       ["Purposes", "We use information to answer inquiries, provide real estate services, assess opportunities, coordinate transactions, follow up commercially, improve and secure the website, comply with law, and—with consent where required—send relevant communications."],
       ["Legal bases", "Depending on the jurisdiction, processing relies on consent, pre-contractual or contractual necessity, legal obligations, and legitimate interests. Consent may be withdrawn where processing depends on it."],
@@ -45,7 +45,7 @@ const content = {
     title: "Politique de confidentialité", updated: "Dernière mise à jour : 1er juillet 2026",
     intro: "ZeVi Capital respecte votre vie privée et traite les données personnelles de manière responsable, transparente et sécurisée. Cette politique précise les données collectées, leur utilisation et vos droits.",
     sections: [
-      ["Responsable et contact", "ZeVi Capital, située Montes Urales 755, 18e étage, Lomas de Chapultepec, 11500 Mexico, Mexique, est responsable des données collectées via ce site. Contact : info@zevicapital.com."],
+      ["Responsable et contact", "ZeVi Capital, située Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cdad. López Mateos, Méx., est responsable des données collectées via ce site. Contact : info@zevicapital.com."],
       ["Données collectées", "Nous pouvons collecter nom, courriel, téléphone, entreprise, intérêts immobiliers, formulaires, communications, adresse IP, appareil, navigation et cookies essentiels ou analytiques."],
       ["Finalités", "Les données servent à répondre aux demandes, fournir nos services immobiliers, évaluer des opportunités, coordonner des opérations, assurer le suivi commercial, améliorer et sécuriser le site, respecter la loi et, avec votre accord lorsque requis, communiquer avec vous."],
       ["Bases juridiques", "Selon la juridiction, le traitement repose sur le consentement, les mesures précontractuelles ou contractuelles, les obligations légales et les intérêts légitimes. Le consentement peut être retiré lorsqu’il constitue la base du traitement."],
