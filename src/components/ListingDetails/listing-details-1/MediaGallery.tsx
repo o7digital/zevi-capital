@@ -101,16 +101,70 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
         </div>
 
         <div className="col-lg-2">
-          <div className={`carousel-indicators position-relative p-15 w-100 h-100 ${style ? "" : "border-15 bg-white shadow4"}`}>
+          <div className={`media-gallery__thumbs p-15 w-100 h-100 ${style ? "" : "border-15 bg-white shadow4"}`}>
             {thumbImages.slice(0, 8).map((image, i) => (
               <button key={i} type="button" onClick={() => setActiveIndex(i)} className={i === activeIndex ? "active" : ""}
                 aria-current={i === activeIndex ? "true" : undefined} aria-label={`Slide ${i + 1}`}>
-                <Image src={image.url} alt={image.alt} className="w-100 border-10" width={160} height={120} />
+                <Image src={image.url} alt={image.alt} className="border-10" width={190} height={135} />
               </button>
             ))}
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .media-gallery__thumbs {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          max-height: 760px;
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+        .media-gallery__thumbs button {
+          display: block;
+          width: 100%;
+          min-height: 94px;
+          padding: 0;
+          border: 2px solid transparent;
+          border-radius: 12px;
+          background: transparent;
+          overflow: hidden;
+          opacity: 0.78;
+          transition: border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+        }
+        .media-gallery__thumbs button:hover,
+        .media-gallery__thumbs button.active {
+          border-color: #c8a96b;
+          opacity: 1;
+          transform: translateY(-1px);
+        }
+        .media-gallery__thumbs :global(img) {
+          display: block;
+          width: 100%;
+          height: 112px;
+          object-fit: cover;
+        }
+        .carousel-inner :global(img) {
+          aspect-ratio: 1060 / 700;
+          object-fit: cover;
+        }
+        @media (max-width: 991px) {
+          .media-gallery__thumbs {
+            flex-direction: row;
+            height: auto !important;
+            max-height: none;
+            overflow-x: auto;
+            padding: 12px !important;
+          }
+          .media-gallery__thumbs button {
+            flex: 0 0 128px;
+            min-height: 86px;
+          }
+          .media-gallery__thumbs :global(img) {
+            height: 86px;
+          }
+        }
+      `}</style>
     </div>
   )
 }
