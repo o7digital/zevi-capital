@@ -83,7 +83,7 @@ function fileId(value: DirectusFileValue | string | { id?: string } | undefined)
 
 function assetUrl(value: DirectusFileValue | string | { id?: string } | undefined) {
    const id = fileId(value);
-   return id && DIRECTUS_URL ? `${DIRECTUS_URL}/assets/${id}` : undefined;
+   return id && DIRECTUS_URL ? `${DIRECTUS_URL}/assets/${id}?format=webp&quality=82` : undefined;
 }
 
 function propertyImages(property: DirectusProperty) {
