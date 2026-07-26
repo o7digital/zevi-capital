@@ -4,6 +4,7 @@ import propertyIcon_3 from "@/assets/images/icon/icon_06.svg";
 
 export interface DirectusPropertyCard {
    id: number | string;
+   href?: string;
    tag: string;
    tag_bg?: string;
    title: string;
@@ -30,7 +31,7 @@ interface DirectusFileValue {
    image?: string | { id?: string };
 }
 
-interface DirectusProperty {
+export interface DirectusProperty {
    id: number | string;
    title?: string;
    description?: string;
@@ -49,6 +50,14 @@ interface DirectusProperty {
    image?: string | { id?: string };
    images?: DirectusFileValue[];
    property_images?: DirectusFileValue[];
+   photos?: DirectusFileValue[];
+   easybroker_id?: string;
+   property_type?: string;
+   operation_type?: string;
+   currency?: string;
+   public_url?: string;
+   latitude?: number | string;
+   longitude?: number | string;
 }
 
 const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL?.replace(/\/$/, "");
@@ -78,7 +87,7 @@ function assetUrl(value: DirectusFileValue | string | { id?: string } | undefine
 }
 
 function propertyImages(property: DirectusProperty) {
-   const relatedImages = [...(property.images || []), ...(property.property_images || [])];
+   const relatedImages = [...(property.photos || []), ...(property.images || []), ...(property.property_images || [])];
    const urls = [
       assetUrl(property.cover_image),
       assetUrl(property.image),
@@ -92,16 +101,41 @@ function propertyImages(property: DirectusProperty) {
    }));
 }
 
+export function directusAssetUrl(value: DirectusFileValue | string | { id?: string } | undefined) {
+   return assetUrl(value);
+}
+
+export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): DirectusPropertyCard {
+   return {
+      id: property.id,
+      href: `/listing_details_01?id=${property.id}`,
+      tag: property.tag || property.listing_status || "FOR SALE",
+      tag_bg: property.tag_bg,
+      title: property.title || "Untitled property",
+      address: property.address || property.location || "",
+      property_info: [
+         { icon: propertyIcon_1, feature: "sqft", total_feature: toNumber(property.sqft) },
+         { icon: propertyIcon_2, feature: "bed", total_feature: toNumber(property.bedrooms) },
+         { icon: propertyIcon_3, feature: "bath", total_feature: toNumber(property.bathrooms) },
+      ],
+      price: toNumber(property.price),
+      price_text: property.price_text,
+      carousel: `directus-${property.id || index}`,
+      carousel_thumb: propertyImages(property),
+   };
+}
+
 export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]> {
    if (!DIRECTUS_URL) return [];
 
    try {
       const params = new URLSearchParams({
-         fields: "*,images.*,property_images.*,property_images.image.*",
+         fields: "*,photos.*,photos.image.*,images.*,property_images.*,property_images.image.*",
          limit: "6",
-         sort: "-date_created",
+         sort: "-id",
       });
       params.set("filter[status][_eq]", "published");
+      params.set("filter[cover_image][_nnull]", "true");
 
       const response = await fetch(`${DIRECTUS_URL}/items/properties?${params.toString()}`, {
          headers: { Accept: "application/json" },
@@ -112,23 +146,30 @@ export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]>
       const payload = await response.json();
       const items = Array.isArray(payload?.data) ? payload.data : [];
 
-      return items.map((property: DirectusProperty, index: number) => ({
-         id: property.id,
-         tag: property.tag || property.listing_status || "FOR SALE",
-         tag_bg: property.tag_bg,
-         title: property.title || "Untitled property",
-         address: property.address || property.location || "",
-         property_info: [
-            { icon: propertyIcon_1, feature: "sqft", total_feature: toNumber(property.sqft) },
-            { icon: propertyIcon_2, feature: "bed", total_feature: toNumber(property.bedrooms) },
-            { icon: propertyIcon_3, feature: "bath", total_feature: toNumber(property.bathrooms) },
-         ],
-         price: toNumber(property.price),
-         price_text: property.price_text,
-         carousel: `directus-${property.id || index}`,
-         carousel_thumb: propertyImages(property),
-      })).filter((property: DirectusPropertyCard) => property.carousel_thumb.length > 0);
+      return items.map(mapDirectusPropertyCard).filter((property: DirectusPropertyCard) => property.carousel_thumb.length > 0);
    } catch {
       return [];
+   }
+}
+
+export async function fetchDirectusProperty(id: string): Promise<DirectusProperty | null> {
+   if (!DIRECTUS_URL || !id) return null;
+
+   try {
+      const params = new URLSearchParams({
+         fields: "*,cover_image.*,photos.*,photos.image.*",
+      });
+      params.set("deep[photos][_sort]", "sort_order");
+
+      const response = await fetch(`${DIRECTUS_URL}/items/properties/${id}?${params.toString()}`, {
+         headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) return null;
+
+      const payload = await response.json();
+      return payload?.data || null;
+   } catch {
+      return null;
    }
 }

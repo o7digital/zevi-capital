@@ -1,4 +1,6 @@
 "use client"
+import { useEffect, useState } from "react"
+import { useSearchParams } from "next/navigation"
 import NiceSelect from "@/ui/NiceSelect"
 import MediaGallery from "./MediaGallery"
 import Review from "@/components/inner-pages/agency/agency-details/Review"
@@ -14,27 +16,51 @@ import CommonSimilarProperty from "../listing-details-common/CommonSimilarProper
 import CommonProPertyScore from "../listing-details-common/CommonProPertyScore"
 import CommonLocation from "../listing-details-common/CommonLocation"
 import CommonReviewForm from "../listing-details-common/CommonReviewForm"
+import { DirectusProperty, directusAssetUrl, fetchDirectusProperty } from "@/lib/directusProperties"
 
 const ListingDetailsOneArea = () => {
+   const searchParams = useSearchParams();
+   const propertyId = searchParams.get("id") || "";
+   const [property, setProperty] = useState<DirectusProperty | null>(null);
 
    const selectHandler = (e: any) => { };
+
+   useEffect(() => {
+      let isMounted = true;
+
+      fetchDirectusProperty(propertyId).then((directusProperty) => {
+         if (isMounted) {
+            setProperty(directusProperty);
+         }
+      });
+
+      return () => {
+         isMounted = false;
+      };
+   }, [propertyId]);
+
+   const galleryImages = [
+      ...(property?.photos || []),
+      ...(property?.cover_image ? [{ image: property.cover_image }] : []),
+   ].map((image, index) => {
+      const url = directusAssetUrl(image);
+      return url ? { url, alt: `${property?.title || "Propiedad"} ${index + 1}` } : null;
+   }).filter((image): image is { url: string; alt: string } => Boolean(image));
 
    return (
       <div className="listing-details-one theme-details-one bg-pink pt-180 lg-pt-150 pb-150 xl-pb-120">
          <div className="container">
-            <CommonBanner />
-            <MediaGallery />
+            <CommonBanner property={property} />
+            <MediaGallery images={galleryImages} />
             <div className="property-feature-list bg-white shadow4 border-20 p-40 mt-50 mb-60">
                <h4 className="sub-title-one mb-40 lg-mb-20">Property Overview</h4>
-               <CommonPropertyOverview />
+               <CommonPropertyOverview property={property} />
             </div>
             <div className="row">
                <div className="col-xl-8">
                   <div className="property-overview mb-50 bg-white shadow4 border-20 p-40">
-                     <h4 className="mb-20">Overview</h4>
-                     <p className="fs-20 lh-lg">Lorem ipsum dolor sit amet consectetur. Et velit varius ipsum tempor vel
-                        dignissim tincidunt. Aliquam accumsan laoreet ultricies tincidunt faucibus fames augue in
-                        sociis. Nisl enim integer neque nec.</p>
+                     <h4 className="mb-20">Descripción</h4>
+                     <p className="fs-20 lh-lg" style={{ whiteSpace: "pre-line" }}>{property?.description || "Información de la propiedad próximamente."}</p>
                   </div>
                   <div className="property-feature-accordion bg-white shadow4 border-20 p-40 mb-50">
                      <h4 className="mb-20">Property Features</h4>

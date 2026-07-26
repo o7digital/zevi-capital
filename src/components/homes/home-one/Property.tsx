@@ -12,6 +12,9 @@ const Property = () => {
    const { t } = useTranslation();
    const fallbackProperties = property_data.filter((items) => items.page === "home_1");
    const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(fallbackProperties);
+   const propertyHref = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
+      return "href" in item && item.href ? item.href : "/listing_details_01";
+   };
 
    useEffect(() => {
       let isMounted = true;
@@ -52,7 +55,7 @@ const Property = () => {
                                     <div className="carousel-inner">
                                        {item.carousel_thumb.map((image, i) => (
                                           <div key={i} className={`carousel-item ${image.active}`} data-bs-interval="1000000">
-                                             <Link href="/listing_details_01" className="d-block"><Image src={image.img} className="w-100" alt={`${item.title} - ${item.address}`} width={410} height={280} /></Link>
+                                             <Link href={propertyHref(item)} className="d-block"><Image src={image.img} className="w-100" alt={item.title} width={410} height={280} /></Link>
                                           </div>
                                        ))}
                                     </div>
@@ -61,7 +64,7 @@ const Property = () => {
                            </div>
 
                            <div className="property-info p-25">
-                              <Link href="/listing_details_01" className="title tran3s">{item.title}</Link>
+                              <Link href={propertyHref(item)} className="title tran3s">{item.title}</Link>
                               <div className="address">{item.address}</div>
                               <ul className="style-none feature d-flex flex-wrap align-items-center justify-content-between">
                                  {item.property_info.map((info, index) => (
@@ -78,7 +81,7 @@ const Property = () => {
                                        maximumFractionDigits: 2
                                     })}{item.price_text &&<>/<sub>m</sub></>}
                                  </strong>
-                                 <Link href="/listing_details_01" className="btn-four rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
+                                 <Link href={propertyHref(item)} className="btn-four rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                               </div>
                            </div>
                         </div>
