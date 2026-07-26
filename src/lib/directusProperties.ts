@@ -16,6 +16,7 @@ export interface DirectusPropertyCard {
    }[];
    price: number;
    price_text?: string;
+   currency?: string;
    carousel: string;
    data_delay_time?: string;
    carousel_thumb: {
@@ -120,6 +121,7 @@ export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): 
       ],
       price: toNumber(property.price),
       price_text: property.price_text,
+      currency: property.currency || "MXN",
       carousel: `directus-${property.id || index}`,
       carousel_thumb: propertyImages(property),
    };
