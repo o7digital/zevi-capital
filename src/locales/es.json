@@ -17,11 +17,12 @@
     "search": "BUSCAR"
   },
   "searchDropdown": {
-    "buyApartments": "Comprar apartamentos",
-    "rentCondos": "Rentar condominios",
-    "sellHouses": "Vender casas",
-    "rentIndustrial": "Rentar industrial",
-    "sellVillas": "Vender villas",
+    "buyProperty": "Comprar propiedad",
+    "rentProperty": "Rentar propiedad",
+    "sellProperty": "Vender propiedad",
+    "commercialSpaces": "Locales comerciales",
+    "industrialProperties": "Inmuebles industriales",
+    "investmentLand": "Terrenos para inversión",
     "searchNow": "Buscar ahora"
   },
   "features": {
