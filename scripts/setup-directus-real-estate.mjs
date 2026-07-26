@@ -82,15 +82,27 @@ async function publicRoleId() {
   return payload?.data?.[0]?.id || null;
 }
 
+async function publicPolicyId() {
+  const payload = await directus("/policies?limit=100");
+  const publicPolicy = payload?.data?.find((policy) => policy.name === "$t:public_label" || policy.icon === "public");
+  return publicPolicy?.id || null;
+}
+
 async function allowPublicRead(collection) {
   const role = await publicRoleId();
+  const policy = await publicPolicyId();
   const existing = await directus(`/permissions?filter[collection][_eq]=${collection}&filter[action][_eq]=read&limit=100`);
-  if (existing?.data?.some((permission) => permission.role === role)) return;
+  if (existing?.data?.some((permission) => permission.role === role || permission.policy === policy)) return;
+  if (!role && !policy) {
+    console.warn(`Skipping public read permission for ${collection}: public role/policy not found.`);
+    return;
+  }
 
   await directus("/permissions", {
     method: "POST",
     body: JSON.stringify({
-      role,
+      ...(role ? { role } : {}),
+      ...(policy ? { policy } : {}),
       collection,
       action: "read",
       permissions: {},
@@ -118,8 +130,95 @@ await ensureField("properties", "sqft", "integer");
 await ensureField("properties", "bedrooms", "integer");
 await ensureField("properties", "bathrooms", "integer");
 await ensureField("properties", "price_text", "string");
+await ensureField("properties", "seller_commission_rate", "decimal", { numeric_precision: 8, numeric_scale: 6 }, {
+  interface: "input",
+  note: "Internal. Seller commission rate as decimal. Example: 0.01 = 1%.",
+  width: "half",
+});
+await ensureField("properties", "seller_commission_amount", "decimal", { numeric_precision: 14, numeric_scale: 2 }, {
+  interface: "input",
+  note: "Internal. Property price multiplied by seller commission rate.",
+  width: "half",
+  readonly: true,
+});
+await ensureField("properties", "team_contribution_rate", "decimal", { numeric_precision: 8, numeric_scale: 6 }, {
+  interface: "input",
+  note: "Internal. Share of seller commission allocated to the socios/team pool. Example: 0.10 = 10%.",
+  width: "half",
+});
+await ensureField("properties", "team_contribution_amount", "decimal", { numeric_precision: 14, numeric_scale: 2 }, {
+  interface: "input",
+  note: "Internal. Amount allocated to the socios/team pool.",
+  width: "half",
+  readonly: true,
+});
+await ensureField("properties", "team_contribution_monthly", "decimal", { numeric_precision: 14, numeric_scale: 2 }, {
+  interface: "input",
+  note: "Internal. Team contribution divided by 12 for annualized planning.",
+  width: "half",
+  readonly: true,
+});
+await ensureField("properties", "commission_status", "string", { default_value: "pending" }, {
+  interface: "select-dropdown",
+  options: {
+    choices: [
+      { text: "Pending", value: "pending" },
+      { text: "Agreed", value: "agreed" },
+      { text: "Paid", value: "paid" },
+      { text: "Cancelled", value: "cancelled" },
+    ],
+  },
+  width: "half",
+});
+await ensureField("properties", "commission_notes", "text", {}, {
+  interface: "input-multiline",
+  note: "Internal notes about commission and socios/team allocation.",
+});
 await ensureField("properties", "cover_image", "uuid", { foreign_key_table: "directus_files", foreign_key_column: "id" }, { interface: "file-image" });
 await ensureField("properties", "image", "uuid", { foreign_key_table: "directus_files", foreign_key_column: "id" }, { interface: "file-image" });
+
+await ensureCollection("team_members", { icon: "groups", note: "Internal socios and team members participating in commission distribution", display_template: "{{name}}" });
+await ensureField("team_members", "name", "string", { is_nullable: false }, { interface: "input", required: true });
+await ensureField("team_members", "role", "string");
+await ensureField("team_members", "email", "string");
+await ensureField("team_members", "active", "boolean", { default_value: true }, { interface: "boolean", width: "half" });
+await ensureField("team_members", "default_share_rate", "decimal", { numeric_precision: 8, numeric_scale: 6 }, {
+  interface: "input",
+  note: "Default share of the team pool for this member. Example: 0.25 = 25%.",
+  width: "half",
+});
+
+await ensureCollection("property_commission_shares", {
+  icon: "payments",
+  note: "Internal per-property distribution of the socios/team contribution",
+  display_template: "{{property_id}} - {{team_member_id}}",
+});
+await ensureField("property_commission_shares", "property_id", "integer", { foreign_key_table: "properties", foreign_key_column: "id" }, { interface: "select-dropdown-m2o", special: ["m2o"] });
+await ensureField("property_commission_shares", "team_member_id", "integer", { foreign_key_table: "team_members", foreign_key_column: "id" }, { interface: "select-dropdown-m2o", special: ["m2o"] });
+await ensureField("property_commission_shares", "share_rate", "decimal", { numeric_precision: 8, numeric_scale: 6 }, {
+  interface: "input",
+  note: "Share of the team pool assigned to this member. Example: 0.50 = 50%.",
+  width: "half",
+});
+await ensureField("property_commission_shares", "share_amount", "decimal", { numeric_precision: 14, numeric_scale: 2 }, {
+  interface: "input",
+  note: "Calculated amount for this member from the team contribution.",
+  width: "half",
+  readonly: true,
+});
+await ensureField("property_commission_shares", "status", "string", { default_value: "pending" }, {
+  interface: "select-dropdown",
+  options: {
+    choices: [
+      { text: "Pending", value: "pending" },
+      { text: "Approved", value: "approved" },
+      { text: "Paid", value: "paid" },
+      { text: "Cancelled", value: "cancelled" },
+    ],
+  },
+  width: "half",
+});
+await ensureField("property_commission_shares", "notes", "text", {}, { interface: "input-multiline" });
 
 await ensureCollection("property_images", { icon: "image", note: "Images attached to public real estate listings" });
 await ensureField("property_images", "property_id", "uuid", { foreign_key_table: "properties", foreign_key_column: "id" }, { interface: "select-dropdown-m2o", special: ["m2o"] });
