@@ -1,5 +1,6 @@
 "use client"
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import spanishMessages from '@/locales/es.json'
 
 type Locale = 'en' | 'fr' | 'es'
 
@@ -10,12 +11,10 @@ interface TranslationContextType {
 }
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined)
-const DEFAULT_LOCALE: Locale = 'es'
-const LOCALE_STORAGE_KEY = 'preferred_locale'
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE)
-  const [messages, setMessages] = useState<any>({})
+  const [locale, setLocaleState] = useState<Locale>('es')
+  const [messages, setMessages] = useState<any>(spanishMessages)
 
   const isValidLocale = (value: string): value is Locale => {
     return value === 'en' || value === 'fr' || value === 'es'
@@ -23,13 +22,13 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Load saved locale from localStorage
-    const savedLocale = localStorage.getItem(LOCALE_STORAGE_KEY)
+    const savedLocale = localStorage.getItem('locale')
     if (savedLocale && isValidLocale(savedLocale)) {
       setLocaleState(savedLocale)
     } else {
-      // Default website language: Spanish
-      setLocaleState(DEFAULT_LOCALE)
-      localStorage.setItem(LOCALE_STORAGE_KEY, DEFAULT_LOCALE)
+      // Par défaut en espagnol si aucune langue sauvegardée
+      setLocaleState('es')
+      localStorage.setItem('locale', 'es')
     }
   }, [])
 
@@ -42,7 +41,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale)
-    localStorage.setItem(LOCALE_STORAGE_KEY, newLocale)
+    localStorage.setItem('locale', newLocale)
   }
 
   const t = (key: string): string => {

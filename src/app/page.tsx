@@ -2,24 +2,30 @@ import HomeOne from "@/components/homes/home-one";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "Expansión Empresarial e Inversión Inmobiliaria en México | ZeVi Capital",
-  description: "ZeVi Capital conecta empresas, propietarios e inversionistas con oportunidades inmobiliarias estratégicas en México. Expansión empresarial, manejo de activos, venta, renta e inversión inmobiliaria.",
-  keywords: ["expansión empresarial México", "inversión inmobiliaria México", "consultoría inmobiliaria México", "manejo de activos inmobiliarios", "propiedades comerciales México", "venta de inmuebles comerciales", "renta de propiedades comerciales", "ZeVi Capital"],
+  title: "Inversión Inmobiliaria en Zona Esmeralda y Estado de México | ZeVi Capital",
+  description: "Consultoría e inversión inmobiliaria en Zona Esmeralda, Atizapán, Naucalpan y Huixquilucan. Compra, venta, renta, expansión empresarial y manejo de activos.",
+  keywords: ["inversión inmobiliaria Zona Esmeralda", "inmobiliaria Zona Esmeralda", "propiedades Estado de México", "bienes raíces Atizapán", "inmuebles Naucalpan", "inversión inmobiliaria Huixquilucan", "locales comerciales Zona Esmeralda", "manejo de activos inmobiliarios", "ZeVi Capital"],
   alternates: { canonical: "https://www.zevicapital.com/" },
   openGraph: {
-    title: "Expansión Empresarial e Inversión Inmobiliaria en México | ZeVi Capital",
-    description: "Expansión empresarial, manejo de activos, venta, renta e inversión inmobiliaria en México.",
+    title: "Inversión Inmobiliaria en Zona Esmeralda y Estado de México | ZeVi Capital",
+    description: "Compra, venta, renta e inversión inmobiliaria en Zona Esmeralda, Atizapán, Naucalpan y Huixquilucan.",
     url: "https://www.zevicapital.com/",
     siteName: "ZeVi Capital",
     type: "website",
     images: [
       {
-        url: "/images/assets/ogg.png",
-        width: 1200,
-        height: 630,
+        url: "/slider/cdmx.webp",
+        width: 2400,
+        height: 1611,
         alt: "ZeVi Capital",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Inversión Inmobiliaria en Zona Esmeralda y Estado de México | ZeVi Capital",
+    description: "Compra, venta, renta e inversión inmobiliaria en Zona Esmeralda, Atizapán, Naucalpan y Huixquilucan.",
+    images: ["/slider/cdmx.webp"],
   },
 };
 const index = () => {

@@ -1,10 +1,28 @@
-'use client'
 import "../styles/index.scss";
-import { Provider } from "react-redux";
-import store from "@/redux/store";
-import { TranslationProvider } from "@/contexts/TranslationContext";
+import type { Metadata, Viewport } from "next";
 import StructuredData from "@/components/seo/StructuredData";
 import Script from "next/script";
+import AppProviders from "./providers";
+import OliviaAI from "@/components/common/OliviaAI";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.zevicapital.com"),
+  title: {
+    default: "ZeVi Capital | Consultoría Inmobiliaria Estratégica",
+    template: "%s",
+  },
+  applicationName: "ZeVi Capital",
+  authors: [{ name: "ZeVi Capital", url: "https://www.zevicapital.com" }],
+  creator: "ZeVi Capital",
+  publisher: "ZeVi Capital",
+  formatDetection: { telephone: false },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0D1A1C",
+};
 
 export default function RootLayout({
   children,
@@ -20,15 +38,6 @@ export default function RootLayout({
         <StructuredData />
         {/* For IE  */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        {/* For Resposive Device */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* For Window Tab Color */}
-        {/* Chrome, Firefox OS and Opera */}
-        <meta name="theme-color" content="#0D1A1C" />
-        {/* Windows Phone */}
-        <meta name="msapplication-navbutton-color" content="#0D1A1C" />
-        {/* iOS Safari */}
-        <meta name="apple-mobile-web-app-status-bar-style" content="#0D1A1C" />
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" />
       </head>
@@ -46,11 +55,10 @@ export default function RootLayout({
           `}
         </Script>
         <div className="main-page-wrapper">
-          <Provider store={store}>
-            <TranslationProvider>
+          <AppProviders>
               {children}
-            </TranslationProvider>
-          </Provider>
+              <OliviaAI />
+          </AppProviders>
         </div>
       </body>
     </html>

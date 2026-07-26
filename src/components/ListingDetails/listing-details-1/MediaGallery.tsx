@@ -25,7 +25,16 @@ const gallery_data: DataType = {
 
 const { big_carousel, small_carousel } = gallery_data;
 
-const MediaGallery = ({ style }: any) => {
+interface GalleryImage {
+  url: string;
+  alt: string;
+}
+
+const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: GalleryImage[] }) => {
+  const hasDirectusImages = images.length > 0;
+  const largeImages = hasDirectusImages ? images : big_carousel.map((image, index) => ({ url: image, alt: `Property image ${index + 1}` }));
+  const thumbImages = hasDirectusImages ? images : small_carousel.map((image, index) => ({ url: image, alt: `Property thumbnail ${index + 1}` }));
+
   return (
     <div className="media-gallery mt-100 xl-mt-80 lg-mt-60">
       <div id="media_slider" className="carousel slide row">
@@ -33,7 +42,7 @@ const MediaGallery = ({ style }: any) => {
           <div className={` bg-white border-20 md-mb-20 ${style ? "" : "shadow4 p-30"}`}>
             <div className="position-relative z-1 overflow-hidden border-20">
               <div className="img-fancy-btn border-10 fw-500 fs-16 color-dark">
-                Sell all 37 Photos
+                Ver {largeImages.length} fotos
                 <Fancybox
                   options={{
                     Carousel: {
@@ -41,16 +50,16 @@ const MediaGallery = ({ style }: any) => {
                     },
                   }}
                 >
-                  {largeThumb.map((thumb: any, index: any) => (
-                    <a key={index} className="d-block" data-fancybox="img2" href={`/assets/images/listing/img_large_0${thumb}.jpg`}></a>
+                  {largeImages.map((image, index) => (
+                    <a key={index} className="d-block" data-fancybox="img2" href={typeof image.url === "string" ? image.url : ""}></a>
                   ))}
                 </Fancybox>
               </div>
 
               <div className="carousel-inner">
-                {big_carousel.map((carousel, index) => (
-                  <div key={index} className="carousel-item active">
-                    <Image src={carousel} alt="" className="w-100 border-20" />
+                {largeImages.map((image, index) => (
+                  <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                    <Image src={image.url} alt={image.alt} className="w-100 border-20" width={1060} height={700} />
                   </div>
                 ))}
               </div>
@@ -70,10 +79,10 @@ const MediaGallery = ({ style }: any) => {
 
         <div className="col-lg-2">
           <div className={`carousel-indicators position-relative p-15 w-100 h-100 ${style ? "" : "border-15 bg-white shadow4"}`}>
-            {small_carousel.map((carousel, i) => (
-              <button key={i} type="button" data-bs-target="#media_slider" data-bs-slide-to={`${i}`} className="active"
-                aria-current="true" aria-label="Slide 1">
-                <Image src={carousel} alt="" className="w-100 border-10" />
+            {thumbImages.slice(0, 8).map((image, i) => (
+              <button key={i} type="button" data-bs-target="#media_slider" data-bs-slide-to={`${i}`} className={i === 0 ? "active" : ""}
+                aria-current={i === 0 ? "true" : undefined} aria-label={`Slide ${i + 1}`}>
+                <Image src={image.url} alt={image.alt} className="w-100 border-10" width={160} height={120} />
               </button>
             ))}
           </div>

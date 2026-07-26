@@ -5,6 +5,7 @@ import icon_2 from "@/assets/images/icon/icon_48.svg"
 import icon_3 from "@/assets/images/icon/icon_49.svg"
 import icon_4 from "@/assets/images/icon/icon_50.svg"
 import icon_5 from "@/assets/images/icon/icon_51.svg"
+import { DirectusProperty } from "@/lib/directusProperties";
 
 interface DataType {
    id: number;
@@ -40,7 +41,35 @@ const property_overview_data: DataType[] = [
    },
 ]
 
-const CommonPropertyOverview = () => {
+const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | null }) => {
+   const property_overview_data: DataType[] = [
+      {
+         id: 1,
+         icon: icon_1,
+         title: `Sqft . ${property?.sqft || 0}`,
+      },
+      {
+         id: 2,
+         icon: icon_2,
+         title: `Bed . ${property?.bedrooms || 0}`,
+      },
+      {
+         id: 3,
+         icon: icon_3,
+         title: `Bath . ${property?.bathrooms || 0}`,
+      },
+      {
+         id: 4,
+         icon: icon_4,
+         title: property?.operation_type === "rental" ? "Operación . Renta" : "Operación . Venta",
+      },
+      {
+         id: 5,
+         icon: icon_5,
+         title: `Type . ${property?.property_type || "Inmueble"}`,
+      },
+   ];
+
    return (
       <ul className="style-none d-flex flex-wrap align-items-center justify-content-between">
          {property_overview_data.map((item) => (
