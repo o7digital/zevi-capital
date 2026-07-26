@@ -121,7 +121,7 @@ const HeaderOne = ({ style }: any) => {
                               </div>
                            </li>
                            <li className="d-none d-lg-block">
-                              <Link href="#" data-bs-toggle="modal" data-bs-target="#loginModal" className="btn-one" style={{ background: 'rgb(48, 92, 115)', borderColor: 'rgb(48, 92, 115)', color: '#ffffff' }}><i className="fa-regular fa-lock"></i> <span>{t('nav.login')}</span></Link>
+                              <Link href="https://zevicapital-directus-backend-lc-inmobiliaria.up.railway.app/admin" target="_blank" rel="noopener noreferrer" className="btn-one" style={{ background: 'rgb(48, 92, 115)', borderColor: 'rgb(48, 92, 115)', color: '#ffffff' }}><i className="fa-regular fa-lock"></i> <span>{t('nav.login')}</span></Link>
                            </li>
                         </ul>
                      </div>
