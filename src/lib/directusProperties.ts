@@ -131,7 +131,7 @@ export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]>
    try {
       const params = new URLSearchParams({
          fields: "*,photos.*,photos.image.*,images.*,property_images.*,property_images.image.*",
-         limit: "6",
+         limit: "-1",
          sort: "-id",
       });
       params.set("filter[status][_eq]", "published");
