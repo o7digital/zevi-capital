@@ -9,7 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         "/about_us_01",
         "/services",
         "/insurance",
-        "/insights",
         "/contact",
         "/faq",
         "/privacy-policy",
@@ -17,6 +16,7 @@ export default function robots(): MetadataRoute.Robots {
       ],
       disallow: [
         "/dashboard/",
+        "/insights",
         "/home-",
         "/listing_",
         "/listing_details_",
