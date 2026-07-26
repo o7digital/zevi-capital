@@ -63,6 +63,18 @@ export interface DirectusProperty {
 
 const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL?.replace(/\/$/, "");
 
+export function propertySlug(property: Pick<DirectusProperty, "id" | "title"> | Pick<DirectusPropertyCard, "id" | "title">) {
+   const title = property.title || "propiedad";
+   const slug = title
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+   return `${slug || "propiedad"}-${property.id}`;
+}
+
 function toNumber(value: number | string | undefined, fallback = 0) {
    const numberValue = Number(value);
    return Number.isFinite(numberValue) ? numberValue : fallback;
@@ -141,6 +153,7 @@ export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]>
 
       const response = await fetch(`${DIRECTUS_URL}/items/properties?${params.toString()}`, {
          headers: { Accept: "application/json" },
+         next: { revalidate: 300 },
       });
 
       if (!response.ok) return [];
@@ -165,6 +178,7 @@ export async function fetchDirectusProperty(id: string): Promise<DirectusPropert
 
       const response = await fetch(`${DIRECTUS_URL}/items/properties/${id}?${params.toString()}`, {
          headers: { Accept: "application/json" },
+         next: { revalidate: 300 },
       });
 
       if (!response.ok) return null;

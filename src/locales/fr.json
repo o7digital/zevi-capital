@@ -5,6 +5,7 @@
     "aboutUs": "À Propos",
     "sales": "Ventes",
     "insurance": "Assurance",
+    "insights": "Analyses",
     "blog": "Blog",
     "contactUs": "Nous Contacter",
     "login": "Connexion"
@@ -48,6 +49,7 @@
     "sqft": "m²",
     "bed": "ch",
     "bath": "sdb"
+    ,"empty": "Les propriétés seront bientôt disponibles."
   },
   "fancyBanner": {
     "exclusive": "Offre",

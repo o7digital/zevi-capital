@@ -2,18 +2,16 @@
 import Image from "next/image"
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import property_data from "@/data/home-data/PropertyData";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { DirectusPropertyCard, fetchDirectusProperties } from "@/lib/directusProperties";
 
 import titleShape from "@/assets/images/shape/title_shape_03.svg";
 
-const Property = () => {
+const Property = ({ initialProperties = [] }: { initialProperties?: DirectusPropertyCard[] }) => {
    const { t } = useTranslation();
-   const fallbackProperties = property_data.filter((items) => items.page === "home_1");
-   const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(fallbackProperties);
-   const formatCardPrice = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
-      const currency = "currency" in item && item.currency ? item.currency : "MXN";
+   const [properties, setProperties] = useState<DirectusPropertyCard[]>(initialProperties);
+   const formatCardPrice = (item: DirectusPropertyCard) => {
+      const currency = item.currency || "MXN";
       const amount = item.price.toLocaleString("es-MX", {
          minimumFractionDigits: item.price_text ? 0 : 2,
          maximumFractionDigits: 2,
@@ -21,9 +19,7 @@ const Property = () => {
 
       return `$${amount} ${currency}`;
    };
-   const propertyHref = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
-      return "href" in item && item.href ? item.href : "/listing_details_01";
-   };
+   const propertyHref = (item: DirectusPropertyCard) => item.href || "/listing_details_01";
 
    useEffect(() => {
       let isMounted = true;
@@ -49,6 +45,11 @@ const Property = () => {
                </div>
 
                <div className="row gx-xxl-5">
+                  {properties.length === 0 && (
+                     <div className="col-12">
+                        <p className="fs-20 mb-0">{t("property.empty")}</p>
+                     </div>
+                  )}
                   {properties.map((item) => (
                      <div key={item.id} className="col-lg-4 col-md-6 d-flex mt-40 wow fadeInUp" data-wow-delay={item.data_delay_time}>
                         <div className="listing-card-one border-25 h-100 w-100">

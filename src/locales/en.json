@@ -5,6 +5,7 @@
     "aboutUs": "About Us",
     "sales": "Sales",
     "insurance": "Insurance",
+    "insights": "Insights",
     "blog": "Blog",
     "contactUs": "Contact Us",
     "login": "Login"
@@ -48,6 +49,7 @@
     "sqft": "sqft",
     "bed": "bed",
     "bath": "bath"
+    ,"empty": "Properties will be available soon."
   },
   "fancyBanner": {
     "exclusive": "Exclusive",

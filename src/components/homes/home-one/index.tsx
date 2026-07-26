@@ -7,14 +7,17 @@ import Property from "./Property"
 import BLockFeatureFive from "./BLockFeatureFive"
 import FancyBannerThree from "./FancyBannerThree"
 import FancyBanner from "@/components/common/FancyBanner"
+import { fetchDirectusProperties } from "@/lib/directusProperties"
 
-const HomeOne = () => {
+const HomeOne = async () => {
+  const initialProperties = await fetchDirectusProperties();
+
   return (
     <>
       <HeaderOne style={false} />
       <Banner />
       <BLockFeatureOne />
-      <Property />
+      <Property initialProperties={initialProperties} />
       {/* <AgentArea style={false} /> */}
       <Feedback />
       {/* <BLockFeatureFive style={false} /> */}
