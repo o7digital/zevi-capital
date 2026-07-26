@@ -5,6 +5,7 @@ import { useTranslation } from "@/contexts/TranslationContext";
 
 const API = "https://olivia-ai.o7digital.com/api";
 const OFFLINE = false;
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjgqaakv";
 
 const copy = {
   es: {
@@ -91,6 +92,22 @@ export default function OliviaAI() {
     setMessages((items) => [...items, { role: "user", content: message }]);
     setLoading(true);
     try {
+      await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message,
+          language: locale,
+          visitorId,
+          form: "olivia-ai-chat",
+          source: "zevicapital.com",
+          metadata: pageContext(),
+        }),
+      }).catch(() => null);
+
       await fetch(`${API}/widget/conversations`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

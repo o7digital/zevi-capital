@@ -3,7 +3,7 @@ import { FormEvent, useState } from "react"
 import { DirectusProperty } from "@/lib/directusProperties"
 import { useTranslation } from "@/contexts/TranslationContext"
 
-const DIRECTUS_URL = process.env.NEXT_PUBLIC_DIRECTUS_URL?.replace(/\/$/, "")
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjgqaakv"
 
 const ScheduleForm = ({ property }: { property?: DirectusProperty | null }) => {
    const { t } = useTranslation()
@@ -11,10 +11,6 @@ const ScheduleForm = ({ property }: { property?: DirectusProperty | null }) => {
 
    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault()
-      if (!DIRECTUS_URL) {
-         setStatus("error")
-         return
-      }
 
       const formData = new FormData(event.currentTarget)
       const lead = {
@@ -22,18 +18,25 @@ const ScheduleForm = ({ property }: { property?: DirectusProperty | null }) => {
          email: String(formData.get("email") || ""),
          phone: String(formData.get("phone") || ""),
          message: String(formData.get("message") || ""),
-         property_id: property?.id ? Number(property.id) : undefined,
+         property_id: property?.id ? String(property.id) : "",
+         property_title: property?.title || "",
+         property_url: typeof window !== "undefined" ? window.location.href : "",
+         form: "property-inquiry",
+         source: "zevicapital.com/listing_details_01",
       }
 
       setStatus("sending")
       try {
-         const response = await fetch(`${DIRECTUS_URL}/items/leads`, {
+         const response = await fetch(FORMSPREE_ENDPOINT, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+               "Accept": "application/json",
+               "Content-Type": "application/json",
+            },
             body: JSON.stringify(lead),
          })
 
-         if (!response.ok) throw new Error("Lead submission failed")
+         if (!response.ok) throw new Error("Formspree submission failed")
          event.currentTarget.reset()
          setStatus("sent")
       } catch {
