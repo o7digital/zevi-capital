@@ -99,7 +99,7 @@ export default function PhotoAdminDemoPage() {
 
                   <div className="proposal">
                      <span>Costo plugin</span>
-                     <strong>$1,899.00 MXN</strong>
+                     <strong>$1,499 MXN</strong>
                      <p>Licencia/configuracion inicial para mejorar la gestion visual de fotos.</p>
                   </div>
                </aside>
