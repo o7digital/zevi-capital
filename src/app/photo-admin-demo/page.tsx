@@ -98,9 +98,9 @@ export default function PhotoAdminDemoPage() {
                   </ul>
 
                   <div className="proposal">
-                     <span>Propuesta</span>
-                     <strong>$1,500 MXN anticipo</strong>
-                     <p>El resto se puede manejar bajo revenue share, con alcance cerrado antes de iniciar.</p>
+                     <span>Costo plugin</span>
+                     <strong>$1,499 MXN</strong>
+                     <p>Licencia/configuracion inicial para mejorar la gestion visual de fotos.</p>
                   </div>
                </aside>
             </div>
