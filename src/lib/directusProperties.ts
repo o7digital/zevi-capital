@@ -87,7 +87,7 @@ function assetUrl(value: DirectusFileValue | string | { id?: string } | undefine
    return id && DIRECTUS_URL ? `${DIRECTUS_URL}/assets/${id}?format=webp&quality=82` : undefined;
 }
 
-function propertyImages(property: DirectusProperty) {
+export function directusPropertyImages(property: DirectusProperty) {
    const relatedImages = [...(property.photos || []), ...(property.images || []), ...(property.property_images || [])];
    const urls = [
       assetUrl(property.cover_image),
@@ -95,7 +95,9 @@ function propertyImages(property: DirectusProperty) {
       ...relatedImages.map(assetUrl),
    ].filter((url): url is string => Boolean(url));
 
-   return urls.map((url, index) => ({
+   const uniqueUrls = Array.from(new Set(urls));
+
+   return uniqueUrls.map((url, index) => ({
       id: `${property.id}-${index}`,
       img: url,
       active: index === 0 ? "active" : undefined,
@@ -123,7 +125,7 @@ export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): 
       price_text: property.price_text,
       currency: property.currency || "MXN",
       carousel: `directus-${property.id || index}`,
-      carousel_thumb: propertyImages(property),
+      carousel_thumb: directusPropertyImages(property),
    };
 }
 
@@ -159,9 +161,10 @@ export async function fetchDirectusProperty(id: string): Promise<DirectusPropert
 
    try {
       const params = new URLSearchParams({
-         fields: "*,cover_image.*,photos.*,photos.image.*",
+         fields: "*,cover_image.*,image.*,photos.*,photos.image.*,property_images.*,property_images.image.*",
       });
       params.set("deep[photos][_sort]", "sort_order");
+      params.set("deep[property_images][_sort]", "sort_order");
 
       const response = await fetch(`${DIRECTUS_URL}/items/properties/${id}?${params.toString()}`, {
          headers: { Accept: "application/json" },
