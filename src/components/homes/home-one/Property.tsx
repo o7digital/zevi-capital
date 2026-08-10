@@ -10,8 +10,11 @@ import titleShape from "@/assets/images/shape/title_shape_03.svg";
 
 const Property = () => {
    const { t } = useTranslation();
+   const hasDirectusConfig = Boolean(process.env.NEXT_PUBLIC_DIRECTUS_URL);
    const fallbackProperties = property_data.filter((items) => items.page === "home_1");
-   const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(fallbackProperties);
+   const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(hasDirectusConfig ? [] : fallbackProperties);
+   const [isLoading, setIsLoading] = useState(hasDirectusConfig);
+   const [loadError, setLoadError] = useState<string | null>(null);
    const formatCardPrice = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
       const currency = "currency" in item && item.currency ? item.currency : "MXN";
       const amount = item.price.toLocaleString("es-MX", {
@@ -22,22 +25,38 @@ const Property = () => {
       return `$${amount} ${currency}`;
    };
    const propertyHref = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
-      return "href" in item && item.href ? item.href : "/listing_details_01";
+      const href = "href" in item && item.href ? item.href : "/listing_details_01";
+      return href;
    };
 
    useEffect(() => {
+      if (!hasDirectusConfig) return;
+
       let isMounted = true;
 
-      fetchDirectusProperties().then((directusProperties) => {
-         if (isMounted && directusProperties.length > 0) {
-            setProperties(directusProperties);
-         }
-      });
+      fetchDirectusProperties()
+         .then((directusProperties) => {
+            if (isMounted) {
+               setProperties(directusProperties);
+               setLoadError(null);
+            }
+         })
+         .catch((error) => {
+            console.error(error);
+            if (isMounted) {
+               setLoadError("No se pueden cargar las propiedades en este momento.");
+            }
+         })
+         .finally(() => {
+            if (isMounted) {
+               setIsLoading(false);
+            }
+         });
 
       return () => {
          isMounted = false;
       };
-   }, []);
+   }, [hasDirectusConfig]);
    
    return (
       <div id="properties" className="property-listing-one bg-pink-two mt-150 xl-mt-120 pt-140 xl-pt-120 lg-pt-80 pb-180 xl-pb-120 lg-pb-100">
@@ -49,6 +68,24 @@ const Property = () => {
                </div>
 
                <div className="row gx-xxl-5">
+                  {isLoading && (
+                     <div className="col-12">
+                        <p className="fs-20 color-dark mt-40">Cargando propiedades...</p>
+                     </div>
+                  )}
+
+                  {!isLoading && loadError && (
+                     <div className="col-12">
+                        <p className="fs-20 color-dark mt-40">{loadError}</p>
+                     </div>
+                  )}
+
+                  {!isLoading && !loadError && properties.length === 0 && (
+                     <div className="col-12">
+                        <p className="fs-20 color-dark mt-40">No hay propiedades disponibles.</p>
+                     </div>
+                  )}
+
                   {properties.map((item) => (
                      <div key={item.id} className="col-lg-4 col-md-6 d-flex mt-40 wow fadeInUp" data-wow-delay={item.data_delay_time}>
                         <div className="listing-card-one border-25 h-100 w-100">
