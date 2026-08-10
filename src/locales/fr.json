@@ -3,9 +3,8 @@
     "home": "Accueil",
     "purchase": "Achat",
     "aboutUs": "À Propos",
-    "sales": "Services",
+    "sales": "Ventes",
     "insurance": "Assurance",
-    "insights": "Insights",
     "blog": "Blog",
     "contactUs": "Nous Contacter",
     "login": "Connexion"
@@ -18,11 +17,12 @@
     "search": "RECHERCHER"
   },
   "searchDropdown": {
-    "buyApartments": "Acheter des Appartements",
-    "rentCondos": "Louer des Condos",
-    "sellHouses": "Vendre des Maisons",
-    "rentIndustrial": "Louer Industriel",
-    "sellVillas": "Vendre des Villas",
+    "buyProperty": "Acheter un bien",
+    "rentProperty": "Louer un bien",
+    "sellProperty": "Vendre un bien",
+    "commercialSpaces": "Locaux commerciaux",
+    "industrialProperties": "Biens industriels",
+    "investmentLand": "Terrains d’investissement",
     "searchNow": "Rechercher Maintenant"
   },
   "features": {
@@ -121,28 +121,26 @@
     "signIn": "Se connecter."
   },
   "testimonials": {
-    "title": "Une confiance fondée sur la stratégie et les résultats",
-    "intro": "Chaque opération immobilière exige de la confiance, une information claire et un accompagnement professionnel. Chez ZeVi Capital, nous veillons à ce que propriétaires, entreprises et investisseurs soient accompagnés à chaque étape.",
     "testimonial1": {
-      "name": "Propriétaire",
-      "location": "Mexico",
-      "text": "ZeVi Capital nous a aidés à comprendre la valeur réelle de notre actif, à structurer une stratégie commerciale et à atteindre des prospects qualifiés. Le processus a été ordonné, clair et professionnel.",
-      "rating": "Stratégie commerciale",
-      "ratingScore": "et accompagnement"
+      "name": "Jonathan Harry",
+      "location": "Milan, Italie",
+      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
+      "rating": "13k évaluations",
+      "ratingScore": "(4.7 Note)"
     },
     "testimonial2": {
-      "name": "Entreprise en expansion",
-      "location": "Mexique",
-      "text": "Nous devions trouver des emplacements stratégiques pour nous développer. ZeVi Capital a organisé la recherche, comparé les options et nous a accompagnés dans la négociation avec une vision claire du projet.",
-      "rating": "Sélection de site",
-      "ratingScore": "et négociation"
+      "name": "Sofia Rena",
+      "location": "New York, USA",
+      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
+      "rating": "10k évaluations",
+      "ratingScore": "(4.5 Note)"
     },
     "testimonial3": {
-      "name": "Investisseur",
-      "location": "Mexique",
-      "text": "Nous avons reçu des informations concrètes pour évaluer l’opportunité, identifier les risques et définir une stratégie d’investissement. Cet accompagnement nous a permis de décider avec davantage de certitude.",
-      "rating": "Analyse d’investissement",
-      "ratingScore": "et certitude"
+      "name": "Rashed Kabir",
+      "location": "Dhaka, BD",
+      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
+      "rating": "11k évaluations",
+      "ratingScore": "(4.8 Note)"
     }
   },
   "footer": {
@@ -160,7 +158,6 @@
     "helpTitle": "Nous sommes toujours heureux de vous aider.",
     "hotlineTitle": "Notre numéro direct",
     "liveChatTitle": "Chat en direct"
-    ,"addressTitle": "Adresse"
   },
   "aboutUs": {
     "breadcrumbTitle": "Qui Sommes-Nous",
@@ -176,6 +173,65 @@
     "whoWeAreText": "O7 Realestates est une agence immobilière de premier plan spécialisée dans les propriétés de luxe à travers le Canada. Fondée avec la vision de redéfinir l'excellence immobilière, nous combinons une connaissance approfondie du marché avec un service personnalisé pour aider nos clients à trouver leur maison idéale ou leur investissement parfait.",
     "ourMission": "Notre Mission",
     "ourMissionText": "Notre mission est de fournir des services immobiliers exceptionnels qui dépassent les attentes. Nous sommes engagés envers l'intégrité, la transparence et la livraison de résultats qui créent une valeur durable pour nos clients dans les marchés immobiliers prestigieux internationaux : Montreal, Los Angeles, Paris, Londres et Mexico."
+  },
+  "listingDetails": {
+    "titleFallback": "Bien ZeVi Capital",
+    "propertyFallback": "Bien immobilier",
+    "price": "Prix",
+    "share": "Partager",
+    "backToList": "Retour à la liste",
+    "sale": "Vente",
+    "rent": "Location",
+    "description": "Description",
+    "descriptionFallback": "Les informations du bien seront disponibles prochainement.",
+    "overview": {
+      "title": "Résumé du bien",
+      "area": "Surface",
+      "bedrooms": "Chambres",
+      "bathrooms": "Salles de bain",
+      "operation": "Opération",
+      "type": "Type"
+    },
+    "details": {
+      "title": "Détails du bien",
+      "bedrooms": "Chambres",
+      "bathrooms": "Salles de bain",
+      "area": "Surface",
+      "type": "Type de bien",
+      "operation": "Opération",
+      "status": "Statut",
+      "location": "Zone",
+      "easybroker": "ID EasyBroker"
+    },
+    "gallery": {
+      "view": "Voir",
+      "photos": "photos"
+    },
+    "agent": {
+      "role": "Conseil immobilier stratégique",
+      "location": "Zone",
+      "phone": "Téléphone",
+      "cta": "Contacter un conseiller"
+    },
+    "form": {
+      "title": "Demander des informations",
+      "name": "Nom*",
+      "namePlaceholder": "Votre nom complet",
+      "firstName": "Prénom*",
+      "firstNamePlaceholder": "Votre prénom",
+      "lastName": "Nom*",
+      "lastNamePlaceholder": "Votre nom",
+      "email": "E-mail*",
+      "emailPlaceholder": "Votre adresse e-mail",
+      "phone": "Téléphone*",
+      "phonePlaceholder": "Votre numéro de téléphone",
+      "message": "Message",
+      "messagePlaceholder": "Bonjour, ce bien m’intéresse :",
+      "submit": "Envoyer la demande",
+      "sending": "Envoi...",
+      "success": "Merci. Nous avons reçu votre demande.",
+      "error": "Envoi impossible. Veuillez réessayer."
+    }
   },
   "insurance": {
     "mainTitle": "Protégez Votre",

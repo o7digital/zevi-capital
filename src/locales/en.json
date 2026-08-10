@@ -3,9 +3,8 @@
     "home": "Home",
     "purchase": "Purchase",
     "aboutUs": "About Us",
-    "sales": "Services",
+    "sales": "Sales",
     "insurance": "Insurance",
-    "insights": "Insights",
     "blog": "Blog",
     "contactUs": "Contact Us",
     "login": "Login"
@@ -18,11 +17,12 @@
     "search": "SEARCH"
   },
   "searchDropdown": {
-    "buyApartments": "Buy Apartments",
-    "rentCondos": "Rent Condos",
-    "sellHouses": "Sell Houses",
-    "rentIndustrial": "Rent Industrial",
-    "sellVillas": "Sell Villas",
+    "buyProperty": "Buy property",
+    "rentProperty": "Rent property",
+    "sellProperty": "Sell property",
+    "commercialSpaces": "Commercial spaces",
+    "industrialProperties": "Industrial properties",
+    "investmentLand": "Investment land",
     "searchNow": "Search Now"
   },
   "features": {
@@ -121,28 +121,26 @@
     "signIn": "Sign in."
   },
   "testimonials": {
-    "title": "Trust built through strategy and results",
-    "intro": "Every real estate transaction requires trust, clear information, and professional guidance. At ZeVi Capital, we work so that owners, companies, and investors feel supported at every stage of the process.",
     "testimonial1": {
-      "name": "Property owner",
-      "location": "Mexico City",
-      "text": "ZeVi Capital helped us understand the real value of our asset, structure a commercial strategy, and reach qualified prospects. The process was organized, clear, and professional.",
-      "rating": "Commercial strategy",
-      "ratingScore": "and guidance"
+      "name": "Jonathan Harry",
+      "location": "Milan, Italy",
+      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
+      "rating": "13k rating",
+      "ratingScore": "(4.7 Rating)"
     },
     "testimonial2": {
-      "name": "Expanding company",
-      "location": "Mexico",
-      "text": "We needed to find strategic locations to grow. ZeVi Capital organized the search, compared alternatives, and supported us through the negotiation with a clear business perspective.",
-      "rating": "Site selection",
-      "ratingScore": "and negotiation"
+      "name": "Sofia Rena",
+      "location": "New York, USA",
+      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
+      "rating": "10k rating",
+      "ratingScore": "(4.5 Rating)"
     },
     "testimonial3": {
-      "name": "Investor",
-      "location": "Mexico",
-      "text": "We received concrete information to assess the opportunity, identify risks, and define an investment strategy. The guidance allowed us to decide with greater confidence.",
-      "rating": "Investment analysis",
-      "ratingScore": "and certainty"
+      "name": "Rashed Kabir",
+      "location": "Dhaka, BD",
+      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
+      "rating": "11k rating",
+      "ratingScore": "(4.8 Rating)"
     }
   },
   "footer": {
@@ -160,7 +158,6 @@
     "helpTitle": "We're always happy to help.",
     "hotlineTitle": "Our hotline number",
     "liveChatTitle": "Live chat"
-    ,"addressTitle": "Address"
   },
   "aboutUs": {
     "breadcrumbTitle": "About Us",
@@ -176,6 +173,65 @@
     "whoWeAreText": "O7 Realestates is a leading real estate agency specializing in luxury properties across Canada. Founded with a vision to redefine property excellence, we combine deep market knowledge with personalized service to help clients find their perfect home or investment.",
     "ourMission": "Our Mission",
     "ourMissionText": "Our mission is to provide exceptional real estate services that exceed expectations. We are committed to integrity, transparency, and delivering results that create lasting value for our clients in Canada's prestigious property landscape."
+  },
+  "listingDetails": {
+    "titleFallback": "ZeVi Capital property",
+    "propertyFallback": "Property",
+    "price": "Price",
+    "share": "Share",
+    "backToList": "Back to listings",
+    "sale": "Sale",
+    "rent": "Rent",
+    "description": "Description",
+    "descriptionFallback": "Property information coming soon.",
+    "overview": {
+      "title": "Property overview",
+      "area": "Area",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "operation": "Operation",
+      "type": "Type"
+    },
+    "details": {
+      "title": "Property details",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "area": "Area",
+      "type": "Property type",
+      "operation": "Operation",
+      "status": "Status",
+      "location": "Location",
+      "easybroker": "EasyBroker ID"
+    },
+    "gallery": {
+      "view": "View",
+      "photos": "photos"
+    },
+    "agent": {
+      "role": "Strategic real estate advisory",
+      "location": "Area",
+      "phone": "Phone",
+      "cta": "Contact advisor"
+    },
+    "form": {
+      "title": "Request information",
+      "name": "Name*",
+      "namePlaceholder": "Your full name",
+      "firstName": "First name*",
+      "firstNamePlaceholder": "Your first name",
+      "lastName": "Last name*",
+      "lastNamePlaceholder": "Your last name",
+      "email": "Email*",
+      "emailPlaceholder": "Your email address",
+      "phone": "Phone*",
+      "phonePlaceholder": "Your phone number",
+      "message": "Message",
+      "messagePlaceholder": "Hello, I am interested in this property:",
+      "submit": "Send request",
+      "sending": "Sending...",
+      "success": "Thank you. We received your request.",
+      "error": "Could not send. Please try again."
+    }
   },
   "insurance": {
     "mainTitle": "Protect Your",
