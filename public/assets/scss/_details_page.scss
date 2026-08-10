@@ -303,6 +303,25 @@
             justify-content: center;
             min-width: 0;
             height: calc(100vh - 84px);
+            overflow: hidden;
+        }
+        .zevi-lightbox__image-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: zoom-in;
+            transform-origin: var(--zevi-zoom-origin, 50% 50%);
+            animation: zeviLightboxZoomIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+            @include transition(0.28s);
+            &.is-zoomed {
+                cursor: zoom-out;
+                transform: scale(2.25);
+            }
         }
         .zevi-lightbox__image {
             width: auto;
@@ -311,6 +330,7 @@
             max-height: 100%;
             object-fit: contain;
             box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+            pointer-events: none;
         }
         .zevi-lightbox__close,
         .zevi-lightbox__arrow {
@@ -344,6 +364,30 @@
             font-size: 24px;
             justify-self: center;
         }
+        .zevi-lightbox__zoom-controls {
+            position: absolute;
+            z-index: 3;
+            left: 50%;
+            bottom: 32px;
+            transform: translateX(-50%);
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                border: 0;
+                border-radius: 50%;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.72);
+                font-size: 20px;
+                @include transition(0.2s);
+                &:hover {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+        }
         .zevi-lightbox__thumbs {
             position: relative;
             z-index: 2;
@@ -372,6 +416,16 @@
                 opacity: 1;
                 border-color: #fff;
             }
+        }
+    }
+    @keyframes zeviLightboxZoomIn {
+        from {
+            opacity: 0;
+            transform: scale(0.94);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
         }
     }
     @media (max-width: 991px) {
@@ -404,6 +458,9 @@
             }
             .zevi-lightbox__arrow--next {
                 right: 18px;
+            }
+            .zevi-lightbox__zoom-controls {
+                bottom: 96px;
             }
             .zevi-lightbox__thumbs {
                 flex-direction: row;

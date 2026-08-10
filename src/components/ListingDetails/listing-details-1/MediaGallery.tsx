@@ -2,6 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { useEffect, useState } from "react";
+import type { CSSProperties, MouseEvent } from "react";
 
 import bigCarousel_1 from "@/assets/images/listing/img_43.jpg"
 import bigCarousel_2 from "@/assets/images/listing/img_44.jpg"
@@ -34,6 +35,8 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomOrigin, setZoomOrigin] = useState("50% 50%");
   const hasDirectusImages = images.length > 0;
   const largeImages = hasDirectusImages ? images : big_carousel.map((image, index) => ({ url: image, alt: `Property image ${index + 1}` }));
   const thumbImages = hasDirectusImages ? images : small_carousel.map((image, index) => ({ url: image, alt: `Property thumbnail ${index + 1}` }));
@@ -42,6 +45,11 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
   useEffect(() => {
     setActiveIndex(0);
   }, [images]);
+
+  useEffect(() => {
+    setIsZoomed(false);
+    setZoomOrigin("50% 50%");
+  }, [activeIndex, isLightboxOpen]);
 
   const goToPrevious = () => {
     setActiveIndex((current) => (current === 0 ? largeImages.length - 1 : current - 1));
@@ -58,6 +66,19 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
 
   const closeLightbox = () => {
     setIsLightboxOpen(false);
+    setIsZoomed(false);
+  };
+
+  const toggleZoom = (origin = "50% 50%") => {
+    setZoomOrigin(origin);
+    setIsZoomed((current) => !current);
+  };
+
+  const handleZoomClick = (event: MouseEvent<HTMLButtonElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    toggleZoom(`${x.toFixed(1)}% ${y.toFixed(1)}%`);
   };
 
   useEffect(() => {
@@ -138,18 +159,31 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
             <i className="bi bi-chevron-left"></i>
           </button>
           <div className="zevi-lightbox__stage">
-            <Image
-              src={activeImage.url}
-              alt={activeImage.alt}
-              width={1600}
-              height={1050}
-              className="zevi-lightbox__image"
-              priority
-            />
+            <button
+              type="button"
+              className={`zevi-lightbox__image-button ${isZoomed ? "is-zoomed" : ""}`}
+              style={{ "--zevi-zoom-origin": zoomOrigin } as CSSProperties}
+              onClick={handleZoomClick}
+              aria-label={isZoomed ? "Zoom out" : "Zoom in"}
+            >
+              <Image
+                src={activeImage.url}
+                alt={activeImage.alt}
+                width={1600}
+                height={1050}
+                className="zevi-lightbox__image"
+                priority
+              />
+            </button>
           </div>
           <button type="button" className="zevi-lightbox__arrow zevi-lightbox__arrow--next" onClick={goToNext} aria-label="Next image">
             <i className="bi bi-chevron-right"></i>
           </button>
+          <div className="zevi-lightbox__zoom-controls" aria-label="Zoom controls">
+            <button type="button" onClick={() => toggleZoom()} aria-label={isZoomed ? "Zoom out" : "Zoom in"}>
+              <i className={`bi ${isZoomed ? "bi-zoom-out" : "bi-zoom-in"}`}></i>
+            </button>
+          </div>
           <div className="zevi-lightbox__thumbs" aria-label="Gallery thumbnails">
             {largeImages.map((image, i) => (
               <button
