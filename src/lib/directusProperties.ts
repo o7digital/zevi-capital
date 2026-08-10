@@ -132,28 +132,26 @@ export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): 
 export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]> {
    if (!DIRECTUS_URL) return [];
 
-   try {
-      const params = new URLSearchParams({
-         fields: "*,photos.*,photos.image.*,images.*,property_images.*,property_images.image.*",
-         limit: "-1",
-         sort: "-id",
-      });
-      params.set("filter[status][_eq]", "published");
-      params.set("filter[cover_image][_nnull]", "true");
+   const params = new URLSearchParams({
+      fields: "*,photos.*,photos.image.*,images.*,property_images.*,property_images.image.*",
+      limit: "-1",
+      sort: "-id",
+   });
+   params.set("filter[status][_eq]", "published");
+   params.set("filter[cover_image][_nnull]", "true");
 
-      const response = await fetch(`${DIRECTUS_URL}/items/properties?${params.toString()}`, {
-         headers: { Accept: "application/json" },
-      });
+   const response = await fetch(`${DIRECTUS_URL}/items/properties?${params.toString()}`, {
+      headers: { Accept: "application/json" },
+   });
 
-      if (!response.ok) return [];
-
-      const payload = await response.json();
-      const items = Array.isArray(payload?.data) ? payload.data : [];
-
-      return items.map(mapDirectusPropertyCard).filter((property: DirectusPropertyCard) => property.carousel_thumb.length > 0);
-   } catch {
-      return [];
+   if (!response.ok) {
+      throw new Error(`Directus properties request failed: ${response.status} ${response.statusText}`);
    }
+
+   const payload = await response.json();
+   const items = Array.isArray(payload?.data) ? payload.data : [];
+
+   return items.map(mapDirectusPropertyCard).filter((property: DirectusPropertyCard) => property.carousel_thumb.length > 0);
 }
 
 export async function fetchDirectusProperty(id: string): Promise<DirectusProperty | null> {

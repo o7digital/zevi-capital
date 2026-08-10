@@ -17,11 +17,15 @@ const ScheduleForm = ({ property }: { property?: DirectusProperty | null }) => {
       }
 
       const formData = new FormData(event.currentTarget)
+      const firstName = String(formData.get("first_name") || "").trim()
+      const lastName = String(formData.get("last_name") || "").trim()
+      const message = String(formData.get("message") || "").trim()
+      const propertyMessage = `${t("listingDetails.form.messagePlaceholder")} ${property?.title || t("listingDetails.propertyFallback")}`
       const lead = {
-         name: String(formData.get("name") || ""),
+         name: [firstName, lastName].filter(Boolean).join(" "),
          email: String(formData.get("email") || ""),
          phone: String(formData.get("phone") || ""),
-         message: String(formData.get("message") || ""),
+         message: message || propertyMessage,
          property_id: property?.id ? Number(property.id) : undefined,
       }
 
@@ -44,8 +48,12 @@ const ScheduleForm = ({ property }: { property?: DirectusProperty | null }) => {
    return (
       <form onSubmit={handleSubmit}>
          <div className="input-box-three mb-25">
-            <div className="label">{t("listingDetails.form.name")}</div>
-            <input name="name" type="text" placeholder={t("listingDetails.form.namePlaceholder")} className="type-input" required />
+            <div className="label">{t("listingDetails.form.firstName")}</div>
+            <input name="first_name" type="text" placeholder={t("listingDetails.form.firstNamePlaceholder")} className="type-input" required />
+         </div>
+         <div className="input-box-three mb-25">
+            <div className="label">{t("listingDetails.form.lastName")}</div>
+            <input name="last_name" type="text" placeholder={t("listingDetails.form.lastNamePlaceholder")} className="type-input" required />
          </div>
          <div className="input-box-three mb-25">
             <div className="label">{t("listingDetails.form.email")}</div>
@@ -53,13 +61,15 @@ const ScheduleForm = ({ property }: { property?: DirectusProperty | null }) => {
          </div>
          <div className="input-box-three mb-25">
             <div className="label">{t("listingDetails.form.phone")}</div>
-            <input name="phone" type="tel" placeholder={t("listingDetails.form.phonePlaceholder")} className="type-input" />
+            <input name="phone" type="tel" placeholder={t("listingDetails.form.phonePlaceholder")} className="type-input" required />
          </div>
          <div className="input-box-three mb-15">
             <div className="label">{t("listingDetails.form.message")}</div>
             <textarea
+               key={property?.id || "property"}
                name="message"
                placeholder={`${t("listingDetails.form.messagePlaceholder")} ${property?.title || t("listingDetails.propertyFallback")}`}
+               defaultValue={`${t("listingDetails.form.messagePlaceholder")} ${property?.title || t("listingDetails.propertyFallback")}`}
             ></textarea>
          </div>
          <button className="btn-nine text-uppercase rounded-3 w-100 mb-10" disabled={status === "sending"}>

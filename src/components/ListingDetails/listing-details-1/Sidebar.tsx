@@ -12,7 +12,7 @@ const Sidebar = ({ property }: { property?: DirectusProperty | null }) => {
             <div className="agent-info bg-white border-20 p-30 mb-40">
                <SidebarInfo />
             </div>
-            <div className="tour-schedule bg-white border-20 p-30 mb-40">
+            <div id="contact-property" className="tour-schedule bg-white border-20 p-30 mb-40">
                <h5 className="mb-40">{t("listingDetails.form.title")}</h5>
                <ScheduleForm property={property} />
             </div>
