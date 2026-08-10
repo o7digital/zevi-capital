@@ -137,6 +137,20 @@
         }
     }
     .media-gallery {
+        .zevi-gallery-main {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            cursor: zoom-in;
+            img {
+                display: block;
+                width: 100%;
+                height: clamp(420px, 62vh, 760px);
+                object-fit: cover;
+            }
+        }
         .carousel {
             .carousel-indicators {
                 display: block;
@@ -254,6 +268,8 @@
             background: $color-one;
             color: #fff;
         }
+        border: 0;
+        cursor: zoom-in;
         a {
             position: absolute;
             top:0;
@@ -261,6 +277,146 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+        }
+    }
+    .zevi-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr) 150px;
+        gap: 28px;
+        align-items: center;
+        padding: 42px 30px 42px 120px;
+        background: rgba(0, 0, 0, 0.94);
+        .zevi-lightbox__backdrop {
+            position: absolute;
+            inset: 0;
+            border: 0;
+            background: transparent;
+        }
+        .zevi-lightbox__stage {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            height: calc(100vh - 84px);
+        }
+        .zevi-lightbox__image {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+        }
+        .zevi-lightbox__close,
+        .zevi-lightbox__arrow {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.72);
+            @include transition(0.2s);
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
+        }
+        .zevi-lightbox__close {
+            position: absolute;
+            top: 32px;
+            right: 160px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 18px;
+        }
+        .zevi-lightbox__arrow {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            font-size: 24px;
+            justify-self: center;
+        }
+        .zevi-lightbox__thumbs {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: calc(100vh - 84px);
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+        .zevi-lightbox__thumb {
+            width: 118px;
+            height: 78px;
+            padding: 0;
+            border: 2px solid transparent;
+            background: transparent;
+            opacity: 0.68;
+            @include transition(0.2s);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &.active,
+            &:hover {
+                opacity: 1;
+                border-color: #fff;
+            }
+        }
+    }
+    @media (max-width: 991px) {
+        .media-gallery {
+            .zevi-gallery-main img {
+                height: clamp(320px, 56vh, 620px);
+            }
+        }
+        .zevi-lightbox {
+            grid-template-columns: 1fr;
+            grid-template-rows: minmax(0, 1fr) auto;
+            gap: 18px;
+            padding: 72px 18px 24px;
+            .zevi-lightbox__stage {
+                height: auto;
+                min-height: 0;
+                max-height: calc(100vh - 180px);
+            }
+            .zevi-lightbox__close {
+                top: 18px;
+                right: 18px;
+            }
+            .zevi-lightbox__arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .zevi-lightbox__arrow--prev {
+                left: 18px;
+            }
+            .zevi-lightbox__arrow--next {
+                right: 18px;
+            }
+            .zevi-lightbox__thumbs {
+                flex-direction: row;
+                max-height: none;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: 0 0 4px;
+            }
+            .zevi-lightbox__thumb {
+                flex: 0 0 auto;
+                width: 92px;
+                height: 62px;
+            }
         }
     }
     .sub-title-one {

@@ -10,25 +10,56 @@ import titleShape from "@/assets/images/shape/title_shape_03.svg";
 
 const Property = () => {
    const { t } = useTranslation();
+   const hasDirectusConfig = Boolean(process.env.NEXT_PUBLIC_DIRECTUS_URL);
    const fallbackProperties = property_data.filter((items) => items.page === "home_1");
-   const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(fallbackProperties);
+   const [properties, setProperties] = useState<(typeof fallbackProperties[number] | DirectusPropertyCard)[]>(hasDirectusConfig ? [] : fallbackProperties);
+   const [isLoading, setIsLoading] = useState(hasDirectusConfig);
+   const [loadError, setLoadError] = useState<string | null>(null);
+   const formatCardPrice = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
+      const currency = "currency" in item && item.currency ? item.currency : "MXN";
+      const amount = item.price.toLocaleString("es-MX", {
+         minimumFractionDigits: item.price_text ? 0 : 2,
+         maximumFractionDigits: 2,
+      });
+
+      return `$${amount} ${currency}`;
+   };
+   const propertyHref = (item: typeof fallbackProperties[number] | DirectusPropertyCard) => {
+      const href = "href" in item && item.href ? item.href : "/listing_details_01";
+      return href;
+   };
 
    useEffect(() => {
+      if (!hasDirectusConfig) return;
+
       let isMounted = true;
 
-      fetchDirectusProperties().then((directusProperties) => {
-         if (isMounted && directusProperties.length > 0) {
-            setProperties(directusProperties);
-         }
-      });
+      fetchDirectusProperties()
+         .then((directusProperties) => {
+            if (isMounted) {
+               setProperties(directusProperties);
+               setLoadError(null);
+            }
+         })
+         .catch((error) => {
+            console.error(error);
+            if (isMounted) {
+               setLoadError("No se pueden cargar las propiedades en este momento.");
+            }
+         })
+         .finally(() => {
+            if (isMounted) {
+               setIsLoading(false);
+            }
+         });
 
       return () => {
          isMounted = false;
       };
-   }, []);
+   }, [hasDirectusConfig]);
    
    return (
-      <div className="property-listing-one bg-pink-two mt-150 xl-mt-120 pt-140 xl-pt-120 lg-pt-80 pb-180 xl-pb-120 lg-pb-100">
+      <div id="properties" className="property-listing-one bg-pink-two mt-150 xl-mt-120 pt-140 xl-pt-120 lg-pt-80 pb-180 xl-pb-120 lg-pb-100">
          <div className="container">
             <div className="position-relative">
                <div className="title-one text-center text-lg-start mb-45 xl-mb-30 lg-mb-20 wow fadeInUp">
@@ -37,6 +68,24 @@ const Property = () => {
                </div>
 
                <div className="row gx-xxl-5">
+                  {isLoading && (
+                     <div className="col-12">
+                        <p className="fs-20 color-dark mt-40">Cargando propiedades...</p>
+                     </div>
+                  )}
+
+                  {!isLoading && loadError && (
+                     <div className="col-12">
+                        <p className="fs-20 color-dark mt-40">{loadError}</p>
+                     </div>
+                  )}
+
+                  {!isLoading && !loadError && properties.length === 0 && (
+                     <div className="col-12">
+                        <p className="fs-20 color-dark mt-40">No hay propiedades disponibles.</p>
+                     </div>
+                  )}
+
                   {properties.map((item) => (
                      <div key={item.id} className="col-lg-4 col-md-6 d-flex mt-40 wow fadeInUp" data-wow-delay={item.data_delay_time}>
                         <div className="listing-card-one border-25 h-100 w-100">
@@ -50,9 +99,9 @@ const Property = () => {
                                        <button type="button" data-bs-target={`#carousel${item.carousel}`} data-bs-slide-to="2" aria-label="Slide 3"></button>
                                     </div>
                                     <div className="carousel-inner">
-                                       {item.carousel_thumb.map((item, i) => (
-                                          <div key={i} className={`carousel-item ${item.active}`} data-bs-interval="1000000">
-                                             <Link href="/listing_details_01" className="d-block"><Image src={item.img} className="w-100" alt="..." width={410} height={280} /></Link>
+                                       {item.carousel_thumb.map((image, i) => (
+                                          <div key={i} className={`carousel-item ${image.active}`} data-bs-interval="1000000">
+                                             <Link href={propertyHref(item)} className="d-block"><Image src={image.img} className="w-100" alt={item.title} width={410} height={280} /></Link>
                                           </div>
                                        ))}
                                     </div>
@@ -61,7 +110,7 @@ const Property = () => {
                            </div>
 
                            <div className="property-info p-25">
-                              <Link href="/listing_details_01" className="title tran3s">{item.title}</Link>
+                              <Link href={propertyHref(item)} className="title tran3s">{item.title}</Link>
                               <div className="address">{item.address}</div>
                               <ul className="style-none feature d-flex flex-wrap align-items-center justify-content-between">
                                  {item.property_info.map((info, index) => (
@@ -73,12 +122,9 @@ const Property = () => {
                               </ul>
                               <div className="pl-footer top-border d-flex align-items-center justify-content-between">
                                  <strong className="price fw-500 color-dark">
-                                    ${item.price.toLocaleString(undefined, {
-                                       minimumFractionDigits: item.price_text ? 0 : 2,
-                                       maximumFractionDigits: 2
-                                    })}{item.price_text &&<>/<sub>m</sub></>}
+                                    {formatCardPrice(item)}{item.price_text &&<>/<sub>m</sub></>}
                                  </strong>
-                                 <Link href="/listing_details_01" className="btn-four rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
+                                 <Link href={propertyHref(item)} className="btn-four rounded-circle"><i className="bi bi-arrow-up-right"></i></Link>
                               </div>
                            </div>
                         </div>
