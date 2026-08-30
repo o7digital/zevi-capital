@@ -13,6 +13,12 @@ const slides = [
    { src: "/slider/sergio-rodriguez-2EOHVbvum9w-unsplash.webp", alt: "Desarrollo urbano y espacios corporativos en México", position: "center" },
    { src: "/slider/spencer-watson-ioy3bN5Irew-unsplash.webp", alt: "Activo hotelero y playa premium en México", position: "center" },
    { src: "/slider/vania-medina-N6MQuEBohZA-unsplash.webp", alt: "Inversión inmobiliaria en Los Cabos", position: "center" },
+   { src: "/slider/IMG_5868.webp", alt: "Villa de lujo en México con vista premium", position: "center" },
+   { src: "/slider/IMG_5869.webp", alt: "Propiedad exclusiva en México", position: "center" },
+   { src: "/slider/IMG_5870.webp", alt: "Residencia de lujo en México", position: "center" },
+   { src: "/slider/IMG_5871.webp", alt: "Inmueble premium en México", position: "center" },
+   { src: "/slider/IMG_5872.webp", alt: "Propiedad de inversión en México", position: "center" },
+   { src: "/slider/IMG_5873.webp", alt: "Vista exclusiva de propiedad en México", position: "center" },
 ]
 
 const Banner = () => {
