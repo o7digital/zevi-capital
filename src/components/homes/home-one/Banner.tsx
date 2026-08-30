@@ -36,9 +36,6 @@ const Banner = () => {
       infinite: true,
       autoplay: true,
       autoplaySpeed: 5000,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      pauseOnDotsHover: false,
       speed: 1000,
       fade: true,
       slidesToShow: 1,
@@ -72,27 +69,31 @@ const Banner = () => {
             zIndex: 0
          }}>
             <Slider ref={sliderRef} {...settings}>
-               {[
-                  "IMG_5868",
-                  "IMG_5869",
-                  "IMG_5870",
-                  "IMG_5871",
-                  "IMG_5872",
-                  "IMG_5873",
-               ].map((name) => (
-                  <div key={name} style={{ height: '100%', width: '100%' }}>
-                     <img
-                        src={`/slider/${name}.webp`}
-                        alt="villa de luxe Mexico immobilier premium exclusif"
-                        style={{
-                           width: '100%',
-                           height: '800px',
-                           objectFit: 'cover',
-                           objectPosition: 'center'
-                        }}
-                     />
-                  </div>
-               ))}
+               <div style={{ height: '100%', width: '100%' }}>
+                  <img 
+                     src="/slider/cdmx.png"
+                     alt="villa de luxe Mexico immobilier premium exclusif"
+                     style={{
+                        width: '100%',
+                        height: '800px',
+                        objectFit: 'cover',
+                        objectPosition: 'center'
+                     }}
+                  />
+               </div>
+               <div style={{ height: '100%', width: '100%' }}>
+                  <img 
+                     src="/slider/montreal2.jpg"
+                     alt="Mexico penthouse luxury real estate"
+                     style={{
+                        width: '100%',
+                        height: '800px',
+                        objectFit: 'cover',
+                        objectPosition: 'center top',
+                        transform: 'translateY(-60px)'
+                     }}
+                  />
+               </div>
             </Slider>
          </div>
 
