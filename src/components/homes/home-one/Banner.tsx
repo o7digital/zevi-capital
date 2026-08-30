@@ -34,15 +34,6 @@ const NextArrow = (props: any) => {
 }
 
 const slides = [
-   { src: "/slider/cdmx.webp", alt: "Panorama nocturno de Ciudad de México", position: "center" },
-   { src: "/slider/alexander-schimmeck-O8JJ72b4a1Y-unsplash.webp", alt: "Ciudad mexicana con vista al volcán", position: "center" },
-   { src: "/slider/arturo-ochoa-wB84N1jrfiM-unsplash.webp", alt: "Centro histórico y arquitectura mexicana", position: "center" },
-   { src: "/slider/gerson-repreza-PW3tJkRkSy8-unsplash.webp", alt: "Oportunidades inmobiliarias frente al mar en Cancún", position: "center" },
-   { src: "/slider/jorge-gardner-6YkqE50Gin0-unsplash.webp", alt: "Paisaje urbano mexicano al atardecer", position: "center" },
-   { src: "/slider/loris-boulinguez-9AFMVXjp5ik-unsplash.webp", alt: "Calle histórica y propiedades comerciales en México", position: "center" },
-   { src: "/slider/sergio-rodriguez-2EOHVbvum9w-unsplash.webp", alt: "Desarrollo urbano y espacios corporativos en México", position: "center" },
-   { src: "/slider/spencer-watson-ioy3bN5Irew-unsplash.webp", alt: "Activo hotelero y playa premium en México", position: "center" },
-   { src: "/slider/vania-medina-N6MQuEBohZA-unsplash.webp", alt: "Inversión inmobiliaria en Los Cabos", position: "center" },
    { src: "/slider/IMG_5868.webp", alt: "Villa de lujo en México con vista premium", position: "center" },
    { src: "/slider/IMG_5869.webp", alt: "Propiedad exclusiva en México", position: "center" },
    { src: "/slider/IMG_5870.webp", alt: "Residencia de lujo en México", position: "center" },
