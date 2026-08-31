@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "@/contexts/TranslationContext";
 
 const API = "https://olivia-ai.o7digital.com/api";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjgqaakv";
 type Locale = "es" | "en" | "fr";
 type Message = { role: "ai" | "user"; content: string };
 type Lead = { firstName: string; lastName: string; email: string; phone: string; reason: string };
@@ -105,12 +106,30 @@ export default function OliviaAI() {
     event.preventDefault(); if (leadLoading || !identity) return; setLeadLoading(true);
     const headers = { "Content-Type": "application/json", "X-Olivia-Widget-Identity": identity };
     try {
-      await fetch(`${API}/widget/conversations`, { method: "POST", headers, body: JSON.stringify({
+      const conversationRequest = fetch(`${API}/widget/conversations`, { method: "POST", headers, body: JSON.stringify({
         clientCode: "zevicapital", visitorId, source: "website", language,
         content: `${lead.firstName} ${lead.lastName} · ${lead.reason}`,
         visitorName: `${lead.firstName} ${lead.lastName}`, email: lead.email, phone: lead.phone,
         metadata: { ...pageContext(), lead }
       }) });
+      const formspreeRequest = fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          subject: "Nuevo contacto desde Olivia AI · ZeVi Capital",
+          firstName: lead.firstName,
+          lastName: lead.lastName,
+          name: `${lead.firstName} ${lead.lastName}`,
+          email: lead.email,
+          phone: lead.phone,
+          message: lead.reason,
+          source: "Olivia AI v2",
+          language,
+          page: location.href,
+        }),
+      });
+      const [, formspreeResponse] = await Promise.all([conversationRequest, formspreeRequest]);
+      if (!formspreeResponse.ok) throw new Error("Formspree notification failed");
       setLeadSubmitted(true); setMessages(items => [...items, { role: "ai", content: text.formThanks }]);
     } finally { setLeadLoading(false); }
   }
