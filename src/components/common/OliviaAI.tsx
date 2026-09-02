@@ -16,7 +16,7 @@ const copy = {
     consent: "Acepto el Aviso de Privacidad para recibir atención de ZeVi Capital.", privacy: "Aviso de Privacidad", privacyTitle: "Aviso de Privacidad · Olivia AI",
     privacyBody: "Al usar este chat autorizas a ZeVi Capital a tratar los datos personales que compartas, incluyendo nombre, datos de contacto, mensajes, idioma, página visitada e información de tu proyecto, para atender tu solicitud, dar seguimiento comercial y contactarte por medios electrónicos. Puedes ejercer tus derechos ARCO, revocar tu consentimiento o limitar el uso de tus datos escribiendo a info@zevicapital.com.",
     accept: "Aceptar y continuar", placeholder: "Escribe tu pregunta…", close: "Cerrar Olivia AI", fallback: "No pude responder ahora. Escríbenos a info@zevicapital.com.",
-    formTitle: "Sigamos con tu proyecto", formIntro: "Déjanos tus datos para que un asesor prepare un seguimiento personalizado.", firstName: "Nombre", lastName: "Apellido", email: "Correo electrónico", phone: "Teléfono", reason: "Motivo de tu consulta", formSend: "Solicitar seguimiento", formThanks: "Gracias. Un asesor de ZeVi Capital dará seguimiento a tu solicitud.",
+    formTitle: "Sigamos con tu proyecto", formIntro: "Déjanos tus datos y el mensaje que deseas enviar para que un asesor prepare un seguimiento personalizado.", firstName: "Nombre", lastName: "Apellido", email: "Correo electrónico", phone: "Teléfono", reason: "Describe tu proyecto, ubicación, plazo y necesidad", formSend: "Solicitar seguimiento", formThanks: "Gracias. Un asesor de ZeVi Capital dará seguimiento a tu solicitud.",
     actions: [["Propiedades", "Quiero ver las propiedades disponibles"], ["Invertir", "Busco una oportunidad de inversión"], ["Expansión", "Quiero expandir mi empresa en México"]],
   },
   en: {
@@ -25,7 +25,7 @@ const copy = {
     consent: "I accept the Privacy Notice to receive assistance from ZeVi Capital.", privacy: "Privacy Notice", privacyTitle: "Privacy Notice · Olivia AI",
     privacyBody: "By using this chat, you authorize ZeVi Capital to process the personal data you provide, including contact details, messages, language, visited page and project information, to answer your request, provide commercial follow-up and contact you electronically. You may exercise ARCO rights, revoke consent or limit data use by writing to info@zevicapital.com.",
     accept: "Accept and continue", placeholder: "Write your question…", close: "Close Olivia AI", fallback: "I’m unable to answer right now. Email us at info@zevicapital.com.",
-    formTitle: "Let’s move your project forward", formIntro: "Leave your details so an advisor can prepare a personalized follow-up.", firstName: "First name", lastName: "Last name", email: "Email", phone: "Phone", reason: "Reason for your inquiry", formSend: "Request a follow-up", formThanks: "Thank you. A ZeVi Capital advisor will follow up on your request.",
+    formTitle: "Let’s move your project forward", formIntro: "Leave your details and the message you want to send so an advisor can prepare a personalized follow-up.", firstName: "First name", lastName: "Last name", email: "Email", phone: "Phone", reason: "Describe your project, location, timeline and needs", formSend: "Request a follow-up", formThanks: "Thank you. A ZeVi Capital advisor will follow up on your request.",
     actions: [["Properties", "Show me the available properties"], ["Invest", "I am looking for an investment opportunity"], ["Expansion", "I want to expand my business in Mexico"]],
   },
   fr: {
@@ -34,7 +34,7 @@ const copy = {
     consent: "J’accepte l’avis de confidentialité pour recevoir l’assistance de ZeVi Capital.", privacy: "Avis de confidentialité", privacyTitle: "Avis de confidentialité · Olivia AI",
     privacyBody: "En utilisant ce chat, vous autorisez ZeVi Capital à traiter les données personnelles que vous partagez, notamment vos coordonnées, messages, langue, page visitée et informations relatives à votre projet, afin de répondre à votre demande et assurer un suivi commercial. Vous pouvez exercer vos droits ARCO, révoquer votre consentement ou limiter l’utilisation de vos données en écrivant à info@zevicapital.com.",
     accept: "Accepter et continuer", placeholder: "Écrivez votre question…", close: "Fermer Olivia AI", fallback: "Je ne peux pas répondre maintenant. Écrivez-nous à info@zevicapital.com.",
-    formTitle: "Faisons avancer votre projet", formIntro: "Laissez-nous vos coordonnées afin qu’un conseiller prépare un suivi personnalisé.", firstName: "Prénom", lastName: "Nom", email: "E-mail", phone: "Téléphone", reason: "Motif de votre demande", formSend: "Demander un suivi", formThanks: "Merci. Un conseiller ZeVi Capital assurera le suivi de votre demande.",
+    formTitle: "Faisons avancer votre projet", formIntro: "Laissez vos coordonnées et le message à transmettre afin qu’un conseiller prépare un suivi personnalisé.", firstName: "Prénom", lastName: "Nom", email: "E-mail", phone: "Téléphone", reason: "Décrivez votre projet, le lieu, le calendrier et votre besoin", formSend: "Demander un suivi", formThanks: "Merci. Un conseiller ZeVi Capital assurera le suivi de votre demande.",
     actions: [["Propriétés", "Montrez-moi les propriétés disponibles"], ["Investir", "Je cherche une opportunité d’investissement"], ["Expansion", "Je souhaite développer mon entreprise au Mexique"]],
   },
 } as const;
@@ -123,9 +123,14 @@ export default function OliviaAI() {
           email: lead.email,
           phone: lead.phone,
           message: lead.reason,
+          conversation: messages.map(message => `${message.role === "user" ? "visitor" : "assistant"}: ${message.content}`).join("\n\n"),
           source: "Olivia AI v2",
           language,
           page: location.href,
+          visitorId,
+          privacyConsent: "accepted",
+          privacyConsentAt: localStorage.getItem("oliviaConsentAt:zevicapital") || "",
+          privacyConsentVersion: "zevicapital-privacy-chat-2026-07-01",
         }),
       });
       const [, formspreeResponse] = await Promise.all([conversationRequest, formspreeRequest]);
