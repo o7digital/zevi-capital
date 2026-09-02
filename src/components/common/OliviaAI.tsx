@@ -66,7 +66,7 @@ export default function OliviaAI() {
   const [input, setInput] = useState(""), [loading, setLoading] = useState(false), [identity, setIdentity] = useState("");
   const [messages, setMessages] = useState<Message[]>([{ role: "ai", content: text.welcome }]);
   const [lead, setLead] = useState<Lead>({ firstName: "", lastName: "", email: "", phone: "", reason: "" });
-  const [leadSubmitted, setLeadSubmitted] = useState(false), [leadLoading, setLeadLoading] = useState(false);
+  const [leadSubmitted, setLeadSubmitted] = useState(false), [leadLoading, setLeadLoading] = useState(false), [leadVisible, setLeadVisible] = useState(false);
   const messageEnd = useRef<HTMLDivElement>(null);
   const userTurns = messages.filter(message => message.role === "user").length;
   const visitorId = useMemo(() => {
@@ -89,14 +89,16 @@ export default function OliviaAI() {
 
   async function submit(message: string) {
     const content = message.trim(); if (!content || !consent || !identity || loading) return;
+    const history = messages.map(message => ({ role: message.role === "ai" ? "assistant" : "user", content: message.content }));
     setInput(""); setMessages(items => [...items, { role: "user", content }]); setLoading(true);
     const headers = { "Content-Type": "application/json", "X-Olivia-Widget-Identity": identity };
     try {
       const metadata = pageContext();
       await fetch(`${API}/widget/conversations`, { method: "POST", headers, body: JSON.stringify({ clientCode: "zevicapital", visitorId, content, source: "website", language, metadata }) });
-      const response = await fetch(`${API}/olivia/chat`, { method: "POST", headers, body: JSON.stringify({ message: content, language, clientCode: "zevicapital", visitorId, metadata }) });
+      const response = await fetch(`${API}/olivia/chat`, { method: "POST", headers, body: JSON.stringify({ message: content, language, clientCode: "zevicapital", visitorId, history, metadata }) });
       if (!response.ok) throw new Error(); const data = await response.json(); const answer = withoutPrematureFormRequest(data.reply || text.fallback, userTurns + 1) || text.fallback;
       setMessages(items => [...items, { role: "ai", content: answer }]);
+      if (data.action === "show_lead_form" || data.leadForm) setLeadVisible(true);
       await fetch(`${API}/widget/conversations`, { method: "PATCH", headers, body: JSON.stringify({ clientCode: "zevicapital", visitorId, content: answer, model: data.mode || "olivia-v2" }) });
     } catch { setMessages(items => [...items, { role: "ai", content: text.fallback }]); } finally { setLoading(false); }
   }
