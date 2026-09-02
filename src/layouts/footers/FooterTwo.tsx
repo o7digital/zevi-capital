@@ -21,7 +21,7 @@ interface ContentType {
 const footer_content: ContentType = {
    title: "Our Newsletter",
    desc_1: "Get instant news by subscribe to our newsletter",
-   desc_2: "Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.",
+   desc_2: "Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cd. López Mateos, México.",
    email: "info@zevicapital.com",
    number: "+757 699-4478",
    icon: ["facebook-f", "twitter", "instagram"],

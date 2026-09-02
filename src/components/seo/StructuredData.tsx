@@ -14,9 +14,9 @@ const structuredData = {
   ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Montes Urales 755, piso 18, Lomas de Chapultepec",
-    "addressLocality": "Ciudad de México",
-    "postalCode": "11500",
+    "streetAddress": "Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda",
+    "addressLocality": "Cd. López Mateos",
+    "postalCode": "52930",
     "addressCountry": "MX"
   },
   "knowsAbout": [

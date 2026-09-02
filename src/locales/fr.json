@@ -144,7 +144,7 @@
     }
   },
   "footer": {
-    "address": "Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.",
+    "address": "Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cd. López Mateos, Mexique.",
     "contact": "CONTACT",
     "links": "Liens",
     "legal": "Légal",
@@ -157,7 +157,8 @@
     "mainTitle": "Des questions ? N'hésitez pas à nous contacter par message.",
     "helpTitle": "Nous sommes toujours heureux de vous aider.",
     "hotlineTitle": "Notre numéro direct",
-    "liveChatTitle": "Chat en direct"
+    "liveChatTitle": "Chat en direct",
+    "addressTitle": "Notre adresse"
   },
   "aboutUs": {
     "breadcrumbTitle": "Qui Sommes-Nous",

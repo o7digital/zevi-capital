@@ -18,7 +18,7 @@ const FooterFour = () => {
                               <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
-                        <p className="mb-30 xs-mb-20">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>
+                        <p className="mb-30 xs-mb-20">Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cd. López Mateos, México.</p>
                         <Link href="mailto:info@zevicapital.com" className="email tran3s mb-60 md-mb-30">info@zevicapital.com</Link>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>
