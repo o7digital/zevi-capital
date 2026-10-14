@@ -6,6 +6,7 @@
     "sales": "Ventes",
     "insurance": "Assurance",
     "blog": "Blog",
+    "insights": "Insights",
     "contactUs": "Nous Contacter",
     "login": "Connexion"
   },
@@ -121,26 +122,27 @@
     "signIn": "Se connecter."
   },
   "testimonials": {
+    "title": "Témoignages de clients",
+    "intro": "Les expériences de clients qui ont fait confiance à ZeVi Capital pour trouver, vendre ou louer un bien.",
     "testimonial1": {
-      "name": "Jonathan Harry",
-      "location": "Milan, Italie",
-      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
-      "rating": "13k évaluations",
-      "ratingScore": "(4.7 Note)"
+      "name": "Guillermo Lacadiere",
+      "location": "Recherche d’un logement",
+      "text": "ZeVi Capital m’a beaucoup aidé à trouver mon logement. J’avais eu de mauvaises expériences avec d’autres agences immobilières, où j’avais l’impression qu’elles cherchaient davantage à conclure une transaction qu’à trouver une maison qui répondait vraiment à mes besoins. Ici, l’accompagnement a été exceptionnel et très complet. Ils m’ont accompagné jusqu’à trouver le bien qui était, littéralement, parfait pour moi. Je les recommande vivement."
     },
     "testimonial2": {
-      "name": "Sofia Rena",
-      "location": "New York, USA",
-      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
-      "rating": "10k évaluations",
-      "ratingScore": "(4.5 Note)"
+      "name": "Alberto Betancourt",
+      "location": "Propriétaire · Vente d’un bien",
+      "text": "ZeVi Capital m’a aidé à vendre mon bien et m’a expliqué tous les aspects juridiques et fiscaux à prendre en compte. Franchement, je me méfie souvent des agences immobilières, car j’ai parfois l’impression qu’elles cherchent uniquement à toucher une commission. Ici, c’était différent : ils m’expliquaient tout en détail et sélectionnaient soigneusement les personnes intéressées pour éviter les risques liés à la transaction. J’ai senti qu’ils protégeaient mes intérêts et mon bien à chaque étape. Les honoraires en valaient vraiment la peine."
     },
     "testimonial3": {
-      "name": "Rashed Kabir",
-      "location": "Dhaka, BD",
-      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
-      "rating": "11k évaluations",
-      "ratingScore": "(4.8 Note)"
+      "name": "Samantha Hoopman",
+      "location": "Recherche d’un bien",
+      "text": "Mon expérience avec ZeVi Capital a été très positive. Je cherchais un bien et des conseillers de différentes agences immobilières m’avaient contactée, mais la confiance qu’ils m’ont inspirée et l’attention que j’ai reçue ici ont fait la différence. Je me suis sentie très bien accompagnée et je n’ai rien à redire. Je les recommande sans hésitation."
+    },
+    "testimonial4": {
+      "name": "Javier Serrano",
+      "location": "Propriétaire · Mise en location d’un bien",
+      "text": "Ils m’ont aidé à louer mon bien avec une grande efficacité. Ce qui m’a particulièrement marqué, c’est qu’ils ne retenaient pas le premier candidat simplement pour conclure la transaction : ils cherchaient la bonne personne pour ma maison. Plusieurs candidats avaient des profils qui ne convenaient pas vraiment, et ils ont poursuivi leurs recherches jusqu’à trouver la personne adaptée. Je les remercie beaucoup pour le service et la communication, qui a toujours été très complète. Ils sont totalement dignes de confiance."
     }
   },
   "footer": {

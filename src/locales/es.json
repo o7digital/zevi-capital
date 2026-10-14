@@ -6,6 +6,7 @@
     "sales": "Ventas",
     "insurance": "Seguros",
     "blog": "Blog",
+    "insights": "Insights",
     "contactUs": "Contáctanos",
     "login": "Ingresar"
   },
@@ -126,26 +127,27 @@
     "signIn": "Inicia sesión."
   },
   "testimonials": {
+    "title": "Testimonios de clientes",
+    "intro": "Experiencias de quienes confiaron en ZeVi Capital para encontrar, vender o rentar una propiedad.",
     "testimonial1": {
-      "name": "Jonathan Harry",
-      "location": "Milán, Italia",
-      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
-      "rating": "13k valoraciones",
-      "ratingScore": "(4.7 calificación)"
+      "name": "Guillermo Lacadiere",
+      "location": "Búsqueda de hogar",
+      "text": "ZeVi Capital me ayudó mucho a encontrar mi hogar. Había tenido experiencias negativas con otras inmobiliarias, donde sentía que les interesaba más cerrar una operación que encontrar una casa que realmente se adecuara a mis necesidades. Aquí la atención fue increíble y muy completa. Me acompañaron hasta encontrar la propiedad que era, literalmente, perfecta para mí. Los recomiendo mucho."
     },
     "testimonial2": {
-      "name": "Sofia Rena",
-      "location": "Nueva York, EE.UU.",
-      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
-      "rating": "10k valoraciones",
-      "ratingScore": "(4.5 calificación)"
+      "name": "Alberto Betancourt",
+      "location": "Propietario · Venta de inmueble",
+      "text": "ZeVi Capital me ayudó a vender mi propiedad y me explicó todos los aspectos legales y fiscales que debía considerar. Francamente, suelo desconfiar de las inmobiliarias porque a veces siento que lo único que buscan es cobrar una comisión. Aquí fue distinto: me explicaban todo al detalle y filtraban muy bien a los interesados para evitar riesgos en la operación. Sentí que cuidaban mis intereses y mi propiedad en cada paso. Los honorarios valieron totalmente la pena."
     },
     "testimonial3": {
-      "name": "Rashed Kabir",
-      "location": "Dhaka, BD",
-      "text": "Eficientes, expertos y lograron que la búsqueda de nuestro hogar fuera una experiencia sencilla.",
-      "rating": "11k valoraciones",
-      "ratingScore": "(4.8 calificación)"
+      "name": "Samantha Hoopman",
+      "location": "Búsqueda de propiedad",
+      "text": "Mi experiencia con ZeVi Capital ha sido muy buena. Estaba buscando una propiedad y me contactaron asesores de distintas inmobiliarias, pero la confianza que me transmitieron y la atención que recibí aquí hicieron la diferencia. Me sentí muy bien atendida y no tengo ninguna queja. Los recomiendo ampliamente."
+    },
+    "testimonial4": {
+      "name": "Javier Serrano",
+      "location": "Propietario · Arrendamiento de inmueble",
+      "text": "Me ayudaron a rentar mi propiedad de una forma muy eficiente. Algo que me llamó mucho la atención fue que no se quedaban con el primer interesado solo por cerrar la operación: buscaban a la persona adecuada para mi casa. Hubo varios interesados cuyos perfiles no eran los más adecuados, y ellos siguieron buscando hasta encontrar a quien sí lo era. Agradezco muchísimo el servicio y la comunicación, que siempre fue muy completa. Son totalmente confiables."
     }
   },
   "footer": {
