@@ -5,6 +5,11 @@ import propertyIcon_3 from "@/assets/images/icon/icon_06.svg";
 export interface DirectusPropertyCard {
    id: number | string;
    href?: string;
+   location?: string;
+   property_type?: string;
+   operation_type?: string;
+   easybroker_id?: string;
+   area?: number;
    tag: string;
    tag_bg?: string;
    title: string;
@@ -112,15 +117,20 @@ export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): 
    return {
       id: property.id,
       href: `/listing_details_01?id=${property.id}`,
-      tag: property.tag || property.listing_status || "FOR SALE",
+      location: property.location,
+      property_type: property.property_type,
+      operation_type: property.operation_type,
+      easybroker_id: property.easybroker_id,
+      area: toNumber(property.sqft),
+      tag: property.tag || property.listing_status || "",
       tag_bg: property.tag_bg,
       title: property.title || "Untitled property",
       address: property.address || property.location || "",
       property_info: [
-         { icon: propertyIcon_1, feature: "sqft", total_feature: toNumber(property.sqft) },
+         { icon: propertyIcon_1, feature: "m²", total_feature: toNumber(property.sqft) },
          { icon: propertyIcon_2, feature: "bed", total_feature: toNumber(property.bedrooms) },
          { icon: propertyIcon_3, feature: "bath", total_feature: toNumber(property.bathrooms) },
-      ],
+      ].filter(info => info.total_feature > 0),
       price: toNumber(property.price),
       price_text: property.price_text,
       currency: property.currency || "MXN",

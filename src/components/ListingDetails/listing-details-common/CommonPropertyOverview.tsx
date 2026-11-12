@@ -6,6 +6,7 @@ import icon_2 from "@/assets/images/icon/icon_48.svg"
 import icon_3 from "@/assets/images/icon/icon_49.svg"
 import icon_4 from "@/assets/images/icon/icon_50.svg"
 import icon_5 from "@/assets/images/icon/icon_51.svg"
+import { propertyOperations } from "@/lib/propertyPresentation";
 import { DirectusProperty } from "@/lib/directusProperties";
 import { useTranslation } from "@/contexts/TranslationContext";
 
@@ -15,41 +16,13 @@ interface DataType {
    title: string;
 }[];
 
-const property_overview_data: DataType[] = [
-   {
-      id: 1,
-      icon: icon_1,
-      title: "Sqft . 3,720",
-   },
-   {
-      id: 2,
-      icon: icon_2,
-      title: "Bed . 03",
-   },
-   {
-      id: 3,
-      icon: icon_3,
-      title: "Bath . 2",
-   },
-   {
-      id: 4,
-      icon: icon_4,
-      title: "Kitchen . 01",
-   },
-   {
-      id: 5,
-      icon: icon_5,
-      title: "Type . Apartment",
-   },
-]
-
 const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | null }) => {
    const { t } = useTranslation();
    const property_overview_data: DataType[] = [
       {
          id: 1,
          icon: icon_1,
-         title: `${t("listingDetails.overview.area")} . ${property?.sqft || 0}`,
+         title: `${t("listingDetails.overview.area")} . ${Number(property?.sqft || 0).toLocaleString()} m²`,
       },
       {
          id: 2,
@@ -64,7 +37,7 @@ const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | nu
       {
          id: 4,
          icon: icon_4,
-         title: `${t("listingDetails.overview.operation")} . ${property?.operation_type === "rental" ? t("listingDetails.rent") : t("listingDetails.sale")}`,
+         title: `${t("listingDetails.overview.operation")} . ${property ? propertyOperations(property).map(operation => operation === "rent" ? t("listingDetails.rent") : t("listingDetails.sale")).join(" / ") : ""}`,
       },
       {
          id: 5,
@@ -75,7 +48,7 @@ const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | nu
 
    return (
       <ul className="style-none d-flex flex-wrap align-items-center justify-content-between">
-         {property_overview_data.map((item) => (
+         {property_overview_data.filter(item => item.id === 1 ? Number(property?.sqft) > 0 : item.id === 2 ? Number(property?.bedrooms) > 0 : item.id === 3 ? Number(property?.bathrooms) > 0 : true).map((item) => (
             <li key={item.id}>
                <Image src={item.icon} alt="" className="lazy-img icon" />
                <span className="fs-20 color-dark">{item.title}</span>

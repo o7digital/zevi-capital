@@ -7,13 +7,22 @@ import Sidebar from "./Sidebar"
 import CommonBanner from "../listing-details-common/CommonBanner"
 import CommonPropertyOverview from "../listing-details-common/CommonPropertyOverview"
 import { DirectusProperty, directusPropertyImages, fetchDirectusProperty } from "@/lib/directusProperties"
+import { propertyOperations } from "@/lib/propertyPresentation"
 import { useTranslation } from "@/contexts/TranslationContext"
 
 const ListingDetailsOneArea = () => {
    const searchParams = useSearchParams();
    const propertyId = searchParams.get("id") || "";
+   const [backHref, setBackHref] = useState("/#properties");
    const [property, setProperty] = useState<DirectusProperty | null>(null);
    const { t } = useTranslation();
+
+   useEffect(() => {
+      try {
+         const saved = sessionStorage.getItem('zevi-property-list-url');
+         if (saved && (saved.startsWith('/?') || saved === '/#properties')) setBackHref(saved);
+      } catch { /* Storage may be disabled. */ }
+   }, []);
 
    useEffect(() => {
       let isMounted = true;
@@ -37,11 +46,11 @@ const ListingDetailsOneArea = () => {
       : [];
 
    const detailRows = [
-      { label: t("listingDetails.details.bedrooms"), value: property?.bedrooms },
-      { label: t("listingDetails.details.bathrooms"), value: property?.bathrooms },
-      { label: t("listingDetails.details.area"), value: property?.sqft ? `${property.sqft} sqft` : undefined },
+      { label: t("listingDetails.details.bedrooms"), value: Number(property?.bedrooms) > 0 ? property?.bedrooms : undefined },
+      { label: t("listingDetails.details.bathrooms"), value: Number(property?.bathrooms) > 0 ? property?.bathrooms : undefined },
+      { label: t("listingDetails.details.area"), value: property?.sqft ? `${Number(property.sqft).toLocaleString()} m²` : undefined },
       { label: t("listingDetails.details.type"), value: property?.property_type },
-      { label: t("listingDetails.details.operation"), value: property?.operation_type === "rental" ? t("listingDetails.rent") : t("listingDetails.sale") },
+      { label: t("listingDetails.details.operation"), value: property ? propertyOperations(property).map(operation => operation === "rent" ? t("listingDetails.rent") : t("listingDetails.sale")).join(" / ") : undefined },
       { label: t("listingDetails.details.status"), value: property?.listing_status || property?.tag },
       { label: t("listingDetails.details.location"), value: property?.location },
       { label: t("listingDetails.details.easybroker"), value: property?.easybroker_id },
@@ -50,7 +59,7 @@ const ListingDetailsOneArea = () => {
    return (
       <div className="listing-details-one theme-details-one bg-pink pt-180 lg-pt-150 pb-150 xl-pb-120">
          <div className="container">
-            <Link href="/#properties" className="d-inline-flex align-items-center mb-35 fw-500 color-dark">
+            <Link href={backHref} className="d-inline-flex align-items-center mb-35 fw-500 color-dark">
                <i className="bi bi-arrow-left me-2"></i>
                {t("listingDetails.backToList")}
             </Link>
@@ -79,10 +88,10 @@ const ListingDetailsOneArea = () => {
                         </ul>
                      </div>
                   </div>
-                  <Link href="/#properties" className="btn-four d-inline-flex align-items-center justify-content-center rounded-circle">
+                  <Link href={backHref} className="btn-four d-inline-flex align-items-center justify-content-center rounded-circle">
                      <i className="bi bi-arrow-left"></i>
                   </Link>
-                  <Link href="/#properties" className="fw-500 color-dark ms-3">
+                  <Link href={backHref} className="fw-500 color-dark ms-3">
                      {t("listingDetails.backToList")}
                   </Link>
                </div>

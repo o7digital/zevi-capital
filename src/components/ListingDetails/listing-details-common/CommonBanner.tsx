@@ -1,25 +1,13 @@
 "use client"
-import Link from "next/link"
+import PropertyShare from "./PropertyShare"
+import { formatPropertyPrice, propertyCopy, propertyOperations } from "@/lib/propertyPresentation"
 import { DirectusProperty } from "@/lib/directusProperties"
 import { useTranslation } from "@/contexts/TranslationContext"
 
-const formatPrice = (property?: DirectusProperty | null) => {
-   const price = Number(property?.price);
-   if (!Number.isFinite(price)) return "Precio a consultar";
-   return new Intl.NumberFormat("es-MX", {
-      style: "currency",
-      currency: property?.currency || "MXN",
-      maximumFractionDigits: 0,
-   }).format(price);
-};
-
 const CommonBanner = ({ style_3, property }: { style_3?: boolean; property?: DirectusProperty | null }) => {
-   const { t } = useTranslation()
-   const listingStatus = property?.operation_type === "rental"
-      ? t("listingDetails.rent")
-      : property?.operation_type === "sale"
-         ? t("listingDetails.sale")
-         : property?.listing_status || property?.tag || t("listingDetails.sale")
+   const { t, locale } = useTranslation();
+   const copy = propertyCopy[locale];
+   const listingStatus = property ? propertyOperations(property).map(operation => operation === 'sale' ? copy.sale : copy.rent).join(' / ') || property.listing_status || property.tag : '';
 
    return (
       <div className="row">
@@ -33,21 +21,9 @@ const CommonBanner = ({ style_3, property }: { style_3?: boolean; property?: Dir
          </div>
          <div className="col-lg-6 text-lg-end">
             <div className="d-inline-block md-mt-40">
-               <div className="price color-dark fw-500">{t("listingDetails.price")}: {formatPrice(property)}</div>
+               <div className="price color-dark fw-500" style={{ fontSize: "clamp(24px, 3vw, 36px)", lineHeight: 1.4, overflowWrap: "anywhere" }}>{t("listingDetails.price")}: {formatPropertyPrice(property, locale)}</div>
                <div className="est-price fs-20 mt-25 mb-35 md-mb-30">{property?.property_type || t("listingDetails.propertyFallback")}</div>
-               <ul className="style-none d-flex align-items-center action-btns">
-                  <li className="me-auto fw-500 color-dark"><i className="fa-sharp fa-regular fa-share-nodes me-2"></i>
-                     {t("listingDetails.share")}</li>
-                  <li><Link href="#"
-                     className={`d-flex align-items-center justify-content-center tran3s ${style_3 ? "" : "rounded-circle"}`}><i
-                        className="fa-light fa-heart"></i></Link></li>
-                  <li><Link href="#"
-                     className={`d-flex align-items-center justify-content-center tran3s ${style_3 ? "" : "rounded-circle"}`}><i
-                        className="fa-light fa-bookmark"></i></Link></li>
-                  <li><Link href="#"
-                     className={`d-flex align-items-center justify-content-center tran3s ${style_3 ? "" : "rounded-circle"}`}><i
-                        className="fa-light fa-circle-plus"></i></Link></li>
-               </ul>
+               {property && <PropertyShare property={property} />}
             </div>
          </div>
       </div>
