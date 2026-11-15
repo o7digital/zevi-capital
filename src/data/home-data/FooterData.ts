@@ -20,7 +20,7 @@ const footer_data: DataType[] = [
       widget_class: "xs-mt-50",
       widget_title: "Links",
       widget_title_key: "footer.links",
-      footer_link: [{ link: "/", link_title: "Home", link_title_key: "nav.home" }, { link: "/about_us_01", link_title: "About Us", link_title_key: "nav.aboutUs" }, { link: "/services", link_title: "Services", link_title_key: "nav.sales" }, { link: "/insurance", link_title: "Insurance", link_title_key: "nav.insurance" }, { link: "/insights", link_title: "Insights", link_title_key: "nav.insights" }, { link: "/contact", link_title: "Contact Us", link_title_key: "nav.contactUs" },]
+      footer_link: [{ link: "/", link_title: "Home", link_title_key: "nav.home" }, { link: "/about_us_01", link_title: "About Us", link_title_key: "nav.aboutUs" }, { link: "/services", link_title: "Services", link_title_key: "nav.sales" }, { link: "/insurance", link_title: "Insurance", link_title_key: "nav.insurance" }, { link: "/contact", link_title: "Contact Us", link_title_key: "nav.contactUs" },]
    },
    {
       id: 2,
