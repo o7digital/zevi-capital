@@ -1,8 +1,8 @@
 "use client"
 import Image, { StaticImageData } from "next/image";
-import Fancybox from "@/components/common/Fancybox";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { useEffect, useState } from "react";
+import type { CSSProperties, MouseEvent } from "react";
 
 import bigCarousel_1 from "@/assets/images/listing/img_43.jpg"
 import bigCarousel_2 from "@/assets/images/listing/img_44.jpg"
@@ -13,8 +13,6 @@ import smallCarousel_1 from "@/assets/images/listing/img_43_s.jpg"
 import smallCarousel_2 from "@/assets/images/listing/img_44_s.jpg"
 import smallCarousel_3 from "@/assets/images/listing/img_45_s.jpg"
 import smallCarousel_4 from "@/assets/images/listing/img_46_s.jpg"
-
-const largeThumb: string[] = ["1", "2", "3"];
 
 interface DataType {
   big_carousel: StaticImageData[];
@@ -36,6 +34,9 @@ interface GalleryImage {
 const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: GalleryImage[] }) => {
   const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomOrigin, setZoomOrigin] = useState("50% 50%");
   const hasDirectusImages = images.length > 0;
   const largeImages = hasDirectusImages ? images : big_carousel.map((image, index) => ({ url: image, alt: `Property image ${index + 1}` }));
   const thumbImages = hasDirectusImages ? images : small_carousel.map((image, index) => ({ url: image, alt: `Property thumbnail ${index + 1}` }));
@@ -45,6 +46,11 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
     setActiveIndex(0);
   }, [images]);
 
+  useEffect(() => {
+    setIsZoomed(false);
+    setZoomOrigin("50% 50%");
+  }, [activeIndex, isLightboxOpen]);
+
   const goToPrevious = () => {
     setActiveIndex((current) => (current === 0 ? largeImages.length - 1 : current - 1));
   };
@@ -52,6 +58,46 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
   const goToNext = () => {
     setActiveIndex((current) => (current + 1) % largeImages.length);
   };
+
+  const openLightbox = (index: number) => {
+    setActiveIndex(index);
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+    setIsZoomed(false);
+  };
+
+  const toggleZoom = (origin = "50% 50%") => {
+    setZoomOrigin(origin);
+    setIsZoomed((current) => !current);
+  };
+
+  const handleZoomClick = (event: MouseEvent<HTMLButtonElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    toggleZoom(`${x.toFixed(1)}% ${y.toFixed(1)}%`);
+  };
+
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") goToPrevious();
+      if (event.key === "ArrowRight") goToNext();
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isLightboxOpen, largeImages.length]);
 
   if (!activeImage) return null;
 
@@ -61,31 +107,22 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
         <div className="col-lg-10">
           <div className={` bg-white border-20 md-mb-20 ${style ? "" : "shadow4 p-30"}`}>
             <div className="position-relative z-1 overflow-hidden border-20">
-              <div className="img-fancy-btn border-10 fw-500 fs-16 color-dark">
+              <button type="button" className="img-fancy-btn border-10 fw-500 fs-16 color-dark" onClick={() => openLightbox(activeIndex)}>
                 {t("listingDetails.gallery.view")} {largeImages.length} {t("listingDetails.gallery.photos")}
-                <Fancybox
-                  options={{
-                    Carousel: {
-                      infinite: true,
-                    },
-                  }}
-                >
-                  {largeImages.map((image, index) => (
-                    <a key={index} className="d-block" data-fancybox="img2" href={typeof image.url === "string" ? image.url : ""}></a>
-                  ))}
-                </Fancybox>
-              </div>
+              </button>
 
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <Image
-                    src={activeImage.url}
-                    alt={activeImage.alt}
-                    className="w-100 border-20"
-                    width={1060}
-                    height={700}
-                    priority={activeIndex === 0}
-                  />
+                  <button type="button" className="zevi-gallery-main" onClick={() => openLightbox(activeIndex)} aria-label="Open photo gallery">
+                    <Image
+                      src={activeImage.url}
+                      alt={activeImage.alt}
+                      className="w-100 border-20"
+                      width={1060}
+                      height={700}
+                      priority={activeIndex === 0}
+                    />
+                  </button>
                 </div>
               </div>
               <button className="carousel-control-prev" type="button" onClick={goToPrevious} aria-label="Previous image">
@@ -165,6 +202,58 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
           }
         }
       `}</style>
+
+      {isLightboxOpen && (
+        <div className="zevi-lightbox" role="dialog" aria-modal="true" aria-label="Property photo gallery">
+          <button type="button" className="zevi-lightbox__backdrop" onClick={closeLightbox} aria-label="Close gallery"></button>
+          <button type="button" className="zevi-lightbox__close" onClick={closeLightbox} aria-label="Close gallery">
+            <i className="bi bi-x-lg"></i>
+          </button>
+          <button type="button" className="zevi-lightbox__arrow zevi-lightbox__arrow--prev" onClick={goToPrevious} aria-label="Previous image">
+            <i className="bi bi-chevron-left"></i>
+          </button>
+          <div className="zevi-lightbox__stage">
+            <button
+              type="button"
+              className={`zevi-lightbox__image-button ${isZoomed ? "is-zoomed" : ""}`}
+              style={{ "--zevi-zoom-origin": zoomOrigin } as CSSProperties}
+              onClick={handleZoomClick}
+              aria-label={isZoomed ? "Zoom out" : "Zoom in"}
+            >
+              <Image
+                src={activeImage.url}
+                alt={activeImage.alt}
+                width={1600}
+                height={1050}
+                className="zevi-lightbox__image"
+                priority
+              />
+            </button>
+          </div>
+          <button type="button" className="zevi-lightbox__arrow zevi-lightbox__arrow--next" onClick={goToNext} aria-label="Next image">
+            <i className="bi bi-chevron-right"></i>
+          </button>
+          <div className="zevi-lightbox__zoom-controls" aria-label="Zoom controls">
+            <button type="button" onClick={() => toggleZoom()} aria-label={isZoomed ? "Zoom out" : "Zoom in"}>
+              <i className={`bi ${isZoomed ? "bi-zoom-out" : "bi-zoom-in"}`}></i>
+            </button>
+          </div>
+          <div className="zevi-lightbox__thumbs" aria-label="Gallery thumbnails">
+            {largeImages.map((image, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`zevi-lightbox__thumb ${i === activeIndex ? "active" : ""}`}
+                onClick={() => setActiveIndex(i)}
+                aria-label={`View photo ${i + 1}`}
+                aria-current={i === activeIndex ? "true" : undefined}
+              >
+                <Image src={image.url} alt={image.alt} width={130} height={90} />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -107,7 +107,7 @@ function assetUrl(value: DirectusFileValue | string | { id?: string } | undefine
    return id && DIRECTUS_URL ? `${DIRECTUS_URL}/assets/${id}?format=webp&quality=82` : undefined;
 }
 
-function propertyImages(property: DirectusProperty) {
+export function directusPropertyImages(property: DirectusProperty) {
    const relatedImages = [...(property.photos || []), ...(property.images || []), ...(property.property_images || [])];
    const urls = [
       assetUrl(property.cover_image),
@@ -115,7 +115,9 @@ function propertyImages(property: DirectusProperty) {
       ...relatedImages.map(assetUrl),
    ].filter((url): url is string => Boolean(url));
 
-   return urls.map((url, index) => ({
+   const uniqueUrls = Array.from(new Set(urls));
+
+   return uniqueUrls.map((url, index) => ({
       id: `${property.id}-${index}`,
       img: url,
       active: index === 0 ? "active" : undefined,
@@ -143,36 +145,34 @@ export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): 
       price_text: property.price_text,
       currency: property.currency || "MXN",
       carousel: `directus-${property.id || index}`,
-      carousel_thumb: propertyImages(property),
+      carousel_thumb: directusPropertyImages(property),
    };
 }
 
 export async function fetchDirectusProperties(): Promise<DirectusPropertyCard[]> {
    if (!DIRECTUS_URL) return [];
 
-   try {
-      const params = new URLSearchParams({
-         fields: "*,photos.*,photos.image.*,images.*,property_images.*,property_images.image.*",
-         limit: "-1",
-         sort: "-id",
-      });
-      params.set("filter[status][_eq]", "published");
-      params.set("filter[cover_image][_nnull]", "true");
+   const params = new URLSearchParams({
+      fields: "*,photos.*,photos.image.*,images.*,property_images.*,property_images.image.*",
+      limit: "-1",
+      sort: "-id",
+   });
+   params.set("filter[status][_eq]", "published");
+   params.set("filter[cover_image][_nnull]", "true");
 
       const response = await fetch(`${DIRECTUS_URL}/items/properties?${params.toString()}`, {
          headers: { Accept: "application/json" },
          next: { revalidate: 300 },
       });
 
-      if (!response.ok) return [];
-
-      const payload = await response.json();
-      const items = Array.isArray(payload?.data) ? payload.data : [];
-
-      return items.map(mapDirectusPropertyCard).filter((property: DirectusPropertyCard) => property.carousel_thumb.length > 0);
-   } catch {
-      return [];
+   if (!response.ok) {
+      throw new Error(`Directus properties request failed: ${response.status} ${response.statusText}`);
    }
+
+   const payload = await response.json();
+   const items = Array.isArray(payload?.data) ? payload.data : [];
+
+   return items.map(mapDirectusPropertyCard).filter((property: DirectusPropertyCard) => property.carousel_thumb.length > 0);
 }
 
 export async function fetchDirectusProperty(id: string): Promise<DirectusProperty | null> {
@@ -180,9 +180,10 @@ export async function fetchDirectusProperty(id: string): Promise<DirectusPropert
 
    try {
       const params = new URLSearchParams({
-         fields: "*,cover_image.*,photos.*,photos.image.*",
+         fields: "*,cover_image.*,image.*,photos.*,photos.image.*,property_images.*,property_images.image.*",
       });
       params.set("deep[photos][_sort]", "sort_order");
+      params.set("deep[property_images][_sort]", "sort_order");
 
       const response = await fetch(`${DIRECTUS_URL}/items/properties/${id}?${params.toString()}`, {
          headers: { Accept: "application/json" },

@@ -10,7 +10,7 @@ import FancyBanner from "@/components/common/FancyBanner"
 import { fetchDirectusProperties } from "@/lib/directusProperties"
 
 const HomeOne = async () => {
-  const initialProperties = await fetchDirectusProperties();
+  const initialProperties = await fetchDirectusProperties().catch(() => []);
 
   return (
     <>

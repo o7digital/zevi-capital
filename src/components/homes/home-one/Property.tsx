@@ -9,6 +9,9 @@ import titleShape from "@/assets/images/shape/title_shape_03.svg";
 
 const Property = ({ initialProperties = [] }: { initialProperties?: DirectusPropertyCard[] }) => {
    const { t } = useTranslation();
+   const hasDirectusConfig = Boolean(process.env.NEXT_PUBLIC_DIRECTUS_URL);
+   const [isLoading, setIsLoading] = useState(hasDirectusConfig && initialProperties.length === 0);
+   const [loadError, setLoadError] = useState(false);
    const [properties, setProperties] = useState<DirectusPropertyCard[]>(initialProperties);
    const formatCardPrice = (item: DirectusPropertyCard) => {
       const currency = item.currency || "MXN";
@@ -22,18 +25,33 @@ const Property = ({ initialProperties = [] }: { initialProperties?: DirectusProp
    const propertyHref = (item: DirectusPropertyCard) => item.href || "/listing_details_01";
 
    useEffect(() => {
+      if (!hasDirectusConfig) return;
+
       let isMounted = true;
 
-      fetchDirectusProperties().then((directusProperties) => {
-         if (isMounted && directusProperties.length > 0) {
-            setProperties(directusProperties);
-         }
-      });
+      fetchDirectusProperties()
+         .then((directusProperties) => {
+            if (isMounted) {
+               setProperties(directusProperties);
+               setLoadError(false);
+            }
+         })
+         .catch((error) => {
+            console.error(error);
+            if (isMounted) {
+               setLoadError(true);
+            }
+         })
+         .finally(() => {
+            if (isMounted) {
+               setIsLoading(false);
+            }
+         });
 
       return () => {
          isMounted = false;
       };
-   }, []);
+   }, [hasDirectusConfig]);
    
    return (
       <div id="properties" className="property-listing-one bg-pink-two mt-150 xl-mt-120 pt-140 xl-pt-120 lg-pt-80 pb-180 xl-pb-120 lg-pb-100">
@@ -47,7 +65,7 @@ const Property = ({ initialProperties = [] }: { initialProperties?: DirectusProp
                <div className="row gx-xxl-5">
                   {properties.length === 0 && (
                      <div className="col-12">
-                        <p className="fs-20 mb-0">{t("property.empty")}</p>
+                        <p className="fs-20 mb-0">{t(isLoading ? "property.loading" : loadError ? "property.loadError" : "property.empty")}</p>
                      </div>
                   )}
                   {properties.map((item) => (

@@ -6,7 +6,7 @@ import MediaGallery from "./MediaGallery"
 import Sidebar from "./Sidebar"
 import CommonBanner from "../listing-details-common/CommonBanner"
 import CommonPropertyOverview from "../listing-details-common/CommonPropertyOverview"
-import { DirectusProperty, directusAssetUrl, fetchDirectusProperty } from "@/lib/directusProperties"
+import { DirectusProperty, directusPropertyImages, fetchDirectusProperty } from "@/lib/directusProperties"
 import { useTranslation } from "@/contexts/TranslationContext"
 
 const ListingDetailsOneArea = () => {
@@ -29,13 +29,12 @@ const ListingDetailsOneArea = () => {
       };
    }, [propertyId]);
 
-   const galleryImages = [
-      ...(property?.photos || []),
-      ...(property?.cover_image ? [{ image: property.cover_image }] : []),
-   ].map((image, index) => {
-      const url = directusAssetUrl(image);
-      return url ? { url, alt: `${property?.title || "Propiedad"} ${index + 1}` } : null;
-   }).filter((image): image is { url: string; alt: string } => Boolean(image));
+   const galleryImages = property
+      ? directusPropertyImages(property).map((image, index) => ({
+         url: image.img,
+         alt: `${property.title || "Propiedad"} ${index + 1}`,
+      }))
+      : [];
 
    const detailRows = [
       { label: t("listingDetails.details.bedrooms"), value: property?.bedrooms },
