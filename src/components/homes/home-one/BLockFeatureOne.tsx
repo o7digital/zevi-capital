@@ -7,41 +7,41 @@ const content = {
   es: {
     eyebrow: "ZeVi Capital · Estado de México",
     title: "Inversión inmobiliaria estratégica en Zona Esmeralda y Estado de México",
-    lead: "En ZeVi Capital conectamos visión, capital, territorio y estrategia para transformar oportunidades inmobiliarias en operaciones reales, rentables y seguras.",
+    lead: "En ZeVi | Capital conectamos empresas, capital y oportunidades inmobiliarias mediante análisis de mercado, asesoría transaccional y estrategias de expansión.",
     description: "Acompañamos a empresas, propietarios e inversionistas en Zona Esmeralda, Atizapán, Naucalpan, Huixquilucan y otras zonas estratégicas del Estado de México.",
-    positioning: "No somos una inmobiliaria tradicional. Somos una firma estratégica que integra análisis de mercado, visión comercial, evaluación técnica, respaldo jurídico y ejecución operativa.",
+    positioning: "Consultoría inmobiliaria corporativa y asesoría para empresas e inversionistas. Acompañamos decisiones de arrendamiento, adquisición, comercialización e inversión con una visión integral del activo y del negocio.",
     advice: "Solicitar asesoría", properties: "Ver propiedades", sell: "Quiero vender o rentar mi propiedad", business: "Busco ubicación para mi empresa",
     searchTitle: "Encuentra oportunidades inmobiliarias en Zona Esmeralda",
-    searchText: "Explora propiedades comerciales, industriales, corporativas, residenciales premium, terrenos y activos con potencial de inversión.",
+    searchText: "Explora naves industriales, locales comerciales, oficinas, terrenos y propiedades residenciales para arrendamiento, adquisición e inversión inmobiliaria.",
     operationTitle: "Tipo de operación", locationTitle: "Ubicación", rangeTitle: "Rango de inversión",
     operations: ["Comprar propiedad", "Rentar propiedad", "Vender propiedad", "Rentar espacio industrial", "Invertir en inmueble", "Buscar terreno estratégico"],
-    note: "Ya sea que busques comprar, rentar, vender, invertir o expandir tu empresa, ZeVi Capital te ayuda a identificar la oportunidad adecuada."
+    note: "Partimos de tu objetivo: analizamos mercado y ubicación, evaluamos alternativas, organizamos documentos y términos de negociación y coordinamos el seguimiento de la operación."
   },
   fr: {
     eyebrow: "ZeVi Capital · État de Mexico",
     title: "Investissement immobilier stratégique à Zona Esmeralda et dans l’État de Mexico",
-    lead: "ZeVi Capital associe vision, capital, territoire et stratégie pour transformer les opportunités immobilières en opérations concrètes, rentables et sécurisées.",
+    lead: "ZeVi | Capital relie entreprises, capitaux et opportunités immobilières grâce à l’analyse de marché, au conseil transactionnel et aux stratégies d’expansion.",
     description: "Nous accompagnons entreprises, propriétaires et investisseurs à Zona Esmeralda, Atizapán, Naucalpan, Huixquilucan et dans les zones stratégiques de l’État de Mexico.",
-    positioning: "Nous ne sommes pas une agence immobilière traditionnelle. Nous sommes un cabinet stratégique qui réunit analyse de marché, vision commerciale, évaluation technique, soutien juridique et exécution opérationnelle.",
+    positioning: "Conseil immobilier d’entreprise et accompagnement des investisseurs. Nous intervenons dans les décisions de location, d’acquisition, de commercialisation et d’investissement avec une vision globale de l’actif et de l’entreprise.",
     advice: "Demander conseil", properties: "Voir les propriétés", sell: "Je souhaite vendre ou louer mon bien", business: "Je cherche un emplacement pour mon entreprise",
     searchTitle: "Trouvez des opportunités immobilières à Zona Esmeralda",
-    searchText: "Découvrez des biens commerciaux, industriels, professionnels et résidentiels premium, ainsi que des terrains et actifs à potentiel d’investissement.",
+    searchText: "Découvrez des bâtiments industriels, locaux commerciaux, bureaux, terrains et biens résidentiels pour la location, l’acquisition et l’investissement immobilier.",
     operationTitle: "Type d’opération", locationTitle: "Localisation", rangeTitle: "Budget d’investissement",
     operations: ["Acheter un bien", "Louer un bien", "Vendre un bien", "Louer un espace industriel", "Investir dans l’immobilier", "Rechercher un terrain stratégique"],
-    note: "Pour acheter, louer, vendre, investir ou développer votre entreprise, ZeVi Capital vous aide à identifier la bonne opportunité."
+    note: "Nous partons de votre objectif : analyser le marché et l’emplacement, évaluer les options, organiser les documents et les termes de négociation, puis coordonner le suivi de l’opération."
   },
   en: {
     eyebrow: "ZeVi Capital · State of Mexico",
     title: "Strategic real estate investment in Zona Esmeralda and the State of Mexico",
-    lead: "ZeVi Capital connects vision, capital, territory and strategy to turn real estate opportunities into viable, profitable and secure transactions.",
+    lead: "ZeVi | Capital connects businesses, capital and real estate opportunities through market analysis, transaction advisory and expansion strategies.",
     description: "We advise businesses, property owners and investors in Zona Esmeralda, Atizapán, Naucalpan, Huixquilucan and other strategic areas of the State of Mexico.",
-    positioning: "We are not a traditional real estate agency. We are a strategic firm combining market analysis, commercial vision, technical assessment, legal support and operational execution.",
+    positioning: "Corporate real estate consulting and advisory for businesses and investors. We support leasing, acquisition, marketing and investment decisions with an integrated view of the asset and the business.",
     advice: "Request advice", properties: "View properties", sell: "I want to sell or lease my property", business: "I need a location for my business",
     searchTitle: "Find real estate opportunities in Zona Esmeralda",
-    searchText: "Explore commercial, industrial, corporate and premium residential properties, land and investment assets.",
+    searchText: "Explore industrial buildings, retail spaces, offices, land and residential properties for leasing, acquisition and real estate investment.",
     operationTitle: "Transaction type", locationTitle: "Location", rangeTitle: "Investment range",
     operations: ["Buy a property", "Rent a property", "Sell a property", "Lease industrial space", "Invest in real estate", "Find strategic land"],
-    note: "Whether you want to buy, rent, sell, invest or expand your business, ZeVi Capital helps you identify the right opportunity."
+    note: "We begin with your objective: analyze the market and location, assess alternatives, organize documents and negotiation terms, then coordinate transaction follow-up."
   }
 }
 

@@ -102,15 +102,27 @@
     "findOut": "Find out"
   },
   "stepsSection": {
-    "title": "We'r here to help",
-    "subtitle": "you get your dream home",
-    "easyStart": "It's easy to start with us with these simple steps",
+    "title": "From vision",
+    "subtitle": "to real estate execution",
+    "easyStart": "Discover. Evaluate. Structure. Execute.",
     "createAccount": "Create Account",
     "createAccountDesc": "It's very easy to open an account and start your journey.",
     "findHome": "Find Home",
     "findHomeDesc": "Complete your profile with all the info to get attention of client.",
     "quickProcess": "Quick Process",
-    "quickProcessDesc": "Apply & get your preferable jobs with all the requirements and get it."
+    "quickProcessDesc": "Apply & get your preferable jobs with all the requirements and get it.",
+    "step1Title": "Discover · Define the mandate",
+    "step1Desc": "Define requirements, the real estate objective and success criteria for each project.",
+    "step2Title": "Evaluate · Analyze the market",
+    "step2Desc": "Compare supply, market comparables, locations and economic terms to understand the market.",
+    "step3Title": "Evaluate · Compare alternatives",
+    "step3Desc": "Assess alternatives against space, operating and investment needs and identified risks.",
+    "step4Title": "Structure · Organize documents",
+    "step4Desc": "Organize property information and coordinate document review and due diligence.",
+    "step5Title": "Structure · Negotiate terms",
+    "step5Desc": "Organize lease or acquisition terms and support real estate negotiations.",
+    "step6Title": "Execute · Coordinate closing",
+    "step6Desc": "Follow up on agreements and outstanding items with the relevant parties and specialists."
   },
   "journeySection": {
     "title": "Start your Journey",
@@ -163,17 +175,19 @@
   "aboutUs": {
     "breadcrumbTitle": "About Us",
     "subtitle": "About us",
-    "mainTitle": "Secure your",
-    "familyWord": "family's",
-    "dreamHome": "Dream home.",
-    "intro": "O7 Realestates is your trusted partner in luxury real estate. With over 15 years of experience in Canada's dynamic property market.",
-    "contactButton": "Contact Us",
+    "mainTitle": "Real estate",
+    "familyWord": "advisory",
+    "dreamHome": "for businesses and investors.",
+    "intro": "ZeVi | Capital supports businesses, investors and owners in identifying, evaluating and negotiating real estate opportunities.",
+    "contactButton": "Speak with an advisor",
     "yearsExperience": "Years of experience",
     "propertiesSold": "Properties sold",
     "whoWeAre": "Who we are?",
-    "whoWeAreText": "O7 Realestates is a leading real estate agency specializing in luxury properties across Canada. Founded with a vision to redefine property excellence, we combine deep market knowledge with personalized service to help clients find their perfect home or investment.",
+    "whoWeAreText": "We are a real estate and investment advisory firm based in Zona Esmeralda, State of Mexico. We combine market analysis, corporate service and transaction coordination.",
     "ourMission": "Our Mission",
-    "ourMissionText": "Our mission is to provide exceptional real estate services that exceed expectations. We are committed to integrity, transparency, and delivering results that create lasting value for our clients in Canada's prestigious property landscape."
+    "ourMissionText": "Support leasing, acquisition, marketing and investment decisions with information, clear criteria and transaction follow-up.",
+    "servicePillars": "Analysis areas: market, asset and transaction",
+    "structuredSteps": "Advisory stages"
   },
   "listingDetails": {
     "titleFallback": "ZeVi Capital property",

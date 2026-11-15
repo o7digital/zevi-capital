@@ -5,7 +5,7 @@ const services = [
     number: "01",
     eyebrow: "Revisión de propiedades · Análisis documental",
     title: "Due diligence inmobiliario",
-    text: "Apoyamos en la revisión de información relevante del activo para identificar posibles riesgos antes de avanzar en una operación.",
+    text: "Coordinamos la revisión documental y el análisis preliminar de riesgos del inmueble para acompañar procesos de due diligence antes de avanzar en una operación.",
     details: ["Documentación del activo", "Condiciones de la operación", "Identificación preventiva de riesgos"],
   },
   {
@@ -18,8 +18,8 @@ const services = [
   {
     number: "03",
     eyebrow: "Contratos inmobiliarios · Operación segura",
-    title: "Coordinación legal y fiscal",
-    text: "Coordinamos con especialistas legales y fiscales para revisar elementos críticos y facilitar operaciones más ordenadas.",
+    title: "Legal & Transaction Advisory",
+    text: "Coordinamos cartas de intención, arrendamientos y compraventas con los especialistas correspondientes. El alcance de los servicios jurídicos se delimita contractualmente.",
     details: ["Coordinación con especialistas", "Revisión de elementos críticos", "Seguimiento estructurado"],
   },
 ]
@@ -30,13 +30,13 @@ const InsuranceArea = () => (
       <div className="container">
         <div className="certainty-intro__grid">
           <div>
-            <span className="certainty-eyebrow">Insurance · Manejo de riesgo y certeza</span>
-            <h1>Certeza, análisis y respaldo para operaciones inmobiliarias</h1>
+            <span className="certainty-eyebrow">Legal & Transaction Advisory</span>
+            <h1>Due diligence inmobiliario y asesoría transaccional</h1>
           </div>
           <div className="certainty-intro__copy">
-            <p className="lead">Toda operación inmobiliaria implica decisiones importantes.</p>
-            <p>Comprar, vender, rentar, invertir o expandirse requiere analizar riesgos, documentos, condiciones comerciales y viabilidad operativa.</p>
-            <p>En ZeVi Capital integramos una visión preventiva para ayudar a nuestros clientes a avanzar con mayor claridad y seguridad.</p>
+            <p className="lead">Análisis documental y coordinación para cada operación inmobiliaria.</p>
+            <p>La asesoría en arrendamiento comercial, adquisición de activos y negociación inmobiliaria corporativa requiere evaluar documentos, condiciones económicas y riesgos.</p>
+            <p>En ZeVi | Capital organizamos la información y el seguimiento de la transacción. El alcance y la prestación de servicios jurídicos especializados se acuerdan según cada asunto.</p>
             <Link href="/contact" className="certainty-cta">Solicitar una evaluación <i className="bi bi-arrow-up-right" /></Link>
           </div>
         </div>
