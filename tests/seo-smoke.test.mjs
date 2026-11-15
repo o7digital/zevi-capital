@@ -32,7 +32,9 @@ for (const route of routes) {
       assert.match(html, /<h2[^>]*>Inversión inmobiliaria en Zona Esmeralda y Estado de México<\/h2>/);
       const image = html.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/)?.[1];
       assert.ok(image, 'homepage has a share image');
-      assert.equal((await fetch(`${base}${new URL(image).pathname}`)).status, 200, 'share image exists');
+      const imageResponse = await fetch(`${base}${new URL(image).pathname}`);
+      assert.equal(imageResponse.status, 200, 'share image exists');
+      await imageResponse.arrayBuffer();
     }
     if (route.startsWith('/services/') || route === '/insurance') {
       const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
@@ -64,4 +66,5 @@ test('robots allows established URLs and keeps template pages excluded', async (
 test('unknown service paths return 404', async () => {
   const response = await fetch(`${base}/services/not-a-service`);
   assert.equal(response.status, 404);
+  await response.text();
 });
