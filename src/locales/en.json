@@ -3,8 +3,8 @@
     "home": "Home",
     "purchase": "Purchase",
     "aboutUs": "About Us",
-    "sales": "Services",
-    "insurance": "Transaction advisory",
+    "sales": "Sales",
+    "insurance": "Insurance",
     "insights": "Insights",
     "faq": "FAQ",
     "blog": "Blog",
@@ -44,16 +44,14 @@
   "property": {
     "featured": "Featured",
     "properties": "Properties",
-    "subtitle": "Properties for sale and lease. Confirm availability and terms with an advisor.",
+    "subtitle": "Explore latest & featured properties for sale.",
     "forSale": "FOR SALE",
     "forRent": "FOR RENT",
     "sqft": "sqft",
     "bed": "bed",
     "bath": "bath",
     "empty": "Properties will be available soon.",
-    "priceOnRequest": "Price on request",
-    "loading": "Loading properties…",
-    "loadError": "Properties could not be loaded. Please contact an advisor."
+    "priceOnRequest": "Price on request"
   },
   "fancyBanner": {
     "exclusive": "Exclusive",
@@ -71,15 +69,11 @@
     "meetTeam": "Meet Entire Team"
   },
   "contact": {
-    "mainTitle": "Questions? Feel Free to Reach Out Via Message.",
-    "helpTitle": "We're always happy to help.",
-    "hotlineTitle": "Our hotline number",
-    "addressTitle": "Our address",
-    "liveChatTitle": "Live chat",
     "inquiry": "Any Inquiry?",
     "feelFree": "Feel free",
     "toContact": "To contact Us.",
-    "sendMessage": "SEND MESSAGE"
+    "sendMessage": "SEND MESSAGE",
+    "addressTitle": "Our address"
   },
   "aboutSection": {
     "whoWeAre": "Who we are?",
@@ -163,6 +157,13 @@
     "cookie": "Cookie",
     "privacyPolicy": "Privacy policy",
     "faqs": "Faq's"
+  },
+  "contact": {
+    "mainTitle": "Questions? Feel Free to Reach Out Via Message.",
+    "helpTitle": "We're always happy to help.",
+    "hotlineTitle": "Our hotline number",
+    "addressTitle": "Our address",
+    "liveChatTitle": "Live chat"
   },
   "aboutUs": {
     "breadcrumbTitle": "About Us",

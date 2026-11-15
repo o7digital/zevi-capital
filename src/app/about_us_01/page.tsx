@@ -3,7 +3,7 @@ import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
    title: "ZeVi Capital | Consultoría Inmobiliaria Estratégica en México",
-   description: "Conoce ZeVi Capital: asesoría inmobiliaria e inversión para empresas y propietarios, análisis de mercado y coordinación transaccional desde Zona Esmeralda.",
+   description: "Conoce ZeVi Capital, firma especializada en expansión empresarial, inversión inmobiliaria, manejo de activos y comercialización estratégica de propiedades en México.",
    keywords: ["ZeVi Capital", "consultoría inmobiliaria México", "expansión empresarial México", "manejo de activos inmobiliarios", "inversión inmobiliaria estratégica"],
    alternates: { canonical: "https://www.zevicapital.com/about_us_01" },
 };

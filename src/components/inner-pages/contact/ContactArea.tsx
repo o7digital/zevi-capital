@@ -25,6 +25,13 @@ const ContactArea = () => {
          address_1: "info@zevicapital.com"
       },
       {
+         id: 2,
+         class_name: "skew-line",
+         title: t('contact.hotlineTitle'),
+         address_1: "+1 819 123 4567",
+         address_2: "+1 819 987 6543",
+      },
+      {
          id: 3,
          title: t('contact.addressTitle'),
          address_1: officeAddress
@@ -37,7 +44,7 @@ const ContactArea = () => {
             <div className="row">
                <div className="col-xxl-9 col-xl-8 col-lg-10 m-auto">
                   <div className="title-one text-center wow fadeInUp">
-                     <h1>{t('contact.mainTitle')}</h1>
+                     <h3>{t('contact.mainTitle')}</h3>
                   </div>
                </div>
             </div>
@@ -53,7 +60,7 @@ const ContactArea = () => {
                               <Image src={circleImg} alt="" className="lazy-img" /></div>
                            <div className="text">
                               <p className="fs-22">{item.title}</p>
-                              <Link href={item.address_1.includes("@") ? `mailto:${item.address_1}` : "https://maps.google.com/?q=Cto.+Plaza+Bona+Esmeralda+1,+Bosque+Esmeralda,+52930+Mexico"} className="tran3s">{item.address_1}</Link>
+                              <Link href="#" className="tran3s">{item.address_1}</Link>
                               {item.address_2 && <> { " " } <Link href="#" className="tran3s">{item.address_2}</Link></>}
                            </div>
                         </div>

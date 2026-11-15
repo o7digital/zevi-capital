@@ -3,8 +3,8 @@
     "home": "Accueil",
     "purchase": "Achat",
     "aboutUs": "À Propos",
-    "sales": "Services",
-    "insurance": "Conseil transactionnel",
+    "sales": "Ventes",
+    "insurance": "Assurance",
     "insights": "Analyses",
     "faq": "FAQ",
     "blog": "Blog",
@@ -44,16 +44,14 @@
   "property": {
     "featured": "Sélection",
     "properties": "Propriétés",
-    "subtitle": "Biens à vendre et à louer. Confirmez la disponibilité et les conditions avec un conseiller.",
+    "subtitle": "Explorez les dernières propriétés en vedette à vendre.",
     "forSale": "À VENDRE",
     "forRent": "À LOUER",
     "sqft": "m²",
     "bed": "ch",
     "bath": "sdb",
     "empty": "Les propriétés seront bientôt disponibles.",
-    "priceOnRequest": "Prix sur demande",
-    "loading": "Chargement des propriétés…",
-    "loadError": "Les propriétés n’ont pas pu être chargées. Contactez un conseiller."
+    "priceOnRequest": "Prix sur demande"
   },
   "fancyBanner": {
     "exclusive": "Offre",
@@ -71,15 +69,11 @@
     "meetTeam": "Rencontrer Toute l'Équipe"
   },
   "contact": {
-    "mainTitle": "Des questions ? N'hésitez pas à nous contacter par message.",
-    "helpTitle": "Nous sommes toujours heureux de vous aider.",
-    "hotlineTitle": "Notre numéro direct",
-    "addressTitle": "Notre adresse",
-    "liveChatTitle": "Chat en direct",
     "inquiry": "Une Question ?",
     "feelFree": "N'hésitez pas",
     "toContact": "à nous contacter.",
-    "sendMessage": "ENVOYER UN MESSAGE"
+    "sendMessage": "ENVOYER UN MESSAGE",
+    "addressTitle": "Notre adresse"
   },
   "aboutSection": {
     "whoWeAre": "Qui sommes-nous ?",
@@ -163,6 +157,13 @@
     "cookie": "Cookie",
     "privacyPolicy": "Politique de confidentialité",
     "faqs": "FAQ"
+  },
+  "contact": {
+    "mainTitle": "Des questions ? N'hésitez pas à nous contacter par message.",
+    "helpTitle": "Nous sommes toujours heureux de vous aider.",
+    "hotlineTitle": "Notre numéro direct",
+    "addressTitle": "Notre adresse",
+    "liveChatTitle": "Chat en direct"
   },
   "aboutUs": {
     "breadcrumbTitle": "Qui Sommes-Nous",

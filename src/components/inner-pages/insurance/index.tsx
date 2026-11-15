@@ -1,10 +1,25 @@
-import HeaderOne from "@/layouts/headers/HeaderOne";
-import FooterOne from "@/layouts/footers/FooterOne";
-import { DivisionContent } from "@/components/advisory/AdvisoryContent";
-import ServiceStructuredData from "@/components/seo/ServiceStructuredData";
-import { divisions } from "@/data/advisory";
+import BreadcrumbOne from "@/components/common/breadcrumb/BreadcrumbOne"
+import HeaderOne from "@/layouts/headers/HeaderOne"
+import InsuranceArea from "./InsuranceArea"
+import FooterOne from "@/layouts/footers/FooterOne"
+import FancyBanner from "@/components/common/FancyBanner"
 
-export default function Insurance() {
-  const division = divisions.find(item => item.slug === "legal-transaction-advisory")!;
-  return <><HeaderOne style={true} /><main><ServiceStructuredData division={division} /><DivisionContent division={division} /></main><FooterOne style={false} /></>;
+const Insurance = () => {
+   return (
+      <>
+         <HeaderOne style={true} />
+         <BreadcrumbOne
+            title="Certeza y Due Diligence"
+            sub_title="Manejo de riesgo y certeza"
+            style={false}
+            image="/images/tierra-mallorca-rgJ1J8SDEAY-unsplash.webp"
+            imagePosition="center 58%"
+         />
+         <InsuranceArea />
+         <FancyBanner style={false} />
+         <FooterOne style={false} />
+      </>
+   )
 }
+
+export default Insurance

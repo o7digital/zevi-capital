@@ -1,8 +1,5 @@
 import type { MetadataRoute } from "next";
 import { fetchDirectusProperties } from "@/lib/directusProperties";
-import { divisions } from "@/data/advisory";
-
-export const revalidate = 300;
 
 const routes = [
   "",
@@ -12,7 +9,6 @@ const routes = [
   "/contact",
   "/faq",
   "/privacy-policy",
-  ...divisions.filter(division => division.href.startsWith("/services/")).map(division => division.href),
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -22,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: index === 0 ? 1 : 0.8,
   }));
 
-  const properties = await fetchDirectusProperties().catch(() => []);
+  const properties = await fetchDirectusProperties();
   const propertyRoutes = properties.map((property) => ({
     url: `https://www.zevicapital.com/listing_details_01?id=${encodeURIComponent(String(property.id))}`,
     changeFrequency: "weekly" as const,
