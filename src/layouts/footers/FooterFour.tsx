@@ -5,6 +5,8 @@ import Link from "next/link"
 import footer_data from "@/data/home-data/FooterData"
 import FooterKeywords from "./FooterKeywords"
 
+const officeAddress = "Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda, 52930 Cdad. López Mateos, Méx."
+
 const FooterFour = () => {
    return (
       <div className="footer-four position-relative z-1">
@@ -18,7 +20,7 @@ const FooterFour = () => {
                               <Image src="/logo.png" alt="ZEVI CAPITAL logo" width={180} height={70} style={{ width: "auto", height: "70px" }} />
                            </Link>
                         </div>
-                        <p className="mb-30 xs-mb-20">Montes Urales 755 piso 18 Lomas de Chapultepec 111500 CDMX Mexico.</p>
+                        <p className="mb-30 xs-mb-20">{officeAddress}</p>
                         <Link href="mailto:info@zevicapital.com" className="email tran3s mb-60 md-mb-30">info@zevicapital.com</Link>
                         <ul className="style-none d-flex align-items-center social-icon">
                            <li><Link href="#"><i className="fa-brands fa-facebook-f"></i></Link></li>
@@ -43,7 +45,7 @@ const FooterFour = () => {
             </div>
             <FooterKeywords />
             <div className="bottom-footer">
-               <p className="m0 text-center fs-16">Copyright @2024 Homy inc.</p>
+               <p className="m0 text-center fs-16">ZeVi Capital</p>
             </div>
          </div>
          <Image src={footerShape} alt="" className="lazy-img shapes shape_01" />

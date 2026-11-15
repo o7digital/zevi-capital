@@ -2,9 +2,6 @@
 import Image from "next/image"
 import { useTranslation } from "@/contexts/TranslationContext";
 
-import feature3Icon_1 from "@/assets/images/icon/icon_07.svg";
-import feature3Icon_2 from "@/assets/images/icon/icon_08.svg";
-import feature3Icon_3 from "@/assets/images/icon/icon_09.svg";
 import titleShape from "@/assets/images/shape/title_shape_07.svg";
 import featureShape_1 from "@/assets/images/shape/shape_07.svg";
 import featureShape_2 from "@/assets/images/shape/shape_08.svg";
@@ -14,23 +11,34 @@ const BLockFeatureFive = ({ style }: any) => {
 
    const features = [
       {
-         id: 1,
-         icon: feature3Icon_1,
-         titleKey: "stepsSection.createAccount",
-         descKey: "stepsSection.createAccountDesc",
+         id: "01",
+         titleKey: "stepsSection.step1Title",
+         descKey: "stepsSection.step1Desc",
       },
       {
-         id: 2,
-         icon: feature3Icon_2,
-         titleKey: "stepsSection.findHome",
-         descKey: "stepsSection.findHomeDesc",
-         class_name: "arrow position-relative"
+         id: "02",
+         titleKey: "stepsSection.step2Title",
+         descKey: "stepsSection.step2Desc",
       },
       {
-         id: 3,
-         icon: feature3Icon_3,
-         titleKey: "stepsSection.quickProcess",
-         descKey: "stepsSection.quickProcessDesc",
+         id: "03",
+         titleKey: "stepsSection.step3Title",
+         descKey: "stepsSection.step3Desc",
+      },
+      {
+         id: "04",
+         titleKey: "stepsSection.step4Title",
+         descKey: "stepsSection.step4Desc",
+      },
+      {
+         id: "05",
+         titleKey: "stepsSection.step5Title",
+         descKey: "stepsSection.step5Desc",
+      },
+      {
+         id: "06",
+         titleKey: "stepsSection.step6Title",
+         descKey: "stepsSection.step6Desc",
       }
    ];
    
@@ -50,11 +58,11 @@ const BLockFeatureFive = ({ style }: any) => {
                <div className="col-xxl-11 m-auto">
                   <div className="row gx-xl-5 justify-content-center">
                      {features.map((item) => (
-                        <div key={item.id} className="col-lg-4 col-sm-6">
-                           <div className={`card-style-one text-center wow fadeInUp mt-40 ${item.class_name || ""}`}>
-                              <Image src={item.icon} alt="" className="lazy-img m-auto icon" />
-                              <h5 className="mt-50 lg-mt-30 mb-15">{t(item.titleKey)}</h5>
-                              <p className="pe-xxl-4 ps-xxl-4">{t(item.descKey)}</p>
+                        <div key={item.id} className="col-lg-4 col-md-6 d-flex">
+                           <div className="card-style-one step-card wow fadeInUp mt-40 w-100">
+                              <span className="step-index">{item.id}</span>
+                              <h5 className="mt-30 mb-15">{t(item.titleKey)}</h5>
+                              <p className="mb-0">{t(item.descKey)}</p>
                            </div>
                         </div>
                      ))}
@@ -64,6 +72,27 @@ const BLockFeatureFive = ({ style }: any) => {
          </div>
          <Image src={featureShape_1} alt="" className="lazy-img shapes shape_01" />
          <Image src={featureShape_2} alt="" className="lazy-img shapes shape_02" />
+         <style jsx>{`
+            .step-card {
+               padding: 34px 28px;
+               border-radius: 28px;
+               text-align: left;
+               box-shadow: 0 20px 60px rgba(13, 26, 28, 0.08);
+            }
+            .step-index {
+               display: inline-flex;
+               align-items: center;
+               justify-content: center;
+               min-width: 56px;
+               height: 56px;
+               border-radius: 18px;
+               background: rgba(48, 92, 115, 0.12);
+               color: rgb(48, 92, 115);
+               font-size: 20px;
+               font-weight: 600;
+               letter-spacing: 0.04em;
+            }
+         `}</style>
       </div>
    )
 }

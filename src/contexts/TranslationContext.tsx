@@ -1,5 +1,6 @@
 "use client"
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import spanishMessages from '@/locales/es.json'
 
 type Locale = 'en' | 'fr' | 'es'
 
@@ -13,7 +14,7 @@ const TranslationContext = createContext<TranslationContextType | undefined>(und
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('es')
-  const [messages, setMessages] = useState<any>({})
+  const [messages, setMessages] = useState<any>(spanishMessages)
 
   const isValidLocale = (value: string): value is Locale => {
     return value === 'en' || value === 'fr' || value === 'es'

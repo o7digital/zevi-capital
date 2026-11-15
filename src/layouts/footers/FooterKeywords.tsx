@@ -1,126 +1,39 @@
 "use client"
 
-import type { CSSProperties } from "react";
-import { useTranslation } from "@/contexts/TranslationContext";
+import { useTranslation } from "@/contexts/TranslationContext"
 
-const spanishVisibleKeywords = [
-  "Consultoría inmobiliaria Zona Esmeralda",
-  "Inversión inmobiliaria Zona Esmeralda",
-  "Inmuebles Estado de México",
-  "Bienes raíces Atizapán",
-  "Propiedades Naucalpan",
-  "Inversión inmobiliaria Huixquilucan",
-  "Inmuebles Tlalnepantla",
-  "Comprar propiedad Zona Esmeralda",
-  "Vender propiedad Zona Esmeralda",
-  "Renta de propiedades Zona Esmeralda",
-  "Locales comerciales Zona Esmeralda",
-  "Inmuebles industriales Estado de México",
-  "Terrenos para inversión Estado de México",
-  "Manejo de activos inmobiliarios Estado de México",
-  "Valuación de activos inmobiliarios Estado de México",
-  "Comercialización inmobiliaria Estado de México",
-  "Expansión empresarial México",
-  "Selección de ubicaciones comerciales Estado de México",
-  "Análisis de mercado inmobiliario Estado de México",
-  "Due diligence inmobiliario Estado de México",
-  "Certeza patrimonial Estado de México",
-  "Oportunidades inmobiliarias Estado de México",
-  "Propiedades premium Zona Esmeralda",
-  "Asesoría para inversionistas Estado de México",
-  "ZeVi Capital",
-];
+const keywords = {
+  fr: [
+    "Conseil immobilier Zona Esmeralda", "Investissement immobilier Zona Esmeralda", "Immobilier dans l'Etat de Mexico", "Immobilier Atizapan", "Biens immobiliers Naucalpan",
+    "Investissement immobilier Huixquilucan", "Immobilier Tlalnepantla", "Achat immobilier Zona Esmeralda", "Vente immobiliere Zona Esmeralda", "Location immobiliere Zona Esmeralda",
+    "Locaux commerciaux Zona Esmeralda", "Immobilier industriel Etat de Mexico", "Terrains d'investissement Etat de Mexico", "Gestion d'actifs immobiliers Etat de Mexico", "Valorisation d'actifs immobiliers Etat de Mexico",
+    "Commercialisation immobiliere Etat de Mexico", "Expansion d'entreprise Etat de Mexico", "Implantation d'entreprise Etat de Mexico", "Analyse du marche immobilier Etat de Mexico", "Due diligence immobiliere Etat de Mexico",
+    "Securite patrimoniale Etat de Mexico", "Opportunites immobilieres Etat de Mexico", "Proprietes premium Zona Esmeralda", "Conseil aux investisseurs immobiliers Etat de Mexico", "ZeVi Capital"
+  ],
+  en: [
+    "Zona Esmeralda real estate advisory", "Zona Esmeralda real estate investment", "State of Mexico real estate", "Atizapan real estate", "Naucalpan properties",
+    "Huixquilucan real estate investment", "Tlalnepantla real estate", "Buy property in Zona Esmeralda", "Sell property in Zona Esmeralda", "Zona Esmeralda property rentals",
+    "Zona Esmeralda commercial properties", "State of Mexico industrial real estate", "Investment land State of Mexico", "Real estate asset management State of Mexico", "Real estate asset valuation State of Mexico",
+    "Property commercialization State of Mexico", "Business expansion State of Mexico", "Business site selection State of Mexico", "Real estate market analysis State of Mexico", "Real estate due diligence State of Mexico",
+    "Property risk assessment State of Mexico", "Real estate opportunities State of Mexico", "Premium properties Zona Esmeralda", "Real estate investor advisory State of Mexico", "ZeVi Capital"
+  ],
+  es: [
+    "Consultoría inmobiliaria Zona Esmeralda", "Inversión inmobiliaria Zona Esmeralda", "Inmuebles Estado de México", "Bienes raíces Atizapán", "Propiedades Naucalpan",
+    "Inversión inmobiliaria Huixquilucan", "Inmuebles Tlalnepantla", "Comprar propiedad Zona Esmeralda", "Vender propiedad Zona Esmeralda", "Renta de propiedades Zona Esmeralda",
+    "Locales comerciales Zona Esmeralda", "Inmuebles industriales Estado de México", "Terrenos para inversión Estado de México", "Manejo de activos inmobiliarios Estado de México", "Valuación de activos inmobiliarios Estado de México",
+    "Comercialización inmobiliaria Estado de México", "Expansión empresarial Estado de México", "Selección de ubicaciones comerciales Estado de México", "Análisis de mercado inmobiliario Estado de México", "Due diligence inmobiliario Estado de México",
+    "Certeza patrimonial Estado de México", "Oportunidades inmobiliarias Estado de México", "Propiedades premium Zona Esmeralda", "Asesoría para inversionistas Estado de México", "ZeVi Capital"
+  ]
+}
 
-const englishVisibleKeywords = [
-  "Real estate consulting Zona Esmeralda",
-  "Real estate investment Zona Esmeralda",
-  "Real estate assets Estado de Mexico",
-  "Real estate Atizapan",
-  "Properties Naucalpan",
-  "Real estate investment Huixquilucan",
-  "Properties Tlalnepantla",
-  "Buy property Zona Esmeralda",
-  "Sell property Zona Esmeralda",
-  "Property rentals Zona Esmeralda",
-  "Commercial spaces Zona Esmeralda",
-  "Industrial properties Estado de Mexico",
-  "Investment land Estado de Mexico",
-  "Real estate asset management Estado de Mexico",
-  "Real estate asset valuation Estado de Mexico",
-  "Real estate commercialization Estado de Mexico",
-  "Business expansion Estado de Mexico",
-  "Commercial site selection Estado de Mexico",
-  "Real estate market analysis Estado de Mexico",
-  "Real estate due diligence Estado de Mexico",
-  "Patrimonial certainty Estado de Mexico",
-  "Real estate opportunities Estado de Mexico",
-  "Premium properties Zona Esmeralda",
-  "Investor advisory Estado de Mexico",
-  "ZeVi Capital",
-];
-
-const frenchVisibleKeywords = [
-  "Conseil immobilier Zona Esmeralda",
-  "Investissement immobilier Zona Esmeralda",
-  "Actifs immobiliers Estado de Mexico",
-  "Immobilier Atizapan",
-  "Proprietes Naucalpan",
-  "Investissement immobilier Huixquilucan",
-  "Proprietes Tlalnepantla",
-  "Acheter une propriete Zona Esmeralda",
-  "Vendre une propriete Zona Esmeralda",
-  "Location de proprietes Zona Esmeralda",
-  "Locaux commerciaux Zona Esmeralda",
-  "Biens industriels Estado de Mexico",
-  "Terrains d'investissement Estado de Mexico",
-  "Gestion d'actifs immobiliers Estado de Mexico",
-  "Valorisation d'actifs immobiliers Estado de Mexico",
-  "Commercialisation immobiliere Estado de Mexico",
-  "Expansion d'entreprise Estado de Mexico",
-  "Selection d'emplacements commerciaux Estado de Mexico",
-  "Analyse du marche immobilier Estado de Mexico",
-  "Due diligence immobiliere Estado de Mexico",
-  "Securite patrimoniale Estado de Mexico",
-  "Opportunites immobilieres Estado de Mexico",
-  "Proprietes premium Zona Esmeralda",
-  "Conseil aux investisseurs Estado de Mexico",
-  "ZeVi Capital",
-];
-
-const FooterKeywords = () => {
-  const { locale } = useTranslation();
-  const isFrench = locale === "fr";
-  const isSpanish = locale === "es";
-  const visibleKeywords = isFrench
-    ? frenchVisibleKeywords
-    : isSpanish
-      ? spanishVisibleKeywords
-      : englishVisibleKeywords;
-
-  const wrapperStyle: CSSProperties = {
-    marginTop: "14px",
-    paddingTop: "10px",
-    borderTop: "1px solid rgba(0, 0, 0, 0.06)",
-    color: "#777",
-    fontSize: "11px",
-    lineHeight: 1.6,
-    fontWeight: 500,
-  };
-
-  const textStyle: CSSProperties = {
-    margin: 0,
-    display: "block",
-  };
-
+export default function FooterKeywords() {
+  const { locale } = useTranslation()
   return (
-    <div
-      className="footer-keywords"
-      style={wrapperStyle}
-      aria-label={isFrench ? "Mots-clés immobiliers" : isSpanish ? "Palabras clave inmobiliarias" : "Real estate keywords"}
-    >
-      <span style={textStyle}>{visibleKeywords.join(" • ")}</span>
+    <div className="footer-keywords" aria-label="SEO keywords">
+      {keywords[locale].join(" • ")}
+      <style jsx>{`
+        .footer-keywords{margin-top:14px;padding:14px 0;border-top:1px solid rgba(0,0,0,.08);color:#555;font-size:14px;font-weight:500;line-height:1.7}
+      `}</style>
     </div>
-  );
-};
-
-export default FooterKeywords;
+  )
+}

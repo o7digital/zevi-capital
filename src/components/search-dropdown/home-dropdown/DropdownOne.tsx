@@ -7,7 +7,7 @@ const DropdownOne = ({ style }: any) => {
    const selectHandler = (e: any) => { };
 
    const searchHandler = () => {
-      window.location.href = '/listing_0';
+      window.location.href = '/#properties';
    };
 
    return (
@@ -18,11 +18,12 @@ const DropdownOne = ({ style }: any) => {
                   <div className="label">{t('banner.searchLabel')}</div>
                   <NiceSelect className={`nice-select ${style ? "fw-normal" : ""}`}
                      options={[
-                        { value: "apartments", text: t('searchDropdown.buyApartments') },
-                        { value: "condos", text: t('searchDropdown.rentCondos') },
-                        { value: "houses", text: t('searchDropdown.sellHouses') },
-                        { value: "industrial", text: t('searchDropdown.rentIndustrial') },
-                        { value: "villas", text: t('searchDropdown.sellVillas') },
+                        { value: "buy", text: t('searchDropdown.buyProperty') },
+                        { value: "rent", text: t('searchDropdown.rentProperty') },
+                        { value: "sell", text: t('searchDropdown.sellProperty') },
+                        { value: "commercial", text: t('searchDropdown.commercialSpaces') },
+                        { value: "industrial", text: t('searchDropdown.industrialProperties') },
+                        { value: "investment", text: t('searchDropdown.investmentLand') },
                      ]}
                      defaultCurrent={0}
                      onChange={selectHandler}
@@ -35,13 +36,14 @@ const DropdownOne = ({ style }: any) => {
                   <div className="label">{t('banner.location')}</div>
                   <NiceSelect className={`nice-select location ${style ? "fw-normal" : ""}`}
                      options={[
-                        { value: "germany", text: "Berlin, Germany" },
-                        { value: "dhaka", text: "Dhanmondi, Dhaka" },
-                        { value: "mexico", text: "Acapulco, Mexico" },
-                        { value: "france", text: "Cannes, France" },
-                        { value: "india", text: "Delhi, India" },
-                        { value: "giza", text: "Giza, Egypt" },
-                        { value: "cuba", text: "Havana, Cuba" },
+                        { value: "zona-esmeralda", text: "Zona Esmeralda, Estado de México" },
+                        { value: "atizapan", text: "Atizapán de Zaragoza, Estado de México" },
+                        { value: "naucalpan", text: "Naucalpan de Juárez, Estado de México" },
+                        { value: "huixquilucan", text: "Huixquilucan, Estado de México" },
+                        { value: "tlalnepantla", text: "Tlalnepantla, Estado de México" },
+                        { value: "tecamachalco", text: "Tecamachalco, Estado de México" },
+                        { value: "polanco", text: "Polanco, CDMX" },
+                        { value: "acapulco", text: "Acapulco, Guerrero" },
                      ]}
                      defaultCurrent={0}
                      onChange={selectHandler}
@@ -55,9 +57,10 @@ const DropdownOne = ({ style }: any) => {
                   <NiceSelect
                      className={`nice-select ${style ? "fw-normal" : ""}`}
                      options={[
-                        { value: "1", text: "$10,000 - $200,000" },
-                        { value: "2", text: "$20,000 - $300,000" },
-                        { value: "3", text: "$30,000 - $400,000" },
+                        { value: "1", text: "$0 - $1,000,000 MXN" },
+                        { value: "2", text: "$1,000,000 - $5,000,000 MXN" },
+                        { value: "3", text: "$5,000,000 - $10,000,000 MXN" },
+                        { value: "4", text: "$10,000,000+ MXN" },
                      ]}
                      defaultCurrent={0}
                      onChange={selectHandler}

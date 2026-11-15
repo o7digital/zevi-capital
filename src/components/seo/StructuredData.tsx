@@ -1,20 +1,31 @@
-"use client"
-
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "O7 Realestates",
-  "url": "https://o7realestates.vercel.app/",
-  "description": "O7 Realestates – International luxury real estate agency. High-end properties, investment opportunities, premium buyers network. Presence in Los Angeles, Montreal, Paris, Mexico. Luxury villas, penthouses, waterfront estates, investment deals.",
-  "areaServed": ["Los Angeles", "Montreal", "Paris", "Mexico", "International"],
+  "@type": ["Organization", "RealEstateAgent"],
+  "@id": "https://www.zevicapital.com/#organization",
+  "name": "ZeVi Capital",
+  "url": "https://www.zevicapital.com/",
+  "logo": "https://www.zevicapital.com/favicon.png",
+  "description": "Firma de consultoría inmobiliaria estratégica especializada en inversión, comercialización y manejo de activos en Zona Esmeralda y el Estado de México.",
+  "areaServed": [
+    { "@type": "Place", "name": "Zona Esmeralda, Estado de México" },
+    { "@type": "City", "name": "Atizapán de Zaragoza" },
+    { "@type": "City", "name": "Naucalpan de Juárez" },
+    { "@type": "City", "name": "Huixquilucan" }
+  ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1030, Avenue Muguette",
-    "addressLocality": "Saint-Élie-de-Caxton",
-    "addressRegion": "QC",
-    "postalCode": "G0X 2N0",
-    "addressCountry": "CA"
-  }
+    "streetAddress": "Cto. Plaza Bona Esmeralda 1, Bosque Esmeralda",
+    "addressLocality": "Ciudad López Mateos",
+    "postalCode": "52930",
+    "addressRegion": "Estado de México",
+    "addressCountry": "MX"
+  },
+  "knowsAbout": [
+    "Expansión empresarial",
+    "Inversión inmobiliaria",
+    "Manejo de activos inmobiliarios",
+    "Due diligence inmobiliario"
+  ]
 };
 
 const StructuredData = () => {
