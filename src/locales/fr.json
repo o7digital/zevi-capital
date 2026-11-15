@@ -133,6 +133,8 @@
     "signIn": "Se connecter."
   },
   "testimonials": {
+    "title": "Témoignages",
+    "intro": "Retours sur l’accompagnement immobilier.",
     "testimonial1": {
       "name": "Jonathan Harry",
       "location": "Milan, Italie",

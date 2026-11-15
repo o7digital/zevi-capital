@@ -133,6 +133,8 @@
     "signIn": "Sign in."
   },
   "testimonials": {
+    "title": "Testimonials",
+    "intro": "Feedback on the real estate advisory experience.",
     "testimonial1": {
       "name": "Jonathan Harry",
       "location": "Milan, Italy",

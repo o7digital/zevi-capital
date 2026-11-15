@@ -138,6 +138,8 @@
     "signIn": "Inicia sesión."
   },
   "testimonials": {
+    "title": "Testimonios",
+    "intro": "Opiniones sobre la experiencia de asesoría inmobiliaria.",
     "testimonial1": {
       "name": "Jonathan Harry",
       "location": "Milán, Italia",
