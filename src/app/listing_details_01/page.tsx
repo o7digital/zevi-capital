@@ -17,6 +17,7 @@ export async function generateMetadata({
       return {
          title: "Propiedades en Zona Esmeralda y Estado de México | ZeVi Capital",
          description: "Consulta propiedades en venta y renta en Zona Esmeralda, Atizapán, Naucalpan y Estado de México con ZeVi Capital.",
+         robots: { index: false, follow: true },
          alternates: { canonical: `${SITE_URL}/listing_details_01${id ? `?id=${encodeURIComponent(id)}` : ""}` },
       };
    }

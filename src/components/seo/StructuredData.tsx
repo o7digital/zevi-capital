@@ -5,7 +5,7 @@ const structuredData = {
   "name": "ZeVi Capital",
   "url": "https://www.zevicapital.com/",
   "logo": "https://www.zevicapital.com/favicon.png",
-  "description": "Firma de consultoría inmobiliaria estratégica especializada en inversión, comercialización y manejo de activos en Zona Esmeralda y el Estado de México.",
+  "description": "Firma de asesoría inmobiliaria corporativa e inversión con base en Zona Esmeralda, Estado de México. Análisis de mercado, expansión comercial y acompañamiento transaccional.",
   "areaServed": [
     { "@type": "Place", "name": "Zona Esmeralda, Estado de México" },
     { "@type": "City", "name": "Atizapán de Zaragoza" },
@@ -21,6 +21,11 @@ const structuredData = {
     "addressCountry": "MX"
   },
   "knowsAbout": [
+    "Consultoría inmobiliaria corporativa",
+    "Industrial & Logistics",
+    "Retail & Corporate Expansion",
+    "Capital Markets",
+    "Research & Market Intelligence",
     "Expansión empresarial",
     "Inversión inmobiliaria",
     "Manejo de activos inmobiliarios",

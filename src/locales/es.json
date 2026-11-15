@@ -3,8 +3,8 @@
     "home": "Inicio",
     "purchase": "Compra",
     "aboutUs": "Nosotros",
-    "sales": "Ventas",
-    "insurance": "Seguros",
+    "sales": "Servicios",
+    "insurance": "Asesoría transaccional",
     "insights": "Insights",
     "faq": "FAQ",
     "blog": "Blog",
@@ -44,14 +44,16 @@
   "property": {
     "featured": "Destacadas",
     "properties": "Propiedades",
-    "subtitle": "Explora las propiedades más recientes y destacadas en venta.",
+    "subtitle": "Propiedades en venta y renta. Consulta disponibilidad y condiciones con un asesor.",
     "forSale": "EN VENTA",
     "forRent": "EN RENTA",
     "sqft": "m²",
     "bed": "rec",
     "bath": "baño",
     "empty": "Las propiedades estarán disponibles pronto.",
-    "priceOnRequest": "Precio a consultar"
+    "priceOnRequest": "Precio a consultar",
+    "loading": "Cargando propiedades…",
+    "loadError": "No se pueden cargar las propiedades en este momento. Contacta a un asesor."
   },
   "fancyBanner": {
     "exclusive": "Oferta",

@@ -13,11 +13,11 @@ const icon_1: string[] = ["facebook", "twitter", "instagram"]
 const FooterOne = ({ style }: any) => {
    const { t } = useTranslation();
    const isDark = Boolean(style);
-   const footerBackground = isDark ? "#0D1A1C" : "#e6e6e6";
-   const introBackground = isDark ? "transparent" : "#3a3a3a";
-   const navTitleColor = isDark ? "#ffffff" : "#111111";
-   const navLinkColor = isDark ? "#ffffff" : "#222222";
-   const navHoverColor = isDark ? "rgb(48, 92, 115)" : "#2f617a";
+   const footerBackground = isDark ? "#102333" : "#f3f5f5";
+   const introBackground = isDark ? "transparent" : "#102333";
+   const navTitleColor = isDark ? "#ffffff" : "#102333";
+   const navLinkColor = isDark ? "#ffffff" : "#536575";
+   const navHoverColor = isDark ? "#087f83" : "#087f83";
    
    return (
       <div className={`footer-one ${isDark ? "dark-bg" : ""}`} style={{ background: footerBackground }}>

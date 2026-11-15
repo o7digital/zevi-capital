@@ -1,25 +1,7 @@
-"use client"
-import BreadcrumbOne from "@/components/common/breadcrumb/BreadcrumbOne"
-import HeaderOne from "@/layouts/headers/HeaderOne"
-import BLockFeatureOne from "./BLockFeatureOne"
-import Feedback from "@/components/homes/home-five/Feedback"
-import FooterOne from "@/layouts/footers/FooterOne"
-import { useTranslation } from "@/contexts/TranslationContext"
-import StrategicContent from "./StrategicContent"
+import HeaderOne from "@/layouts/headers/HeaderOne";
+import FooterOne from "@/layouts/footers/FooterOne";
+import { AdvisoryAbout } from "@/components/advisory/AdvisoryContent";
 
-const AboutUsOne = () => {
-   const { t } = useTranslation();
-   
-   return (
-      <>
-         <HeaderOne style={true} />
-         <BreadcrumbOne title={t('aboutUs.breadcrumbTitle')} sub_title={t('aboutUs.subtitle')} style={false} />
-         <StrategicContent />
-         <BLockFeatureOne />
-         <Feedback style={true} />
-         <FooterOne style={false} />
-      </>
-   )
+export default function AboutUsOne() {
+  return <><HeaderOne style={true} /><main><AdvisoryAbout /></main><FooterOne style={false} /></>;
 }
-
-export default AboutUsOne
