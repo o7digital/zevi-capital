@@ -1,0 +1,147 @@
+// ZeVi palette 01. Only color declarations: existing layout and behavior stay intact.
+$zevi-blue: #102333;
+$zevi-teal: #087F83;
+$zevi-champagne: #B49A70;
+$zevi-stone: #F3F5F5;
+$zevi-slate: #536575;
+$zevi-line: #D7E0E5;
+
+// Existing navigation and inline button colors.
+body .main-page-wrapper .theme-main-menu {
+  .nav-item .nav-link { color: $zevi-blue !important; }
+  .nav-item .nav-link:hover,
+  .nav-item .nav-link:focus-visible { color: $zevi-teal !important; }
+  .logo span { color: $zevi-blue !important; }
+  .btn-one { background-color: $zevi-teal !important; border-color: $zevi-teal !important; }
+  .btn-one:hover,
+  .btn-one:focus-visible { background-color: $zevi-blue !important; border-color: $zevi-blue !important; }
+  .navbar-toggler span,
+  .navbar-toggler::before,
+  .navbar-toggler::after { background-color: $zevi-blue !important; }
+}
+
+// Homepage: same introduction, actions and search block.
+.strategy-home {
+  background-color: $zevi-stone !important;
+  color: $zevi-blue !important;
+  h1, h2, h3 { color: $zevi-blue; }
+  .strategy-home__eyebrow { color: $zevi-teal !important; }
+  .strategy-home__copy p,
+  .strategy-home__search-head p,
+  .strategy-home__note,
+  li { color: $zevi-slate !important; }
+  .strategy-home__copy .lead,
+  .strategy-home__copy strong { color: $zevi-blue !important; }
+  .strategy-home__actions,
+  .strategy-home__search-head,
+  .strategy-home__note { border-color: $zevi-line !important; }
+  .strategy-btn { color: $zevi-blue !important; border-color: $zevi-teal !important; }
+  .strategy-btn--dark,
+  .strategy-btn:hover,
+  .strategy-btn:focus-visible { color: #fff !important; background-color: $zevi-teal !important; }
+  .strategy-btn--dark:hover,
+  .strategy-btn--dark:focus-visible { background-color: $zevi-blue !important; }
+  .strategy-link { color: $zevi-blue !important; border-color: $zevi-champagne !important; }
+  li::before { background-color: $zevi-champagne !important; }
+}
+
+// Existing about, services, transaction advisory and insights sections.
+.about-strategy,
+.services-page,
+.certainty-page,
+.insights-page {
+  color: $zevi-blue !important;
+  h1, h2, h3, h4, h5, h6 { color: $zevi-blue; }
+}
+.about-strategy {
+  background-color: $zevi-stone !important;
+  p { color: $zevi-slate !important; }
+  .about-strategy__lead p:first-child,
+  .about-strategy__difference .statement { color: $zevi-blue !important; }
+  .about-strategy__eyebrow,
+  .about-strategy__pillars article > span,
+  .about-strategy__cards span { color: $zevi-teal !important; }
+  .about-strategy__pillars { background-color: $zevi-line !important; border-color: $zevi-line !important; }
+  .about-strategy__difference-head,
+  .about-strategy__cards article { border-color: $zevi-line !important; }
+}
+.services-hero,
+.insights-hero {
+  // Keep the existing photos; change only the tint of their overlays.
+  background-image: linear-gradient(90deg, rgba($zevi-blue, .93), rgba($zevi-blue, .64)), url('/images/retrosupply-jLwVAUtLOAQ-unsplash(1).webp') !important;
+  h1 { color: #fff; }
+  > .container > span { color: $zevi-champagne !important; }
+}
+.insights-hero { background-image: linear-gradient(90deg, rgba($zevi-blue, .92), rgba($zevi-blue, .62)), url('/images/thought-catalog-505eectW54k-unsplash.webp') !important; }
+.services-intro,
+.service-detail,
+.service-title blockquote,
+.certainty-intro,
+.insights-list { background-color: $zevi-stone !important; }
+.services-intro span,
+.service-title > span,
+.service-detail li::before,
+.certainty-eyebrow,
+.certainty-card__number,
+.certainty-services article > span,
+.certainty-services li::before,
+.insights-card__meta { color: $zevi-teal !important; }
+.services-intro p,
+.service-title p,
+.service-detail li,
+.certainty-intro__copy p,
+.certainty-services__head p,
+.certainty-services article p,
+.insights-list__head p,
+.insights-card__body p { color: $zevi-slate !important; }
+.service-title .lead,
+.certainty-intro__copy .lead { color: $zevi-blue !important; }
+.services-list article,
+.certainty-principles,
+.certainty-principles span,
+.certainty-services__grid,
+.certainty-services article,
+.certainty-services ul { border-color: $zevi-line !important; }
+.service-title blockquote { border-color: $zevi-champagne !important; }
+.services-hero a,
+.services-cta a,
+.certainty-cta,
+.insights-newsletter a { background-color: $zevi-teal !important; color: #fff !important; }
+.services-hero a:hover,
+.services-cta a:hover,
+.certainty-cta:hover,
+.insights-newsletter a:hover { background-color: $zevi-blue !important; }
+.services-cta,
+.certainty-footer-cta { background-color: $zevi-blue !important; }
+.services-cta h2,
+.certainty-footer-cta h2 { color: #fff; }
+.services-cta span,
+.certainty-footer-cta .certainty-eyebrow { color: $zevi-champagne !important; }
+.insights-newsletter { background-color: $zevi-stone !important; }
+.insights-newsletter span { color: $zevi-teal !important; }
+.insights-card__body a { color: $zevi-blue !important; border-color: $zevi-champagne !important; }
+
+// Existing listing cards, contact actions and footer.
+.btn-four,
+.btn-five,
+.btn-nine { background-color: $zevi-teal; border-color: $zevi-teal; color: #fff; }
+.btn-four:hover,
+.btn-five:hover,
+.btn-nine:hover { background-color: $zevi-blue; border-color: $zevi-blue; color: #fff; }
+.listing-card-one .tag,
+.listing-card-four .tag { background-color: $zevi-blue; color: #fff; }
+.fancy-banner-two::before { background-color: rgba($zevi-blue, .55); }
+.footer-four { background-color: $zevi-stone; }
+.footer-four .bottom-footer { border-color: $zevi-champagne; }
+.footer-four .email,
+.footer-four .social-icon a { color: $zevi-blue; border-color: $zevi-blue; }
+.footer-one { background-color: $zevi-stone !important; }
+.footer-one.dark-bg { background-color: $zevi-blue !important; }
+.footer-one .footer-intro .bg-wrapper { background-color: $zevi-blue !important; }
+.footer-one .footer-title { color: $zevi-blue !important; }
+.footer-one .footer-nav-link a { color: $zevi-slate !important; }
+.footer-one.dark-bg .footer-title,
+.footer-one.dark-bg .footer-nav-link a { color: #fff !important; }
+.footer-one .footer-nav-link a:hover,
+.footer-one .footer-nav-link a:focus-visible { color: $zevi-teal !important; }
+.footer-one .footer-nav { border-color: $zevi-champagne; }
