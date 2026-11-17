@@ -9,7 +9,6 @@ import { defaultPropertyFilters, filterProperties, formatPropertyPrice, matchesP
 import titleShape from "@/assets/images/shape/title_shape_03.svg";
 import styles from "./Property.module.css";
 
-const PAGE_SIZE = 12;
 const fallbackProperties = property_data.filter(item => item.page === "home_1");
 type Card = typeof fallbackProperties[number] | DirectusPropertyCard;
 
@@ -32,10 +31,9 @@ const Property = () => {
    const [attempt, setAttempt] = useState(0);
    const [filters, setFilters] = useState<PropertyFilters>(defaultPropertyFilters);
    const [filtersReady, setFiltersReady] = useState(false);
-   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
    useEffect(() => {
-      const restore = () => { setFilters(readFilters()); setVisibleCount(PAGE_SIZE); };
+      const restore = () => { setFilters(readFilters()); };
       restore();
       setFiltersReady(true);
       window.addEventListener('popstate', restore);
@@ -78,9 +76,8 @@ const Property = () => {
    const uniqueOptions = (key: 'location' | 'property_type' | 'currency') => Array.from(new Set(summaries.map(item => item[key]).filter((value): value is string => Boolean(value)))).sort((a, b) => a.localeCompare(b, locale));
    const change = (key: keyof PropertyFilters, value: string) => {
       setFilters(current => ({ ...current, [key]: value, ...(key === 'category' ? { type: '' } : key === 'type' ? { category: '' } : {}) }));
-      setVisibleCount(PAGE_SIZE);
    };
-   const reset = () => { setFilters({ ...defaultPropertyFilters }); setVisibleCount(PAGE_SIZE); };
+   const reset = () => { setFilters({ ...defaultPropertyFilters }); };
    const active = Object.keys(filters).some(key => filters[key as keyof PropertyFilters] !== defaultPropertyFilters[key as keyof PropertyFilters]);
    const select = (key: keyof PropertyFilters, label: string, placeholder: string, options: { value: string; label: string }[]) => (
       <label className={styles.field}>
@@ -140,7 +137,7 @@ const Property = () => {
             </div>
             {!isLoading && !loadError && filtered.length === 0 && <p className={styles.empty}>{copy.noResults}</p>}
             <div className="row gx-xxl-5">
-               {!isLoading && !loadError && filtered.slice(0, visibleCount).map(item => {
+               {!isLoading && !loadError && filtered.map(item => {
                   const href = 'href' in item && item.href ? item.href : '/listing_details_01';
                   const operations = propertyOperations(item);
                   const tag = operations.map(operation => operation === 'sale' ? copy.sale : copy.rent).join(' / ') || item.tag;
@@ -176,7 +173,6 @@ const Property = () => {
                   );
                })}
             </div>
-            {!isLoading && !loadError && filtered.length > visibleCount && <button type="button" className={styles.more} onClick={() => setVisibleCount(count => count + PAGE_SIZE)}>{copy.more} ({Math.min(visibleCount, filtered.length)}/{filtered.length})</button>}
          </div>
       </section>
    );

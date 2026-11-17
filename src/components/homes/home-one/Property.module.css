@@ -24,6 +24,5 @@
 .footer { margin-top: auto; gap: 12px; }
 .price { font-size: 22px !important; line-height: 1.4; overflow-wrap: anywhere; }
 .empty { text-align: center; padding: 48px 20px; }
-.more { display: block; margin: 36px auto 0; border: 0; border-radius: 8px; background: #087f83; color: white; padding: 12px 28px; }
 @media(max-width: 991px) { .categories { grid-template-columns: repeat(4, minmax(0, 1fr)); } .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media(max-width: 575px) { .filters { padding: 18px; } .categories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; } .fields { grid-template-columns: minmax(0, 1fr); } .search { grid-column: auto; } }
