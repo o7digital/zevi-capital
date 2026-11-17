@@ -90,7 +90,7 @@ const HeaderOne = ({ style }: any) => {
                            </div>
                         </Link>
                      </div>
-                     <div className="desktop-language-selector right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
+                     <div className="desktop-language-selector d-none d-lg-block right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
                         <ul className="d-flex align-items-center style-none">
                            <li className="me-3">
                               <div className="d-flex align-items-center gap-2">

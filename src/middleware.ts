@@ -14,7 +14,9 @@ const indexableRoutes = new Set([
 export function middleware(request: NextRequest) {
   const response = NextResponse.next()
 
-  if (!indexableRoutes.has(request.nextUrl.pathname)) {
+  const path = request.nextUrl.pathname
+  const isPublicPropertyRoute = path === "/listing_details_01" || path === "/propiedades" || path.startsWith("/propiedades/")
+  if (!indexableRoutes.has(path) && !isPublicPropertyRoute) {
     response.headers.set("X-Robots-Tag", "noindex, follow")
   }
 

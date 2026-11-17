@@ -16,6 +16,7 @@
 .field input:focus, .field select:focus { outline: 2px solid #087f83; outline-offset: 2px; }
 .help { margin: 16px 0 0; color: #52636e; font-size: 14px; line-height: 1.5; }
 .results { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; }
+.catalogLink { color: #06676a; text-decoration: underline; text-underline-offset: 4px; font-size: 15px; }
 .reset { border: 1px solid #087f83; border-radius: 8px; padding: 8px 16px; color: #087f83; background: white; font-size: 15px; }
 .reset:hover { background: #eef4f7; }
 .card { display: flex; flex-direction: column; overflow: hidden; }

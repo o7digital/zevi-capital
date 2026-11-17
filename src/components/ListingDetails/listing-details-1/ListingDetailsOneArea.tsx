@@ -1,33 +1,16 @@
 "use client"
-import { useEffect, useState } from "react"
-import { useSearchParams } from "next/navigation"
+import type { ReactNode } from "react"
 import Link from "next/link"
 import MediaGallery from "./MediaGallery"
 import Sidebar from "./Sidebar"
 import CommonBanner from "../listing-details-common/CommonBanner"
 import CommonPropertyOverview from "../listing-details-common/CommonPropertyOverview"
-import { DirectusProperty, directusPropertyImages, fetchDirectusProperty } from "@/lib/directusProperties"
+import { DirectusProperty, directusPropertyImages } from "@/lib/directusProperties"
+import { propertyPlainText, propertyTransactions } from "@/lib/propertySeo"
 import { useTranslation } from "@/contexts/TranslationContext"
 
-const ListingDetailsOneArea = () => {
-   const searchParams = useSearchParams();
-   const propertyId = searchParams.get("id") || "";
-   const [property, setProperty] = useState<DirectusProperty | null>(null);
+const ListingDetailsOneArea = ({ property, seoLinks }: { property: DirectusProperty; seoLinks: ReactNode }) => {
    const { t } = useTranslation();
-
-   useEffect(() => {
-      let isMounted = true;
-
-      fetchDirectusProperty(propertyId).then((directusProperty) => {
-         if (isMounted) {
-            setProperty(directusProperty);
-         }
-      });
-
-      return () => {
-         isMounted = false;
-      };
-   }, [propertyId]);
 
    const galleryImages = property
       ? directusPropertyImages(property).map((image, index) => ({
@@ -39,9 +22,9 @@ const ListingDetailsOneArea = () => {
    const detailRows = [
       { label: t("listingDetails.details.bedrooms"), value: property?.bedrooms },
       { label: t("listingDetails.details.bathrooms"), value: property?.bathrooms },
-      { label: t("listingDetails.details.area"), value: property?.sqft ? `${property.sqft} sqft` : undefined },
+      { label: t("listingDetails.details.area"), value: property?.sqft ? `${property.sqft} m²` : undefined },
       { label: t("listingDetails.details.type"), value: property?.property_type },
-      { label: t("listingDetails.details.operation"), value: property?.operation_type === "rental" ? t("listingDetails.rent") : t("listingDetails.sale") },
+      { label: t("listingDetails.details.operation"), value: propertyTransactions(property).map(operation => t(operation === 'renta' ? "listingDetails.rent" : "listingDetails.sale")).join(' / ') || property.operation_type },
       { label: t("listingDetails.details.status"), value: property?.listing_status || property?.tag },
       { label: t("listingDetails.details.location"), value: property?.location },
       { label: t("listingDetails.details.easybroker"), value: property?.easybroker_id },
@@ -55,6 +38,7 @@ const ListingDetailsOneArea = () => {
                {t("listingDetails.backToList")}
             </Link>
             <CommonBanner property={property} />
+            {seoLinks}
             <MediaGallery images={galleryImages} />
             <div className="property-feature-list bg-white shadow4 border-20 p-40 mt-50 mb-60">
                <h4 className="sub-title-one mb-40 lg-mb-20">{t("listingDetails.overview.title")}</h4>
@@ -64,7 +48,7 @@ const ListingDetailsOneArea = () => {
                <div className="col-xl-8">
                   <div className="property-overview mb-50 bg-white shadow4 border-20 p-40">
                      <h4 className="mb-20">{t("listingDetails.description")}</h4>
-                     <p className="fs-20 lh-lg" style={{ whiteSpace: "pre-line" }}>{property?.description || t("listingDetails.descriptionFallback")}</p>
+                     <p className="fs-20 lh-lg" style={{ whiteSpace: "pre-line" }}>{propertyPlainText(property.description || '') || t("listingDetails.descriptionFallback")}</p>
                   </div>
                   <div className="property-feature-accordion bg-white shadow4 border-20 p-40 mb-50">
                      <h4 className="mb-30">{t("listingDetails.details.title")}</h4>

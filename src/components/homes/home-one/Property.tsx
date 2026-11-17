@@ -132,6 +132,7 @@ const Property = () => {
             </form>
             <div className={styles.results}>
                <span role="status" aria-live="polite">{isLoading ? copy.loading : loadError ? copy.loadError : `${filtered.length} ${copy.results}`}</span>
+               <Link href="/propiedades" className={styles.catalogLink}>{locale === 'fr' ? 'Explorer les biens au Mexique' : locale === 'en' ? 'Explore properties across Mexico' : 'Explorar propiedades en todo México'}</Link>
                {active && <button type="button" className={styles.reset} onClick={reset}>{copy.reset}</button>}
                {loadError && <button type="button" className={styles.reset} onClick={() => setAttempt(value => value + 1)}>{copy.retry}</button>}
             </div>
