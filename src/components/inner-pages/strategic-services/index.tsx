@@ -5,54 +5,108 @@ import FancyBanner from "@/components/common/FancyBanner"
 
 const services = [
   {
-    number: "01",
-    title: "Expansión empresarial",
-    intro: "Sabemos que una empresa no es solo un negocio. Es una creación, una visión y una historia construida con esfuerzo.",
-    text: "Expandir una empresa requiere elegir ubicaciones correctas, entender el mercado, anticipar riesgos y estructurar cada operación con inteligencia. Acompañamos a empresas que buscan abrir nuevas unidades, ingresar a nuevas ciudades, desarrollar franquicias o crecer en zonas estratégicas.",
-    subtitle: "Qué incluye",
-    items: ["Búsqueda de ubicaciones", "Análisis de zonas", "Evaluación de competencia", "Estudios de mercado", "Contacto con propietarios", "Revisión de condiciones comerciales", "Análisis de viabilidad", "Negociación", "Acompañamiento hasta el cierre"],
+    "number": "01",
+    "title": "Retail & Corporate Expansion",
+    "intro": "Expansión comercial y selección de ubicaciones para marcas, cadenas y operadores.",
+    "text": "Integramos búsqueda de locales comerciales, análisis de zona, compatibilidad comercial, negociación de rentas y coordinación con propietarios. El objetivo es una ubicación coherente con el formato, el mercado y el crecimiento de cada negocio.",
+    "subtitle": "Expansión empresarial y site selection",
+    "items": [
+      "Definición del formato y criterios de ubicación",
+      "Búsqueda de locales comerciales",
+      "Site selection México",
+      "Análisis de zona",
+      "Ubicaciones para franquicias",
+      "Contacto con propietarios",
+      "Compatibilidad comercial",
+      "Negociación de arrendamientos",
+      "Seguimiento del cierre"
+    ]
   },
   {
-    number: "02",
-    title: "Manejo de activos inmobiliarios",
-    intro: "Una propiedad no debe estar detenida. Debe estar generando valor para ti.",
-    text: "Nos especializamos en maximizar el rendimiento de tu patrimonio con estrategias personalizadas para vender, alquilar o reposicionar cada activo frente a clientes calificados.",
-    subtitle: "Qué hacemos por tu propiedad",
-    items: ["Analizamos su valor", "Definimos una estrategia comercial", "Creamos materiales profesionales", "Identificamos prospectos calificados", "Promovemos en canales adecuados", "Gestionamos visitas", "Negociamos condiciones", "Acompañamos el cierre"],
-    quote: "El dinero, como el agua, debe fluir para generar vida. Deja que ZeVi Capital impulse tu propiedad al siguiente nivel.",
+    "number": "02",
+    "title": "Capital Markets",
+    "intro": "Inversión inmobiliaria comercial, adquisición y manejo de activos inmobiliarios.",
+    "text": "Apoyamos la evaluación de terrenos, inmuebles generadores de renta y proyectos con potencial de inversión. Consideramos condiciones de mercado, perfil de comprador, documentación y estructura de la transacción para definir alternativas de adquisición, disposición y comercialización.",
+    "subtitle": "Evaluación y estrategia del activo",
+    "items": [
+      "Diagnóstico del activo",
+      "Análisis de comparables",
+      "Evaluación de inmuebles generadores de renta",
+      "Adquisición de activos inmobiliarios",
+      "Comercialización de terrenos",
+      "Perfil del comprador",
+      "Documentación de la transacción",
+      "Coordinación y seguimiento"
+    ],
+    "quote": "No se prometen rendimientos ni se sustituye asesoría financiera regulada."
   },
   {
-    number: "03",
-    title: "Comercialización inmobiliaria estructurada",
-    intro: "Una propiedad no se vende únicamente por estar publicada.",
-    text: "Se vende cuando está bien posicionada, bien presentada y dirigida al comprador adecuado. Desarrollamos estrategias para activos comerciales, industriales, corporativos, hoteleros, residenciales premium y terrenos.",
-    subtitle: "Nuestro enfoque",
-    items: ["Diagnóstico del activo", "Definición del comprador ideal", "Estrategia de posicionamiento", "Material visual y comercial", "Campañas digitales", "Prospección directa", "Seguimiento profesional", "Negociación y cierre"],
+    "number": "03",
+    "title": "Industrial & Logistics",
+    "intro": "Asesoría para la ocupación, comercialización y adquisición de inmuebles industriales.",
+    "text": "Identificamos naves, terrenos, parques industriales y oportunidades build-to-suit conforme a los requerimientos técnicos, financieros y operativos de cada proyecto. Evaluamos superficies, andenes, alturas, conectividad, infraestructura, disponibilidad y condiciones contractuales antes de recomendar alternativas.",
+    "subtitle": "Requerimientos de logística inmobiliaria",
+    "items": [
+      "Renta de naves industriales",
+      "Parques industriales",
+      "Terrenos industriales",
+      "Build to suit México",
+      "Superficies, alturas y andenes",
+      "Conectividad e infraestructura",
+      "Condiciones de arrendamiento",
+      "Adquisición y negociación"
+    ]
   },
   {
-    number: "04",
-    title: "Asesoría comercial inmobiliaria",
-    intro: "Decisiones inmobiliarias con mayor claridad.",
-    text: "Ayudamos a propietarios, inversionistas y empresas a resolver dudas críticas antes de vender, rentar, invertir o expandirse.",
-    subtitle: "Preguntas que ayudamos a resolver",
-    items: ["¿Cuál es el valor real de mi propiedad?", "¿Conviene vender o rentar?", "¿Qué comprador puede interesarse?", "¿Cómo presento mejor mi activo?", "¿Qué riesgos debo revisar?", "¿Qué ubicación conviene para una sucursal?"],
+    "number": "04",
+    "title": "Research & Market Intelligence",
+    "intro": "Inteligencia inmobiliaria para decisiones de negocio.",
+    "text": "Integramos comparables de mercado, análisis de oferta, corredores industriales, accesibilidad, condiciones comerciales y viabilidad preliminar de ubicaciones. La información se documenta con fecha, fuente y alcance; se distingue entre datos confirmados y estimaciones.",
+    "subtitle": "Análisis de mercado y localización",
+    "items": [
+      "Comparables de mercado",
+      "Análisis de oferta",
+      "Corredores industriales",
+      "Accesibilidad y localización",
+      "Condiciones comerciales",
+      "Fuentes, fechas y estimaciones"
+    ]
   },
   {
-    number: "05",
-    title: "Marketing inmobiliario",
-    intro: "Presentación profesional, narrativa clara y difusión enfocada.",
-    text: "En una era digital, el marketing inmobiliario es clave para generar interés real y llegar a prospectos calificados.",
-    subtitle: "Herramientas",
-    items: ["Ficha comercial", "Presentación ejecutiva", "Landing page de propiedad", "Galería visual", "Campañas digitales", "Prospección por sector", "Contenido para inversionistas", "Seguimiento de leads"],
+    "number": "05",
+    "title": "Comercialización de activos inmobiliarios",
+    "intro": "Presentación profesional y una estrategia dirigida al comprador u ocupante adecuado.",
+    "text": "Partimos del diagnóstico del activo, el mercado y el perfil de los prospectos. Organizamos fichas comerciales, materiales visuales y canales de difusión para acompañar la prospección, las visitas, la negociación y el seguimiento de cada oportunidad.",
+    "subtitle": "Posicionamiento y seguimiento comercial",
+    "items": [
+      "Diagnóstico del activo",
+      "Perfil del comprador u ocupante",
+      "Estrategia de posicionamiento",
+      "Fichas comerciales y presentaciones",
+      "Material visual del inmueble",
+      "Canales de difusión por sector",
+      "Prospección y seguimiento",
+      "Negociación y cierre"
+    ]
   },
   {
-    number: "06",
-    title: "Asesoría legal y fiscal",
-    intro: "Certeza para cada operación.",
-    text: "Acompañamos el proceso con revisión documental y coordinación con especialistas para reducir riesgos y facilitar cierres ordenados.",
-    subtitle: "Aspectos que pueden revisarse",
-    items: ["Escrituras", "Uso de suelo", "Situación jurídica", "Contratos", "Cartas de intención", "Condiciones de compraventa", "Arrendamientos", "Riesgos fiscales", "Procesos de cierre"],
-  },
+    "number": "06",
+    "title": "Legal & Transaction Advisory",
+    "intro": "Coordinación jurídica y documental de operaciones inmobiliarias.",
+    "text": "Acompañamos cartas de intención, arrendamientos, compraventas, análisis preliminar de riesgos y procesos de due diligence. El alcance y la prestación de servicios jurídicos especializados se delimitan contractualmente según cada asunto.",
+    "subtitle": "Due diligence y negociación inmobiliaria",
+    "items": [
+      "Revisión documental",
+      "Cartas de intención",
+      "Due diligence inmobiliario",
+      "Asesoría en arrendamiento comercial",
+      "Negociación inmobiliaria corporativa",
+      "Condiciones de compraventa",
+      "Identificación de riesgos",
+      "Coordinación jurídica",
+      "Seguimiento del cierre"
+    ]
+  }
 ]
 
 const Services = () => (
@@ -61,13 +115,13 @@ const Services = () => (
     <main className="services-page">
       <section className="services-hero">
         <div className="container">
-          <span>ZeVi Capital · Soluciones integrales</span>
-          <h1>Servicios inmobiliarios estratégicos para empresas, propietarios e inversionistas</h1>
-          <p>Combinamos análisis, estrategia, promoción, negociación y acompañamiento para transformar activos e ideas de expansión en operaciones concretas.</p>
-          <Link href="/contact">Solicitar asesoría <i className="bi bi-arrow-up-right" /></Link>
+          <span>ZeVi | Capital · Real Estate & Investment Advisory</span>
+          <h1>Consultoría inmobiliaria corporativa para empresas e inversionistas</h1>
+          <p>Conectamos empresas, capital y oportunidades inmobiliarias mediante análisis de mercado, asesoría transaccional y estrategias de expansión.</p>
+          <Link href="/contact">Hablar con un asesor corporativo <i className="bi bi-arrow-up-right" /></Link>
         </div>
       </section>
-      <section className="services-intro"><div className="container"><span>Nuestro enfoque</span><h2>Decisiones con impacto patrimonial, comercial y operativo.</h2><p>ZeVi Capital ofrece soluciones integrales para clientes que necesitan tomar decisiones inmobiliarias con dirección, certeza y visión de largo plazo.</p></div></section>
+      <section className="services-intro"><div className="container"><span>Nuestro enfoque</span><h2>Soluciones estratégicas para cada decisión inmobiliaria.</h2><p>Entendemos el objetivo de cada proyecto: optimizar una operación logística, abrir nuevas unidades comerciales, evaluar una adquisición o posicionar un activo ante compradores y ocupantes calificados.</p></div></section>
       <section className="services-list"><div className="container">
         {services.map((service, index) => (
           <article key={service.number} className={index % 2 ? "reverse" : ""}>

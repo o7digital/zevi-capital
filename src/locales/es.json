@@ -111,15 +111,27 @@
     "findOut": "Descubrir"
   },
   "stepsSection": {
-    "title": "Estamos aquí para ayudarte",
-    "subtitle": "a conseguir la casa de tus sueños",
-    "easyStart": "Es muy fácil empezar con nosotros en simples pasos",
+    "title": "De la visión",
+    "subtitle": "a la ejecución inmobiliaria",
+    "easyStart": "Discover. Evaluate. Structure. Execute.",
     "createAccount": "Crear cuenta",
     "createAccountDesc": "Abre tu cuenta en minutos y comienza tu proceso.",
     "findHome": "Encontrar casa",
     "findHomeDesc": "Completa tu perfil con toda la información para atraer mejores oportunidades.",
     "quickProcess": "Proceso rápido",
-    "quickProcessDesc": "Postula y obtén las mejores opciones con todos los requisitos claros."
+    "quickProcessDesc": "Postula y obtén las mejores opciones con todos los requisitos claros.",
+    "step1Title": "Discover · Definir el mandato",
+    "step1Desc": "Definimos las necesidades, el objetivo inmobiliario y los criterios de éxito de cada proyecto.",
+    "step2Title": "Evaluate · Analizar el mercado",
+    "step2Desc": "Contrastamos oferta, comparables, ubicación y condiciones económicas para entender el mercado.",
+    "step3Title": "Evaluate · Comparar alternativas",
+    "step3Desc": "Evaluamos alternativas según superficie, operación, inversión y riesgos identificados.",
+    "step4Title": "Structure · Organizar documentos",
+    "step4Desc": "Ordenamos la información del inmueble y coordinamos la revisión documental y el due diligence.",
+    "step5Title": "Structure · Negociar condiciones",
+    "step5Desc": "Organizamos términos de arrendamiento o adquisición y acompañamos la negociación inmobiliaria.",
+    "step6Title": "Execute · Coordinar el cierre",
+    "step6Desc": "Damos seguimiento a acuerdos y pendientes con las partes y los especialistas correspondientes."
   },
   "journeySection": {
     "title": "Comienza tu camino",
@@ -130,6 +142,8 @@
     "signIn": "Inicia sesión."
   },
   "testimonials": {
+    "title": "Testimonios",
+    "intro": "Opiniones sobre la experiencia de asesoría inmobiliaria.",
     "testimonial1": {
       "name": "Jonathan Harry",
       "location": "Milán, Italia",
@@ -165,17 +179,19 @@
   "aboutUs": {
     "breadcrumbTitle": "Sobre nosotros",
     "subtitle": "Sobre nosotros",
-    "mainTitle": "Asegura",
-    "familyWord": "el hogar soñado",
-    "dreamHome": "de tu familia.",
-    "intro": "ZEVI CAPITAL es tu aliado de confianza en bienes raíces de lujo. Con más de 15 años de experiencia en mercados inmobiliarios de alto nivel.",
-    "contactButton": "Contáctanos",
+    "mainTitle": "Asesoría",
+    "familyWord": "inmobiliaria",
+    "dreamHome": "para empresas e inversionistas.",
+    "intro": "ZeVi | Capital acompaña a empresas, inversionistas y propietarios en la identificación, evaluación y negociación de oportunidades inmobiliarias.",
+    "contactButton": "Hablar con un asesor",
     "yearsExperience": "Años de experiencia",
     "propertiesSold": "Propiedades vendidas",
     "whoWeAre": "¿Quiénes somos?",
-    "whoWeAreText": "ZEVI CAPITAL es una agencia inmobiliaria líder especializada en propiedades de lujo. Combinamos conocimiento de mercado y servicio personalizado para ayudarte a encontrar tu hogar o inversión ideal.",
+    "whoWeAreText": "Somos una firma de asesoría inmobiliaria e inversión con base en Zona Esmeralda, Estado de México. Integramos análisis de mercado, atención corporativa y coordinación transaccional.",
     "ourMission": "Nuestra misión",
-    "ourMissionText": "Nuestra misión es ofrecer servicios inmobiliarios excepcionales, con transparencia e integridad, generando valor duradero para nuestros clientes en mercados internacionales premium."
+    "ourMissionText": "Acompañar decisiones de arrendamiento, adquisición, comercialización e inversión con información, criterios claros y seguimiento de cada operación.",
+    "servicePillars": "Ejes de análisis: mercado, activo y transacción",
+    "structuredSteps": "Etapas de acompañamiento"
   },
   "listingDetails": {
     "titleFallback": "Propiedad ZeVi Capital",
