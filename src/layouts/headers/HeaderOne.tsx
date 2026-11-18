@@ -1,177 +1,91 @@
-"use client"
-import NavMenu from "./Menu/NavMenu"
-import Link from "next/link"
-import Image from "next/image"
-import UseSticky from "@/hooks/UseSticky"
-import LoginModal from "@/modals/LoginModal"
-import { useTranslation } from "@/contexts/TranslationContext"
+"use client";
 
-const HeaderOne = ({ style }: any) => {
-   
-   const { sticky } = UseSticky();
-   const { t, locale, setLocale } = useTranslation();
-   const languages = [
-      { code: 'es' as const, label: 'ES', flag: '🇪🇸', title: 'Español' },
-      { code: 'en' as const, label: 'EN', flag: '🇬🇧', title: 'English' },
-      { code: 'fr' as const, label: 'FR', flag: '🇫🇷', title: 'Français' },
-   ];
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/contexts/TranslationContext";
+import AdvisoryBrand from "@/components/common/AdvisoryBrand";
+import LoginModal from "@/modals/LoginModal";
+import { advisoryCopy, sectors } from "@/components/homes/home-one/advisoryContent";
+import styles from "./HeaderOne.module.scss";
 
-   const languageSelector = (mobile = false) => (
-      <div className={`d-flex align-items-center gap-2 ${mobile ? "flex-wrap" : ""}`}>
-         {languages.map((lang) => (
-            <button key={lang.code} onClick={() => setLocale(lang.code)}
-               className="btn btn-sm d-flex align-items-center gap-1"
-               style={{
-                  border: "1px solid #1f2937", padding: mobile ? "8px 12px" : "6px 10px",
-                  borderRadius: "5px", background: locale === lang.code ? "#1f2937" : "#ffffff",
-                  color: locale === lang.code ? "#ffffff" : "#1f2937", fontWeight: "500", fontSize: "13px",
-               }}
-               title={lang.title} aria-pressed={locale === lang.code}>
-               {lang.flag} {lang.label}
-            </button>
-         ))}
-      </div>
-   );
+const HeaderOne = (_props: { style?: boolean }) => {
+  const { locale, setLocale, t } = useTranslation();
+  const copy = advisoryCopy[locale];
+  const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
-   return (
-      <>
-         <header
-            className={`theme-main-menu menu-style-one sticky-menu ${sticky ? "fixed" : ""}`}
-            style={{ background: "#ffffff", borderBottom: "1px solid #e9ecef" }}
-         >
-            <div className="inner-content gap-one">
-               <div className="top-header position-relative">
-                  <div className="d-flex align-items-center justify-content-between">
-                     <div className="logo order-lg-0" style={{ position: "relative", zIndex: 1000 }}>
-                        <Link href="/" className="d-flex align-items-center gap-2 gap-lg-3 text-decoration-none">
-                           <Image
-                              src="/logo.png"
-                              alt="ZEVI CAPITAL logo"
-                              width={400}
-                              height={100}
-                              style={{ width: "auto", height: "60px" }}
-                              className="d-lg-none"
-                              priority
-                           />
-                           <Image
-                              src="/logo.png"
-                              alt="ZEVI CAPITAL logo"
-                              width={400}
-                              height={100}
-                              style={{ width: "auto", height: "100px" }}
-                              className="d-none d-lg-block"
-                              priority
-                           />
-                           <div className="d-flex flex-column" style={{ lineHeight: "1.1", marginLeft: "20px" }}>
-                              <span 
-                                 className="text-uppercase" 
-                                 style={{ 
-                                    fontSize: "clamp(16px, 2.5vw, 24px)",
-                                    fontWeight: "700",
-                                    letterSpacing: "2px",
-                                    color: "#111111",
-                                    fontFamily: "'Montserrat', 'Arial', sans-serif"
-                                 }}
-                              >
-                                 ZEVI
-                              </span>
-                              <span 
-                                 className="text-uppercase" 
-                                 style={{ 
-                                    fontSize: "clamp(14px, 2vw, 20px)",
-                                    fontWeight: "300",
-                                    letterSpacing: "3px",
-                                    color: "#111111",
-                                    fontFamily: "'Montserrat', 'Arial', sans-serif"
-                                 }}
-                              >
-                                 CAPITAL
-                              </span>
-                           </div>
-                        </Link>
-                     </div>
-                     <div className="desktop-language-selector right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
-                        <ul className="d-flex align-items-center style-none">
-                           <li className="me-3">
-                              <div className="d-flex align-items-center gap-2">
-                                 {[
-                                    { code: 'fr' as const, label: 'FR', flag: '🇫🇷', title: 'Français' },
-                                    { code: 'en' as const, label: 'EN', flag: '🇬🇧', title: 'English' },
-                                    { code: 'es' as const, label: 'ES', flag: '🇪🇸', title: 'Español' },
-                                 ].map((lang) => (
-                                    <button
-                                       key={lang.code}
-                                       onClick={() => setLocale(lang.code)}
-                                       className="btn btn-sm d-flex align-items-center gap-1"
-                                       style={{
-                                          border: "1px solid #1f2937",
-                                          padding: '6px 10px',
-                                          borderRadius: '5px',
-                                          background: locale === lang.code ? "#1f2937" : "#ffffff",
-                                          color: locale === lang.code ? "#ffffff" : "#1f2937",
-                                          fontWeight: '500',
-                                          fontSize: '13px',
-                                          cursor: 'pointer'
-                                       }}
-                                       title={lang.title}
-                                    >
-                                       {lang.flag} {lang.label}
-                                    </button>
-                                 ))}
-                              </div>
-                           </li>
-                           <li className="d-none d-lg-block">
-                              <Link href="https://zevicapital-directus-backend-lc-inmobiliaria.up.railway.app/admin" target="_blank" rel="noopener noreferrer" className="btn-one" style={{ background: 'rgb(48, 92, 115)', borderColor: 'rgb(48, 92, 115)', color: '#ffffff' }}><i className="fa-regular fa-lock"></i> <span>{t('nav.login')}</span></Link>
-                           </li>
-                        </ul>
-                     </div>
-                     <nav className="navbar navbar-expand-lg p0 order-lg-2">
-                        <button className="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
-                           data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                           aria-label="Toggle navigation">
-                           <span></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                           <NavMenu />
-                           <div className="d-block d-lg-none px-3 pt-4 mt-3 border-top">
-                              {languageSelector(true)}
-                           </div>
-                        </div>
-                     </nav>
-                  </div>
-               </div>
-            </div>
-            <style jsx global>{`
-               .theme-main-menu .nav-item .nav-link {
-                  color: #111111 !important;
-               }
-               .theme-main-menu .nav-item .nav-link:hover {
-                  color: rgb(48, 92, 115) !important;
-               }
-               .theme-main-menu.fixed {
-                  background: #ffffff !important;
-                  border-bottom: 1px solid #e9ecef !important;
-               }
-               .theme-main-menu .navbar-toggler span,
-               .theme-main-menu .navbar-toggler::before,
-               .theme-main-menu .navbar-toggler::after {
-                  background: #111111 !important;
-               }
-               @media (max-width: 991.98px) {
-                  .theme-main-menu .desktop-language-selector {
-                     display: none !important;
-                  }
-               }
-               @media (min-width: 992px) {
-                  .theme-main-menu .desktop-language-selector {
-                     display: block !important;
-                  }
-               }
-            `}</style>
-         </header>
-         <LoginModal />
-      </>
-   )
-}
+  const closeMenus = () => {
+    setMenuOpen(false);
+    headerRef.current?.querySelectorAll("details[open]").forEach(item => item.removeAttribute("open"));
+  };
 
-export default HeaderOne
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenus();
+        headerRef.current?.querySelector<HTMLButtonElement>("[aria-controls='advisory-navigation']")?.focus();
+      }
+    };
+    const onOutside = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) closeMenus();
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onOutside);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onOutside);
+    };
+  }, []);
+
+  return (
+    <>
+      <header ref={headerRef} className={styles.header}>
+        <div className={styles.inner}>
+          <AdvisoryBrand />
+          <button type="button" className={styles.toggle} aria-expanded={menuOpen}
+            aria-controls="advisory-navigation" aria-label={copy.menu} onClick={() => setMenuOpen(!menuOpen)}>
+            <span /><span /><span />
+          </button>
+          <nav id="advisory-navigation" className={`${styles.nav} ${menuOpen ? styles.open : ""}`} aria-label={copy.navigation}>
+            <details className={styles.dropdown}>
+              <summary>{copy.services}<span className={styles.chevron} /></summary>
+              <div className={styles.panel}>
+                <Link href="/services" onClick={closeMenus}>{copy.advisory}</Link>
+                <Link href="/insurance" onClick={closeMenus}>Legal & Transaction Advisory</Link>
+                <Link href="/faq" onClick={closeMenus}>{t("nav.faq")}</Link>
+              </div>
+            </details>
+            <details className={styles.dropdown}>
+              <summary>{copy.properties}<span className={styles.chevron} /></summary>
+              <div className={styles.panel}>
+                <Link href="/#properties" onClick={closeMenus}>{copy.allProperties}</Link>
+                <Link href="/contact" onClick={closeMenus}>{copy.listProperty}</Link>
+              </div>
+            </details>
+            <details className={styles.dropdown}>
+              <summary>{copy.sectors}<span className={styles.chevron} /></summary>
+              <div className={styles.panel}>
+                {sectors.map((sector, index) => <Link href={sector.href} key={sector.id} onClick={closeMenus}>{copy.sectorNames[index]}</Link>)}
+              </div>
+            </details>
+            <Link href="/about_us_01" onClick={closeMenus}>{copy.about}</Link>
+            <Link href="/insights" onClick={closeMenus}>Insights</Link>
+            <details className={`${styles.dropdown} ${styles.language}`}>
+              <summary aria-label={copy.language}>{locale.toUpperCase()}<span className={styles.chevron} /></summary>
+              <div className={styles.panel}>
+                {([['es', 'Español'], ['en', 'English'], ['fr', 'Français']] as const).map(([code, label]) => (
+                  <button type="button" key={code} lang={code} aria-pressed={locale === code}
+                    onClick={() => { setLocale(code); closeMenus(); }}>{label}</button>
+                ))}
+              </div>
+            </details>
+            <Link href="/contact" onClick={closeMenus} className={styles.contact}>{copy.contact}<span aria-hidden="true">⟶</span></Link>
+          </nav>
+        </div>
+      </header>
+      <LoginModal />
+    </>
+  );
+};
+
+export default HeaderOne;

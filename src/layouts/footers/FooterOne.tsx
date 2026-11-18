@@ -4,6 +4,7 @@ import Link from "next/link"
 import footer_data from "@/data/home-data/FooterData"
 import { useTranslation } from "@/contexts/TranslationContext"
 import FooterKeywords from "./FooterKeywords"
+import AdvisoryBrand from "@/components/common/AdvisoryBrand"
 
 import footerShape_1 from "@/assets/images/shape/shape_32.svg"
 import footerShape_2 from "@/assets/images/shape/shape_33.svg"
@@ -28,15 +29,7 @@ const FooterOne = ({ style }: any) => {
                      <div className={`footer-intro ${isDark ? "position-relative z-1" : ""}`}>
                         <div className="bg-wrapper" style={!isDark ? { background: introBackground } : undefined}>
                            <div className="logo mb-20">
-                              <Link href="/" className="d-inline-block text-decoration-none">
-                                 <Image
-                                    src="/logo.png"
-                                    alt="ZEVI CAPITAL logo"
-                                    width={220}
-                                    height={120}
-                                    style={{ width: "auto", height: "110px" }}
-                                 />
-                              </Link>
+                              <AdvisoryBrand />
                            </div>
                            <p className="mb-60 lg-mb-40 md-mb-20" style={{ color: '#ffffff' }}>{t('footer.address')}</p>
                            <h6 style={{ color: '#ffffff' }}>{t('footer.contact')}</h6>

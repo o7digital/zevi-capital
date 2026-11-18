@@ -1,0 +1,23 @@
+.brand {
+  display: inline-flex; align-items: center; gap: 16px; color: #fff; text-decoration: none; flex-shrink: 0;
+  &:hover { color: #fff; }
+}
+.symbol {
+  display: block; width: 110px; height: 63px; overflow: hidden; mix-blend-mode: screen;
+  img { display: block; width: 110px; height: auto; filter: invert(1) sepia(1) saturate(3) hue-rotate(165deg) brightness(1.05); }
+}
+.wordmark {
+  display: flex; flex-direction: column; white-space: nowrap; font-family: 'EB Garamond', Georgia, serif;
+  font-size: 39px; font-weight: 500; line-height: 1; letter-spacing: -1px;
+  .divider { font-weight: 400; margin: 0 2px; }
+  small { margin-top: 7px; text-align: center; font-size: 15px; letter-spacing: 0; }
+}
+@media (max-width: 1199px) {
+  .brand { gap: 10px; }
+  .symbol { width: 82px; height: 47px; img { width: 82px; } }
+  .wordmark { font-size: 31px; small { font-size: 12px; } }
+}
+@media (max-width: 575px) {
+  .symbol { width: 65px; height: 37px; img { width: 65px; } }
+  .wordmark { font-size: 27px; small { margin-top: 5px; font-size: 10px; } }
+}

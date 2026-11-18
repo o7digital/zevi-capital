@@ -58,7 +58,7 @@ const BLockFeatureOne = () => {
       <div className="strategy-home__intro">
         <div>
           <span className="strategy-home__eyebrow">{copy.eyebrow}</span>
-          <h1 id="strategy-title">{copy.title}</h1>
+          <h2 id="strategy-title" className="strategy-home__title">{copy.title}</h2>
         </div>
         <div className="strategy-home__copy">
           <p className="lead">{copy.lead}</p>

@@ -1,0 +1,8 @@
+ZeVi Capital — architectural background for the design preview
+
+Asset: public/images/advisory-office-dusk.webp
+Created with the built-in imagegen tool, then compressed to WebP.
+This is a conceptual illustration, not an identified property in the inventory.
+
+Final generation prompt:
+Use case: photorealistic-natural. Asset type: full-bleed real estate investment website hero background, wide landscape 16:9. Primary request: cinematic architectural photograph closely matching the architecture and lighting of the user's reference website. Only generate the background photograph, no website interface. A large premium modern corporate office building with blue glass curtain walls fills the RIGHT half of the image, seen from ground level looking along its facade towards a distant city skyline across the lower LEFT. Strong perspective diagonal facade: the nearest right facade fills full image height and recedes to the middle. Glass panels reflect dusk blue sky and warm pink sunset. Elegant thin warm amber lights beneath the long facade canopy and illuminated ground-floor lobby. Silhouetted landscaping trees along building and dark low trees bottom left. LEFT upper half is a smooth dark navy to muted blue clear twilight sky with ample negative space for white website headlines, dusk city skyline on lower left horizon. Expensive corporate real estate photography, highly realistic, deep navy blue, steel blue, subtle warm golden reflections. Horizon low, architecture right, readable dark blue sky at left. Avoid ALL typography, text, logo, watermark, panels, buttons, icons, website layout, graphics, people. This is an illustrative visual for a design preview, not a photograph of a specific named property.

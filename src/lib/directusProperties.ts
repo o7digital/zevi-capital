@@ -4,6 +4,7 @@ import propertyIcon_3 from "@/assets/images/icon/icon_06.svg";
 
 export interface DirectusPropertyCard {
    id: number | string;
+   property_type?: string;
    href?: string;
    tag: string;
    tag_bg?: string;
@@ -131,6 +132,7 @@ export function directusAssetUrl(value: DirectusFileValue | string | { id?: stri
 export function mapDirectusPropertyCard(property: DirectusProperty, index = 0): DirectusPropertyCard {
    return {
       id: property.id,
+      property_type: property.property_type,
       href: `/listing_details_01?id=${property.id}`,
       tag: property.tag || property.listing_status || "FOR SALE",
       tag_bg: property.tag_bg,

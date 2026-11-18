@@ -1,0 +1,54 @@
+.advisory-home {
+  background: #f5f7fa;
+  .strategy-home { padding: 100px 0; background: #f5f7fa !important; }
+  .strategy-home__intro { gap: 70px; }
+  .strategy-home .strategy-home__title { font-size: clamp(38px, 4.5vw, 64px); line-height: 1.04; letter-spacing: -.035em; }
+  .strategy-home .strategy-home__eyebrow { color: #466a8b !important; }
+  .strategy-home .strategy-btn--dark, .strategy-home .strategy-btn:hover { background: #102c4b !important; border-color: #102c4b !important; }
+  .strategy-home__search { padding: 45px; box-shadow: none; border: 1px solid #dae2ec; }
+  .strategy-home__search h2 { font-size: clamp(30px, 3vw, 43px); }
+  .strategy-home__actions { margin-bottom: 70px; }
+  .strategy-home__search-head { gap: 45px; }
+  .strategy-home__columns { gap: 35px; }
+  .strategy-home .strategy-home__copy strong { color: #466a8b !important; font-family: 'EB Garamond', Georgia, serif; font-size: 25px; }
+  #properties { margin-top: 0; padding: 90px 0 110px; background: #fff; scroll-margin-top: 24px; }
+  #properties .title-one h2 { color: #102c4b; font-family: 'EB Garamond', Georgia, serif; font-size: clamp(40px, 4vw, 65px); line-height: 1.06; }
+  #properties .title-one h2 img { display: none; }
+  #properties .title-one p { color: #64748b; font-size: 18px; }
+  .listing-card-one { border: 1px solid #dbe3ed; border-radius: 5px; box-shadow: none; }
+  .listing-card-one .img-gallery { padding: 10px; }
+  .listing-card-one .img-gallery .border-25 { border-radius: 3px; }
+  .listing-card-one .carousel-inner img { height: 245px; object-fit: cover; }
+  .listing-card-one .tag { border-radius: 2px; font-size: 11px; letter-spacing: .04em; }
+  .listing-card-one .property-info { padding: 20px; }
+  .listing-card-one .property-info .title { color: #102c4b; font-family: 'EB Garamond', Georgia, serif; font-size: 26px; line-height: 1.15; }
+  .listing-card-one .property-info .address { font-size: 13px; line-height: 1.5; }
+  .listing-card-one .property-info .price { font-size: 20px; }
+  .listing-card-one .btn-four { background: #102c4b; border-color: #102c4b; }
+  .feedback-section-one { background: #edf2f7; }
+  .feedback-section-one h2 { color: #102c4b; font-family: 'EB Garamond', Georgia, serif; }
+  .fancy-banner-two { background-color: #0a213b; }
+}
+.advisory-property-filters {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 12px;
+  a { padding: 9px 16px; border: 1px solid #dbe3ed; border-radius: 3px; color: #183753; font-size: 13px; line-height: 1.5; }
+  a:hover, a[aria-current] { background: #102c4b; border-color: #102c4b; color: #fff; }
+  a:focus-visible { outline: 2px solid #466a8b; outline-offset: 3px; }
+}
+.advisory-clear-filter { margin-top: 15px; color: #183753; text-decoration: underline; }
+.main-page-wrapper:has(.advisory-home) .zevi-olivia .teaser {
+  padding: 6px; animation: none;
+  > span, > em { display: none; }
+}
+.footer-one .footer-intro .logo > a { gap: 10px; > span:first-child { width: 70px; height: 40px; img { width: 70px; } } > span:last-child { font-size: 27px; small { font-size: 11px; } } }
+.footer-one.dark-bg { background: #071c31 !important; .footer-intro .bg-wrapper { background: #0c2640 !important; } }
+@media (max-width: 991px) {
+  .advisory-home .strategy-home { padding: 70px 0; }
+  .advisory-home .strategy-home__intro { gap: 30px; }
+}
+@media (max-width: 575px) {
+  .advisory-home .strategy-home__search { padding: 28px 20px; }
+  .advisory-home .strategy-home__search-head { gap: 22px; }
+  .advisory-home .strategy-home__columns { gap: 20px; }
+  .advisory-home #properties { padding: 65px 0; }
+}

@@ -28,10 +28,10 @@ export const metadata = {
     images: ["/slider/cdmx.webp"],
   },
 };
-const index = () => {
+const index = ({ searchParams }: { searchParams?: { sector?: string } }) => {
   return (
     <Wrapper>
-      <HomeOne />
+      <HomeOne sector={searchParams?.sector} />
     </Wrapper>
   )
 }

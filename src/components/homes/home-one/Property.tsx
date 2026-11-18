@@ -6,9 +6,11 @@ import { useTranslation } from "@/contexts/TranslationContext";
 import { DirectusPropertyCard, fetchDirectusProperties, shouldDisplayPropertyPrice } from "@/lib/directusProperties";
 
 import titleShape from "@/assets/images/shape/title_shape_03.svg";
+import { advisoryCopy, sectors } from "./advisoryContent";
 
-const Property = ({ initialProperties = [] }: { initialProperties?: DirectusPropertyCard[] }) => {
-   const { t } = useTranslation();
+const Property = ({ initialProperties = [], sector }: { initialProperties?: DirectusPropertyCard[]; sector?: string }) => {
+   const { t, locale } = useTranslation();
+   const copy = advisoryCopy[locale];
    const hasDirectusConfig = Boolean(process.env.NEXT_PUBLIC_DIRECTUS_URL);
    const [isLoading, setIsLoading] = useState(hasDirectusConfig && initialProperties.length === 0);
    const [loadError, setLoadError] = useState(false);
@@ -23,6 +25,17 @@ const Property = ({ initialProperties = [] }: { initialProperties?: DirectusProp
       return `$${amount} ${currency}`;
    };
    const propertyHref = (item: DirectusPropertyCard) => item.href || "/listing_details_01";
+   const sectorPatterns: Record<string, RegExp> = {
+      industrial: /industrial|bodega|nave|warehouse|logistic/i,
+      offices: /oficina|office|corporativ/i,
+      retail: /local|comercial|retail|commerc/i,
+      land: /terreno|land|lote|lot\b/i,
+      residential: /casa|departamento|residenc|condominio|house|apartment|villa|penthouse/i,
+   };
+   const activeSector = typeof sector === "string" && Object.prototype.hasOwnProperty.call(sectorPatterns, sector) ? sector : undefined;
+   const visibleProperties = activeSector
+      ? properties.filter(item => sectorPatterns[activeSector].test(item.property_type || item.title))
+      : properties;
 
    useEffect(() => {
       if (!hasDirectusConfig) return;
@@ -58,17 +71,24 @@ const Property = ({ initialProperties = [] }: { initialProperties?: DirectusProp
          <div className="container">
             <div className="position-relative">
                <div className="title-one text-center text-lg-start mb-45 xl-mb-30 lg-mb-20 wow fadeInUp">
-                  <h3>{t('property.featured')} <span>{t('property.properties')} <Image src={titleShape} alt="" className="lazy-img" /></span></h3>
+                  <h2>{t('property.featured')} <span>{t('property.properties')} <Image src={titleShape} alt="" className="lazy-img" /></span></h2>
                   <p className="fs-22 mt-xs">{t('property.subtitle')}</p>
                </div>
 
-               <div className="row gx-xxl-5">
-                  {properties.length === 0 && (
+               <nav className="advisory-property-filters" aria-label={copy.sectorLabel}>
+                  <Link href="/#properties" aria-current={!activeSector ? "page" : undefined}>{copy.all}</Link>
+                  {sectors.filter(item => item.id !== "developments").map((item, index) => (
+                     <Link key={item.id} href={item.href} aria-current={activeSector === item.id ? "page" : undefined}>{copy.sectorNames[index]}</Link>
+                  ))}
+               </nav>
+               <div className="row gx-xxl-5" aria-live="polite">
+                  {visibleProperties.length === 0 && (
                      <div className="col-12">
-                        <p className="fs-20 mb-0">{t(isLoading ? "property.loading" : loadError ? "property.loadError" : "property.empty")}</p>
+                        <p className="fs-20 mb-0">{isLoading ? t("property.loading") : loadError ? t("property.loadError") : activeSector ? copy.noResults : t("property.empty")}</p>
+                        {activeSector && <Link href="/#properties" className="advisory-clear-filter">{copy.clear} ⟶</Link>}
                      </div>
                   )}
-                  {properties.map((item) => (
+                  {visibleProperties.map((item) => (
                      <div key={item.id} className="col-lg-4 col-md-6 d-flex mt-40 wow fadeInUp" data-wow-delay={item.data_delay_time}>
                         <div className="listing-card-one border-25 h-100 w-100">
                            <div className="img-gallery p-15">
