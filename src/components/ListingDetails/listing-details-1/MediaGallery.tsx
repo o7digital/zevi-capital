@@ -103,7 +103,7 @@ const MediaGallery = ({ style, images = [] }: { style?: boolean; images?: Galler
 
   return (
     <div className="media-gallery mt-100 xl-mt-80 lg-mt-60">
-      <div id="media_slider" className="row">
+      <div id="media_slider" className="row carousel">
         <div className="col-lg-10">
           <div className={` bg-white border-20 md-mb-20 ${style ? "" : "shadow4 p-30"}`}>
             <div className="position-relative z-1 overflow-hidden border-20">

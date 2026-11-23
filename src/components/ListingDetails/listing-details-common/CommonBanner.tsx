@@ -2,8 +2,9 @@
 import Link from "next/link"
 import { DirectusProperty } from "@/lib/directusProperties"
 import { useTranslation } from "@/contexts/TranslationContext"
-import { propertyTransactions } from "@/lib/propertySeo"
+import { propertyPath, propertyTransactions, SITE_URL } from "@/lib/propertySeo"
 import { formatPropertyPrice } from "@/lib/propertyPresentation"
+import PropertyShare from "./PropertyShare"
 
 const CommonBanner = ({ style_3, property }: { style_3?: boolean; property?: DirectusProperty | null }) => {
    const { t, locale } = useTranslation()
@@ -24,8 +25,9 @@ const CommonBanner = ({ style_3, property }: { style_3?: boolean; property?: Dir
                <div className="price color-dark fw-500" style={{ overflowWrap: 'anywhere' }}>{t("listingDetails.price")}: {formatPropertyPrice(property, locale)}</div>
                <div className="est-price fs-20 mt-25 mb-35 md-mb-30">{property?.property_type || t("listingDetails.propertyFallback")}</div>
                <ul className="style-none d-flex align-items-center action-btns">
-                  <li className="me-auto fw-500 color-dark"><i className="fa-sharp fa-regular fa-share-nodes me-2"></i>
-                     {t("listingDetails.share")}</li>
+                  <li className="me-auto fw-500 color-dark">
+                     <PropertyShare title={property?.title || t("listingDetails.titleFallback")} url={property ? SITE_URL + propertyPath(property) : undefined} />
+                  </li>
                   <li><Link href="#"
                      className={`d-flex align-items-center justify-content-center tran3s ${style_3 ? "" : "rounded-circle"}`}><i
                         className="fa-light fa-heart"></i></Link></li>
