@@ -2,38 +2,26 @@
 import Link from "next/link"
 import { DirectusProperty } from "@/lib/directusProperties"
 import { useTranslation } from "@/contexts/TranslationContext"
-
-const formatPrice = (property?: DirectusProperty | null) => {
-   const price = Number(property?.price);
-   if (!Number.isFinite(price)) return "Precio a consultar";
-   return new Intl.NumberFormat("es-MX", {
-      style: "currency",
-      currency: property?.currency || "MXN",
-      maximumFractionDigits: 0,
-   }).format(price);
-};
+import { propertyTransactions } from "@/lib/propertySeo"
+import { formatPropertyPrice } from "@/lib/propertyPresentation"
 
 const CommonBanner = ({ style_3, property }: { style_3?: boolean; property?: DirectusProperty | null }) => {
-   const { t } = useTranslation()
-   const listingStatus = property?.operation_type === "rental"
-      ? t("listingDetails.rent")
-      : property?.operation_type === "sale"
-         ? t("listingDetails.sale")
-         : property?.listing_status || property?.tag || t("listingDetails.sale")
+   const { t, locale } = useTranslation()
+   const listingStatus = property ? propertyTransactions(property).map(operation => t(operation === 'renta' ? "listingDetails.rent" : "listingDetails.sale")).join(' / ') || property.operation_type || '' : ''
 
    return (
       <div className="row">
          <div className="col-lg-6">
-            <h3 className="property-titlee">{property?.title || t("listingDetails.titleFallback")}</h3>
+            <h1 className="property-titlee" style={{ fontSize: 'clamp(28px, 4vw, 40px)', lineHeight: 1.25 }}>{property?.title || t("listingDetails.titleFallback")}</h1>
             <div className="d-flex flex-wrap mt-10">
                <div className={`list-type text-uppercase mt-15 me-3 ${style_3 ? "bg-white text-dark fw-500" : "text-uppercase border-20"}`}>{listingStatus}</div>
-               <div className="address mt-15"><i className="bi bi-geo-alt"></i> {property?.address || property?.location || "Estado de México"}
+               <div className="address mt-15"><i className="bi bi-geo-alt"></i> {property?.address || property?.location || ''}
                </div>
             </div>
          </div>
          <div className="col-lg-6 text-lg-end">
             <div className="d-inline-block md-mt-40">
-               <div className="price color-dark fw-500">{t("listingDetails.price")}: {formatPrice(property)}</div>
+               <div className="price color-dark fw-500" style={{ overflowWrap: 'anywhere' }}>{t("listingDetails.price")}: {formatPropertyPrice(property, locale)}</div>
                <div className="est-price fs-20 mt-25 mb-35 md-mb-30">{property?.property_type || t("listingDetails.propertyFallback")}</div>
                <ul className="style-none d-flex align-items-center action-btns">
                   <li className="me-auto fw-500 color-dark"><i className="fa-sharp fa-regular fa-share-nodes me-2"></i>

@@ -1,12 +1,35 @@
 "use client"
+import Image, { StaticImageData } from "next/image"
 import Slider from 'react-slick'
 import { useTranslation } from "@/contexts/TranslationContext"
 
-const feedback_data = [
-   { id: 1, initials: "GL", testimonialKey: "testimonials.testimonial1" },
-   { id: 2, initials: "AB", testimonialKey: "testimonials.testimonial2" },
-   { id: 3, initials: "SH", testimonialKey: "testimonials.testimonial3" },
-   { id: 4, initials: "JS", testimonialKey: "testimonials.testimonial4" },
+import rating from "@/assets/images/assets/rating_01.png";
+import feadbackImg_1 from "@/assets/images/media/img_01.jpg";
+import feadbackImg_2 from "@/assets/images/media/img_02.jpg";
+import feadbackImg_3 from "@/assets/images/media/img_03.jpg";
+
+interface DataType {
+   id: number;
+   img: StaticImageData;
+   testimonialKey: string;
+}
+
+const feedback_data: DataType[] = [
+   {
+      id: 1,
+      img: feadbackImg_1,
+      testimonialKey: "testimonials.testimonial1"
+   },
+   {
+      id: 2,
+      img: feadbackImg_2,
+      testimonialKey: "testimonials.testimonial2"
+   },
+   {
+      id: 3,
+      img: feadbackImg_3,
+      testimonialKey: "testimonials.testimonial3"
+   },
 ]
 
 const Feedback = () => {
@@ -38,12 +61,16 @@ const Feedback = () => {
                      <div className="feedback-block-one text-center">
                         <div className="row align-items-center">
                            <div className="col-md-3">
-                              <div aria-hidden="true" className="rounded-circle m-auto d-flex align-items-center justify-content-center" style={{ width: 80, height: 80, background: "#305c73", color: "#fff", fontSize: 26 }}>{item.initials}</div>
+                              <Image src={item.img} alt={t(`${item.testimonialKey}.name`)} className="rounded-circle m-auto avatar" />
                               <h6 className="fs-20 m0 pt-10">{t(`${item.testimonialKey}.name`)}</h6>
                               <span className="fs-16">{t(`${item.testimonialKey}.location`)}</span>
                            </div>
-                           <div className="col-md-9">
-                              <blockquote style={{ fontSize: "clamp(18px, 2vw, 24px)", lineHeight: 1.6, marginBottom: 0 }}>{t(`${item.testimonialKey}.text`)}</blockquote>
+                           <div className="col-md-6">
+                              <blockquote>{t(`${item.testimonialKey}.text`)}</blockquote>
+                           </div>
+                           <div className="col-md-3">
+                              <Image src={rating} alt={t(`${item.testimonialKey}.ratingScore`)} className="lazy-img m-auto" />
+                              <p className="text-center m0 pt-10"><span className="fw-500 color-dark">{t(`${item.testimonialKey}.rating`)}</span> {t(`${item.testimonialKey}.ratingScore`)}</p>
                            </div>
                         </div>
                      </div>

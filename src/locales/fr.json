@@ -6,7 +6,6 @@
     "sales": "Ventes",
     "insurance": "Assurance",
     "blog": "Blog",
-    "insights": "Insights",
     "contactUs": "Nous Contacter",
     "login": "Connexion"
   },
@@ -103,15 +102,27 @@
     "findOut": "Découvrir"
   },
   "stepsSection": {
-    "title": "Nous sommes là pour vous aider",
-    "subtitle": "à obtenir la maison de vos rêves",
-    "easyStart": "C'est facile de commencer avec nous avec ces étapes simples",
+    "title": "De la vision",
+    "subtitle": "à l’exécution immobilière",
+    "easyStart": "Discover. Evaluate. Structure. Execute.",
     "createAccount": "Créer un Compte",
     "createAccountDesc": "Il est très facile d'ouvrir un compte et de commencer votre voyage.",
     "findHome": "Trouver une Maison",
     "findHomeDesc": "Complétez votre profil avec toutes les informations pour attirer l'attention du client.",
     "quickProcess": "Processus Rapide",
-    "quickProcessDesc": "Postulez et obtenez vos emplois préférables avec toutes les exigences et obtenez-le."
+    "quickProcessDesc": "Postulez et obtenez vos emplois préférables avec toutes les exigences et obtenez-le.",
+    "step1Title": "Discover · Définir le mandat",
+    "step1Desc": "Définir les besoins, l’objectif immobilier et les critères de réussite de chaque projet.",
+    "step2Title": "Evaluate · Analyser le marché",
+    "step2Desc": "Comparer l’offre, les références de marché, les emplacements et les conditions économiques.",
+    "step3Title": "Evaluate · Comparer les options",
+    "step3Desc": "Évaluer les options selon les surfaces, les besoins opérationnels, l’investissement et les risques.",
+    "step4Title": "Structure · Organiser les documents",
+    "step4Desc": "Organiser les informations du bien et coordonner la revue documentaire et la due diligence.",
+    "step5Title": "Structure · Négocier les conditions",
+    "step5Desc": "Structurer les conditions de location ou d’acquisition et accompagner les négociations.",
+    "step6Title": "Execute · Coordonner la clôture",
+    "step6Desc": "Suivre les accords et les points en attente avec les parties et les spécialistes concernés."
   },
   "journeySection": {
     "title": "Commencez votre Voyage",
@@ -122,27 +133,28 @@
     "signIn": "Se connecter."
   },
   "testimonials": {
-    "title": "Témoignages de clients",
-    "intro": "Les expériences de clients qui ont fait confiance à ZeVi Capital pour trouver, vendre ou louer un bien.",
+    "title": "Témoignages",
+    "intro": "Retours sur l’accompagnement immobilier.",
     "testimonial1": {
-      "name": "Guillermo Lacadiere",
-      "location": "Recherche d’un logement",
-      "text": "ZeVi Capital m’a beaucoup aidé à trouver mon logement. J’avais eu de mauvaises expériences avec d’autres agences immobilières, où j’avais l’impression qu’elles cherchaient davantage à conclure une transaction qu’à trouver une maison qui répondait vraiment à mes besoins. Ici, l’accompagnement a été exceptionnel et très complet. Ils m’ont accompagné jusqu’à trouver le bien qui était, littéralement, parfait pour moi. Je les recommande vivement."
+      "name": "Jonathan Harry",
+      "location": "Milan, Italie",
+      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
+      "rating": "13k évaluations",
+      "ratingScore": "(4.7 Note)"
     },
     "testimonial2": {
-      "name": "Alberto Betancourt",
-      "location": "Propriétaire · Vente d’un bien",
-      "text": "ZeVi Capital m’a aidé à vendre mon bien et m’a expliqué tous les aspects juridiques et fiscaux à prendre en compte. Franchement, je me méfie souvent des agences immobilières, car j’ai parfois l’impression qu’elles cherchent uniquement à toucher une commission. Ici, c’était différent : ils m’expliquaient tout en détail et sélectionnaient soigneusement les personnes intéressées pour éviter les risques liés à la transaction. J’ai senti qu’ils protégeaient mes intérêts et mon bien à chaque étape. Les honoraires en valaient vraiment la peine."
+      "name": "Sofia Rena",
+      "location": "New York, USA",
+      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
+      "rating": "10k évaluations",
+      "ratingScore": "(4.5 Note)"
     },
     "testimonial3": {
-      "name": "Samantha Hoopman",
-      "location": "Recherche d’un bien",
-      "text": "Mon expérience avec ZeVi Capital a été très positive. Je cherchais un bien et des conseillers de différentes agences immobilières m’avaient contactée, mais la confiance qu’ils m’ont inspirée et l’attention que j’ai reçue ici ont fait la différence. Je me suis sentie très bien accompagnée et je n’ai rien à redire. Je les recommande sans hésitation."
-    },
-    "testimonial4": {
-      "name": "Javier Serrano",
-      "location": "Propriétaire · Mise en location d’un bien",
-      "text": "Ils m’ont aidé à louer mon bien avec une grande efficacité. Ce qui m’a particulièrement marqué, c’est qu’ils ne retenaient pas le premier candidat simplement pour conclure la transaction : ils cherchaient la bonne personne pour ma maison. Plusieurs candidats avaient des profils qui ne convenaient pas vraiment, et ils ont poursuivi leurs recherches jusqu’à trouver la personne adaptée. Je les remercie beaucoup pour le service et la communication, qui a toujours été très complète. Ils sont totalement dignes de confiance."
+      "name": "Rashed Kabir",
+      "location": "Dhaka, BD",
+      "text": "Efficace, compétent, et a rendu notre recherche de maison une expérience fluide. Agence hautement recommandée !",
+      "rating": "11k évaluations",
+      "ratingScore": "(4.8 Note)"
     }
   },
   "footer": {
@@ -165,17 +177,19 @@
   "aboutUs": {
     "breadcrumbTitle": "Qui Sommes-Nous",
     "subtitle": "À propos de nous",
-    "mainTitle": "Sécurisez le",
-    "familyWord": "foyer de rêve",
-    "dreamHome": "de votre famille.",
-    "intro": "O7 Realestates est votre partenaire de confiance en immobilier de luxe. Avec plus de 15 ans d'expérience sur le marché immobilier dynamique du Canada.",
-    "contactButton": "Nous contacter",
+    "mainTitle": "Conseil",
+    "familyWord": "immobilier",
+    "dreamHome": "pour entreprises et investisseurs.",
+    "intro": "ZeVi | Capital accompagne entreprises, investisseurs et propriétaires dans l’identification, l’évaluation et la négociation d’opportunités immobilières.",
+    "contactButton": "Parler à un conseiller",
     "yearsExperience": "Années d'expérience",
     "propertiesSold": "Propriétés vendues",
     "whoWeAre": "Qui sommes-nous ?",
-    "whoWeAreText": "O7 Realestates est une agence immobilière de premier plan spécialisée dans les propriétés de luxe à travers le Canada. Fondée avec la vision de redéfinir l'excellence immobilière, nous combinons une connaissance approfondie du marché avec un service personnalisé pour aider nos clients à trouver leur maison idéale ou leur investissement parfait.",
+    "whoWeAreText": "Nous sommes un cabinet de conseil immobilier et d’investissement basé à Zona Esmeralda, dans l’État de Mexico. Nous réunissons analyse de marché, conseil aux entreprises et coordination transactionnelle.",
     "ourMission": "Notre Mission",
-    "ourMissionText": "Notre mission est de fournir des services immobiliers exceptionnels qui dépassent les attentes. Nous sommes engagés envers l'intégrité, la transparence et la livraison de résultats qui créent une valeur durable pour nos clients dans les marchés immobiliers prestigieux internationaux : Montreal, Los Angeles, Paris, Londres et Mexico."
+    "ourMissionText": "Accompagner les décisions de location, d’acquisition, de commercialisation et d’investissement avec des informations, des critères clairs et un suivi des opérations.",
+    "servicePillars": "Axes d’analyse : marché, actif et transaction",
+    "structuredSteps": "Étapes d’accompagnement"
   },
   "listingDetails": {
     "titleFallback": "Bien ZeVi Capital",

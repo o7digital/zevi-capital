@@ -3,7 +3,7 @@ import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
    title: "Contacto | Consultoría Inmobiliaria ZeVi Capital",
-   description: "Contacta a ZeVi Capital en Ciudad de México para proyectos de expansión empresarial, inversión, comercialización y manejo de activos inmobiliarios.",
+   description: "Contacta a ZeVi Capital en Zona Esmeralda, Estado de México. Asesoría inmobiliaria corporativa, expansión comercial, inversión y acompañamiento transaccional.",
    alternates: { canonical: "https://www.zevicapital.com/contact" },
 };
 const index = () => {

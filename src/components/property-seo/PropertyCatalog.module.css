@@ -1,0 +1,32 @@
+.main { background: #f3f6f6; padding: 190px 0 90px; color: #112532; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 14px; color: #52636e; margin-bottom: 30px; }
+.breadcrumbs a { color: #06676a; text-decoration: underline; text-underline-offset: 3px; }
+.heading { max-width: 1000px; margin-bottom: 36px; }
+.eyebrow { color: #06676a; font-size: 13px; letter-spacing: .12em; font-weight: 600; }
+.heading h1 { font-size: clamp(32px, 4vw, 56px); line-height: 1.15; margin: 16px 0 24px; }
+.heading > p { line-height: 1.7; }
+.intro { color: #52636e; font-size: 17px; }
+.explore { background: white; border: 1px solid #dde6e6; border-radius: 20px; padding: 24px; margin: 32px 0 42px; }
+.explore h2, .results { font-size: 23px; line-height: 1.35; margin-bottom: 22px; }
+.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tags a { display: inline-flex; align-items: center; gap: 6px; color: #06676a; background: #edf7f5; border: 1px solid #c9dfdc; border-radius: 24px; padding: 9px 16px; font-size: 14px; line-height: 1.5; }
+.tags a:hover { color: white; background: #06676a; border-color: #06676a; }
+.tags a:focus-visible, .view:focus-visible { outline: 3px solid #087f83; outline-offset: 3px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.card { display: flex; flex-direction: column; min-width: 0; background: white; border: 1px solid #e2e8e8; border-radius: 20px; overflow: hidden; }
+.image { display: block; aspect-ratio: 1.5; background: #e5eeee; overflow: hidden; }
+.image img { width: 100%; height: 100%; object-fit: cover; }
+.cardBody { display: flex; flex: 1; flex-direction: column; gap: 14px; padding: 24px; }
+.kind { color: #06676a; font-size: 13px; line-height: 1.5; margin: 0; }
+.card h3 { font-size: 23px; line-height: 1.4; overflow-wrap: anywhere; margin: 0; }
+.card h3 a { color: #112532; }
+.card h3 a:hover { color: #087f83; }
+.address { color: #52636e; font-size: 15px; line-height: 1.6; margin: 0; }
+.price { margin: auto 0 0; padding-top: 10px; font-size: 19px; line-height: 1.5; font-weight: 500; overflow-wrap: anywhere; }
+.view { color: #06676a; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.contact { margin: 50px 0 0; padding: 28px; border-radius: 20px; background: #e2eeee; }
+.contact p { margin-bottom: 12px; }
+.contact a { color: #06676a; text-decoration: underline; }
+.propertyLinks { margin: 24px 0 30px; }
+@media (max-width: 991px) { .main { padding-top: 155px; } .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } }
+@media (max-width: 575px) { .main { padding-top: 130px; padding-bottom: 55px; } .grid { grid-template-columns: minmax(0, 1fr); } .explore { padding: 20px; } .cardBody { padding: 22px; } }

@@ -8,6 +8,7 @@ import icon_4 from "@/assets/images/icon/icon_50.svg"
 import icon_5 from "@/assets/images/icon/icon_51.svg"
 import { DirectusProperty } from "@/lib/directusProperties";
 import { useTranslation } from "@/contexts/TranslationContext";
+import { propertyTransactions } from "@/lib/propertySeo";
 
 interface DataType {
    id: number;
@@ -45,6 +46,7 @@ const property_overview_data: DataType[] = [
 
 const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | null }) => {
    const { t } = useTranslation();
+   const operation = property ? propertyTransactions(property).map(value => t(value === 'renta' ? "listingDetails.rent" : "listingDetails.sale")).join(' / ') || property.operation_type : '';
    const property_overview_data: DataType[] = [
       {
          id: 1,
@@ -64,7 +66,7 @@ const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | nu
       {
          id: 4,
          icon: icon_4,
-         title: `${t("listingDetails.overview.operation")} . ${property?.operation_type === "rental" ? t("listingDetails.rent") : t("listingDetails.sale")}`,
+         title: `${t("listingDetails.overview.operation")} . ${operation || ''}`,
       },
       {
          id: 5,
@@ -75,7 +77,7 @@ const CommonPropertyOverview = ({ property }: { property?: DirectusProperty | nu
 
    return (
       <ul className="style-none d-flex flex-wrap align-items-center justify-content-between">
-         {property_overview_data.map((item) => (
+         {property_overview_data.filter(item => item.id === 1 ? Number(property?.sqft) > 0 : item.id === 2 ? Number(property?.bedrooms) > 0 : item.id === 3 ? Number(property?.bathrooms) > 0 : item.id === 4 ? Boolean(operation) : Boolean(property?.property_type)).map((item) => (
             <li key={item.id}>
                <Image src={item.icon} alt="" className="lazy-img icon" />
                <span className="fs-20 color-dark">{item.title}</span>

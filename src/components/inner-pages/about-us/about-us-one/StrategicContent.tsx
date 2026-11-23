@@ -1,18 +1,18 @@
 const differences = [
   {
     number: "01",
-    title: "Análisis antes de acción",
-    text: "Cada decisión se basa en información. Antes de promover, vender, rentar o recomendar una ubicación, analizamos el contexto y el potencial real.",
+    title: "Discover · Entender el objetivo",
+    text: "Definimos el mandato, las necesidades y los criterios de éxito: arrendamiento, adquisición, expansión comercial o posicionamiento de un activo.",
   },
   {
     number: "02",
-    title: "Estrategia antes de promoción",
-    text: "No publicamos propiedades sin dirección. Creamos una narrativa comercial, definimos el perfil del prospecto y estructuramos la forma correcta de presentar cada activo.",
+    title: "Evaluate · Contrastar alternativas",
+    text: "Contrastamos mercado, ubicación, condiciones económicas y riesgos. Evaluamos comparables, oferta y compatibilidad con los requerimientos del proyecto.",
   },
   {
     number: "03",
-    title: "Confianza antes de cierre",
-    text: "Una operación inmobiliaria segura requiere claridad. Por eso acompañamos cada etapa con comunicación, seguimiento y coordinación profesional.",
+    title: "Structure & Execute · Coordinar",
+    text: "Organizamos alternativas, documentos y términos de negociación. Coordinamos seguimiento y cierre con las partes y los especialistas correspondientes.",
   },
 ]
 
@@ -22,13 +22,13 @@ const StrategicContent = () => (
       <div className="about-strategy__opening">
         <div>
           <span className="about-strategy__eyebrow">Where vision meets strategy</span>
-          <h1 id="about-strategy-title">ZeVi Capital: donde la visión se encuentra con la estrategia</h1>
+          <h1 id="about-strategy-title">ZeVi | Capital: asesoría inmobiliaria e inversión estratégica</h1>
         </div>
         <div className="about-strategy__lead">
-          <p>ZeVi Capital es una firma especializada en expansión empresarial, inversión inmobiliaria y manejo estratégico de activos.</p>
-          <p>Nacimos con una convicción clara: una propiedad no debe estar detenida. Un activo inmobiliario debe generar movimiento, valor y oportunidades.</p>
-          <p>Acompañamos a propietarios, empresas e inversionistas en decisiones inmobiliarias importantes, integrando análisis comercial, visión patrimonial, estructura operativa y acompañamiento estratégico.</p>
-          <p>Nuestro enfoque está diseñado para quienes buscan algo más que una transacción. Trabajamos para construir operaciones inteligentes, sostenibles y alineadas con objetivos de crecimiento.</p>
+          <p>ZeVi | Capital es una firma de asesoría inmobiliaria y de inversión que acompaña a empresas, inversionistas y propietarios en la identificación, evaluación, negociación y ejecución de oportunidades inmobiliarias.</p>
+          <p>Integramos información de mercado, criterio transaccional y coordinación jurídica para evaluar cada activo y las necesidades del negocio.</p>
+          <p>Acompañamos decisiones de arrendamiento, adquisición, comercialización e inversión, así como proyectos de expansión empresarial y selección de ubicaciones comerciales.</p>
+          <p>Desde Zona Esmeralda, Estado de México, definimos con cada cliente el alcance territorial del proyecto y los especialistas que intervienen en la operación.</p>
         </div>
       </div>
 
@@ -36,29 +36,29 @@ const StrategicContent = () => (
         <article>
           <span>01 · Visión inmobiliaria estratégica</span>
           <h2>Nuestra visión</h2>
-          <p>Ser una firma referente en expansión empresarial y estructuración inmobiliaria estratégica, reconocida por conectar oportunidades, capital y territorio.</p>
-          <p>Buscamos impulsar el crecimiento de empresas y optimizar el valor patrimonial de propietarios mediante soluciones seguras, inteligentes y sostenibles.</p>
-          <p>Nuestra visión es crear un puente entre activos inmobiliarios, empresas en crecimiento e inversionistas con visión de largo plazo.</p>
+          <p>Conectar empresas, capital y oportunidades inmobiliarias mediante análisis de mercado y una visión integral del activo y del negocio.</p>
+          <p>Buscamos acompañar decisiones de ocupación, expansión comercial e inversión con información, criterios claros y una metodología de trabajo.</p>
+          <p>Orientamos cada mandato a relaciones de largo plazo con empresas, propietarios e inversionistas, según los objetivos y el alcance acordados.</p>
         </article>
         <article>
           <span>02 · Consultoría inmobiliaria integral</span>
           <h2>Nuestra misión</h2>
-          <p>Ofrecer soluciones integrales que articulen estrategia comercial, análisis técnico, respaldo jurídico y ejecución operativa.</p>
-          <p>Facilitamos tanto la expansión de empresas como la comercialización estructurada de activos inmobiliarios, garantizando certeza, eficiencia y valor en cada operación.</p>
-          <p>Nuestra misión es transformar la complejidad inmobiliaria en procesos claros, medibles y ejecutables.</p>
+          <p>Acompañar la identificación, evaluación y negociación de oportunidades inmobiliarias con análisis comercial y coordinación documental.</p>
+          <p>Integramos comparables de mercado, análisis de localización, condiciones económicas y revisión preliminar de riesgos antes de recomendar alternativas.</p>
+          <p>Delimitamos el alcance de cada servicio y coordinamos la participación de especialistas cuando la operación lo requiere.</p>
         </article>
       </div>
 
       <div className="about-strategy__difference">
         <div className="about-strategy__difference-head">
           <div>
-            <span className="about-strategy__eyebrow">Firma inmobiliaria boutique</span>
+            <span className="about-strategy__eyebrow">Real Estate & Investment Advisory</span>
             <h2>Lo que nos hace diferentes</h2>
           </div>
           <div>
-            <p className="statement">No trabajamos desde la improvisación. Trabajamos desde la estrategia.</p>
-            <p>En ZeVi Capital analizamos cada activo y cada proyecto desde múltiples ángulos: ubicación, mercado, documentación, perfil del comprador, competencia, viabilidad, riesgos y potencial de retorno.</p>
-            <p>Esto nos permite diseñar estrategias inmobiliarias más precisas, más profesionales y más alineadas con los objetivos del cliente.</p>
+            <p className="statement">Información, metodología y seguimiento para decisiones inmobiliarias.</p>
+            <p>Analizamos ubicación, mercado, documentación, perfil del comprador u ocupante, condiciones comerciales y riesgos. Distinguimos los datos confirmados de las estimaciones.</p>
+            <p>Definimos una ruta de análisis, selección, negociación y ejecución acorde con el objetivo del cliente y las características del activo.</p>
           </div>
         </div>
         <div className="about-strategy__cards">

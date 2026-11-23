@@ -6,7 +6,6 @@
     "sales": "Sales",
     "insurance": "Insurance",
     "blog": "Blog",
-    "insights": "Insights",
     "contactUs": "Contact Us",
     "login": "Login"
   },
@@ -103,15 +102,27 @@
     "findOut": "Find out"
   },
   "stepsSection": {
-    "title": "We'r here to help",
-    "subtitle": "you get your dream home",
-    "easyStart": "It's easy to start with us with these simple steps",
+    "title": "From vision",
+    "subtitle": "to real estate execution",
+    "easyStart": "Discover. Evaluate. Structure. Execute.",
     "createAccount": "Create Account",
     "createAccountDesc": "It's very easy to open an account and start your journey.",
     "findHome": "Find Home",
     "findHomeDesc": "Complete your profile with all the info to get attention of client.",
     "quickProcess": "Quick Process",
-    "quickProcessDesc": "Apply & get your preferable jobs with all the requirements and get it."
+    "quickProcessDesc": "Apply & get your preferable jobs with all the requirements and get it.",
+    "step1Title": "Discover · Define the mandate",
+    "step1Desc": "Define requirements, the real estate objective and success criteria for each project.",
+    "step2Title": "Evaluate · Analyze the market",
+    "step2Desc": "Compare supply, market comparables, locations and economic terms to understand the market.",
+    "step3Title": "Evaluate · Compare alternatives",
+    "step3Desc": "Assess alternatives against space, operating and investment needs and identified risks.",
+    "step4Title": "Structure · Organize documents",
+    "step4Desc": "Organize property information and coordinate document review and due diligence.",
+    "step5Title": "Structure · Negotiate terms",
+    "step5Desc": "Organize lease or acquisition terms and support real estate negotiations.",
+    "step6Title": "Execute · Coordinate closing",
+    "step6Desc": "Follow up on agreements and outstanding items with the relevant parties and specialists."
   },
   "journeySection": {
     "title": "Start your Journey",
@@ -122,27 +133,28 @@
     "signIn": "Sign in."
   },
   "testimonials": {
-    "title": "Client testimonials",
-    "intro": "Experiences from clients who trusted ZeVi Capital to find, sell or rent a property.",
+    "title": "Testimonials",
+    "intro": "Feedback on the real estate advisory experience.",
     "testimonial1": {
-      "name": "Guillermo Lacadiere",
-      "location": "Home search",
-      "text": "ZeVi Capital helped me so much to find my home. I had had negative experiences with other real estate agencies, where I felt they were more interested in closing a deal than finding a house that truly suited my needs. Here, the service was incredible and very thorough. They supported me until we found the property that was, literally, perfect for me. I highly recommend them."
+      "name": "Jonathan Harry",
+      "location": "Milan, Italy",
+      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
+      "rating": "13k rating",
+      "ratingScore": "(4.7 Rating)"
     },
     "testimonial2": {
-      "name": "Alberto Betancourt",
-      "location": "Property owner · Property sale",
-      "text": "ZeVi Capital helped me sell my property and explained all the legal and tax aspects I needed to consider. Frankly, I tend to distrust real estate agencies because I sometimes feel that all they want is to collect a commission. Here, it was different: they explained everything in detail and carefully screened interested buyers to avoid risks in the transaction. I felt they looked after my interests and my property at every step. The fees were absolutely worth it."
+      "name": "Sofia Rena",
+      "location": "New York, USA",
+      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
+      "rating": "10k rating",
+      "ratingScore": "(4.5 Rating)"
     },
     "testimonial3": {
-      "name": "Samantha Hoopman",
-      "location": "Property search",
-      "text": "My experience with ZeVi Capital has been very good. I was looking for a property and advisers from different real estate agencies contacted me, but the confidence they inspired and the attention I received here made the difference. I felt very well looked after and have no complaints. I wholeheartedly recommend them."
-    },
-    "testimonial4": {
-      "name": "Javier Serrano",
-      "location": "Property owner · Property rental",
-      "text": "They helped me rent out my property very efficiently. Something that really stood out was that they did not settle for the first interested person just to close the deal: they looked for the right person for my house. Several applicants had profiles that were not the best fit, and they kept looking until they found someone who was. I am very grateful for the service and communication, which was always very thorough. They are completely trustworthy."
+      "name": "Rashed Kabir",
+      "location": "Dhaka, BD",
+      "text": "Efficient, knowledgeable, & made our home search a smooth experience. Highly recommended agency!",
+      "rating": "11k rating",
+      "ratingScore": "(4.8 Rating)"
     }
   },
   "footer": {
@@ -165,17 +177,19 @@
   "aboutUs": {
     "breadcrumbTitle": "About Us",
     "subtitle": "About us",
-    "mainTitle": "Secure your",
-    "familyWord": "family's",
-    "dreamHome": "Dream home.",
-    "intro": "O7 Realestates is your trusted partner in luxury real estate. With over 15 years of experience in Canada's dynamic property market.",
-    "contactButton": "Contact Us",
+    "mainTitle": "Real estate",
+    "familyWord": "advisory",
+    "dreamHome": "for businesses and investors.",
+    "intro": "ZeVi | Capital supports businesses, investors and owners in identifying, evaluating and negotiating real estate opportunities.",
+    "contactButton": "Speak with an advisor",
     "yearsExperience": "Years of experience",
     "propertiesSold": "Properties sold",
     "whoWeAre": "Who we are?",
-    "whoWeAreText": "O7 Realestates is a leading real estate agency specializing in luxury properties across Canada. Founded with a vision to redefine property excellence, we combine deep market knowledge with personalized service to help clients find their perfect home or investment.",
+    "whoWeAreText": "We are a real estate and investment advisory firm based in Zona Esmeralda, State of Mexico. We combine market analysis, corporate service and transaction coordination.",
     "ourMission": "Our Mission",
-    "ourMissionText": "Our mission is to provide exceptional real estate services that exceed expectations. We are committed to integrity, transparency, and delivering results that create lasting value for our clients in Canada's prestigious property landscape."
+    "ourMissionText": "Support leasing, acquisition, marketing and investment decisions with information, clear criteria and transaction follow-up.",
+    "servicePillars": "Analysis areas: market, asset and transaction",
+    "structuredSteps": "Advisory stages"
   },
   "listingDetails": {
     "titleFallback": "ZeVi Capital property",
